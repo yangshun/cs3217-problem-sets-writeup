@@ -28,12 +28,12 @@
         <div class="main-container">
             <div class="half-container">
                 <h3>Editor</h3>
-                <select id="ps-selection">
-                    <option value="PS1" selected>PS1</option>
-                    <option value="PS2">PS2</option>
-                    <option value="PS3">PS3</option>
-                    <option value="PS4">PS4</option>
-                    <option value="PS5">PS5</option>
+                <select id="selected-ps">
+                    <option value="1" selected>PS1</option>
+                    <option value="2">PS2</option>
+                    <option value="3">PS3</option>
+                    <option value="4">PS4</option>
+                    <option value="5">PS5</option>
                 </select>
                 <button onclick="saveDocument()">Save</button>
                 <textarea class="editor inner-container"></textarea>
@@ -50,6 +50,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="/js/plugins.js"></script>
         <script src="/js/showdown.js"></script>
+        <script src="/js/common.js"></script>
         <script src="/js/editor.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
