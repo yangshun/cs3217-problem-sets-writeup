@@ -27,19 +27,20 @@
         
         <div class="main-container">
             <div class="half-container">
-                <h3>Editor</h3>
-                <select id="selected-ps">
-                    <option value="1" selected>PS1</option>
-                    <option value="2">PS2</option>
-                    <option value="3">PS3</option>
-                    <option value="4">PS4</option>
-                    <option value="5">PS5</option>
-                </select>
-                <button onclick="saveDocument()">Save</button>
+                <div class="title-container"><span>Editor</span> &nbsp;
+                    <select id="selected-ps">
+                        <option value="1" selected>PS1</option>
+                        <option value="2">PS2</option>
+                        <option value="3">PS3</option>
+                        <option value="4">PS4</option>
+                        <option value="5">PS5</option>
+                    </select>
+                    <button id="save-button">Save</button>
+                </div>
                 <textarea class="editor inner-container"></textarea>
             </div>
             <div class="half-container">
-                <h3>Preview</h3>
+                <div class="title-container"><span>Preview</span></div>
                 <div class="inner-container preview">
                     
                 </div>

@@ -37,11 +37,14 @@ app.get('/edit', function(req, res) {
   res.render('ps/index.html');
 });
 
-app.post('/ps', function(req, res) {
-  var pathname = path.join(__dirname, 'public/ps/' + req.params.folder + '/');
-  fs.writeFile(pathname + 'message.txt', 'Hello Node', function (err) {
+app.post('/save', function(req, res) {
+
+  var filepath = path.join(__dirname, 'public/ps/PS' + req.body.ps + '/PS' + req.body.ps + '.md');
+  fs.writeFile(filepath, req.body.file_data, function (err) {
     if (err) throw err;
     console.log('It\'s saved!');
+    res.write('success');
+    res.end();
   });
 })
 
