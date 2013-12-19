@@ -12,10 +12,11 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/swiss.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/swiss.css">
+        <link rel="stylesheet" href="/css/editor.css">
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -23,15 +24,33 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        
         <div class="main-container">
-            
+            <div class="half-container">
+                <h3>Editor</h3>
+                <select id="ps-selection">
+                    <option value="PS1" selected>PS1</option>
+                    <option value="PS2">PS2</option>
+                    <option value="PS3">PS3</option>
+                    <option value="PS4">PS4</option>
+                    <option value="PS5">PS5</option>
+                </select>
+                <button onclick="saveDocument()">Save</button>
+                <textarea class="editor inner-container"></textarea>
+            </div>
+            <div class="half-container">
+                <h3>Preview</h3>
+                <div class="inner-container preview">
+                    
+                </div>
+            </div>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/showdown.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/showdown.js"></script>
+        <script src="/js/editor.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

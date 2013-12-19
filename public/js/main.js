@@ -1,8 +1,8 @@
 var converter = new Showdown.converter();
 
-(function() {
-    for (var i = 1; i <= 1; i++) {
-        var file_path = 'PS' + i.toString() + '/PS' + i.toString() + '.md';
+$(function() {
+    for (var i = 1; i <= 2; i++) {
+        var file_path = 'ps/PS' + i.toString() + '/PS' + i.toString() + '.md';
         var $div = $('<div></div>');
         $div.attr('class', 'ps-' + i.toString());
         appendContent($div);
@@ -14,4 +14,4 @@ var converter = new Showdown.converter();
             });
         }
     }
-})();
+});
