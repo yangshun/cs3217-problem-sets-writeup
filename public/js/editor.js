@@ -43,12 +43,7 @@ function resizeInnerContainers() {
 }
 
 function redirectToMain() {
-    if (modified) {
-        var p = confirm('Content has been modified. Proceed without saving?');
-    }
-    if (p || !modified) {
-        location.href = '/';
-    }
+    location.href = '/';
 }
 
 function setFileModificationStatus(state) {
