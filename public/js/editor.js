@@ -54,9 +54,9 @@ function redirectToMain() {
 function setFileModificationStatus(state) {
     modified = state;
     if (modified) {
-        $('.saving-status').text('File has not been saved.').removeClass('green');
+        $('.saving-status').text('There are unsaved changes.').removeClass('green');
     } else {
-        $('.saving-status').text('File saved.').addClass('green');
+        $('.saving-status').text('All changes saved.').addClass('green');
     }
 }
 
