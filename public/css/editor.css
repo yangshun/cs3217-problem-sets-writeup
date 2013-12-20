@@ -1,7 +1,9 @@
 body { padding: 0; height: 100%; background-color: #eee; }
-.half-container { width: 47%; height: 100%; overflow: scroll; display: inline-block; padding: 10px; vertical-align: top; height: 100%; }
-.half-container .inner-container { width: 99%; padding: 5px; border: 1px solid #ccc;}
+.half-container { width: 47%; height: 100%; overflow: hidden; display: inline-block; padding: 10px; vertical-align: top; height: 100%; }
+.half-container .inner-container { width: 98%; padding: 10px; border: 1px solid #ccc; overflow: scroll; }
 .half-container .editor { height: 600px; font-family: monospace; }
-.half-container .preview { padding: 10px; background-color: #fff; }
+.half-container .preview { background-color: #fff; }
 .half-container .title-container { margin-bottom: 10px; }
-.half-container .title-container span { font-size: 24px; font-weight: bold; }
+.half-container .title-container .title { font-size: 24px; font-weight: bold; }
+.saving-status { color: red; }
+.saving-status.green { color: green; } 

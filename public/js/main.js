@@ -1,7 +1,7 @@
 var converter = new Showdown.converter();
 
 $(function() {
-    for (var i = 1; i <= 2; i++) {
+    for (var i = 1; i <= 5; i++) {
         var $div = $('<div></div>');
         $div.attr('class', 'ps-' + i.toString());
         appendContent($div);

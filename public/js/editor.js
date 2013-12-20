@@ -1,4 +1,6 @@
 var converter = new Showdown.converter();
+var modified = false;
+var current_selection = 1;
 
 function refresh() {
     var $editor = $('.editor');
@@ -7,11 +9,20 @@ function refresh() {
 }
 
 function loadMarkdown() {
-    var number = $('#selected-ps').val();
-    $.get(makeFilePath(number), function(data) {
-        $('.editor').val(data);
-        refresh();
-    })
+    if (modified) {
+        var p = confirm('Content has been modified. Proceed without saving?');
+    }
+    if (p || !modified) {
+        var number = $('#selected-ps').val();
+        current_selection = number;
+        $.get(makeFilePath(number), function(data) {
+            $('.editor').val(data);
+            refresh();
+            setFileModificationStatus(false);
+        })
+    } else {
+        $('#selected-ps').val(current_selection);
+    }
 }
 
 function saveDocument() {
@@ -22,17 +33,63 @@ function saveDocument() {
         file_data: content
     }, function(res) {
         if (res == "success") {
-            alert('File saved sucessfully!');
+            setFileModificationStatus(false);
         }
     })
 }
 
+function resizeInnerContainers() {
+    $('.inner-container').height($(window).height() - 100);   
+}
+
+function redirectToMain() {
+    if (modified) {
+        var p = confirm('Content has been modified. Proceed without saving?');
+    }
+    if (p || !modified) {
+        location.href = '/';
+    }
+}
+
+function setFileModificationStatus(state) {
+    modified = state;
+    if (modified) {
+        $('.saving-status').text('File has not been saved.').removeClass('green');
+    } else {
+        $('.saving-status').text('File saved.').addClass('green');
+    }
+}
+
+function bindShortcuts() {
+    $(document).keydown(function(e) {
+        if ((e.which == '115' || e.which == '83' ) && 
+            (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            saveDocument();
+            return false;
+        }
+        return true;
+    });
+}
+
 $(function() {
     $('.editor').bind('input cut paste', function() {
+        if (!modified) {
+            setFileModificationStatus(true);
+        }
         refresh();
     })
     $('#selected-ps').on('change', loadMarkdown);
     $('#save-button').on('click', saveDocument);
     loadMarkdown();
+    $(window).resize(resizeInnerContainers);
+    resizeInnerContainers();
+    window.onbeforeunload = function() {
+        if (modified) {
+            return 'Content has been modified. Proceed without saving?';
+        }
+    }
+    setFileModificationStatus(false);
+    bindShortcuts();
 });
 

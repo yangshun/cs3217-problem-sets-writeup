@@ -1,1 +1,2 @@
 .main-container { max-width: 768px; width: 100%; margin: 0 auto; }
+div[class*="ps-"] { margin-bottom: 100px; }
