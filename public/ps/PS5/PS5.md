@@ -175,7 +175,7 @@ Please read this section carefully so that you fully understand the grading sche
 
 In this module, you are being trained to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write well-documented code.
 
-For this problem set, we will be testing your code by compiling your app and deploying it on an iPad to make sure that the game works as expected. You should also probably deploy the application on your iPad to make sure that you can play the game. We will be looking at the following:
+For this problem set, we will be testing your code by compiling your app and uploading to an iPad to make sure that the game works as expected and you can play it. We will be looking at the following:
 
 - Your submission should adhere to the submission format.
 - You have answered the questions satisfactorily in a concise manner.
