@@ -17,6 +17,3 @@
 
 5. To use the markdown editor and previewer, visit the url [http://localhost:3000/edit](http://localhost:3000/edit).
 
-
- 
-
