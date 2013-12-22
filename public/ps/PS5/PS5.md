@@ -98,7 +98,7 @@ Make the application a complete one by implementing the following screens and UI
 
 Draw the MDD for the basic implementation of your game (i.e. you do not need to include the bells and whistles). Save you diagram as `MDD.png` and include it in your repository for submission.
 
-Section 3 - Completing the Game (100 points)
+Section 3 - Testing, Refinements and Reflections (100 points)
 --
 In this section, you will perform thorough testing of your app to make sure that it runs as intended. You will also try your best to refine and polish up your app.
 
