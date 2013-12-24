@@ -11,6 +11,8 @@ In this problem set, your task is to complete the implementation of Bubble Blast
 
 ***Reminder: Please read the entire problem set before starting.***  
 
+![audi](/ps/ps5/img/audi.jpg)
+
 ### Introduction ###
 
 In this assignment you will see your efforts over the past few weeks to completion. You have three key tasks in this assignment:
