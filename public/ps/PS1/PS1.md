@@ -37,7 +37,7 @@ If you’re comfortable with basic object-oriented concepts and the C language, 
 
 [Cocoa](https://developer.apple.com/technologies/mac/cocoa.html) is Apple’s native object-oriented API for the Mac OSX operating system. For iOS development, we will be using [Cocoa Touch](https://developer.apple.com/technologies/ios/cocoa-touch.html), a touch-oriented API similar to Cocoa. Cocoa Touch follows a Model-View-Controller (MVC) paradigm.
 
-###Milestone 0: Find out how common programming constructs are expressed idiomatically in Objective C. (Not graded)
+##### Milestone 0: Find out how common programming constructs are expressed idiomatically in Objective C. (Not graded)
 
 * Declaring primitive types
 * Declaring and instantiating objects
@@ -101,9 +101,9 @@ In this section, you will be introduced to Object Oriented Programming and colle
 
 Objective C provides three main collection types
 
-1. `NSArray` describes a linear collection of objects where each object may be accessed by an index
-2. `NSDictionary` describes a key-value store where some one *key*-object maps to one *value*-object
-3. `NSSet` describes an unordered collection of unqiue objects
+- `NSArray` describes a linear collection of objects where each object may be accessed by an index.
+- `NSDictionary` describes a key-value store where some one *key*-object maps to one *value*-object.
+- `NSSet` describes an unordered collection of unique objects.
 
 
 
