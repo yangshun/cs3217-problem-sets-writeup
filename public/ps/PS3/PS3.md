@@ -33,25 +33,25 @@ The Cocoa and Cocoa Touch frameworks encourage the use of the MVC pattern. Inter
 ￼
 ### Bubble Blast Saga Level Designer (MVC) ###
 
-The following is a brief overview of the game that you will be building called Bubble Blast Sage. When launching the game, the user is presented with the interface, with a grid like structure where the bubbles will be placed. A palette at the bottom will allow the designer to choose the type of bubble he wants to design the grid with (blue, red, green, orange). The palette also contains an eraser used to delete bubbles from the grid. After adding the bubbles onto the grid, the user can use the SAVE button to store the current grid bubbles in a file on the iPad. The LOAD button can be use to load and restore the previously saved level, and the RESET button will clear all the bubbles from the grid n the level designer. Once the grid is ready, the user starts the game by pressing the START button.
+The following is a brief overview of the game that you will be building called Bubble Blast Saga. When launching the game, the user is presented with the interface, with an isometric grid-like structure where the bubbles will be placed. A palette at the bottom will allow the designer to choose the type of bubble he wants to design the grid with (blue, red, green, orange). The palette also contains an eraser used to clean the bubbles off the grid. After adding the bubbles onto the grid, the user can use the **SAVE** button to store the current grid bubbles in a file on the iPad. The **LOAD** button can be used to load and restore the previously saved level, and the **RESET** button will clear all the bubbles from the grid. Once the user is satisfied with the level design, he can start the game by pressing the **START** button (to be implemented in the upcoming problem sets).
 
-In the game, the user specifies the direction of a new bubble to shot. The bubble will then interact with the existing bubbles in the grid according to the physics engine that you will build in the next problem set. If the shot bubble touches another bubble with the same colour as its own, and these bubbles form a group of 3 or more bubbles, then all the connected bubbles of this colour are destroyed. The objective of the game is to destroy all the bubbles from the grid by making groups of 3 or more. In this problem set, the START button will be disabled. You will only have to build a rudimentary level designer.
+In the game, the user specifies the direction of a new bubble to shot. The bubble will then interact with the existing bubbles in the grid according to the game engine that you will build in the next problem set. If the shot bubble touches another bubble with the same colour as its own, and these bubbles form a group of 3 or more bubbles, then all the connected bubbles of this colour are destroyed. The objective of the game is to destroy all the bubbles from the grid by making groups of 3 or more. In this problem set, the **START** button will be disabled. You will only have to build a rudimentary level designer.
 
 The features of the level designer that you are expected to implement include the following:
 
 * Reset, save and load a game level;
 * An object palette from which the user can select the bubble colour or the eraser;
-* Fill the grid with the bubbles (translate);
-* Change the colour in the grid in a round-robin fashion (single tap);
-* Delete bubbles from the grid (double tap);
+* Fill the grid with the bubbles (pan gesture);
+* Change the colour in the grid in a round-robin fashion (single-tap gesture);
+* Delete bubbles from the grid (double-tap gesture);
 
 
-Section 2 - Bubble Blast Sage Level Designer
+Section 2 - Bubble Blast Saga Level Designer
 --
 
 ### Problem 1: Create the Bubble Palette (10 points) ###
 
-To create the palette, you need to add a new view, palette, to the main view. The palette will contain 4 bubbles (blue, red, green, orange) that the designer can choose to fill the grid with and an eraser to delete the bubble. These objects should be added as subviews in the palette and should stay in the palette throughout the design phase. You can find the necessary graphic files for the game objects in the archive for this problem set. Image 5.1 is a sample screenshot of the level designer. You are however free to redesign the layout of the level designer as long as you satisfy the basic requirements.
+To create the palette, you need to add a new view, palette, to the main view. The palette will contain 4 bubbles (blue, red, green, orange) that the user can choose to fill the grid with and an eraser to delete bubbles. These images should stay in the palette throughout the design phase. You can find the necessary graphic files for the game objects in the archive for this problem set. Image 5.1 is a sample screenshot of the level designer. You are however free to redesign the layout of the level designer as long as you satisfy the basic requirements.
 
 From the bubble palette, the user taps to select the type of bubble he wants to use to fill the grid or taps the eraser to delete the bubble from the grid.
 
@@ -63,9 +63,9 @@ Your next task is to create an isometric grid. The grid should have 12 columns a
 
 Before you begin, please spend some time understanding the requirements of this problem set. Think about the following questions: What objects do you need to implement? How will the objects interact with your main controller? How do you best organize the code for these objects? Are there alternatives? How will you add new game objects?
 
-Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file design.pdf at the root directory of your project folder.
+Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file `design.pdf` at the root directory of your project folder.
 
-a. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two ore more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one to one, one to many, many to one). Please follow the conventions as discussed in lecture. **(10 points)**
+a. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two ore more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. **(10 points)**
 
 b. Explain why you decided on your chosen design over alternative designs. **(5 points)**
 
@@ -86,37 +86,39 @@ A correct implementation of the MVC framework has the following properties:
 
 ### Problem 4: Implementing the Bubble Objects (80 points) ###
 
-You will be using the MVC pattern to implement the game objects. Thus, a game object is represented by the triad: model, to store the state of the object; view, to represent the object on the screen; and controller, to manage the model and the view.
+You will be using the MVC pattern to implement the game objects. Thus, a game object is represented by the triad: **model**, to store the state of the object; **view**, to represent the object on the screen; and **controller**, to manage the model and the view.
 
-* **Model**. There are two important aspects regarding the object model. In this problem set, you are concerned mostly with the position of the object on the screen, such that you can save and restore the object to that position using the buttons on the tab bar created in the walkthrough at the start of this problem set. However, be aware that for the next problem set the game objects state will be more complex as you develop a representation required for the physics engine. (10 points)
-* **View**. Rendering to the screen is handled by the view. It uses the model to know where to draw everything. The view doesn’t have any other functionality than this. You are provided with the required sprites in the attached archive. A sprite is an image or animation that is going to be integrated into a larger scene, such as our game. Here you will find included the image sprites. (10 points)
- - *bubble-blue.png, bubble-red.png, bubble-orange.png, bubble-green.png* are image sprites. These are the bubble images that will be used to design the game level. The default size of the bubble frame is 160x160 pixels.
+- **Model** - There are two important aspects regarding the object model. In this problem set, you are concerned mostly with the position of the object on the screen, such that you can save and restore the object to that position using the buttons on the tab bar created in the walkthrough at the start of this problem set. However, be aware that for the next problem set the game objects state will be more complex as you develop a representation required for the physics engine. (10 points)
 
-**Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do no have to be the same, as the palette is just for the designer to select the type of bubble  to be used to fill the grid. 
+- **View** -  Rendering to the screen is handled by the view. It uses the model to know where to draw everything. The view doesn’t have any other functionality than this. You are provided with the required sprites in the attached archive. A sprite is an image or animation that is going to be integrated into a larger scene, such as our game. Here you will find included the image sprites. (10 points)
+ - `bubble-blue.png`, `bubble-red.png`, `bubble-orange.png`, `bubble-green.png` are image sprites. These are the bubble images that will be used to design the game level. The default size of the bubble frame is 160x160 pixels.
 
-* **Controller**. The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, double tap to delete, tap to change type, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
+  **Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do no have to be the same, as the palette is just for the designer to select the type of bubble  to be used to fill the grid. 
+
+- **Controller** - The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, double tap to delete, tap to change type, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
 
 **ARE WE DOING THIS
 You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each object type (30 points). The interface is found in the file GameObject.h. The subclasses implementation should contained in the files GameWolf.m, GamePig.m and GameBlock.m respectively. **(30 points)**
 
-* **Touch Gestures**. To implement the drag, single tap and double tap, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer` and for touch/double-tap you can use `UITapGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
+YS: Yes we have to do this. Eventually they should subclass a basic bubble for the special effects bubbles. Should hint to them that the colored bubbles should also be subclassed.
+
+- **Touch Gestures**. To implement the drag, single tap and double tap, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer` and for touch/double-tap you can use `UITapGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
 
         // This is required for touch interaction with the view
-        view.userInteractionEnabled = YES; 
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panHandler:)];
         panGesture.minimumNumberOfTouches = 1;
         panGesture.maximumNumberOfTouches = 1;
         [view addGestureRecognizer:panGesture];
-    
-* Supported Operations:
+
+- Supported Operations:
  - Select a bubble colour from the palette (Single Tap gesture)
- - Drag finger on main game arena to colour the grids with the selected bubble color (Pan gesture)
+ - Drag finger across main grid to fill the cells up with the selected bubble colour or erase a cell if the eraser was chosen in the palette (Pan gesture)
  - Tap the bubble to cycle through bubble colours (Single Tap gesture)
- - Erasing a bubble (Double Tap gesture)
+ - Quick erasure of a bubble (Double Tap gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
-Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Please explain how you chose to implement the save/load function in design.pdf. Please argue that your implementation is the best one among all the alternatives you considered.
+Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Please explain how you chose to implement the save/load function in `design.pdf`. Please argue that your implementation is the best one among all the alternatives you considered.
 
 There are five ways to maintain data persistency on iOS:
 
@@ -132,9 +134,9 @@ All applications in iOS are sandboxed. As such, applications can only read and w
 
 You can choose to save your data either using a single file, or using multiple files. We will discuss only the case of single file since it might be easier to implement. You start by having one root object (e.g. an `NSArray` or `NSDictionary`) which you populate with all the data that have to be persisted. When saving, you rewrite the single file with the contents of the root directory.
 
-**Property Lists.** Property lists are convenient because their representation is in XML. As such, you  can view and edit files manually using *Xcode* or the *Property List Editor* application. You can create  and write both `NSArray` and `NSDictionary` containing any object as long as the objects are serializable. Although any object can be made serializable, only certain objects can be placed in the Objective-C collection classes, such as: `NSArray, NSMutableArray, NSDictionary, NSMutableDictionary, NSData, NSMutableData, NSString, NSMutableString, NSNumber, NSDate`. If you can build ￼your model using only these objects (NOTE: look at the documentation for `NSData`) then you can save your entire game data using the collection method `writeToFile:atomically:`.
+**Property Lists** - Property lists are convenient because their representation is in XML. As such, you  can view and edit files manually using *Xcode* or the *Property List Editor* application. You can create  and write both `NSArray` and `NSDictionary` containing any object as long as the objects are serializable. Although any object can be made serializable, only certain objects can be placed in the Objective-C collection classes, such as: `NSArray, NSMutableArray, NSDictionary, NSMutableDictionary, NSData, NSMutableData, NSString, NSMutableString, NSNumber, NSDate`. If you can build ￼your model using only these objects (NOTE: look at the documentation for `NSData`) then you can save your entire game data using the collection method `writeToFile:atomically:`.
 
-**Object Archives.** One of the problems with property lists is that custom objects cannot be serialized. In Cocoa, “archiving” refers to a more generic serialization that any object can implement. In fact, any object model should support archiving since this allows you any model object to be saved and restored. As long as every property you implement in your class is either a scalar (int, float etc.) or an object that conforms to the `NSCoding` protocol, you can archive your objects completely. To make an object conform to the `NSCoding` protocol, you must implement two methods, one to encode your object into an archive, and one to create your object by decoding it from a file:
+**Object Archives** - One of the problems with property lists is that custom objects cannot be serialized. In Cocoa, “archiving” refers to a more generic serialization that any object can implement. In fact, any object model should support archiving since this allows you any model object to be saved and restored. As long as every property you implement in your class is either a scalar (int, float etc.) or an object that conforms to the `NSCoding` protocol, you can archive your objects completely. To make an object conform to the `NSCoding` protocol, you must implement two methods, one to encode your object into an archive, and one to create your object by decoding it from a file:
 
     - (void)encodeWithCoder:(NSCoder*)coder {
         // This tells the archiver how to encode the object
@@ -158,7 +160,7 @@ To actually store your data then your have to create an instance of `NSMutableDa
 
 Restoring an object from a file is similar, using an `NSKeyedUnarchiver` object and its `decodeObjectForKey:` method.
 
-**Saving Images**: Because the `UIImage` class does not implement the `NSCoding` protocol by default, you need to extend it using an Objective-C concept known as *categories*, and add these methods yourself. As before, to encode an object you would do:
+**Saving Images** - Because the `UIImage` class does not implement the `NSCoding` protocol by default, you need to extend it using an Objective-C concept known as *categories*, and add these methods yourself. As before, to encode an object you would do:
 
     NSData *imageData = UIImagePNGRepresentation(self);
     [coder encodeObject:imageData forKey:@"image"];
@@ -168,7 +170,7 @@ And to decode it:
     NSData *imageData = [coder decodeObjectForKey:@"image"];
     return [UIImage imageWithData:imageData];
 
-**Manual Encoding.** The general idea in this approach is to open a file and to pass the handler to each object for the object to write itself into the file using a custom format. You will need to assign a unique identifier (type) to each object and write the type of the object to file before calling the object to write itself. To reconstruct objects, you will require a factory function that will read the file for the object type, create an associated empty object and then pass the file handle to the object for the object to initialize its state. Effectively, each object must support a `read` and a `write` method (which you will have to define yourself).
+**Manual Encoding** - The general idea in this approach is to open a file and to pass the handler to each object for the object to write itself into the file using a custom format. You will need to assign a unique identifier (type) to each object and write the type of the object to file before calling the object to write itself. To reconstruct objects, you will require a factory function that will read the file for the object type, create an associated empty object and then pass the file handle to the object for the object to initialize its state. Effectively, each object must support a `read` and a `write` method (which you will have to define yourself).
 
 ### Problem 6: Testing (30 points) ###
 
@@ -180,7 +182,7 @@ Testing is an integral part of software engineering. Since you are not implement
  - Save 
  - ··· 
  - Test implementation of game: 
-     - Drag to fill the grid
+     - Drag to fill the grid cells
      - ...
 ￼
 * Glass-box testing 
