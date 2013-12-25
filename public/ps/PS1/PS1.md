@@ -57,33 +57,33 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 **Important Note:** Even though it is possible to complete the first part of the assignment just by following instructions, it is important for you to understand what you are doing in each step, since in the next assignments you will be required to use the same tools.
 
-###Milestone 1: Create a new project in Xcode (Not graded)
+##### Milestone 1: Create a new project in Xcode (Not graded)
 
 Please follow the step-by-step instructions shown in Gallery 3.1 to create your first iPad app. The detailed instructions for each step is given by the caption below the figures.
 
 TODO: Add screenshots
 
-###Milestone 2: Run your project in the simulator (Not graded)
+##### Milestone 2: Run your project in the simulator (Not graded)
 
 Please follow the step-by-step instructions shown in Gallery 3.2 to
 run your first iPad app in the simulator. The detailed instructions for each step is given by the caption below the figures.
 
 TOOD: Add screenshots
 
-###Milestone 3: Understanding the Xcode IDE Layout (Not graded)
+##### Milestone 3: Understanding the Xcode IDE Layout (Not graded)
 
 Interactive 3.1 shows the overall project layout in Xcode. Xcode is a powerful Integrated Design Environment (IDE).
 
 TODO: Add screenshots
 
-###Milestone 4: Add library interface elements to your app. (Not graded)
+##### Milestone 4: Add library interface elements to your app. (Not graded)
 
 Please follow the step-by-step instructions shown in Gallery 3.3 to
 add an interface element to the main view of your app. The detailed instructions for each step is given by the caption below the figures.
 
 TODO: Add screenshots
 
-###Milestone 5: Add resource files to your project. (Not graded)
+##### Milestone 5: Add resource files to your project. (Not graded)
 
 Please follow the step-by-step instructions shown in Gallery 3.4 to add an image resource file to your project and add that resource into your app’s main view. The detailed instructions for each step is given by the caption below the figures.
 
@@ -96,8 +96,8 @@ Section 3 - Introduction to Objective-C (100 points)
 In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
 
 
-Collections in Objective C
----
+### Collections in Objective C
+
 
 Objective C provides three main collection types
 
@@ -109,35 +109,35 @@ Objective C provides three main collection types
 
 Collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
 
-###Milestone 6: What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  (10 points)
+##### Milestone 6: What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  (10 points)
 
-###Milestone 7: What is the worst-case time complexity of performing a linear search through an `NSArray`? (5 points)
+##### Milestone 7: What is the worst-case time complexity of performing a linear search through an `NSArray`? (5 points)
 
-FIFO Queue
----
+### FIFO Queue
+
 
 Your task is to implement a generic FIFO queue.
 
 Since a queue describes a set of operations on an arbitrary data structure, it should be abstracted from its concrete implementation. We have provided a protocol in `Queue.h` that you should implement in a concrete class.
 
-###Milestone 8: Implement the queue protocol using an `NSMutableArray`. Call the test method `BOOL testQueue(id<Queue> queue)` and demonstrate that it returns `TRUE`. (25 points)
+##### Milestone 8: Implement the queue protocol using an `NSMutableArray`. Call the test method `BOOL testQueue(id<Queue> queue)` and demonstrate that it returns `TRUE`. (25 points)
 
-###Milestone 9: Implement sufficient test cases to ensure that your queue works in all cases described by the protocol. You may make reasonably assuptions where necessary. (10 points)
+##### Milestone 9: Implement sufficient test cases to ensure that your queue works in all cases described by the protocol. You may make reasonably assuptions where necessary. (10 points)
 
 *You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
 
-Tree Traversal with Enumerators
----
+### Tree Traversal with Enumerators
+
 
 We may represent a tree as a dictionary that maps vertex labels to arrays of their children.
 
 // TODO:
 
-###Milestone 10: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
+##### Milestone 10: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
 
-###Milestone 11: Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. (15 points)
+##### Milestone 11: Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. (15 points)
 
-###Milestone 12: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
+##### Milestone 12: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
 
 Coding Style
 ---
