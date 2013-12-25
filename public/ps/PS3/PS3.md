@@ -44,10 +44,17 @@ The features of the level designer that you are expected to implement include th
 Section 2 - Bubble Blast Sage Level Designer
 --
 
-### Problem 1: Create the Bubble Grid ###
+### Problem 1: Create the Bubble Palette (10 points) ###
 
+To create the palette, you need to add a new view, palette, to the main view. The palette will contain 4 bubbles (blue, red, green, orange) that the designer can choose to fill the grid with and an eraser to delete the bubble. These objects should be added as subviews in the palette and should stay in the palette throughout the design phase. You can find the necessary graphic files for the game objects in the archive for this problem set. Image 5.1 is a sample screenshot of the level designer. You are however free to redesign the layout of the level designer as long as you satisfy the basic requirements.
 
-### Problem 2: Explain your Design (40 points) ###
+From the bubble palette, the user taps to select the type of bubble he wants to use to fill the grid or taps the eraser to delete the bubble from the grid.
+
+### Problem 2: Create the Bubble Grid (10 points) ###
+
+Your next task is to create an isometric grid. The grid should have 12 columns and should be tightly packed as seen in the previous image (the number of rows is up to you to decide). This grid will indicate all the possible positions of the bubble and would be used by the designer to design a game level by filling it with bubbles.
+
+### Problem 3: Explain your Design (40 points) ###
 
 Before you begin, please spend some time understanding the requirements of this problem set. Think about the following questions: What objects do you need to implement? How will the objects interact with your main controller? How do you best organize the code for these objects? Are there alternatives? How will you add new game objects?
 
@@ -72,9 +79,34 @@ A correct implementation of the MVC framework has the following properties:
 * the controller knows about the the view and the model
 * the controller observes the view
 
-### Problem 3: Implementing the Bubble Objects (90 points) ###
+### Problem 4: Implementing the Bubble Objects (80 points) ###
 
-### Problem 4: Saving and Loading Game Levels. (50 points) ###
+You will be using the MVC pattern to implement the game objects. Thus, a game object is represented by the triad: model, to store the state of the object; view, to represent the object on the screen; and controller, to manage the model and the view.
+
+* **Model**. There are two important aspects regarding the object model. In this problem set, you are concerned mostly with the position of the object on the screen, such that you can save and restore the object to that position using the buttons on the tab bar created in the walkthrough at the start of this problem set. However, be aware that for the next problem set the game objects state will be more complex as you develop a representation required for the physics engine. (10 points)
+* **View**. Rendering to the screen is handled by the view. It uses the model to know where to draw everything. The view doesn’t have any other functionality than this. You are provided with the required sprites in the attached archive. A sprite is an image or animation that is going to be integrated into a larger scene, such as our game. Here you will find included the image sprites. (10 points)
+ - *bubble-blue.png, bubble-red.png, bubble-orange.png, bubble-green.png* are image sprites. These are the bubble images that will be used to design the game level. The default size of the bubble frame is 160x160 pixels.
+
+**Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do no have to be the same, as the palette is just for the designer to select the type of bubble  to be used to fill the grid. 
+
+* **Controller**. The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: drag from palette, resize using pinch, rotate, translate in the game area), you are given the interface for an abstract class representing a game object controller. You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each object type (30 points). The interface is found in the file GameObject.h. The subclasses implementation should contained in the files GameWolf.m, GamePig.m and GameBlock.m respectively. (60 points)
+
+* **Touch Gestures**. To implement the drag, single tap and double tap, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer` and for touch/double-tap you can use `UITapGestureRecognizer`. An example use of gesture recognisers is the following: 
+     
+     `// This is required for touch interaction with the view
+     view.userInteractionEnabled = YES; 
+     UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotate:)]; 
+    [view addGestureRecognizer:rotation]; `
+
+* Supported Operations. Each of the game objects needs to implement the following operations:
+ - Drag and drop from object palette to main game area;
+ - Translation (drag);
+ - Rotation and resizing (pinch to resize, two-finger rotate);
+ - Deletion and returning to the object palette (double tap);
+ - Game block only: the ability to change the type of the block (single tap).
+
+
+### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
 Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Please explain how you chose to implement the save/load function in design.pdf. Please argue that your implementation is the best one among all the alternatives you considered.
 
@@ -119,10 +151,9 @@ To actually store your data then your have to create an instance of `NSMutableDa
 Restoring an object from a file is similar, using an `NSKeyedUnarchiver` object and its `decodeObjectForKey:` method.
 
 **Saving Images**: Because the `UIImage` class does not implement the `NSCoding` protocol by default, you need to extend it using an Objective-C concept known as *categories*, and add these methods yourself. As before, to encode an object you would do:
-    
+
     NSData *imageData = UIImagePNGRepresentation(self);
     [coder encodeObject:imageData forKey:@"image"];
-
 
 And to decode it:
 
@@ -131,7 +162,7 @@ And to decode it:
 
 **Manual Encoding.** The general idea in this approach is to open a file and to pass the handler to each object for the object to write itself into the file using a custom format. You will need to assign a unique identifier (type) to each object and write the type of the object to file before calling the object to write itself. To reconstruct objects, you will require a factory function that will read the file for the object type, create an associated empty object and then pass the file handle to the object for the object to initialize its state. Effectively, each object must support a `read` and a `write` method (which you will have to define yourself).
 
-### Problem 5: Testing (30 points) ###
+### Problem 6: Testing (30 points) ###
 
 Testing is an integral part of software engineering. Since you are not implementing any complicated ADTs in this assignments, unit tests are probably not particularly helpful. That said, you are supposed to implement a large number of features and it is important for you to test your final code to make sure that your application meets the stated requirements. The way to do this is to start from a hierarchy and then break down into smaller and more specific cases. For example:
 
