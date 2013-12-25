@@ -33,12 +33,17 @@ The Cocoa and Cocoa Touch frameworks encourage the use of the MVC pattern. Inter
 ￼
 ### Bubble Blast Saga Level Designer (MVC) ###
 
-The following is a brief overview of the game that you will be building called Bubble Blast Sage. When launching the game, the user is presented with the interface, with a grid like structure for bubbles as shown in the image below. The user can place bubbles of different colour (blue, red, green, orange). After dragging the game objects onto the play area and perhaps arranging and resizing them, the user can use the SAVE button to store the currently placed objects in a file on the iPad. The LOAD button can be use to load and restore the previously saved level, and the RESET button will clear all placed objects from the level designer. Once the game objects are placed, the user starts the game by pressing the START button.
+The following is a brief overview of the game that you will be building called Bubble Blast Sage. When launching the game, the user is presented with the interface, with a grid like structure where the bubbles will be placed. A palette at the bottom will allow the designer to choose the type of bubble he wants to design the grid with (blue, red, green, orange). The palette also contains an eraser used to delete bubbles from the grid. After adding the bubbles onto the grid, the user can use the SAVE button to store the current grid bubbles in a file on the iPad. The LOAD button can be use to load and restore the previously saved level, and the RESET button will clear all the bubbles from the grid n the level designer. Once the grid is ready, the user starts the game by pressing the START button.
 
-In the game, the user specifies the angle and power with which the wolf will blow a puff of air towards the pig. The air blown by the wolf will interact with the other objects in the game (blocks and the pig) according to the physics engine that you will build in the next problem set. The objective of the game is to destroy the pig that is protected by the blocks, ironically by crushing him with the blocks. In this problem set, the START button will be disabled. You will only have to build a rudimentary level designer.
+In the game, the user specifies the direction of a new bubble to shot. The bubble will then interact with the existing bubbles in the grid according to the physics engine that you will build in the next problem set. If the shot bubble touches another bubble with the same colour as its own, and these bubbles form a group of 3 or more bubbles, then all the connected bubbles of this colour are destroyed. The objective of the game is to destroy all the bubbles from the grid by making groups of 3 or more. In this problem set, the START button will be disabled. You will only have to build a rudimentary level designer.
 
 The features of the level designer that you are expected to implement include the following:
 
+* Reset, save and load a game level;
+* An object palette from which the user can select the bubble colour or the eraser;
+* Fill the grid with the bubbles (translate);
+* Change the colour in the grid in a round-robin fashion (single tap);
+* Delete bubbles from the grid (double tap);
 
 
 Section 2 - Bubble Blast Sage Level Designer
@@ -89,22 +94,25 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 
 **Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do no have to be the same, as the palette is just for the designer to select the type of bubble  to be used to fill the grid. 
 
-* **Controller**. The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: drag from palette, resize using pinch, rotate, translate in the game area), you are given the interface for an abstract class representing a game object controller. You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each object type (30 points). The interface is found in the file GameObject.h. The subclasses implementation should contained in the files GameWolf.m, GamePig.m and GameBlock.m respectively. (60 points)
+* **Controller**. The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, double tap to delete, tap to change type, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
 
-* **Touch Gestures**. To implement the drag, single tap and double tap, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer` and for touch/double-tap you can use `UITapGestureRecognizer`. An example use of gesture recognisers is the following: 
-     
-     `// This is required for touch interaction with the view
-     view.userInteractionEnabled = YES; 
-     UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotate:)]; 
-    [view addGestureRecognizer:rotation]; `
+**ARE WE DOING THIS
+You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each object type (30 points). The interface is found in the file GameObject.h. The subclasses implementation should contained in the files GameWolf.m, GamePig.m and GameBlock.m respectively. **(30 points)**
 
-* Supported Operations. Each of the game objects needs to implement the following operations:
- - Drag and drop from object palette to main game area;
- - Translation (drag);
- - Rotation and resizing (pinch to resize, two-finger rotate);
- - Deletion and returning to the object palette (double tap);
- - Game block only: the ability to change the type of the block (single tap).
+* **Touch Gestures**. To implement the drag, single tap and double tap, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer` and for touch/double-tap you can use `UITapGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
 
+        // This is required for touch interaction with the view
+        view.userInteractionEnabled = YES; 
+        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panHandler:)];
+        panGesture.minimumNumberOfTouches = 1;
+        panGesture.maximumNumberOfTouches = 1;
+        [view addGestureRecognizer:panGesture];
+    
+* Supported Operations:
+ - Select a bubble colour from the palette (Single Tap gesture)
+ - Drag finger on main game arena to colour the grids with the selected bubble color (Pan gesture)
+ - Tap the bubble to cycle through bubble colours (Single Tap gesture)
+ - Erasing a bubble (Double Tap gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
@@ -135,7 +143,7 @@ You can choose to save your data either using a single file, or using multiple f
     }
 
     - (void)initWithCoder:(NSCoder*)decoder {
-        // This tells the unarchiver how to decode the object
+    	// This tells the unarchiver how to decode the object
         self.strVar = [decoder decodeObjectForKey:@"theStringVariable"];
         self.intVar = [decoder decodeIntForKey:@"theIntVariable"];
     }
