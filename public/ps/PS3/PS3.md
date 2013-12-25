@@ -100,7 +100,7 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 **ARE WE DOING THIS
 You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each object type (30 points). The interface is found in the file GameObject.h. The subclasses implementation should contained in the files GameWolf.m, GamePig.m and GameBlock.m respectively. **(30 points)**
 
-YS: Yes we have to do this. Eventually they should subclass a basic bubble for the special effects bubbles. Should hint to them that the colored bubbles should also be subclassed.
+YS: Yes we have to do this. Eventually they should subclass a basic bubble for the special effects bubbles. Should hint to them that the colored bubbles have to be subclassed.
 
 - **Touch Gestures**. To implement the drag, single tap and double tap, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer` and for touch/double-tap you can use `UITapGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
 
@@ -113,8 +113,8 @@ YS: Yes we have to do this. Eventually they should subclass a basic bubble for t
 - Supported Operations:
  - Select a bubble colour from the palette (Single Tap gesture)
  - Drag finger across main grid to fill the cells up with the selected bubble colour or erase a cell if the eraser was chosen in the palette (Pan gesture)
- - Tap the bubble to cycle through bubble colours (Single Tap gesture)
- - Quick erasure of a bubble (Double Tap gesture)
+ - Tap a cell to cycle through bubble colours (Single Tap gesture)
+ - Quick erasure of a cell (Double Tap gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
