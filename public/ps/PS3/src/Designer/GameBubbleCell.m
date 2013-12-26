@@ -11,8 +11,7 @@
 
 @implementation GameBubbleCell
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         
@@ -38,41 +37,37 @@
     self.contentView.frame = cellFrame;
     self.contentView.layer.borderColor = [UIColor blackColor].CGColor;
     self.contentView.layer.borderWidth = 1.5f;
-    [self.contentView setBackgroundColor:[UIColor grayColor]];
-    self.contentView.alpha = 0.40;
+    [self.contentView setBackgroundColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.4]];
+
     self.contentView.layer.cornerRadius = kBubbleViewDiameter/2;
 }
 
 - (void)activateBubbleWithType:(BubbleType)bubbleColor {
     [self.bubble setState: kActive];
     [self.bubble setType: bubbleColor];
-    self.bubbleImage = [[UIImageView alloc]initWithImage:[self getImageForBubbleType:self.bubble.bubbleType]];
-    self.bubbleImage.frame = CGRectMake(0, 0, kBubbleViewDiameter, kBubbleViewDiameter);
+    [self.bubbleImage setImage:[self getImageForBubbleType:bubbleColor]];
     
-    [self.contentView addSubview:self.bubbleImage];
-//    self.layer.backgroundColor = [UIColor clearColor].CGColor;
-//    cell.layer.shouldRasterize = YES;
-}
-
-- (void)inactiveBubble {
-    [self.bubble setState:kInactive];
-    [self.bubbleImage setAlpha:0.25f];
+    self.bubbleImage.hidden = NO;
 }
 
 - (void)activateBubble {
     self.bubbleImage.hidden = NO;
     [self.bubble setState:kActive];
-    [self.contentView setAlpha:1.0f];
 }
 
 
 - (void)deactiveBubble {
-    [self.bubble setState:kKilled];
-    [self.bubbleImage setAlpha:0.0f];
+    [self.bubble setState:kInactive];
+    self.bubbleImage.hidden = YES;
 }
 
+//- (void)inactiveBubble {
+//    [self.bubble setState:kInactive];
+//    [self.bubbleImage setAlpha:0.25f];
+//}
+
+
 - (UIImage*)getImageForBubbleType:(BubbleType)type {
-    //    UIImage *bubbleImage = [UIImage imageNamed:@"bubble-red.png"];
     UIImage *bubbleImage = [[UIImage alloc]init];
     switch (type) {
         case kBlue:
@@ -111,7 +106,7 @@
 
 
 - (void)dealloc {
-    NSLog(@"test");
+    NSLog(@"cell deleted? why?");
 }
 
 

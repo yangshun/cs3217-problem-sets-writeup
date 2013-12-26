@@ -22,4 +22,4 @@ FOUNDATION_EXPORT int const kNumberOfColumns;
 FOUNDATION_EXPORT int const kBubbleViewDiameter;
 
 typedef enum {kInactive, kActive, kKilled} BubbleState;
-typedef enum {kBlue, kOrange, kGreen, kRed} BubbleType;
+typedef enum {kBlue, kRed, kOrange, kGreen, kEraser} BubbleType;

@@ -37,27 +37,27 @@
                                 </items>
                             </toolbar>
                             <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5d-uF-TEq">
-                                <rect key="frame" x="0.0" y="914" width="768" height="66"/>
+                                <rect key="frame" x="0.0" y="917" width="768" height="63"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="NDm-TH-jOd">
-                                        <rect key="frame" x="25" y="7" width="50" height="50"/>
+                                        <rect key="frame" x="25" y="4" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-red.png" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-Ia-3Nt">
-                                        <rect key="frame" x="83" y="8" width="50" height="50"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-red.png" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-Ia-3Nt">
+                                        <rect key="frame" x="83" y="5" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="QzL-1T-0WJ">
-                                        <rect key="frame" x="141" y="7" width="50" height="50"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="QzL-1T-0WJ">
+                                        <rect key="frame" x="141" y="4" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-green.png" translatesAutoresizingMaskIntoConstraints="NO" id="nmA-oS-psz">
-                                        <rect key="frame" x="199" y="7" width="50" height="50"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble-green.png" translatesAutoresizingMaskIntoConstraints="NO" id="nmA-oS-psz">
+                                        <rect key="frame" x="199" y="4" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eraser-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="jLf-4i-8CR">
-                                        <rect key="frame" x="257" y="4" width="77" height="58"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eraser-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="jLf-4i-8CR">
+                                        <rect key="frame" x="257" y="1" width="77" height="58"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -68,6 +68,12 @@
                     </view>
                     <connections>
                         <outlet property="actionBar" destination="W4Q-is-rZc" id="ApK-Kl-3uk"/>
+                        <outlet property="bluePaletteBubble" destination="NDm-TH-jOd" id="YiF-ia-0Fa"/>
+                        <outlet property="eraserPalette" destination="jLf-4i-8CR" id="8gR-NP-dj0"/>
+                        <outlet property="greenPaletteBubble" destination="nmA-oS-psz" id="icU-t2-neQ"/>
+                        <outlet property="orangePaletteBubble" destination="QzL-1T-0WJ" id="uP1-rE-gew"/>
+                        <outlet property="paletteView" destination="X5d-uF-TEq" id="Vdj-5B-hze"/>
+                        <outlet property="redPaletteBubble" destination="FLk-Ia-3Nt" id="0ci-0P-NnI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GameBubbleCell.h"
+#import "Constants.h"
+
 
 @interface GameAreaCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate>
 
@@ -15,4 +17,6 @@
 
 - (void)createLevel;
 - (void)redesignLevel;
+- (void)updateCellFill:(BubbleType)cellFill;
+
 @end

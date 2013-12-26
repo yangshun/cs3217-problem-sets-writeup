@@ -16,9 +16,10 @@
 
 - (void)createBubbleAtRow:(int)row Column:(int)column AtPos:(CGPoint)origin;
 - (void)activateBubbleWithType:(BubbleType)bubbleColor;
-- (void)inactiveBubble;
 - (void)activateBubble;
 - (void)deactiveBubble;
+//- (void)inactiveBubble;
+
 - (void)bubbleTapped;
 
 @end

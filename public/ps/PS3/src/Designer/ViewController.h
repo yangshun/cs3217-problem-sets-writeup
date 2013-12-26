@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIGestureRecognizerDelegate>
 @property (strong, nonatomic) IBOutlet UIToolbar *actionBar;
+@property (strong, nonatomic) IBOutlet UIImageView *bluePaletteBubble;
+@property (strong, nonatomic) IBOutlet UIImageView *redPaletteBubble;
+@property (strong, nonatomic) IBOutlet UIImageView *orangePaletteBubble;
+@property (strong, nonatomic) IBOutlet UIImageView *greenPaletteBubble;
+@property (strong, nonatomic) IBOutlet UIImageView *eraserPalette;
+@property (strong, nonatomic) IBOutlet UIView *paletteView;
 
 @end

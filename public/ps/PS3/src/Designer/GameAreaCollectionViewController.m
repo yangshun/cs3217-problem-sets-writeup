@@ -9,11 +9,11 @@
 #import "Graph.h"
 #import "GameAreaCollectionViewController.h"
 #import "NSDictionary+NSDictionaryExtension.h"
-#import "Constants.h"
 
 @interface GameAreaCollectionViewController ()
 @property NSMutableSet *topWallBubbles;
 @property Graph *graph;
+@property BubbleType cellFill;
 @end
 
 @implementation GameAreaCollectionViewController
@@ -22,6 +22,7 @@
     self = [super init];
     if (self) {
         self.topWallBubbles = [[NSMutableSet alloc]init];
+        self.cellFill = kBlue;
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         self.bubbleCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 768, 700) collectionViewLayout:layout];
         
@@ -31,9 +32,9 @@
         [self.bubbleCollection addGestureRecognizer:panGesture];
 
         UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(processLongpress:)];
-//        longPressGesture.minimumPressDuration = 1.0;
+        longPressGesture.minimumPressDuration = 0.5;
         [self.bubbleCollection addGestureRecognizer:longPressGesture];
-        
+
         [self.bubbleCollection registerClass:[GameBubbleCell class] forCellWithReuseIdentifier:@"Cell"];
         self.bubbleCollection.delegate = self;
         self.bubbleCollection.dataSource = self;
@@ -49,18 +50,28 @@
     [super viewDidLoad];
 }
 
-- (void)panHandler:(UIGestureRecognizer*)gesture {
-    CGPoint panPoint = [(UILongPressGestureRecognizer*)gesture locationInView:self.bubbleCollection];
-    NSIndexPath *index = [self.bubbleCollection indexPathForItemAtPoint:panPoint];
-    [(GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:index] activateBubble];
+- (void)updateCellFill:(BubbleType)cellFill {
+    self.cellFill = cellFill;
+    return;
 }
 
-- (void) processLongpress:(UILongPressGestureRecognizer *)sender {
+- (void)panHandler:(UIGestureRecognizer*)gesture {
+    CGPoint panPoint = [(UILongPressGestureRecognizer*)gesture locationInView:self.bubbleCollection];
+    NSIndexPath *indexPath = [self.bubbleCollection indexPathForItemAtPoint:panPoint];
+    if (self.cellFill == kEraser) {
+        [(GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:indexPath] deactiveBubble];
+    }
+    else {
+        [(GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:indexPath] activateBubbleWithType:self.cellFill];
+    }
+}
+
+- (void)processLongpress:(UILongPressGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan) {
         CGPoint point = [sender locationInView:self.bubbleCollection];
         NSIndexPath *indexPath = [self.bubbleCollection indexPathForItemAtPoint:point];
         if (indexPath) {
-            [(GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:indexPath] inactiveBubble];
+            [(GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:indexPath] deactiveBubble];
         }
     }
 }
@@ -131,12 +142,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     GameBubbleCell *thisCell = (GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:indexPath];
     [thisCell bubbleTapped];
-//    NSLog(@"cell row: #%d column: #%d was selected", indexPath.section, indexPath.item);
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     GameBubbleCell *thisCell = (GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:indexPath];
     [thisCell bubbleTapped];
-//    NSLog(@"cell row: #%d column: #%d was selected", indexPath.section, indexPath.item);
 
 }
 
@@ -203,20 +212,20 @@
     }
 }
 
-- (void)redesignLevel {
-    for (int row = 0; row < kNumberOfRows; row++) {
-        for (int column = 0; column < kNumberOfColumns; column++) {
-            if (row % 2 == 1 && column == kNumberOfColumns - 1) {
-                continue;
-            } else {
-                GameBubbleCell *thisBubble = (GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:[NSIndexPath indexPathForItem:column inSection:row]];
-                if (thisBubble.bubble.bubbleState == kKilled) {
-                    [thisBubble inactiveBubble];
-                }
-            }
-        }
-    }
-}
+//- (void)redesignLevel {
+//    for (int row = 0; row < kNumberOfRows; row++) {
+//        for (int column = 0; column < kNumberOfColumns; column++) {
+//            if (row % 2 == 1 && column == kNumberOfColumns - 1) {
+//                continue;
+//            } else {
+//                GameBubbleCell *thisBubble = (GameBubbleCell*)[self.bubbleCollection cellForItemAtIndexPath:[NSIndexPath indexPathForItem:column inSection:row]];
+//                if (thisBubble.bubble.bubbleState == kKilled) {
+//                    [thisBubble inactiveBubble];
+//                }
+//            }
+//        }
+//    }
+//}
 
 
 - (void)createLevel {

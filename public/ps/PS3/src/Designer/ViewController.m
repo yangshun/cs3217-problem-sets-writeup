@@ -18,42 +18,15 @@
 
 @implementation ViewController
 
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//    Graph *test = [[Graph alloc]initWithNumberOfVertices:4 isDirected:NO];
-//    
-//    [test insertEdge:[Edge edgeWithSource:[Node nodeWithData:@"A"] andDestination:[Node nodeWithData:@"B"]]];
-//    [test insertEdge:[Edge edgeWithSource:[Node nodeWithData:@"A"] andDestination:[Node nodeWithData:@"C"]]];
-//    [test insertEdge:[Edge edgeWithSource:[Node nodeWithData:@"B"] andDestination:[Node nodeWithData:@"D"]]];
-//    [test insertEdge:[Edge edgeWithSource:[Node nodeWithData:@"B"] andDestination:[Node nodeWithData:@"E"]]];
-//    [test insertEdge:[Edge edgeWithSource:[Node nodeWithData:@"D"] andDestination:[Node nodeWithData:@"E"]]];
-//
-//    NSMutableData *data = [NSMutableData data];
-//    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-//    [archiver encodeObject:test.tree forKey:@"Graph"];
-//    [archiver finishEncoding];
-//    NSArray* documentsFolder = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
-//    NSString* documentString = [documentsFolder objectAtIndex:0];
-//    NSString* fileLocation = [NSString stringWithFormat:@"%@/%@", documentString, @"test"];
-//    BOOL result = [data writeToFile: fileLocation atomically:YES];
-//    if (result) {
-//        NSLog(@"success");
-//    }
-//    // Do any additional setup after loading the view, typically from a nib.
-//}
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self loadBackground];
+    [self loadPalette];
     
     self.gameAreaCollection = [[GameAreaCollectionViewController alloc] init];
     [self.view addSubview:self.gameAreaCollection.bubbleCollection];
-    //    self.gameArea = [[GameAreaViewController alloc]init];
-    //    [self.view addSubview:self.gameArea.view];
 }
-
 
 - (void)loadBackground {
     UIImage *bgImage = [UIImage imageNamed:@"background.png"];
@@ -63,11 +36,32 @@
     [self.view sendSubviewToBack:background];
 }
 
+- (void)loadPalette {
+    
+    NSArray *paletteItems = [[NSArray alloc]initWithObjects:self.bluePaletteBubble, self.redPaletteBubble, self.orangePaletteBubble, self.greenPaletteBubble, self.eraserPalette, nil];
+    for (UIImageView* paletteItem in paletteItems) {
+        paletteItem.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(paletteBubbleTapped:)];
+        tapGesture.numberOfTouchesRequired = 1;
+        [paletteItem addGestureRecognizer:tapGesture];
+    }
+    
+}
 
-- (void)didReceiveMemoryWarning
-{
+
+- (void)paletteBubbleTapped:(UITapGestureRecognizer*)sender {
+    NSArray *paletteItems = [[NSArray alloc]initWithObjects:self.bluePaletteBubble, self.redPaletteBubble, self.orangePaletteBubble, self.greenPaletteBubble, self.eraserPalette, nil];
+    for (UIImageView* paletteItem in paletteItems) {
+        [paletteItem setAlpha:0.5f];
+        if ([sender.view isEqual:paletteItem]) {
+            [self.gameAreaCollection updateCellFill:[paletteItems indexOfObject:paletteItem]];
+            [paletteItem setAlpha:1.0f];
+        }
+    }
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 //- (IBAction)createLevelButtonPressed:(id)sender {
@@ -80,4 +74,6 @@
 //        [self.gameAreaCollection redesignLevel];
 //    }
 //}
+
+
 @end
