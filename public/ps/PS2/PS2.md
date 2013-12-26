@@ -7,7 +7,7 @@ Tutorial Date: Week 4*
 
 Section 1 - Introduction
 --
-The purpose of this problem set is to improve your understanding of *Abstract Data Types* (ADTs). You will interpret, implement and test three ADT classes, `Node`, `Edge` and `Graph`, representing the vertices, edges and overall structure of a labeled graph respectively. The code for these classes can be found in `ps2/Classes`.
+The purpose of this problem set is to improve your understanding of *Abstract Data Types* (ADTs). You will interpret, implement and test three ADT classes, `Node`, `Edge` and `Graph`, representing the vertices, edges and overall structure of a labeled graph respectively. The code for these classes can be found in `cs3217/ps2/GraphADT`.
 
 **Reminder**: Please read the entire problem set before starting.
 
@@ -60,8 +60,11 @@ Fill in an implementation for the methods in the specification of *Graph*, accor
 Answer the following questions in `design.txt`:
 
 1. Where did you include calls to `checkRep:` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some combination)? Why? **(5 points)**
+
 2. In **Problem 1.4**, you had explored the different types of graph representations. Briefly explain why you chose the representation you did in order to implement the Graph ADT. **(5 points)**
+
 3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
+
 4. Imagine that the original representation invariant was changed to include a new requirement that there can be **at most 1 edge** between a source and destination node. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
 
 ### Problem 3: Testing the Graph ADT (30 Points) ###
@@ -71,6 +74,29 @@ It is a very good practice to write unit tests for your ADTs. They help you make
 Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphADT_Tests.m`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
 
 ### Problem 4: Extending the Graph ADT (50 Points) ###
+In this problem, you are going to use a tree to cipher and decipher texts. The cipher and decipher functions are defined as follows:
+
+* **Cipher**: perform string-to-tree with breadth first and then tree-to-string with depth-first
+* **Decipher**: perform string-to-tree with depth first and then tree-to-string with breadth-first
+
+In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string. 
+
+1. First, you must design and implement an ADT for a *Tree* in new files named `Tree.h` and `Tree.m`. You may extend the Graph ADT used in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly.
+
+2. Now, write a class category for NSString that implements the following two methods:
+
+ - `- (Tree*)breadthFirstStringToTree:(NSNumber*)key`
+ - `- (Tree*)depthFirstStringToTree:(NSNumber*)key`
+
+ Your algorithm will need to append some 'special nodes' to the end of the tree to conform to the keys.
+
+3. Add the following two methods to the *Tree* ADT you had implemented earlier:
+ - `- (NSString*)breadthFirstTreeToString:(NSNumber*)key`
+ - `- (NSString*)breadthFirstTreeToString:(NSNumber*)key`
+
+ Your algorithm will need to add special characters to the result string to indicate the 'special nodes' in the tree.
+
+4. Write appropriate test cases in `GraphADT_Tests.m` to test the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
 ### Problem 5 [Bonus Question]: Reflection ###
 Please answer the following questions:
