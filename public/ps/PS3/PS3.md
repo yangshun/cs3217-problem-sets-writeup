@@ -1,9 +1,9 @@
 Problem Set 3
 ==
 
-*Issue Date: 27 January 2014  
-Due Date: 03 February 2014  
-Tutorial Date: 07 February 2014*
+*Issue Date: 09 February 2014  
+Due Date: 17 February 2014  
+Tutorial Date: Week 5*
 
 Section 1 - Introduction
 --

@@ -1,9 +1,9 @@
 Problem Set 5
 ==
 
-*Issue Date: 13 January 2014  
-Due Date: 20 January 2014  
-Tutorial Date: 24 January 2014*
+*Issue Date: 02 March 2014  
+Due Date: 10 March 2014  
+Tutorial Date: Week 7*
 
 Section 1 - Designing Your Game
 --
