@@ -32,45 +32,45 @@ Section 2 - Graph ADT
 --
 Interpreting an abstract type involves understanding its specifications -  what services it should provide and what their behaviour should be. Implementing an abstract type involves choosing a representation and algorithms, and embodying them in code. In this section, you will practice interpreting and implementing specifications for a Graph structure and in doing so, will gain a better appreciation for the role that fundamental tools such as specifications, object models and the representation invariants play in the design of a module.
 
-### Problem 1: Designing the Graph ADT ###
+### Problem 1: Designing the Graph ADT (20 Points) ###
 
 Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `cs3217/ps2/GraphADT`. Double click `GraphADT.xcodeproj` to open the project template. Read the specifications for *Node* in `Node.h`, representing individual vertices, and for *Edge* in `Edge.h`, representing edges in the graph. Then read over the staff-provided implementations, `Node.m` and `Edge.m`.
 
 Answer the following questions in `design.txt`:
 
-1. The `isEqual:` methods in *Node* and *Edge* require that object != nil. This is because these methods access the fields of 'object' without checking if 'object' is null first. Why do we require `self` to be non-null? What happens when we pass a message to a nil pointer? Explain.
+1. The `isEqual:` methods in *Node* and *Edge* require that object != nil. This is because these methods access the fields of 'object' without checking if 'object' is null first. Why do we require `self` to be non-null? What happens when we pass a message to a nil pointer? Explain. **(5 points)**
 
-2. Calls to `checkRep:` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one call `checkRep:` at the beginning and end of every method. In the case of *Node* and *Edge*, why is it sufficient to call `checkRep:` only at the end of the constructors? (Hint: could a method ever modify a *Node* or *Edge* such that it violates its representation invariant? How are changes to instances of *Node* and *Edge* prevented?) 
+2. Calls to `checkRep:` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one call `checkRep:` at the beginning and end of every method. In the case of *Node* and *Edge*, why is it sufficient to call `checkRep:` only at the end of the constructors? (Hint: could a method ever modify a *Node* or *Edge* such that it violates its representation invariant? How are changes to instances of *Node* and *Edge* prevented?) **(5 points)**
 
-3. For *Node* and *Edge*, we could provide a separate method such as `isEquivalentTo:` to test whether two objects represent the same Node or Edge instead of overriding the `isEqual:` method of NSObject. Why is it necessary to override the `isEqual:` methods in these classes? (Hint: methods like `containsObject:`,  `indexOfObject:` for NSArray, and `addObject:` for NSMutableSet call the `isEqual:` method of the collection objects to test for equality). Explain.
+3. For *Node* and *Edge*, we could provide a separate method such as `isEquivalentTo:` to test whether two objects represent the same Node or Edge instead of overriding the `isEqual:` method of NSObject. Why is it necessary to override the `isEqual:` methods in these classes? (Hint: methods like `containsObject:`,  `indexOfObject:` for NSArray, and `addObject:` for NSMutableSet call the `isEqual:` method of the collection objects to test for equality). Explain. **(5 points)**
 
 4. There are several ways to represent a graph. Here are a few:
  * As a collection of edges
  * As an adjacency list, in which each node is associated with a list of its outgoing edges.
  * As an adjacency matrix, which explicitly represents, for every pair ⟨A,B⟩ of edges, whether there is a link from A to B, and how many. 
 
-  Briefly discuss the advantages and disadvantages of any three types of Graph representations. 
+  Briefly discuss the advantages and disadvantages of any three types of Graph representations. **(5 points)**
 
-### Problem 2: Implementing the Graph ADT ###
+### Problem 2: Implementing the Graph ADT (100 Points) ###
 
 Read over the specifications provided for the *Graph* class in `Graph.h`. Make sure that you understand the overview for *Graph* and the specifications for the given methods.
 
-Fill in an implementation for the methods in the specification of *Graph*, according to the specifications. You may define new helper methods in `Graph.m` if you need them. You may not add public methods; the external interface must remain the same. Also implement the private `checkRep:` method to help you test whether or not a *Graph* instance violates the representation invariants. We highly recommend you use `checkRep:` in the code you write. Think about the issues discussed in **Problem 1.2** when deciding where `checkRep:` should be called.
+Fill in an implementation for the methods in the specification of *Graph*, according to the specifications. You may define new helper methods in `Graph.m` if you need them. You may not add public methods; the external interface must remain the same. Also implement the private `checkRep:` method to help you test whether or not a *Graph* instance violates the representation invariants. We highly recommend you use `checkRep:` in the code you write. Think about the issues discussed in **Problem 1.2** when deciding where `checkRep:` should be called. **(80 points)**
 
 Answer the following questions in `design.txt`:
 
-1. Where did you include calls to `checkRep:` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some combination)? Why?
-2. In **Problem 1.4**, you had explored the different types of graph representations. Briefly explain why you chose the representation you did in order to implement the Graph ADT.
-3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec.
-4. Imagine that the original representation invariant was changed to include a new requirement that there can be **at most 1 edge** between a source and destination node. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec.
+1. Where did you include calls to `checkRep:` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some combination)? Why? **(5 points)**
+2. In **Problem 1.4**, you had explored the different types of graph representations. Briefly explain why you chose the representation you did in order to implement the Graph ADT. **(5 points)**
+3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
+4. Imagine that the original representation invariant was changed to include a new requirement that there can be **at most 1 edge** between a source and destination node. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
 
-### Problem 3: Testing the Graph ADT ###
+### Problem 3: Testing the Graph ADT (30 Points) ###
 
 It is a very good practice to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 2.1 to run the unit test for Graph ADT.
 
-Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphADT_Tests.m`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) 
+Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphADT_Tests.m`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
 
-### Problem 4: Extending the Graph ADT ###
+### Problem 4: Extending the Graph ADT (50 Points) ###
 
 ### Problem 5 [Bonus Question]: Reflection ###
 Please answer the following questions:
