@@ -16,7 +16,7 @@
 @property (strong, nonatomic) UICollectionView *bubbleCollection;
 
 - (void)createLevel;
-- (void)redesignLevel;
+//- (void)redesignLevel;
 - (void)updateCellFill:(BubbleType)cellFill;
 
 @end

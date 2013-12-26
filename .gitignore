@@ -1,1 +1,4 @@
 node_modules/
+*.xcuserstate
+
+public/ps/PS3/src/Designer.xcodeproj/project.xcworkspace/xcuserdata/ishaansingal.xcuserdatad/UserInterfaceState.xcuserstate
