@@ -62,7 +62,7 @@
     return [Edge edgeWithSource:s andDestination:d andWeight:[NSNumber numberWithInt:1]];
 }
 
--(BOOL)isEqual:(Edge*)object {
+-(BOOL)isEqual:(id)object {
     // REQUIRES: self != nil, object != nil
     // EFFECTS: override NSObject's isEqual method.
     //          returns YES if object represents the same edge as self

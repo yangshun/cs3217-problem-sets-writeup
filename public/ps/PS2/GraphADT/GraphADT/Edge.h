@@ -15,7 +15,7 @@
     // Representation invariant for every Edge e:
 	// e.source is a valid Node object,
     // e.destination is a valid Node object, and
-    // e.weight > 0
+    // e.weight >= 0
 	// (A representation invariant tells us something that is true for all
 	// instances of an Edge)
 }
@@ -43,7 +43,7 @@
 // EFFECTS: Factory method that creates a new Edge object e with
 //          e.source = s, e.destination = d and e.weight = 1
 
--(BOOL)isEqual:(Edge*)object;
+-(BOOL)isEqual:(id)object;
 // REQUIRES: self != nil, object != nil
 // EFFECTS: override NSObject's isEqual method.
 //          returns YES if object represents the same edge as self
