@@ -43,7 +43,7 @@ The features of the level designer that you are expected to implement include th
 * An object palette from which the user can select the bubble colour or the eraser;
 * Fill the grid with the bubbles (pan gesture);
 * Change the colour in the grid in a round-robin fashion (single-tap gesture);
-* Delete bubbles from the grid (double-tap gesture);
+* Delete bubbles from the grid (long-press gesture);
 
 
 Section 2 - Bubble Blast Saga Level Designer
@@ -95,14 +95,11 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 
   **Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do no have to be the same, as the palette is just for the designer to select the type of bubble  to be used to fill the grid. 
 
-- **Controller** - The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, double tap to delete, tap to change type, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
+- **Controller** - The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, long-press to delete, tap to change type, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
 
-**ARE WE DOING THIS
-You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each object type (30 points). The interface is found in the file GameObject.h. The subclasses implementation should contained in the files GameWolf.m, GamePig.m and GameBlock.m respectively. **(30 points)**
+ You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each bubble type (30 points). For this problem set, there is only one basic bubble type with different colours. Eventually however, over the next problem sets, you would be subclassing this abstract class to create different types of games bubbles (for example, special power bubbles) that would have different behaviour than the basic bubble types. The interface is found in the file `GameBubble.h`. The subclass implementation be should contained in the file `GameBubbleBasic.m`. **(30 points)**
 
-YS: Yes we have to do this. Eventually they should subclass a basic bubble for the special effects bubbles. Should hint to them that the colored bubbles have to be subclassed.
-
-- **Touch Gestures**. To implement the drag, single tap and double tap, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer` and for touch/double-tap you can use `UITapGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
+- **Touch Gestures**. To implement the drag, single tap and long-press, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer`, for touch/double-tap you can use `UITapGestureRecognizer` and for long-press you can use `UILongPressGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
 
         // This is required for touch interaction with the view
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panHandler:)];
@@ -114,7 +111,7 @@ YS: Yes we have to do this. Eventually they should subclass a basic bubble for t
  - Select a bubble colour from the palette (Single Tap gesture)
  - Drag finger across main grid to fill the cells up with the selected bubble colour or erase a cell if the eraser was chosen in the palette (Pan gesture)
  - Tap a cell to cycle through bubble colours (Single Tap gesture)
- - Quick erasure of a cell (Double Tap gesture)
+ - Quick erasure of a cell (Long-press gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
