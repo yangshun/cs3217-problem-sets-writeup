@@ -66,6 +66,10 @@ Answer the following questions in `design.txt`:
 
 ### Problem 3: Testing the Graph ADT ###
 
+It is a very good practice to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 2.1 to run the unit test for Graph ADT.
+
+Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphADT_Tests.m`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) 
+
 ### Problem 4: Extending the Graph ADT ###
 
 ### Problem 5 [Bonus Question]: Reflection ###
