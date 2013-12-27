@@ -92,7 +92,7 @@ In order to perform the string-to-tree conversions, you will be provided with a 
 
 3. Add the following two methods to the *Tree* ADT you had implemented earlier:
  - `- (NSString*)breadthFirstTreeToString:(NSNumber*)key`
- - `- (NSString*)breadthFirstTreeToString:(NSNumber*)key`
+ - `- (NSString*)depthFirstTreeToString:(NSNumber*)key`
 
  Your algorithm will need to add special characters to the result string to indicate the 'special nodes' in the tree.
 
