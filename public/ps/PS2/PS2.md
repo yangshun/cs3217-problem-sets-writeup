@@ -12,17 +12,17 @@ The purpose of this problem set is to improve your understanding of *Abstract Da
 **Reminder**: Please read the entire problem set before starting.
 
 ### Background ###
-The purpose of a specification is to document a program’s logic, the range of input that it can safely operate on, and its expected behaviour. So for ADTs, the specification describes what this ADT represents, its purpose, its representation invariant, and the behaviour of each of its method. At the start of the ADT, the specification gives a summary of the ADT, mainly the abstraction function and the representation invariant. The abstraction function is a mapping from the state of an ADT instance to some mathematical object that it represents. The representation invariant is some condition that all valid instances of the ADT must satisfy, which is essentially the format of the ADT. Before each method, there are comments describing its behaviour. Here we are simply describing its expected input and output. The “requires” clause state the conditions that the input must satisfy. When calling this method, we must make sure all the conditions in the “requires” clause are met. When implementing this method, we can safely assume that the input satisfies the “requires” clause. The “returns” clause dictates the relationship between the expected output and the input.
+The purpose of a specification is to document a program’s logic, the range of inputs that it can safely operate on, and its expected behaviour. So for ADTs, the specification describes what this ADT represents, its purpose, its representation invariant, and the behaviour of each of its method(s). At the start of the ADT, the specification gives a summary of the ADT, mainly the abstraction function and the representation invariant. The abstraction function is a mapping from the state of an ADT instance to some mathematical object that it represents. The representation invariant is some condition that all valid instances of the ADT must satisfy, which is essentially the format of the ADT. Before each method, there are comments describing its behaviour. Here we are simply describing its expected input and output. The “requires” clause state the conditions that the input must satisfy. When calling this method, we must make sure all the conditions in the “requires” clause are met. When implementing this method, we can safely assume that the input satisfies the “requires” clause. The “returns” clause dictates the relationship between the expected output and the input.
 
 ### Definitions and Terminology ###
 
-A *graph* is a collection of *nodes* (also called *vertices*) and *edges*. Each edge connects two nodes. In a *directed graph*, edges are one-way: an edge `e = (A,B)` indicates B that is directly reachable from A. To indicate that B is directly reachable from A and A from B, a directed graph would have edges `(A,B) and (B,A)`. On the other hand, in an *undirected graph* we can travel in either directions along the edges between nodes.
+A *graph* is a collection of *nodes* (also called *vertices*) and *edges*. Each edge connects two nodes. In a *directed graph*, edges are one-way: an edge `e = (A, B)` indicates that a node, B is directly reachable from another node, A. To indicate that B is directly reachable from A and vice-versa, a directed graph would have edges `(A, B) and (B, A)`. On the other hand, in an *undirected graph* we can travel in either directions along the edges between nodes.
 
 The *children* of node B are the nodes to which there is an edge from B. In Fig. 1, the children of B are A and C. Similarly, the *parents* of B are the nodes from which there is an edge to B. In Fig. 1, B only has one parent, A.
 
 A node is said to be *adjacent* to another node if there exists an edge between the two nodes.
 
-A *path* is a sequence of edges `(node1,node2), (node2,node3), (node3,node4), ....` In other words, a path is an ordered list of edges, where an edge to some node is immediately followed by an edge from that node. In Fig. 1, one possible path is `(B,A),(A,B),(B,C)`. This path represents traveling from B to A to B to C. A path may traverse a given edge twice.
+A *path* is a sequence of edges `(node1, node2), (node2, node3), (node3, node4), ....` In other words, a path is an ordered list of edges, where an edge to some node is immediately followed by an edge from that node. In Fig. 1, one possible path is `(B, A), (A, B), (B, C)`. This path represents traveling from B to A to B to C. A path may traverse a given edge twice.
 
 In a *multigraph*, there can be any number of edges (zero, one, or more) between a pair of nodes. Fig. 2 shows a multigraph with 2 edges from A to C.
 
@@ -47,7 +47,7 @@ Answer the following questions in `design.txt`:
 4. There are several ways to represent a graph. Here are a few:
  * As a collection of edges
  * As an adjacency list, in which each node is associated with a list of its outgoing edges.
- * As an adjacency matrix, which explicitly represents, for every pair ⟨A,B⟩ of edges, whether there is a link from A to B, and how many. 
+ * As an adjacency matrix, which explicitly represents, for every pair ⟨A, B⟩ of edges, whether there is a link from A to B, and how many. 
 
   Briefly discuss the advantages and disadvantages of any three types of Graph representations. **(5 points)**
 
@@ -59,11 +59,11 @@ Fill in an implementation for the methods in the specification of *Graph*, accor
 
 Answer the following questions in `design.txt`:
 
-1. Where did you include calls to `checkRep:` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some combination)? Why? **(5 points)**
+1. Where did you include calls to `checkRep:` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some other combination)? Why? **(5 points)**
 
-2. In **Problem 1.4**, you had explored the different types of graph representations. Briefly explain why you chose the representation you did in order to implement the Graph ADT. **(5 points)**
+2. In Problem 1.4, you have explored the different types of graph representations. Briefly explain why you chose that representation to implement the Graph ADT. **(5 points)**
 
-3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
+3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to be changed? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given specifcations. **(5 points)**
 
 4. Imagine that the original representation invariant was changed to include a new requirement that there can be **at most 1 edge** between a source and destination node. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
 
@@ -98,7 +98,7 @@ In order to perform the string-to-tree conversions, you will be provided with a 
 
 4. Write appropriate test cases in `GraphADT_Tests.m` to test the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
-### Problem 5 [Bonus Question]: Reflection ###
+### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
 
 * How many hours did you spend on each problem of this problem set?
