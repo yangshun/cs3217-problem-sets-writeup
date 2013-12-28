@@ -65,15 +65,15 @@ Before you begin, please spend some time understanding the requirements of this 
 
 Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file `design.pdf` at the root directory of your project folder.
 
-a. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two ore more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. **(10 points)**
+1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two ore more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. **(10 points)**
 
-b. Explain why you decided on your chosen design over alternative designs. **(5 points)**
+2. Explain why you decided on your chosen design over alternative designs. **(5 points)**
 
-c. How would you add a new “projectile” object - the bubble/shooter - to the game? (To be done later) **(5 points)**
+3. How would you add a new “projectile” object - the launched bubble, to the game? (To be done later) **(5 points)**
 
-d. How do you plan to integrate the bubble objects with a game engine? **(10 points)**
+4. How do you plan to integrate the bubble objects with a game engine? **(10 points)**
 
-e. What other functionalities do you think you might want to add to the game later and how can you extend your code to support these new features, other than what has been specified in this problem set? Give two concrete examples of changes you can make to your code as well as the structure of your classes). **(10 points)**
+5. What other functionalities do you think you might want to add to the game later and how can you extend your code to support these new features, other than what has been specified in this problem set? Give two concrete examples of changes you can make to your code as well as the structure of your classes). **(10 points)**
 
 
 ***Self-check:***
