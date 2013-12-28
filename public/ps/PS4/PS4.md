@@ -129,11 +129,11 @@ Please come up with your testing strategy and describe it in `design.txt`. Note 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
 
-a. How many hours did you spend on each problem of this problem set?
+1. How many hours did you spend on each problem of this problem set?
 
-b. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
+2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 
-c. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set?
+3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set?
 
 Your answers to these questions should be appended at the end of `design.txt`.
 

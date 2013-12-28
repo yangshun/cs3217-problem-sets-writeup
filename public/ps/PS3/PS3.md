@@ -187,7 +187,7 @@ Testing is an integral part of software engineering. Since you are not implement
 
 Please come up with your testing strategy and describe it in `design.pdf.` Of course, you should actually test your application as you have described instead of just listing down what you think you ought to test! :-)  
 
-### Bonus Problem: Reflection (3 Bonus Points). ###
+### Bonus Problem: Reflection (3 Bonus Points) ###
 
 Please answer the following questions:
 
