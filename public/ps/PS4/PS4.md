@@ -7,51 +7,52 @@ Tutorial Date: Week 6*
 
 Section 1 - Introduction
 --
-This section gives you an overview of the task of this problem set, which is to implement a game engine with simple physics and game-specific behaviours based on the requirements and specifications described later in this section.
+This section gives you an overview of of this problem set, which is to implement a game engine with a simplified physics engine and game-specific behaviours based on the requirements and specifications described later in this section.
 
 ￼￼￼***Reminder: Please read the entire assignment before starting.***
 
-### Game Engine (to be updated) ###
-In this assignment, you will practice software engineering skills by building a simple 2D physics engine from scratch. The process involves understanding how physics can be simulated, deciding on the ADTs that you need, designing the classes and modules that are necessary and finally, implementing and testing your design.
+In this assignment, you will practice software engineering skills by building a 
+simple 2D game engine. The process involves understanding how a game can be
+simulated, deciding on the ADTs that you need, designing the classes and modules 
+that are necessary and finally, implementing and testing your design.
 
-You should also keep in mind that the physics engine should be designed such that it can be integrated with any other application which requires rigid body dynamics with as little modification as possible, and not just out of fulfillment of the Falling Bricks demonstration Problem 4 or your next problem set, where the engine is to be integrated with what you have already done in Problem Set 3. You do not necessarily have to implement your engine according to the rules given in the Appendix, and you are free refer to other references or physics engines. Your physics engine simply has to be able to simulate physical interactions and motion in a “natural” way. You must however write all the code for your engine yourself and are not allowed to include an external physics engine library. You are allowed to use any Apple frameworks and libraries though.
+You should also keep in mind that the game engine should be designed such that it 
+not only fulfils the requirements in section 2 but also be general enough to
+extend in the next problem set when your engine is to be integrated with what you
+have already done in problem set 3. You can refer to any game (and/or physics) 
+engines; however, you must write all the code for your game yourself and not 
+allowed to include an external engine library. You are allowed to use any Apple 
+frameworks and libraries except SpriteKit!
 
-A physics engine is the virtual simulation of the physical aspects of an abstract world, like the mass, shape, velocity, acceleration of each physical body, the forces and torques acting on the bodies. These objects and entities interact based on the laws of physics derived for real world physical entities.
+A good game engine provides varied functionalities including "a renderer for 2D or 3D graphics, a physics engine (collision detection), sound, scripting, animation, artificial intelligence, networking, streaming, memory management, threading, localization support, and a scene graph" ([Wikipedia][Wikipedia-Game Engine]). In this assignment, you are supposed to build a simple engine which only consists of a renderer and a physics engine.
 
-The physics engine will serve as an oracle for the main game engine. After setting up the physics world, the main game engine periodically queries the physics engine for the status of the world; mainly the position and angle of rotation of the physical bodies in the world (by angle of rotation, we mean the angle at which the object is rotated from its standard upright position). Whenever the engine is queried, it simulates the interactions between the physical bodies in the time interval from the last query to the current one. This is therefore a discrete simulation of the physical world. Usually the time interval between each successive queries is fixed. (for example, 1/60 seconds)
+While we’ll provide certain guidelines here on how to build a game engine, the pleasure of personally designing it is all yours. :)
 
-In this assignment, we’ll only provide the guidelines on how to build a physics engine. The pleasure of personally designing it is all yours. :)
+[Wikipedia-Game Engine]: http://en.wikipedia.org/wiki/Game_engine
 
-The entities that you may need to model in a physics engine include:
+### 2D Renderer ###
 
-* The world, which contains a set of physical bodies, the direction and magnitude of the gravity, and some other information specifically related with the simulation, instead of the physics, which are discussed in the Appendix. Note however that if you do not wish to use the physics model described in the Appendix, you are free to do your own thing. Note however that you do so at your own peril.
+Apple's UIKit framework has excellent built-in classes that you can use to draw and display your game objects. Nevertheless, you still need to choose your object's model that can be easily stored and displayed.
 
-* Physical bodies. The attributes for a body includes: mass, moment of inertia, position, shape (in this assignment, we’ll only deal with rectangular shapes, but it would be advisable for your design to be extensible to other types of shapes), velocity, angular velocity, force (you only need to keep a vector sum of all the forces acting on the body), torque, friction coefficient.
+Next, a game must have smooth animation which means the screen needs to be redrawn frequently (e.g. 60 frames per second). At every 1/60 second, your game engine should use its physics engine to update the objects' properties (e.g. position, velocity or collision), handle all the gameplay's scenario and then call the renderer to redrawn your objects.
 
-* The contact points, which are the points where the physical bodies collide with each other. Note that we hardly encounter cases where two colliding bodies are barely touching each other. Usually, since we are running a discrete simulation, when two bodies collide, they share an intersection area. We therefore need to approximate; find two contact points such that we can think of the two bodies as colliding at these points only. (more on this later)
+*Hint: If you did a good job for the problem set 3, you can simply reuse the data model! However, note that this assignment does not require you to support persistent data. If you choose to do so and it causes bugs when your game runs, your mark will be deducted.*
 
-* Restitution coefficient (which is a value between 0 and 1, that describes how much the objects bounce after the collision. The larger the value, the more bouncy the objects are. For a restitution coefficient of 0, the objects do not bounce at all. For a restitution coefficient of 1, no kinetic energy is lost in the collision). In reality this constant is unique for each collision. Even for the same pair of objects, when they collide with different velocities, this constant is different. But that is very hard to implement. We will simplify it by giving each object a constant e, depending on how bouncy you intend it to be. Then for two objects with bounciness e1 and e2 respectively, we compute the restitution coefficient between their collisions as e1e2 ,
-under the assumption that this coefficient remains the same for different velocities.
+### Physics Engine ###
 
-Make sure you download ps04-code.zip, which provides you with an implementation of an immutable 2- dimensional vector class and an immutable 2x2 matrix class to aid you with some mathematics for this assignment. While these classes may seem simple, please take some time to go through its methods and comments.
+A typical physics engine would require its objects to have all important physics properties such as position, velocity, mass, force, torque and etc. in order to calculate realistic physics phenomena like impulse, reflection or oscillation. However, a full-scaled physics engine is a bit overkill for the purpose of building Bubble Blast Sage and hence, you are only required to implement a simplified engine which supports simple object movement (problem 2.1) and collision detection between bubbles or between bubble and wall (2.3).  
 
-Now, let us examine a little example that demonstrates what we can do with the physics engine. We build a world, and add four thin immobile bodies to form walls at the edges of the screen (we make a body immobile by giving it an infinite mass). Next we place some bodies inside the box and start the simulation. As gravity pulls the bodies downward, collisions may happen. After some period of times, collisions will stop, and the bodies reach the ground.
+Keep in my mind that your physics engine should be flexible enough to extend easily and support further requirements to build an interesting game.
 
+*Hint: You might want to look ahead at the problem set 5 or try out Bubble Mania to see what features your physics engine might need to support.*
 
-The physics engine should support a “world” object to which you can add objects. 
-These objects have the following properties:
+### Gameplay ###
 
-* position
-* shape (though in this assignment, you only need to support circular shapes) 
-* velocity
+On top of the game engine that might be reused across different games, each game will have its own unique gameplay. In Bubble Blast Sage, the core features which you have to implement in this problem set includes:
 
-The world object needs to support a step function that takes in small time step dt and update the state of all the objects that it contains.
-
-
-**References**
-
-1. D. M. Bourg. Physics for Game Developers. O’Reilly Media, November 2001.
-2. I. Millington. Game Physics Engine Development, Second Edition: How to Build a Robust Commercial-Grade Physics Engine for your Game. Morgan Kaufmann, August 2010.
+- The moving bubble snaps to the closest empty grid when collides with another bubble (2.4)
+- Then, a group of 3 or more connected identically-coloured bubbles including the colliding bubble is removed
+- Afterwards, any floating bubbles (detached from the top roof and hanging bubbles) should be removed as well
 
 Section 2 - Design & Implement the Game Engine (100 points)
 --
@@ -73,16 +74,16 @@ Put the explanation in a text file `design.txt` and add it to folder `ps04` as w
 
 ##### 1. Bubble shooting (10 points) #####
 
-Decide on how to allow the user to specify the angle of the bubble to be shot and implement it accordingly. Explain how your game handles user input for the angle and implement it. Remember to give the shot bubble a velocity!
+Decide on how to allow the user to specify the angle of the bubble to be shot and implement it accordingly. Explain how your game handles user input for the angle and implement it. Remember to give your user a new bubble after every shot!
 
 ##### 2. Bubble movement (5 points) #####
 A bubble should be able to
 
-- travel with its current velocity
+- travel with its current speed and direction
 - reflect off the side walls
 
 ##### 3. Bubble collisions (10 points) #####
-The game engine should be able to detect the following collisions of the moving bubble:
+The game engine should be able to detect the following collisions of the moving bubble when:
 
 - It collides with another bubble in the arena.
 - It collides with the top wall
