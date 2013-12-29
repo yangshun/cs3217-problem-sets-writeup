@@ -53,7 +53,7 @@ If you’re comfortable with basic object-oriented concepts and the C language, 
 Section 2 - Hello iPad!
 --
 
-In this section, you will use Xcode to create a project and storyboards to construct a very simple user interface. This assignment requires no coding. It is intended to provide you with a quick introduction to the tools that you’ll be using during the course. Follow this walkthrough and build your first **HelloIPad** application.
+In this section, you will use Xcode to create a project and storyboards to construct a very simple user interface. This assignment requires no coding. It is intended to provide you with a quick introduction to the tools that you’ll be using during the course. Follow this walkthrough and build your first iOS application.
 
 **Important Note:** Even though it is possible to complete the first part of the assignment just by following instructions, it is important for you to understand what you are doing in each step, since in the next assignments you will be required to use the same tools.
 
@@ -126,18 +126,62 @@ Since a queue describes a set of operations on an arbitrary data structure, it s
 
 *You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
 
-### Tree Traversal with Enumerators
+### Property Lists
 
+[Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
 
-We may represent a tree as a dictionary that maps vertex labels to arrays of their children.
+In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to `.ini` files in Windows. 
 
-// TODO:
+#### Tree Traversal
+We may represent a tree as a dictionary that maps vertex labels to arrays of their children. For example, the following tree
 
-##### Milestone 10: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
+	  a
+	 / \
+	b   c
+	     \
+	      d
 
-##### Milestone 11: Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. (15 points)
+would be represented in this style as the datastructure
 
-##### Milestone 12: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
+	{ a: [ { b: [ ] }, { c: [ { d: [ ] } ] } ] }
+		
+The corresponding (Apple) property list would be as follows
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+	<dict>
+	  <key>a</key>
+	  <array>
+	    <dict>
+	      <key>b</key>
+	      <array>
+	      </array>
+	    </dict>
+	    <dict>
+	      <key>c</key>
+	      <array>
+	        <dict>
+	          <key>d</key>
+	          <array>
+	          </array>
+	        </dict>
+	      </array>
+	    </dict>
+	  </array>
+	</dict>
+	</plist>
+	
+Your task is to perform a level-order traversal (breadth-first search from the root) of a tree, given a starting vertex. 
+
+To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.	
+##### Milestone 10: Find out what an `NSEnumerator` does. (Not graded)
+
+##### Milestone 11: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
+
+##### Milestone 12: Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. (15 points)
+
+##### Milestone 13: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
 
 Coding Style
 ---
