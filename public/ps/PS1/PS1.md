@@ -213,7 +213,40 @@ To reduce ambiguity, vertices should be returned in the order which they occur i
 
 ##### Milestone 13: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
 
-Coding Style
----
+### Bonus Problem: Reflection (3 Bonus Points) ###
+Please answer the following questions:
 
-Up to **10 points** may be deducted for issues with coding style.
+1. How many hours did you spend on each problem of this problem set?
+2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
+3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
+
+Submit the answer to this question in the form of a comment appended at the end of your code. (3 bonus points)
+
+Section 4 - Grading and Submission
+--
+Please read this section carefully so that you fully understand the grading scheme and the mode of submission!
+
+### Grading Scheme ###
+In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write well-documented code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained and the probability that some poor soul will have to come along to read and modify your code is very high. Your goal is to minimize the grief of this poor fella and make him love reading your code.
+
+You also want to minimize the grief that is inflicted on your TAs. In particular, we will be looking out for the following:
+
+- Your submission should adhere to the submission format.
+- Your files should compile without errors or warnings.
+- Your program should run without crashing over the range of all valid inputs.
+- Your code should be well-documented, correctly indented and neat. You should not use magic numbers.  
+
+### Mode of Submission ###
+In this assignment, you will be using [GitHub](https://github.com) for submitting your code and receiving feedback. The required files TODO: Overlaps.m, PEShape.h, PERectangle.h and PERectangle.m should be in a single directory called `ps01`. This directory should be inside the root directory of the private repository assigned to you. You must upload all your work to the master branch of this remote repository. You will be graded on the latest commit on the master branch before the deadline.
+
+The following is a typical workflow to set up the integration with Xcode.
+1. Use the git clone command to get a local copy of your remote repository located at `https://github.com/NUS-CS3217-AY1213/<yourreponame>`. This is a one-time operation and should not be repeated for every PS. For successive problem sets, you would just be creating appropriate directories inside this repository as mentioned above.
+2. Create a new subdirectory called `ps01` in your local repository. Use the `git add` command to track it.
+3. Create a new Xcode project for this assignment and save it to `ps01`. Xcode will automatically inherit the git repo settings, following which you can push/pull/merge etc. to the remote repo.
+4. Once you are satisfied with your work, push your changes to the master branch using Xcode.
+
+When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore ￼￼any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
+
+**Important Note:** All the required files should be directly inside the `ps01` directory. Even though your TAs will be reading every single line of your code, we will be compiling and doing high-level tests of your code using an automatic script. You must also include all the files we specified or the scripts might fail. If you fail to comply with our instructions, points will be taken off.
+
+Clarifications and questions related to this assignment may be directed to the IVLE Forum under the heading **‘Problem Set 1: Hello iPad!’**.
