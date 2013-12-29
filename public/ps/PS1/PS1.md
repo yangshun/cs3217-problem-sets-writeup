@@ -59,29 +59,37 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 ##### Milestone 1: Create a new Xcode project. (Not graded)
 
-![Welcome to Xcode\!](img/1-1.png)
+![Welcome to Xcode\!](/ps/ps1/img/1-1.png)
 
-![When you have finally decided to start working, begin by creating an iOS Single View application.](img/1-2.png)
+Welcome to Xcode\!
 
-![Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\)](img/1-3.png)
+![When you have finally decided to start working, begin by creating an iOS Single View application.](/ps/ps1/img/1-2.png)
 
-You will be prompted to save your project to disk after this step.
+When you have finally decided to start working, begin by creating an iOS Single View application.
+
+![Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\)](/ps/ps1/img/1-3.png)
+
+Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\) You will be prompted to save your project to disk after this step.
 
 ##### Milestone 2: Navigate around the IDE. (Not graded)
 
-![The standard editor displays a single file.](img/2-1.png)
+![The standard editor displays a single file.](/ps/ps1/img/2-1.png)
 
-This screenshot shows the visual storyboard editor. Note the properties panel to the right of the screen.
+The standard editor displays a single file. This screenshot shows the visual storyboard editor. Note the properties panel to the right of the screen.
 
-![The assistant editor is highly recommended for writing code.](img/2-2.png)
+![The assistant editor is highly recommended for writing code.](/ps/ps1/img/2-2.png)
 
-It shows header and implementation files in a 2-column split view by default, but can also be made to show any arbitrary file.
+The assistant editor is highly recommended for writing code. It shows header and implementation files in a 2-column split view by default, but can also be made to show any arbitrary file.
 
-![When writing code, the properties panel is replaced with Quick Help, which shows brief documentation of the object under cursor.](img/2-3.png)
+![When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.](/ps/ps1/img/2-3.png)
+
+When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.
 
 ##### Milestone 3: Add library interface elements. (Not graded)
 
-![Add user interface elements from the library by dragging them to the storyboard.](img/3-1.png)
+![Add user interface elements from the library by dragging them to the storyboard.](/ps/ps1/img/3-1.png)
+
+Add user interface elements from the library by dragging them to the storyboard.
 
 Note how the properties panel expands to show further details when a UI element is selected. Add both a label, and a button. 
 
@@ -89,21 +97,27 @@ Note how the properties panel expands to show further details when a UI element 
 
 You need to "link" storyboard elements to their associated View Controller before you can reference them in code.
 
-![Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.](img/4-1.png)
+![Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.](/ps/ps1/img/4-1.png)
 
-![Add an Action handler in the same way for "Touch Up Inside".](img/4-2.png)
+Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.
 
-![Write a single line of code to change the label's text.](img/4-3.png)
+![Add an Action handler in the same way for "Touch Up Inside".](/ps/ps1/img/4-2.png)
+
+Add an Action handler in the same way for "Touch Up Inside".
+
+![Write a single line of code to change the label's text.](/ps/ps1/img/4-3.png)
+
+Write a single line of code to change the label's text.
 
 ##### Milestone 5: Run your project in the emulator. (Not graded)
 
 Run your project by clicking on the play button at the top-left of the screen. It may take awhile for the emulator to launch. 
 
-![My First iOS App\!](img/4-4.png)
+![My First iOS App\!](/ps/ps1/img/4-4.png)
 
 Test that your app works by tapping on the button. Observe that the label's text changes.
 
-![It works\!](img/4-5.png)
+![It works\!](/ps/ps1/img/4-5.png)
 
 Note that on lower resolution screens, your emulator may not show the faux iPad bezel. In addition, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down emulator.
 
@@ -193,7 +207,8 @@ The corresponding (Apple) property list would be as follows
 	
 Your task is to perform a level-order traversal (breadth-first search from the root) of a tree, given a starting vertex. 
 
-To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.	
+To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.
+	
 ##### Milestone 10: Find out what an `NSEnumerator` does. (Not graded)
 
 ##### Milestone 11: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
