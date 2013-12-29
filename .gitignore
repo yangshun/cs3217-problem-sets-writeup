@@ -1,6 +1,7 @@
 node_modules/
 *.xcuserstate
-
 public/ps/PS3/src/Designer.xcodeproj/project.xcworkspace/xcuserdata/ishaansingal.xcuserdatad/UserInterfaceState.xcuserstate
 public/ps/PS1/HelloWorld/HelloWorld.xcodeproj/project.xcworkspace
 public/ps/PS1/HelloWorld/HelloWorld.xcodeproj/xcuserdata
+public/ps/PS1/CS3217-PS1/CS3217-PS1.xcodeproj/project.xcworkspace
+public/ps/PS1/CS3217-PS1/CS3217-PS1.xcodeproj/xcuserdata
