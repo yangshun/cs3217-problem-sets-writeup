@@ -188,27 +188,23 @@ The corresponding (Apple) property list would be as follows
 	  <array>
 	    <dict>
 	      <key>b</key>
-	      <array>
-	      </array>
-	    </dict>
-	    <dict>
+	      <array/>
 	      <key>c</key>
 	      <array>
 	        <dict>
 	          <key>d</key>
-	          <array>
-	          </array>
+	          <array/>
 	        </dict>
 	      </array>
 	    </dict>
 	  </array>
 	</dict>
 	</plist>
+
 	
 Your task is to perform a level-order traversal (breadth-first search from the root) of a tree, given a starting vertex. 
 
-To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.
-	
+To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.	
 ##### Milestone 10: Find out what an `NSEnumerator` does. (Not graded)
 
 ##### Milestone 11: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
