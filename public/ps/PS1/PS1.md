@@ -57,38 +57,57 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 **Important Note:** Even though it is possible to complete the first part of the assignment just by following instructions, it is important for you to understand what you are doing in each step, since in the next assignments you will be required to use the same tools.
 
-##### Milestone 1: Create a new project in Xcode (Not graded)
+##### Milestone 1: Create a new Xcode project. (Not graded)
 
-Please follow the step-by-step instructions shown in Gallery 3.1 to create your first iPad app. The detailed instructions for each step is given by the caption below the figures.
+![Welcome to Xcode\!](img/1-1.png)
 
-TODO: Add screenshots
+![When you have finally decided to start working, begin by creating an iOS Single View application.](img/1-2.png)
 
-##### Milestone 2: Run your project in the simulator (Not graded)
+![Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\)](img/1-3.png)
 
-Please follow the step-by-step instructions shown in Gallery 3.2 to
-run your first iPad app in the simulator. The detailed instructions for each step is given by the caption below the figures.
+You will be prompted to save your project to disk after this step.
 
-TOOD: Add screenshots
+##### Milestone 2: Navigate around the IDE. (Not graded)
 
-##### Milestone 3: Understanding the Xcode IDE Layout (Not graded)
+![The standard editor displays a single file.](img/2-1.png)
 
-Interactive 3.1 shows the overall project layout in Xcode. Xcode is a powerful Integrated Design Environment (IDE).
+This screenshot shows the visual storyboard editor. Note the properties panel to the right of the screen.
 
-TODO: Add screenshots
+![The assistant editor is highly recommended for writing code.](img/2-2.png)
 
-##### Milestone 4: Add library interface elements to your app. (Not graded)
+It shows header and implementation files in a 2-column split view by default, but can also be made to show any arbitrary file.
 
-Please follow the step-by-step instructions shown in Gallery 3.3 to
-add an interface element to the main view of your app. The detailed instructions for each step is given by the caption below the figures.
+![When writing code, the properties panel is replaced with Quick Help, which shows brief documentation of the object under cursor.](img/2-3.png)
 
-TODO: Add screenshots
+##### Milestone 3: Add library interface elements. (Not graded)
 
-##### Milestone 5: Add resource files to your project. (Not graded)
+![Add user interface elements from the library by dragging them to the storyboard.](img/3-1.png)
 
-Please follow the step-by-step instructions shown in Gallery 3.4 to add an image resource file to your project and add that resource into your app’s main view. The detailed instructions for each step is given by the caption below the figures.
+Note how the properties panel expands to show further details when a UI element is selected. Add both a label, and a button. 
 
-TODO: Add screenshots
+##### Milestone 4: Add some code. (Not graded)
 
+You need to "link" storyboard elements to their associated View Controller before you can reference them in code.
+
+![Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.](img/4-1.png)
+
+![Add an Action handler in the same way for "Touch Up Inside".](img/4-2.png)
+
+![Write a single line of code to change the label's text.](img/4-3.png)
+
+##### Milestone 5: Run your project in the emulator. (Not graded)
+
+Run your project by clicking on the play button at the top-left of the screen. It may take awhile for the emulator to launch. 
+
+![My First iOS App\!](img/4-4.png)
+
+Test that your app works by tapping on the button. Observe that the label's text changes.
+
+![It works\!](img/4-5.png)
+
+Note that on lower resolution screens, your emulator may not show the faux iPad bezel. In addition, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down emulator.
+
+Holding the `Alt` key with your cursor over the emulator's "screen" brings out two gray circles representing two touch points. This is useful for debugging pinch and rotate gestures. 
 
 Section 3 - Introduction to Objective-C (100 points)
 --
