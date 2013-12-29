@@ -55,6 +55,8 @@ To create the palette, you need to add a new view, palette, to the main view. Th
 
 From the bubble palette, the user taps to select the color of bubble he wants to use to fill the grid or taps the eraser to delete the bubble from the grid.
 
+![designer](/ps/ps3/img/designer.png)
+
 ### Problem 2: Create the Bubble Grid (10 points) ###
 
 Your next task is to create an isometric grid. The grid should have 12 columns and should be tightly packed as seen in the previous image (the number of rows is up to you to decide). This grid will indicate all the possible positions of the bubble and would be used by the designer to design a game level by filling it with bubbles.
