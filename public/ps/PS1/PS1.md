@@ -186,19 +186,19 @@ The (Apple) property list would look like
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 	<plist version="1.0">
 	<dict>
-		<key>a</key>
-		<array>
-			<string>b</string>
-			<string>c</string>
-		</array>
-		<key>b</key>
-		<array/>
-		<key>c</key>
-		<array>
-			<string>d</string>
-		</array>
-		<key>d</key>
-		<array/>
+	  <key>a</key>
+	  <array>
+	    <string>b</string>
+	    <string>c</string>
+	  </array>
+	  <key>b</key>
+	  <array/>
+	  <key>c</key>
+	  <array>
+	    <string>d</string>
+	  </array>
+	  <key>d</key>
+	  <array/>
 	</dict>
 	</plist>
 	
