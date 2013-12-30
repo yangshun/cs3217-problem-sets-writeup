@@ -126,7 +126,8 @@ Holding the `Alt` key with your cursor over the emulator's "screen" brings out t
 Section 3 - Introduction to Objective-C (100 points)
 --
 
-In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
+In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. 
+As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks. You are free to modify any skeleton files provided unless otherwise stated. Obviously, protocols must *not* be altered.
 
 
 ### Collections in Objective C
@@ -206,11 +207,11 @@ Your task is to perform a level-order traversal (breadth-first search from the r
 
 To reduce ambiguity, vertices should be returned in the order which they occur in the property list. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.
 
-##### Milestone 10: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
+We have provided a protocol in `Traversable.h` that you should implement in an `NSDictionary` category. 
 
-##### Milestone 11: Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. (15 points)
+##### Milestone 10: Create a category for the `NSDictionary` class that implements the `Traversable` protocol. You should name your file `NSDictionary+Traversable.{h,m}` in the Objective C naming convention. Call the test method `BOOL testTraversable()` and demonstrate that it returns `TRUE`. (40 points)
 
-##### Milestone 12: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
+##### Milestone 11: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:

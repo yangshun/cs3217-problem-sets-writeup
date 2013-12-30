@@ -40,6 +40,7 @@
 		4A678392186319CB003DE1F1 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		4A67839318631B5B003DE1F1 /* ArrayBackedQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayBackedQueue.h; sourceTree = "<group>"; };
 		4A67839418631B5B003DE1F1 /* ArrayBackedQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayBackedQueue.m; sourceTree = "<group>"; };
+		4A7C759D18715C3E007E56F7 /* bigtree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bigtree.plist; sourceTree = "<group>"; };
 		4A8C6C5F1864403C008143C8 /* Traversable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Traversable.h; sourceTree = "<group>"; };
 		4A8C6C61186440EF008143C8 /* NSDictionary+Traversable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Traversable.h"; sourceTree = "<group>"; };
 		4A8C6C62186440EF008143C8 /* NSDictionary+Traversable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Traversable.m"; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				4A1737871870889400158387 /* example.plist */,
+				4A7C759D18715C3E007E56F7 /* bigtree.plist */,
 			);
 			name = Trees;
 			sourceTree = "<group>";
