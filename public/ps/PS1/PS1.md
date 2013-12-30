@@ -166,7 +166,9 @@ Since a queue describes a set of operations on an arbitrary data structure, it s
 In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to `.ini` files in Windows. 
 
 #### Tree Traversal
-We may represent a tree as a dictionary that maps vertex labels to arrays of their children. For example, the following tree
+We may represent a rudimentary tree using the constructs supported by property lists with an adjacency list. Keys represent vertex labels, and values are arrays of other vertex labels corresponding to children. 
+
+This tree
 
 	  a
 	 / \
@@ -174,44 +176,41 @@ We may represent a tree as a dictionary that maps vertex labels to arrays of the
 	     \
 	      d
 
-would be represented in this style as the datastructure
+would be represented as an abstract dictionary like
 
-	{ a: [ { b: [ ] }, { c: [ { d: [ ] } ] } ] }
+	{ 'a': [ 'b', 'c' ], 'b': [ ], 'c': [ 'd' ] }
 		
-The corresponding (Apple) property list would be as follows
+The (Apple) property list would look like
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 	<plist version="1.0">
 	<dict>
-	  <key>a</key>
-	  <array>
-	    <dict>
-	      <key>b</key>
-	      <array/>
-	      <key>c</key>
-	      <array>
-	        <dict>
-	          <key>d</key>
-	          <array/>
-	        </dict>
-	      </array>
-	    </dict>
-	  </array>
+		<key>a</key>
+		<array>
+			<string>b</string>
+			<string>c</string>
+		</array>
+		<key>b</key>
+		<array/>
+		<key>c</key>
+		<array>
+			<string>d</string>
+		</array>
+		<key>d</key>
+		<array/>
 	</dict>
 	</plist>
-
 	
 Your task is to perform a level-order traversal (breadth-first search from the root) of a tree, given a starting vertex. 
 
-To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.	
-##### Milestone 10: Find out what an `NSEnumerator` does. (Not graded)
+To reduce ambiguity, vertices should be returned in the order which they occur in the property list. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.
 
-##### Milestone 11: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
+##### Milestone 10: Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. (25 points)
 
-##### Milestone 12: Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. (15 points)
+##### Milestone 11: Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. (15 points)
 
-##### Milestone 13: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
+##### Milestone 12: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
@@ -219,7 +218,6 @@ Please answer the following questions:
 1. How many hours did you spend on each problem of this problem set?
 2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
-
 Submit the answer to this question in the form of a comment appended at the end of your code. (3 bonus points)
 
 Section 4 - Grading and Submission
@@ -245,7 +243,7 @@ The following is a typical workflow to set up the integration with Xcode.
 3. Create a new Xcode project for this assignment and save it to `ps01`. Xcode will automatically inherit the git repo settings, following which you can push/pull/merge etc. to the remote repo.
 4. Once you are satisfied with your work, push your changes to the master branch using Xcode.
 
-When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore ￼￼any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
+When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
 
 **Important Note:** All the required files should be directly inside the `ps01` directory. Even though your TAs will be reading every single line of your code, we will be compiling and doing high-level tests of your code using an automatic script. You must also include all the files we specified or the scripts might fail. If you fail to comply with our instructions, points will be taken off.
 
