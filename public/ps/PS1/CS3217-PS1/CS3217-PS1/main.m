@@ -8,6 +8,7 @@
 
 #import "Queue.h"
 #import "ArrayBackedQueue.h"
+#import "NSDictionary+Traversable.h"
 #import <Foundation/Foundation.h>
 
 BOOL testQueue(id<Queue>);
@@ -28,6 +29,7 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:@"/Users/cgcai/Development/CS3217-PS1/CS3217-PS1/example.plist"];
         NSLog(@"%lu", (unsigned long)dict.count);
+        NSLog(@"%@", [dict arrayInLevelOrderFromVertexLabeled:@"a"]);
     }
     
     return 0;

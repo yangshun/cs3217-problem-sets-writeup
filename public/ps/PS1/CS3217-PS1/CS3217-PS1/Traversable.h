@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol Traversable <NSObject>
-- (NSArray *) arrayInLevelOrder;
-- (NSEnumerator *) levelOrderEnumerator;
+- (NSArray *) arrayInLevelOrderFromVertexLabeled: (NSString *)label;
+- (NSEnumerator *) levelOrderEnumeratorFromVertexLabeled: (NSString *)label;
 
 @end

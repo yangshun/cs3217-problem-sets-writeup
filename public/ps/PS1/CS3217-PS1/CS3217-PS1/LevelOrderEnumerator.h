@@ -10,11 +10,12 @@
 #import <Foundation/Foundation.h>
 
 @interface LevelOrderEnumerator : NSEnumerator
+@property (nonatomic, strong) NSDictionary *backingDict;
 @property (nonatomic, strong) id<Queue> bfsQueue;
 
-+ (LevelOrderEnumerator *) enumeratorWithDictionary: (NSDictionary *)dict;
++ (LevelOrderEnumerator *) enumeratorWithDictionary: (NSDictionary *)dict startVertex: (NSString *)label;
 
-- (id) initWithDictionary: (NSDictionary *)dict;
+- (id) initWithDictionary: (NSDictionary *)dict startVertex: (NSString *)label;
 - (NSArray *) allObjects;
 - (id) nextObject;
 

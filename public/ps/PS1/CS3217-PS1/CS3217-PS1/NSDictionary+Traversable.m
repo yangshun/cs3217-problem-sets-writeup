@@ -6,17 +6,18 @@
 //  Copyright (c) 2013 NUS CS3217. All rights reserved.
 //
 
+#import "LevelOrderEnumerator.h"
 #import "NSDictionary+Traversable.h"
 
 @implementation NSDictionary (NSDictionary_Traversable)
-- (NSArray *) arrayInLevelOrder
+- (NSArray *) arrayInLevelOrderFromVertexLabeled:(NSString *)label
 {
-    return [[self levelOrderEnumerator] allObjects];
+    return [[self levelOrderEnumeratorFromVertexLabeled:label] allObjects];
 }
 
-- (NSEnumerator *) levelOrderEnumerator
+- (NSEnumerator *) levelOrderEnumeratorFromVertexLabeled:(NSString *)label
 {
-    return NULL;
+    return [LevelOrderEnumerator enumeratorWithDictionary:self startVertex:label];
 }
 
 @end

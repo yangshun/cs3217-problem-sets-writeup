@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (NSDictionary_Traversable) <Traversable>
-- (NSArray *) arrayInLevelOrder;
-- (NSEnumerator *) levelOrderEnumerator;
+- (NSArray *) arrayInLevelOrderFromVertexLabeled: (NSString *)label;
+- (NSEnumerator *) levelOrderEnumeratorFromVertexLabeled: (NSString *)label;
 
 @end

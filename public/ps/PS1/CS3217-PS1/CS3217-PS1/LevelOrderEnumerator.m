@@ -10,18 +10,20 @@
 #import "LevelOrderEnumerator.h"
 
 @implementation LevelOrderEnumerator
+@synthesize backingDict;
 @synthesize bfsQueue;
 
-+ (LevelOrderEnumerator *) enumeratorWithDictionary:(NSDictionary *)dict
++ (LevelOrderEnumerator *) enumeratorWithDictionary:(NSDictionary *)dict startVertex:(NSString *)label
 {
-    return [[LevelOrderEnumerator alloc] initWithDictionary:dict];
+    return [[LevelOrderEnumerator alloc] initWithDictionary:dict startVertex:label];
 }
 
-- (id) initWithDictionary:(NSDictionary *)dict
+- (id) initWithDictionary:(NSDictionary *)dict startVertex:(NSString *)label
 {
     if (self = [super init]) {
-        NSDictionary *backingDict = [NSDictionary dictionaryWithDictionary:dict];
+        self.backingDict = [NSDictionary dictionaryWithDictionary:dict];
         self.bfsQueue = [ArrayBackedQueue queue];
+        [self.bfsQueue enqueueObject:label];
     }
     return self;
 }
@@ -38,7 +40,16 @@
 
 - (id) nextObject
 {
-    return nil;
+    if (self.bfsQueue.count > 0) {
+        NSString *current = [self.bfsQueue dequeueObject];
+        NSArray *children = [self.backingDict objectForKey:current];
+        for (NSString *child in children) {
+            [self.bfsQueue enqueueObject:child];
+        }
+        return current;
+    } else {
+        return nil;
+    }
 }
 
 @end
