@@ -164,7 +164,7 @@ Since a queue describes a set of operations on an arbitrary data structure, it s
 
 [Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
 
-In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to `.ini` files in Windows. 
+In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the registry in Windows. (Whereas the Windows registry is a global key-value store, property lists are compartmentalised into individual files.)
 
 #### Tree Traversal
 We may represent a rudimentary tree using the constructs supported by property lists with an adjacency list. Keys represent vertex labels, and values are arrays of other vertex labels corresponding to children. 
