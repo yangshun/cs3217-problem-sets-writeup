@@ -126,50 +126,43 @@ Holding the `Alt` key with your cursor over the emulator's "screen" brings out t
 Section 3 - Introduction to Objective-C (100 points)
 --
 
-In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. 
-As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks. You are free to modify any skeleton files provided unless otherwise stated. Obviously, protocols must *not* be altered.
+In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
 
 
-### Collections in Objective C
+### Problem 1: Collections in Objective C (15 points)
 
-
-Objective C provides three main collection types
+Objective C provides three main collection types:
 
 - `NSArray` describes a linear collection of objects where each object may be accessed by an index.
 - `NSDictionary` describes a key-value store where some one *key*-object maps to one *value*-object.
 - `NSSet` describes an unordered collection of unique objects.
 
-
-
 Collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
 
-##### Milestone 6: What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  (10 points)
+1. What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  **(10 points)**
 
-##### Milestone 7: What is the worst-case time complexity of performing a linear search through an `NSArray`? (5 points)
+2. What is the worst-case time complexity of performing a linear search through an `NSArray`? **(5 points)**
 
-### FIFO Queue
-
+### Problem 2: FIFO Queue (35 points)
 
 Your task is to implement a generic FIFO queue.
 
 Since a queue describes a set of operations on an arbitrary data structure, it should be abstracted from its concrete implementation. We have provided a protocol in `Queue.h` that you should implement in a concrete class.
 
-##### Milestone 8: Implement the queue protocol using an `NSMutableArray`. Call the test method `BOOL testQueue(id<Queue> queue)` and demonstrate that it returns `TRUE`. (25 points)
+1. Implement the queue protocol using an `NSMutableArray`. Call the test method `BOOL testQueue(id<Queue> queue)` and demonstrate that it returns `TRUE`. **(25 points)**
 
-##### Milestone 9: Implement sufficient test cases to ensure that your queue works in all cases described by the protocol. You may make reasonably assuptions where necessary. (10 points)
+2. Implement sufficient test cases to ensure that your queue works in all cases described by the protocol. You may make reasonable assumptions where necessary and state them in your submission. **(10 points)**
 
 *You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
 
-### Property Lists
+### Problem 3: Understanding Property Lists (50 points)
 
 [Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
 
-In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the registry in Windows. (Whereas the Windows registry is a global key-value store, property lists are compartmentalised into individual files.)
+In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to `.ini` files in Windows. 
 
 #### Tree Traversal
-We may represent a rudimentary tree using the constructs supported by property lists with an adjacency list. Keys represent vertex labels, and values are arrays of other vertex labels corresponding to children. 
-
-This tree
+We may represent a tree as a dictionary that maps vertex labels to arrays of their children. For example, the following tree
 
 	  a
 	 / \
@@ -177,11 +170,11 @@ This tree
 	     \
 	      d
 
-would be represented as an abstract dictionary like
+would be represented in this style as the data structure
 
-	{ 'a': [ 'b', 'c' ], 'b': [ ], 'c': [ 'd' ] }
+	{ a: [ { b: [ ] }, { c: [ { d: [ ] } ] } ] }
 		
-The (Apple) property list would look like
+The corresponding (Apple) property list would be as follows
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -189,29 +182,36 @@ The (Apple) property list would look like
 	<dict>
 	  <key>a</key>
 	  <array>
-	    <string>b</string>
-	    <string>c</string>
+	    <dict>
+	      <key>b</key>
+	      <array>
+	      </array>
+	    </dict>
+	    <dict>
+	      <key>c</key>
+	      <array>
+	        <dict>
+	          <key>d</key>
+	          <array>
+	          </array>
+	        </dict>
+	      </array>
+	    </dict>
 	  </array>
-	  <key>b</key>
-	  <array/>
-	  <key>c</key>
-	  <array>
-	    <string>d</string>
-	  </array>
-	  <key>d</key>
-	  <array/>
 	</dict>
 	</plist>
 	
 Your task is to perform a level-order traversal (breadth-first search from the root) of a tree, given a starting vertex. 
 
-To reduce ambiguity, vertices should be returned in the order which they occur in the property list. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.
+To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.
+	
+1. Find out what an `NSEnumerator` does. **(Not graded)**
 
-We have provided a protocol in `Traversable.h` that you should implement in an `NSDictionary` category. 
+2. Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. **(25 points)**
 
-##### Milestone 10: Create a category for the `NSDictionary` class that implements the `Traversable` protocol. You should name your file `NSDictionary+Traversable.{h,m}` in the Objective C naming convention. Call the test method `BOOL testTraversable()` and demonstrate that it returns `TRUE`. (40 points)
+3. Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. **(15 points)**
 
-##### Milestone 11: Write sufficient test cases to ensure that your algorithm is correct. (10 points)
+4. Write sufficient test cases to ensure that your algorithm is correct. **(10 points)**
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
@@ -219,6 +219,7 @@ Please answer the following questions:
 1. How many hours did you spend on each problem of this problem set?
 2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
+
 Submit the answer to this question in the form of a comment appended at the end of your code. (3 bonus points)
 
 Section 4 - Grading and Submission
@@ -238,13 +239,14 @@ You also want to minimize the grief that is inflicted on your TAs. In particular
 ### Mode of Submission ###
 In this assignment, you will be using [GitHub](https://github.com) for submitting your code and receiving feedback. The required files TODO: Overlaps.m, PEShape.h, PERectangle.h and PERectangle.m should be in a single directory called `ps01`. This directory should be inside the root directory of the private repository assigned to you. You must upload all your work to the master branch of this remote repository. You will be graded on the latest commit on the master branch before the deadline.
 
-The following is a typical workflow to set up the integration with Xcode.
+The following is a typical workflow to set up the integration with Xcode:
+
 1. Use the git clone command to get a local copy of your remote repository located at `https://github.com/NUS-CS3217-AY1213/<yourreponame>`. This is a one-time operation and should not be repeated for every PS. For successive problem sets, you would just be creating appropriate directories inside this repository as mentioned above.
 2. Create a new subdirectory called `ps01` in your local repository. Use the `git add` command to track it.
 3. Create a new Xcode project for this assignment and save it to `ps01`. Xcode will automatically inherit the git repo settings, following which you can push/pull/merge etc. to the remote repo.
 4. Once you are satisfied with your work, push your changes to the master branch using Xcode.
 
-When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
+When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore ￼￼any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
 
 **Important Note:** All the required files should be directly inside the `ps01` directory. Even though your TAs will be reading every single line of your code, we will be compiling and doing high-level tests of your code using an automatic script. You must also include all the files we specified or the scripts might fail. If you fail to comply with our instructions, points will be taken off.
 
