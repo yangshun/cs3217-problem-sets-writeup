@@ -17,9 +17,8 @@ In this problem set, your task is to complete the implementation of Bubble Blast
 
 In this assignment you will see your efforts over the past few weeks to completion. You have three key tasks in this assignment:
 
-1. Extend your implementation of the physics engine to support circles;  
-2. Integrating the game engine with the MVC-based GUI from Problem Set 3; and   
-3. Tying up the loose ends to complete the game.
+1. Integrating the game engine with the MVC-based GUI from Problem Set 3; and   
+2. Tying up the loose ends to complete the game.
 
 The objective of this assignment is to help you better understand design and integration in software engineering. If your did your past two problem sets very well and debugged your code thoroughly, the integration should not be too difficult; on the other hand, if your previous problem sets still have bugs, the bugs will come back to haunt you and you would probably want to debug them before attempting to integrate. How you choose to do this assignment is really up to you. Our goal here is to provide you with an opportunity to learn.
 
@@ -75,7 +74,7 @@ Implement the following additional bubbles:
 - **Bomb Bubble** - Removes all bubbles adjacent to it.
 - **Star Bubble** - When a coloured bubble comes into contact with the star bubble, all bubbles of that colour in the arena will be removed.
 
-Except for the indestructible bubble, the effects of the other special bubbles are triggered when the fired bubble comes into contact with it (i.e. adjacent).
+Except for the indestructible bubble, the effects of the other special bubbles are triggered when any of its adjacent bubbles is removed.
 
 a. You will have to support the addition of these special bubbles in the level designer (5 points).  
 b. Modify your game engine to handle these new bubble behaviours (25 points).
