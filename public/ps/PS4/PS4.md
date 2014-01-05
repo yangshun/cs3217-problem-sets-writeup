@@ -81,14 +81,14 @@ Implement your game engine according to your design in Problem 1 and make sure i
 
 2. **Bubble movement (5 points)**
 
-    The bubble should to:
+    The bubble should:
 
     - Travel at a constant speed in the direction of launch
-    - Reflect normally off the side walls
+    - Reflect off the side walls realistically
 
 3. **Bubble collisions (10 points)**
 
-    The launched bubble will stop moving when it:
+    The launched bubble should stop moving when it:
 
     - Collides with another bubble in the arena
     - Collides with the top wall
