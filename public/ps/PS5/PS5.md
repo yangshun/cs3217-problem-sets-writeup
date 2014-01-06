@@ -11,8 +11,6 @@ In this problem set, your task is to complete the implementation of Bubble Blast
 
 ***Reminder: Please read the entire problem set before starting.***  
 
-![audi](/ps/ps5/img/audi.jpg)
-
 ### Introduction ###
 
 In this assignment you will see your efforts over the past few weeks to completion. You have three key tasks in this assignment:
@@ -36,13 +34,13 @@ The following are the conditions that your game must satisfy:
 - It allows for the creation, saving and loading of multiple “levels” or level-equivalents.
 - There is a complete game flow where there are transitions between the menu screen, level selection screen, level design screen and gameplay screen.
 
-As long as your game satisfies the above conditions, you are free to do pretty much anything you want. You are free to replace the background and provided images, if so desire. First, read through this entire problem set to understand the technical requirements for the problem. Next, describe the rules of your game and how the game works in a file called design.txt.
+As long as your game satisfies the above conditions, you are free to do pretty much anything you want. You are free to replace the background and provided images, if so desire. First, read through this entire problem set to understand the technical requirements for the problem. Next, describe the rules of your game and how the game works in a file called `design.txt`.
 
 Section 2 - Completing the Game (100 points)
 --
 In Problem Set 3, you implemented the level designer of the game. The user can freely colour the bubbles in the arena, save and load levels while in Problem Set 4, you wrote the logic for the removal of the bubbles after the fired bubble collides with the bubbles in the arena. 
 
-It is time to implement the actual game. On the level designer screen, the game starts when the user presses the START button (though you are free to change the user interface to something else that accomplishes the same). This will trigger several things: a bubble can be fired from the bottom, the arena bubbles will interact with the fired bubble upon collision, and animations are also enabled.
+It is time to implement the actual game. On the level designer screen, the game starts when the user presses the **START** button (though you are free to change the user interface to something else that accomplishes the same). This will trigger several things: a bubble can be fired from the bottom, the arena bubbles will interact with the fired bubble upon collision, and animations are also enabled.
 
 ### 1. Cannon Direction (5 points) ###
 
@@ -77,8 +75,8 @@ Implement the following additional bubbles:
 
 Except for the indestructible bubble, the effects of the other special bubbles are triggered when the fired bubble comes into contact with it (i.e. adjacent).
 
-a. You will have to support the addition of these special bubbles in the level designer (5 points).  
-b. Modify your game engine to handle these new bubble behaviours (25 points).
+a. You will have to support the addition of these special bubbles in the level designer **(5 points)**.  
+b. Modify your game engine to handle these new bubble behaviours **(25 points)**.
 
 Explain in the file `design.txt` your general strategy for implementing these special behaviours. Explain why your strategy is the best among alternatives.
 
@@ -89,7 +87,7 @@ Make the application a complete one by implementing the following screens and UI
 - **Menu Screen** - Entry point of the application
  - Select Level Button - Leads to level selection screen
  - Design Level Button - Leads to level designer screen from Problem Set 3
-- **Level Selection Screen** - Interface that shows the preloaded levels that are packaged with the application; they are not levels that can be loaded in the design mode).
+- **Level Selection Screen** - Interface that shows the levels that are pre-packaged with the application and levels that can be loaded in the design mode).
  - Buttons that lead to the gameplay screen which allows users to preloaded levels. There should be at least 3 different preloaded levels.
 - **Level Designer Screen** - Interface created from Problem Set 3
  - As stated in Problem Set 3
@@ -128,7 +126,7 @@ Of course, you should test the game as you have described instead of just listin
 
 ### The Bells & Whistles (60 points) ###
 
-With a good design and good implementation for problem sets 3 and 4, extensions and integration should not take too much time. Spend your remaining time by finishing the game and adding extensions. The points in this part are subjective and take into consideration the general feeling of the entire game and will be awarded relative to the submissions by the rest of the class. The following is a list of possible improvements that you can consider implementing:
+With a good design and good implementation for Problem Sets 3 and 4, extensions and integration should not take too much time. Spend your remaining time by finishing the game and adding extensions. The points in this part are subjective and take into consideration the general feeling of the entire game and will be awarded relative to the submissions by the rest of the class. The following is a list of possible improvements that you can consider implementing:
 
 - Implement the bubble bursting animation using the sprite `bubble-burst.png`;
 - Adding game score;
@@ -189,6 +187,6 @@ For this problem set, we will be testing your code by compiling your app and upl
 ### Mode of Submission ###
 
 The teaching staff will be grading your code directly on GitHub. You will be graded on the latest commit on the master branch before the deadline. Your solution for this Problem Set should be contained in a single directory called `ps05`, which should be inside the root directory of the private repository
-assigned to you. The `ps05` directory should contain all your project files. However, in order to keep the size of your submission small, you should omit the build subdirectory that contains the compiled binaries. In addition, your submission directory should contain your design explanation design.txt, a module dependency diagram `MDD.png` and a `README` file where you specify which implementation files contain your code.
+assigned to you. The `ps05` directory should contain all your project files. However, in order to keep the size of your submission small, you should omit the build subdirectory that contains the compiled binaries. In addition, your submission directory should contain your design explanation `design.txt`, a module dependency diagram `MDD.png` and a `README` file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 5: Putting It All Together”**.
