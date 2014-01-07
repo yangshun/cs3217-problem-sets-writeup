@@ -101,11 +101,13 @@ Implement your game engine according to your design in Problem 1 and make sure i
 
     After the launched bubble has found a resting position, if it is connected to other identically-coloured bubbles and they form a group of 3 or more, that connected group of bubbles is removed from the arena.
 
-6. **Removing unattached bubbles (15 points)**
+6. **Removing unattached bubbles (10 points)**
     
     After identically-coloured bubbles are removed, if there are bubbles that are not connected to the bubbles on the top wall, they should be removed too.
 
-**For 5 Bonus Points:** Give the removal (Problems 2.5 & 2.6) some cool animations such as exploding/fading away/falling out of the screen, etc.
+7. **Animations (5 points)**
+
+    Give each removal (Problems 2.5 & 2.6) some cool animation such as exploding/fading away/falling out of the screen, etc. While you are free to create whatever animation you like, it must enhance the overall gameplay! 
 
 ### Problem 3 - Testing (20 points) ###
 
