@@ -19,8 +19,8 @@
 -(void)checkRep{
     
 	if (self.label == nil){
-		[NSException raise:@"Node rep error" format:
-		 @"Label of a Node cannot be nil"];
+		[NSException raise:@"Node rep error"
+                    format:@"Label of a Node cannot be nil"];
 	}
 }
 

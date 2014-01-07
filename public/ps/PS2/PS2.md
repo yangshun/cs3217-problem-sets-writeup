@@ -40,7 +40,7 @@ Answer the following questions in `design.txt`:
 
 1. The `isEqual:` methods in *Node* and *Edge* require that object != nil. This is because these methods access the fields of 'object' without checking if 'object' is null first. Why do we require `self` to be non-null? What happens when we pass a message to a nil pointer? Explain. **(5 points)**
 
-2. Calls to `checkRep:` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one call `checkRep:` at the beginning and end of every method. In the case of *Node* and *Edge*, why is it sufficient to call `checkRep:` only at the end of the constructors? (Hint: could a method ever modify a *Node* or *Edge* such that it violates its representation invariant? How are changes to instances of *Node* and *Edge* prevented?) **(5 points)**
+2. Calls to `checkRep:` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `checkRep:` at the beginning and end of every method. In the case of *Node* and *Edge*, why is it sufficient to call `checkRep:` only at the end of the constructors? (Hint: could a method ever modify a *Node* or *Edge* such that it violates its representation invariant? How are changes to instances of *Node* and *Edge* prevented?) **(5 points)**
 
 3. For *Node* and *Edge*, we could provide a separate method such as `isEquivalentTo:` to test whether two objects represent the same Node or Edge instead of overriding the `isEqual:` method of NSObject. Why is it necessary to override the `isEqual:` methods in these classes? (Hint: methods like `containsObject:`,  `indexOfObject:` for NSArray, and `addObject:` for NSMutableSet call the `isEqual:` method of the collection objects to test for equality). Explain. **(5 points)**
 
@@ -55,7 +55,7 @@ Answer the following questions in `design.txt`:
 
 Read over the specifications provided for the *Graph* class in `Graph.h`. Make sure that you understand the overview for *Graph* and the specifications for the given methods.
 
-Fill in an implementation for the methods in the specification of *Graph*, according to the specifications. You may define new helper methods in `Graph.m` if you need them. You may not add public methods; the external interface must remain the same. Also implement the private `checkRep:` method to help you test whether or not a *Graph* instance violates the representation invariants. We highly recommend you use `checkRep:` in the code you write. Think about the issues discussed in **Problem 1.2** when deciding where `checkRep:` should be called. **(80 points)**
+Fill in an implementation for the methods in the definition of *Graph*, according to the specifications. You may define new helper methods in `Graph.m` if you need them. You may not add public methods; the external interface must remain the same. Also implement the private `checkRep:` method to help you test whether or not a *Graph* instance violates the representation invariants. We highly recommend you use `checkRep:` in the code you write. Think about the issues discussed in **Problem 1.2** when deciding where `checkRep:` should be called. **(80 points)**
 
 Answer the following questions in `design.txt`:
 
@@ -63,7 +63,7 @@ Answer the following questions in `design.txt`:
 
 2. In Problem 1.4, you have explored the different types of graph representations. Briefly explain why you chose that representation to implement the Graph ADT. **(5 points)**
 
-3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to be changed? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given specifcations. **(5 points)**
+3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to be changed? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given specifications. **(5 points)**
 
 4. Imagine that the original representation invariant was changed to include a new requirement that there can be **at most 1 edge** between a source and destination node. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
 

@@ -7,7 +7,7 @@ Tutorial Date: Week 6*
 
 Section 1 - Introduction
 --
-This section gives you an overview of of this problem set, which is to implement a game engine with a simplified physics engine and game-specific behaviours based on the requirements and specifications described later in this section.
+This section gives you an overview of this problem set, which is to implement a game engine with a simplified physics engine and game-specific behaviours based on the requirements and specifications described later in this section.
 
 ￼￼￼***Reminder: Please read the entire assignment before starting.***
 
@@ -17,7 +17,7 @@ simulated, deciding on the ADTs that you need, designing the classes and modules
 that are necessary and finally, implementing and testing your design.
 
 You should also keep in mind that the game engine should be designed such that it 
-not only fulfils the requirements in section 2 but also be extensible enough to
+not only fulfills the requirements in section 2 but also be extensible enough to
 support new behaviours in the next problem set when your engine is to be integrated with what you have completed in problem set 3. You can refer to any game (and/or physics) engines; however, you must write all the code for your game yourself and not allowed to include an external engine library. You are allowed to use any Apple frameworks and libraries except SpriteKit!
 
 A good game engine provides various functionalities including "a renderer for 2D or 3D graphics, a physics engine (real-world physical interaction), sound, scripting, animation, artificial intelligence, networking, streaming, memory management, threading, localization support, and a scene graph" ([Wikipedia][Wikipedia-Game Engine]). In this assignment, you are supposed to build a simple engine which only consists of a renderer and a physics engine.
@@ -30,7 +30,7 @@ While we will provide certain guidelines here on how to build a game engine, the
 
 A game must have smooth animation which means the screen needs to be redrawn frequently (e.g. 60 frames per second). For every 1/60<sup>th</sup> of a second, your game engine should use its physics engine to update the objects' physical properties (e.g. position, velocity, rotation, etc), handle all the resulting interaction (according to gameplay logic and specifications), then call the renderer to redraw your objects on the screen.
 
-*Hint: If you designed your problem set 3 well, you can simply reuse the data model! However, note that this assignment does not require you to support persistent data. If you choose to do reuse your data model and it causes bugs when your game engine runs, marks will be deducted.*
+*Hint: If you designed your problem set 3 well, you can simply reuse the data model! However, note that this assignment does not require you to support persistent data. If you choose to reuse your data model and it causes bugs when your game engine runs, marks will be deducted.*
 
 ### 2D Renderer ###
 
@@ -64,9 +64,9 @@ Bear in mind that a good game engine is one where the modules/components are reu
 
 Please draw the following diagrams and include them in your `ps04` folder:
 
-a. Draw a data model by identifying the data types and how they are related.
+a. Draw a data model by identifying the data types and how they are related. **(10 points)**
 
-b. Draw a module-dependency diagram (MDD) of your game engine and describe what each module is used for. Please also list down the APIs (Application Programming Interface) for each of your modules. Explain the rationale for your design over alternatives.
+b. Draw a module-dependency diagram (MDD) of your game engine and describe what each module is used for. Please also list down the APIs (Application Programming Interface) for each of your modules. Explain the rationale for your design over alternatives. **(15 points)**
 
 Put the explanation in a text file `design.txt` and add it to folder `ps04` as well. The image files for your data model and MDD should be named `data-model.png` and `module-dependency.png` respectively (You can use other file formats or names if you prefer to. You should indicate this in `design.txt`). Also, please explain how you would extend your design to support more complex game logic such as removal of all bubbles in the grid of a specific colour.
 
@@ -99,7 +99,7 @@ Implement your game engine according to your design in Problem 1 and make sure i
 
 5. **Removing connected bubbles of the same colour (10 points)**
 
-    After the launched bubble has found a resting position, if it is connected to other identically coloured bubbles and they form a group of 3 or more, that connected group of bubbles is removed from the arena.
+    After the launched bubble has found a resting position, if it is connected to other identically-coloured bubbles and they form a group of 3 or more, that connected group of bubbles is removed from the arena.
 
 6. **Removing unattached bubbles (15 points)**
     
@@ -124,7 +124,7 @@ Testing is an integral part of software engineering. You are expected to create 
  * ···
      * ···
 
-Please come up with your testing strategy and describe it in `design.txt`. Note that if we find that if your application fails any of the tests described, **you will be penalized heavily**. We do not want testing to be merely an exercise in documentation.
+Please come up with your testing strategy and describe it in `design.txt`. Note that if we find that your application fails any of the tests described, **you will be penalized heavily**. We do not want testing to be merely an exercise in documentation.
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:

@@ -1,0 +1,48 @@
+CS3217 - Software Engineering on Modern Application Platforms
+Grading Report for Problem Set 2
+Student:
+
+-----
+Grading
+
+Problem 1.1		:   5/  5
+Problem 1.2		:   5/  5
+Problem 1.3		:   5/  5
+Problem 1.4		:   5/  5
+Problem 1 subtotal	:  20/ 20
+
+Problem 2
+Implementation		:  80/ 80
+Problem 2.1		:   5/  5
+Problem 2.2		:   5/  5
+Problem 2.3		:   5/  5
+Problem 2.4		:   5/  5
+Problem 2 Subtotal	: 100/100
+
+Problem 3		:  30/ 30
+
+Problem 4		:  50/ 50
+
+Bonus			:   3/  3
+
+Basic score		: 200/200
+
+Coding Style Deduction	:   0/ 60
+
+Final Score		: 200/200
+
+-----
+Autograder Test Results:
+
+
+
+
+
+------
+Comments by Tutor/TA:
+
+* 
+
+* 
+
+ 
