@@ -20,6 +20,10 @@ A *graph* is a collection of *nodes* (also called *vertices*) and *edges*. Each 
 
 The *children* of node B are the nodes to which there is an edge from B. In Fig. 1, the children of B are A and C. Similarly, the *parents* of B are the nodes from which there is an edge to B. In Fig. 1, B only has one parent, A.
 
+<img src="/ps/ps2/img/digraph.png" alt="digraph" style="width: 180px;"/>
+<img src="/ps/ps2/img/multigraph.png" alt="multigraph" style="width: 180px;"/>
+<img src="/ps/ps2/img/labeled-graph.png" alt="labelledgraph" style="width: 180px;"/>
+
 A node is said to be *adjacent* to another node if there exists an edge between the two nodes.
 
 A *path* is a sequence of edges `(node1, node2), (node2, node3), (node3, node4), ....` In other words, a path is an ordered list of edges, where an edge to some node is immediately followed by an edge from that node. In Fig. 1, one possible path is `(B, A), (A, B), (B, C)`. This path represents traveling from B to A to B to C. A path may traverse a given edge twice.
@@ -70,6 +74,20 @@ Answer the following questions in `design.txt`:
 ### Problem 3: Testing the Graph ADT (30 Points) ###
 
 It is a very good practice to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 2.1 to run the unit test for Graph ADT.
+
+**Gallery 2.1** Run unit test for GraphADT in Xcode.
+
+![Open Project](/ps/ps2/img/2-1.png)
+
+**Step 1:** Open the *GraphADT* Xcode project.
+
+![Test Project](/ps/ps2/img/2-2.png)
+
+**Step 2:** Then, select `Product -> Test` (or use the ⌘+U shortcut key) to perform unit testing.
+
+![Test Results](/ps/ps2/img/2-3.png)
+
+**Step 3:** Check your test results by switching to the **Log Navigator** and select the first item *Test* under *GraphADT*. If you have done everything correctly, you should see a series of green checks indicating all the unit tests have passed successfully.
 
 Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphADT_Tests.m`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
 
