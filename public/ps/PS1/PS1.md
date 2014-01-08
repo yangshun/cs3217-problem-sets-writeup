@@ -15,17 +15,17 @@ This assignment consists of two parts. In the first part of this assignment, you
 
 This assignment (and the rest of the course) assumes that you have access to
 
-* Mac OSX 10.9
+* Mac OS X 10.9
 * Xcode 5
 * An Apple Developer account
 * An iPad capable of running iOS 7
 
-Strictly speaking, it is sufficient (but *not* recommended) to install and use OSX Command Line Tools.
+Strictly speaking, it is sufficient (but *not* recommended) to install and use OS X Command Line Tools.
 
-If you do not have access to a computer running Mac OSX 10.9, you may
+If you do not have access to a computer running Mac OS X 10.9, you may
 
 * Use the iMacs in the programming lab. They have already been configured to support course requirements
-* Resourcefully acquire an OSX installer image. This image can be installed on a virtual machine like VMWare Workstation or Virtual Box
+* Resourcefully acquire an OS X installer image. This image can be installed on a virtual machine like VMWare Workstation or Virtual Box
 
 Development in general can be a messy process, and you should consider running your toolchain in a virtual environment if you are working on your primary computer.
 
@@ -123,13 +123,15 @@ Note that on lower resolution screens, your emulator may not show the faux iPad 
 
 Holding the `Alt` key with your cursor over the emulator's "screen" brings out two gray circles representing two touch points. This is useful for debugging pinch and rotate gestures. 
 
+The emulator has limitations when testing more complicated gestures, the camera, and network stacks. You should find out about these limitations if your application implements such functionality.
+
 Section 3 - Introduction to Objective-C (100 points)
 --
 
 In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
 
 
-### Problem 1: Collections in Objective C (15 points)
+### Problem 1: Collections in Objective C (10 points)
 
 Objective C provides three main collection types:
 
@@ -141,77 +143,115 @@ Collections are immutable by default. The mutable counterparts of the above are 
 
 1. What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  **(10 points)**
 
-2. What is the worst-case time complexity of performing a linear search through an `NSArray`? **(5 points)**
 
-### Problem 2: FIFO Queue (35 points)
+### Problem 2: Standard Datastructures (30 points)
 
-Your task is to implement a generic FIFO queue.
+Objective C does not provide Stacks and Queus natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
 
-Since a queue describes a set of operations on an arbitrary data structure, it should be abstracted from its concrete implementation. We have provided a protocol in `Queue.h` that you should implement in a concrete class.
+**Fork** the problem set from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your development environment to begin working. 
 
-1. Implement the queue protocol using an `NSMutableArray`. Call the test method `BOOL testQueue(id<Queue> queue)` and demonstrate that it returns `TRUE`. **(25 points)**
+The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change*. We will be using this driver program to grade your assignment automatically.
 
-2. Implement sufficient test cases to ensure that your queue works in all cases described by the protocol. You may make reasonable assumptions where necessary and state them in your submission. **(10 points)**
+A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. 
 
-*You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
+1. Implement the Stack by filling out the skeleton file. You should not change the protocol provided. **(15 points)**
 
-### Problem 3: Understanding Property Lists (50 points)
+A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`.
+
+2. Implement the Queue by filling out the skeleton file. You should not change the protocol provided. **(15 points)**
+
+
+### Problem 3: Property Lists (45 points)
 
 [Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
 
-In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to `.ini` files in Windows. 
+In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to applicaiton bundles, whereas the Windows registry is a global store). 
 
-#### Tree Traversal
-We may represent a tree as a dictionary that maps vertex labels to arrays of their children. For example, the following tree
+#### Graph Traversal
+We may represent a **general graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbors.
 
-	  a
-	 / \
-	b   c
-	     \
-	      d
+Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
-would be represented in this style as the data structure
+![Example Graph](/ps/ps1/img/graph.png)
 
-	{ a: [ { b: [ ] }, { c: [ { d: [ ] } ] } ] }
-		
 The corresponding (Apple) property list would be as follows
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 	<plist version="1.0">
 	<dict>
-	  <key>a</key>
+	  <key>A</key>
 	  <array>
-	    <dict>
-	      <key>b</key>
-	      <array>
-	      </array>
-	    </dict>
-	    <dict>
-	      <key>c</key>
-	      <array>
-	        <dict>
-	          <key>d</key>
-	          <array>
-	          </array>
-	        </dict>
-	      </array>
-	    </dict>
+	    <string>B</string>
+	    <string>C</string>
+	    <string>E</string>
+	  </array>
+	  <key>B</key>
+	  <array>
+	    <string>A</string>
+	    <string>D</string>
+	    <string>F</string>
+	  </array>
+	  <key>C</key>
+	  <array>
+	    <string>A</string>
+	    <string>G</string>
+	  </array>
+	  <key>D</key>
+	  <array>
+	    <string>B</string>
+	  </array>
+	  <key>E</key>
+	  <array>
+	    <string>A</string>
+	    <string>F</string>
+	  </array>
+	  <key>F</key>
+	  <array>
+	    <string>B</string>
+	    <string>E</string>
+	  </array>
+	  <key>G</key>
+	  <array>
+	    <string>C</string>
 	  </array>
 	</dict>
 	</plist>
 	
-Your task is to perform a level-order traversal (breadth-first search from the root) of a tree, given a starting vertex. 
+Note that this graph contains a cycle, and that edges are bidirectional.
 
-To reduce ambiguity, vertices should be returned in the order which they occur in the plist. For the given example, the correct sequence is `[ a, b, c, d ]`. The alternative order of `[ a, c, b, d ]` will be treated as incorrect.
+Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
+
+![plist Editor](/ps/ps1/img/plist.png)
+	
+Your task is to write enumerators that traverse the graph in Depth-first and Breadth-first order starting from a given vertex.
 	
 1. Find out what an `NSEnumerator` does. **(Not graded)**
 
-2. Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. **(25 points)**
+2. Implement an `NSEnumerator` for Depth-first Search. **(20 points)**
 
-3. Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(15 points)**
+The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: A, B, D, F, E, C, G.
 
-4. Write sufficient test cases to ensure that your algorithm is correct. **(10 points)**
+3. Implement an `NSEnumerator` for Breadth-first Search. **(20 points)**
+
+The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: A, B, C, E, D, F, G.
+
+4. Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(5 points)**
+
+Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Objective C.
+
+### Problem 4: Testing (15 points)
+
+1. Write sufficient tests to ensure the your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
+
+While it is a good practice to code defensively, we will not be supplying malformed property lists to your implementation.
+
+*You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
+
+#### Running the Driver Program
+If you have implemented the skeleton classes correctly, the driver program should run without modification. The following screenshot shows the execution of the driver program on the example graph given in this document.
+
+![Correct output](/ps/ps1/img/driver.png)
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
