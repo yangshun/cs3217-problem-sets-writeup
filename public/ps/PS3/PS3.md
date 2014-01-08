@@ -192,6 +192,8 @@ From the bubble palette, the user taps to select the color of bubble he wants to
 
 Your next task is to create an isometric grid. The grid should have 12 columns and should be tightly packed as seen in the previous image (the number of rows is up to you to decide). This grid will indicate all the possible positions of the bubble and would be used by the designer to design a game level by filling it with bubbles.
 
+(Hint: The traditional way of doing this is by adding individual UIView circles to make the grid. Alternatively, you may use UICollectionView to directly build the grid. Although this will make your life less complicated, understanding how UICollectiionView works may take some time. Both ways are equally acceptable and you need to decide which one you are more comforaable with ;) ).
+
 ### Problem 3: Explain your Design (40 points) ###
 
 Before you begin, please spend some time understanding the requirements of this problem set. Think about the following questions: What objects do you need to implement? How will the objects interact with your main controller? How do you best organize the code for these objects? Are there alternatives? How will you add new game objects?
