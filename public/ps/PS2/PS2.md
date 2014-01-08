@@ -99,20 +99,32 @@ In this problem, you are going to use a tree to cipher and decipher texts. The c
 
 In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string. 
 
-1. First, you must design and implement an ADT for a *Tree* in new files named `Tree.h` and `Tree.m`. You may extend the Graph ADT used in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly.
+As an example, consider the string **HELLO WORLD**. When performing the cipher operation with the **key as 2**, the breadth-first string-to-tree conversion would result in the following tree:
+
+![Cipher Tree](/ps/ps2/img/cipher-tree.png)
+
+Here, we need to append some 'special nodes' to the end of the tree to conform to the key. In the given example, **+** denotes a whitespace while ***** represents a special node. 
+
+In the second part of the cipher operation, this tree is converted to a string using the depth-first approach. This would result in the following string: **HELOROLDL \*\*W\*\***. 
+
+If this resultant string is used as the input for the decipher operation using the same key, then it should give back the initial string i.e. **HELLO WORLD**.
+
+Now, follow the steps described below to implement the cipher/decipher functionalities:
+
+1. First, you must design and implement an ADT for a *Tree* in new files named `Tree.h` and `Tree.m`. You may extend the Graph ADT used in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may add new files to the project to support your implementation. However, you are required to mention them in `design.txt`.
 
 2. Now, write a class category for NSString that implements the following two methods:
 
  - `- (Tree*)breadthFirstStringToTree:(NSNumber*)key`
  - `- (Tree*)depthFirstStringToTree:(NSNumber*)key`
 
- Your algorithm will need to append some 'special nodes' to the end of the tree to conform to the keys.
+ Your algorithm will need to append the 'special nodes' to the end of the tree to conform to the keys.
 
 3. Add the following two methods to the *Tree* ADT you had implemented earlier:
  - `- (NSString*)breadthFirstTreeToString:(NSNumber*)key`
  - `- (NSString*)depthFirstTreeToString:(NSNumber*)key`
 
- Your algorithm will need to add special characters to the result string to indicate the 'special nodes' in the tree.
+ Your algorithm will need to deal with the 'special nodes' in the tree appropriately.
 
 4. Write appropriate test cases in `GraphADT_Tests.m` to test the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
@@ -140,6 +152,7 @@ The simplest way to ensure that you get a good grade on your assignment is to si
 - Your unit test cases are well-designed.
 
 ### Mode of Submission ###
+
 Like Problem Set 1, you will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
 
 The Xcode project for this problem set will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 2`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
