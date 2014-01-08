@@ -37,7 +37,6 @@
 		C053C2D9186B0A1400642065 /* bubble-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = C053C2D2186B0A1400642065 /* bubble-orange.png */; };
 		C053C2DA186B0A1400642065 /* bubble-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C053C2D3186B0A1400642065 /* bubble-red.png */; };
 		C053C2DB186B0A1400642065 /* eraser-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C053C2D4186B0A1400642065 /* eraser-1.png */; };
-		C053C2DC186B0A1400642065 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = C053C2D5186B0A1400642065 /* eraser.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +95,6 @@
 		C053C2D2186B0A1400642065 /* bubble-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble-orange.png"; sourceTree = "<group>"; };
 		C053C2D3186B0A1400642065 /* bubble-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble-red.png"; sourceTree = "<group>"; };
 		C053C2D4186B0A1400642065 /* eraser-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eraser-1.png"; sourceTree = "<group>"; };
-		C053C2D5186B0A1400642065 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +224,6 @@
 				C053C2D2186B0A1400642065 /* bubble-orange.png */,
 				C053C2D3186B0A1400642065 /* bubble-red.png */,
 				C053C2D4186B0A1400642065 /* eraser-1.png */,
-				C053C2D5186B0A1400642065 /* eraser.png */,
 			);
 			path = Images;
 			sourceTree = SOURCE_ROOT;
@@ -308,7 +305,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C053C2D9186B0A1400642065 /* bubble-orange.png in Resources */,
-				C053C2DC186B0A1400642065 /* eraser.png in Resources */,
 				C053C28F186B08FC00642065 /* Images.xcassets in Resources */,
 				C053C2D8186B0A1400642065 /* bubble-green.png in Resources */,
 				C053C2D6186B0A1400642065 /* background.png in Resources */,
