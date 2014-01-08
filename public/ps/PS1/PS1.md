@@ -209,7 +209,7 @@ To reduce ambiguity, vertices should be returned in the order which they occur i
 
 2. Implement an `NSEnumerator` that returns an `NSString` containing vertex labels in level-order. **(25 points)**
 
-3. Create a category for the `NSDictionary` class that contains a selector returning the new `NSEnumerator` class. **(15 points)**
+3. Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(15 points)**
 
 4. Write sufficient test cases to ensure that your algorithm is correct. **(10 points)**
 
@@ -246,7 +246,7 @@ The following is a typical workflow to set up the integration with Xcode:
 3. Create a new Xcode project for this assignment and save it to `ps01`. Xcode will automatically inherit the git repo settings, following which you can push/pull/merge etc. to the remote repo.
 4. Once you are satisfied with your work, push your changes to the master branch using Xcode.
 
-When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore ￼￼any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
+When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
 
 **Important Note:** All the required files should be directly inside the `ps01` directory. Even though your TAs will be reading every single line of your code, we will be compiling and doing high-level tests of your code using an automatic script. You must also include all the files we specified or the scripts might fail. If you fail to comply with our instructions, points will be taken off.
 
