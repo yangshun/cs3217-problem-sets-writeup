@@ -350,10 +350,15 @@ Points will be taken off if you fail to comply with these requirements.
 
 ### Mode of Submission ###
 
-The teaching staff will be grading your code directly on GitHub. You will be graded on the latest commit on the master branch before the deadline. Your solution for this Problem Set should be contained in a single directory called `ps03`, which should be inside the root directory of the private repository
-assigned to you. The `ps03` directory should contain **all** your project files. However, in order to keep the size of your submission small, you should omit the `build` subdirectory that contains the compiled binaries. In addition, your submission directory should contain your design explanation `design.pdf` and a README file where you specify which implementation files contain your code.
+You will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
 
-You must upload all your work to the master branch of the remote repository. You will be graded on the **latest commit** before the deadline.
+All the relevant files (images and two source files) for the problem set is located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 3`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
+
+When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
+
+**Important Note:** This time, you have to create a new Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
+
+In addition, your project directory should contain your design explanation `design.pdf` and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this problem set may be directed to the IVLE Forum under the heading **“Problem Set 3: Bubble Blast Saga Level Designer”.**
 
