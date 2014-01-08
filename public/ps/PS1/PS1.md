@@ -31,9 +31,9 @@ Development in general can be a messy process, and you should consider running y
 
 ### Objective-C and Cocoa ###
 
-Objective-C is the primary language that will used to write Mac and iOS software. During this semester, all coding assignments will be done using Objective-C.
+Objective-C is the primary language that will be used to write Mac and iOS software. During this semester, all coding assignments will be done using Objective-C.
 
-If you’re comfortable with basic object-oriented concepts and the C language, the extensions provided by Objective-C should be quite natural, and it should be easy to pick up Objective-C during CS3217. You should read Apple's [Introduction to Objective C \(PDF\)](http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ObjectiveC/ObjC.pdf).
+If you’re comfortable with basic object-oriented concepts and the C language, the extensions provided by Objective-C should be quite natural, and it should be easy to pick up Objective-C during CS3217. You should read Apple's [Introduction to Objective C \(PDF\)](https://developer.apple.com/library/ios/documentation/cocoa/Conceptual/OOP_ObjC/OOP_ObjC.pdf).
 
 [Cocoa](https://developer.apple.com/technologies/mac/cocoa.html) is Apple’s native object-oriented API for the Mac OSX operating system. For iOS development, we will be using [Cocoa Touch](https://developer.apple.com/technologies/ios/cocoa-touch.html), a touch-oriented API similar to Cocoa. Cocoa Touch follows a Model-View-Controller (MVC) paradigm.
 
