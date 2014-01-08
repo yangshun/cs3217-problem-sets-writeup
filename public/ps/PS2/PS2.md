@@ -140,9 +140,15 @@ The simplest way to ensure that you get a good grade on your assignment is to si
 - Your unit test cases are well-designed.
 
 ### Mode of Submission ###
-Like Problem Set 1, the teaching staff will be grading your code directly on GitHub. Your solution for this Problem Set should be contained in a single directory called `ps02`. This directory should be inside the root directory of the private repository assigned to you. You must upload all your work to the master branch of this remote repository. You will be graded on the **latest commit** on the master branch before the deadline.
+Like Problem Set 1, you will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
 
-The directory should contain all the source files, so that your TA can run your code and unit tests.
+The Xcode project for this problem set will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 2`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
+
+When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
+
+**Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
+
+Even though your TAs will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **‘Problem Set 2: Objective-C & Coding to Specifications’**.
 
