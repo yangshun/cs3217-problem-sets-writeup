@@ -277,17 +277,20 @@ You also want to minimize the grief that is inflicted on your TAs. In particular
 - Your code should be well-documented, correctly indented and neat. You should not use magic numbers.  
 
 ### Mode of Submission ###
-In this assignment, you will be using [GitHub](https://github.com) for submitting your code and receiving feedback. The required files TODO: Overlaps.m, PEShape.h, PERectangle.h and PERectangle.m should be in a single directory called `ps01`. This directory should be inside the root directory of the private repository assigned to you. You must upload all your work to the master branch of this remote repository. You will be graded on the latest commit on the master branch before the deadline.
+In this assignment, you will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
 
-The following is a typical workflow to set up the integration with Xcode:
+Accounts have already been created for you using your matriculation number and the email address you supplied when registering for this module. You should have received an email containing an initial password, and instructions asking you to login and change that password.
 
-1. Use the git clone command to get a local copy of your remote repository located at `https://github.com/NUS-CS3217-AY1213/<yourreponame>`. This is a one-time operation and should not be repeated for every PS. For successive problem sets, you would just be creating appropriate directories inside this repository as mentioned above.
-2. Create a new subdirectory called `ps01` in your local repository. Use the `git add` command to track it.
-3. Create a new Xcode project for this assignment and save it to `ps01`. Xcode will automatically inherit the git repo settings, following which you can push/pull/merge etc. to the remote repo.
-4. Once you are satisfied with your work, push your changes to the master branch using Xcode.
+*As this is a non-TLS service (due to typical civil service red tape), please choose a strong throwaway password. Do not reuse passwords from your other accounts.*
 
-When you build your project, a directory called build containing the binaries appears in your project folder. It is needless and time-consuming to have git upload these files to the remote repo, so you can ignore this directory when syncing with the remote. The way to do this is add a file called `.gitignore` containing the line build/ to the root directory of your local repository. This line is called a pattern or rule, and tells git to ignore any directory named build anywhere below the current level in the directory tree. You can add more rules to this file to define which files or directories you want git to ignore.
+The Xcode projects for your problem sets, if they are provided, will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
-**Important Note:** All the required files should be directly inside the `ps01` directory. Even though your TAs will be reading every single line of your code, we will be compiling and doing high-level tests of your code using an automatic script. You must also include all the files we specified or the scripts might fail. If you fail to comply with our instructions, points will be taken off.
+As with GitHub, you may add an SSH key to your account. However, due once again to the above reason, SSH will only be accessible within the SoC network. (We're working on this; it takes *some* time.) We recommend that you clone using HTTP and configure Git to remember your password for minimum grief.
+
+When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
+
+**Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes.
+
+Even though your TAs will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the heading **‘Problem Set 1: Hello iPad!’**.
