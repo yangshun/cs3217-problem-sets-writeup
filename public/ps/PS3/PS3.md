@@ -13,7 +13,7 @@ You will also design and implement a few simple objects. Some specifications wil
 
 **Reminder**: Please read the entire problem set before starting.
 
-When programming a new game, you usually start by implementing some basic features and subsequently enhance it with more complex features. As the game grows, the code gets more complicated and the classes will get bigger. To avoid ending up with a mess of spaghetti code, we typically decouple the rendering from the logic. Doing so will also allow you to let the game logic run at a different speed than the rendering. Actually, the game logic will know nothing about the rendering, so it does not matter how the game is displayed (2D, 3D, ASCII art or whatever). The rendering however depends on the logic, because it needs info on how/where to display everything. Typically, all the rendering is done in the view module.
+When programming a new game, you usually start by implementing some basic features and subsequently enhance it with more complex features. As the game grows, the code gets more complicated and the classes will get bigger. To avoid ending up with a mess of spaghetti code, we typically decouple the rendering from the logic. Doing so will also allow you to let the game logic run at a different speed than the rendering. Actually, the game logic will know nothing about the rendering, so it does not matter how the game is displayed (2D, 3D, ASCII art, etc). The rendering however depends on the logic, because it needs info on how/where to display everything. Typically, all the rendering is done in the view module.
 
 The game logic is typically subdivided into a model and a controller. The model keeps track of the objects in the game world, and knows nothing about displaying, user input, etc. It just implements all the world rules, and how entities interact with each other. The controller knows about the model and can manipulate it depending on the external inputs.
 
@@ -192,13 +192,13 @@ From the bubble palette, the user taps to select the color of bubble he wants to
 
 Your next task is to create an isometric grid. The grid should have 12 columns and should be tightly packed as seen in the previous image (the number of rows is up to you to decide). This grid will indicate all the possible positions of the bubble and would be used by the designer to design a game level by filling it with bubbles.
 
-(Hint: The traditional way of doing this is by adding individual UIView circles to make the grid. Alternatively, you may use UICollectionView to directly build the grid. Although this will make your life less complicated, understanding how UICollectiionView works may take some time. Both ways are equally acceptable and you need to decide which one you are more comforaable with ;) ).
+(Hint: The traditional way of doing this is by adding individual UIView circles to make the grid. Alternatively, you may use UICollectionView to directly build the grid. Although this will make your life less complicated, understanding how UICollectiionView works may take some time. Both ways are equally acceptable and you need to decide which one you are more comfortable with ;) ).
 
 ### Problem 3: Explain your Design (40 points) ###
 
 Before you begin, please spend some time understanding the requirements of this problem set. Think about the following questions: What objects do you need to implement? How will the objects interact with your main controller? How do you best organize the code for these objects? Are there alternatives? How will you add new game objects?
 
-Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file `design.pdf` at the root directory of your project folder.
+Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file `design.pdf` at the root directory of your project repository.
 
 1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. **(10 points)**
 
