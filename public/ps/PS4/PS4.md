@@ -158,8 +158,13 @@ For this problem set, we will be testing your code by compiling your app and upl
 
 ### Mode of Submission ###
 
-The teaching staff will be grading your code directly on GitHub. You will be graded on the latest commit on the master branch before the deadline. Your solution for this Problem Set should be contained in a single directory called `ps04`, which should be inside the root directory of the private repository
-assigned to you. The `ps04` directory should contain all your project files. However, in order to keep the size of your submission small, you should omit the build subdirectory that contains the compiled binaries. In addition, your submission directory should contain your design explanation `design.txt`, two diagrams `data-model.png` and `module-dependency.png`, and a `README` file where you specify which implementation files contain your code.
+You will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
+
+There is no resource or template provided for this problem set. In the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 4`, there is a repository which only contains the `.gitignore` as in the previous problem sets. Feel free to fork and clone it or create a new repository on your own but make sure to add the `.gitignore` to reduce the submission size.
+
+**Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
+
+In addition, your submission directory should contain your design explanation `design.txt`, two diagrams `data-model.png` and `module-dependency.png`, and a `README` file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 4: Bubble Blast Saga Game Engine”**.
 
