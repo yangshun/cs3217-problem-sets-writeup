@@ -95,7 +95,7 @@ Make the application a complete one by implementing the following screens and UI
 
 ### 6. Module-Dependency Diagram (5 points) ###
 
-Draw the MDD for the basic implementation of your game (i.e. you do not need to include the bells and whistles). Save you diagram as `MDD.png` and include it in your repository for submission.
+Draw the MDD for the basic implementation of your game (i.e. you do not need to include the bells and whistles). Save your diagram as `module-dependency-diagram.png` and include it in your repository for submission.
 
 Section 3 - Testing, Refinements and Reflections (100 points)
 --
@@ -191,7 +191,7 @@ There is no resource or template provided for this problem set. In the group [Pr
 
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your submission directory should contain your design explanation design.txt, a module dependency diagram `module-dependency.png` and a README file where you specify which implementation files contain your code.
+In addition, your submission directory should contain your design explanation design.txt, a module dependency diagram `module-dependency-diagram.png` and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 5: Putting It All Together”**.
 
