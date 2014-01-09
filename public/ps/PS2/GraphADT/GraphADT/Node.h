@@ -5,11 +5,11 @@
  of a graph, wherein the node label can be a NSString object, NSNumber
  object, or even a custom-defined object.
  
- An immutatable class is simply a class whose instances cannot be
+ An immutable class is simply a class whose instances cannot be
  modified. All of the information contained in each instance is
  provided when it is created and is fixed for the lifetime of the
- object. In objective c, we can make a class immutable by providing
- only readonly accessors. In objective-c, there is no analogue for the
+ object. In Objective-C, we can make a class immutable by providing
+ only readonly accessors. Also, there is no analogue for the
  "final" keyword in java.
  */
 
