@@ -143,7 +143,7 @@ Now, we want to add a `UIView` to the main view to represent the game area. We a
 The game area is rather dull, isn’t it? Let’s place a picture in it. Please follow the step-by-step instructions shown in the gallery below to add image resource files to your project and programmatically add these images as UIImageView subviews to your Game View. The detailed instructions for each step is given by the caption below the figures. 
 
 ![](/ps/ps3/img/Milestone4img/ImageExtraction.png)
-*Step 1:* Extract all the images from ps03-images.zip.
+*Step 1:* Select all the images in the folder Problem Set 3/Images (the project folder that you forked).
 
 ![](/ps/ps3/img/Milestone4img/ImportImages.png)
 
