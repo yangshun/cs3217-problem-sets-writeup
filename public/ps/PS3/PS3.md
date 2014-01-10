@@ -13,7 +13,7 @@ You will also design and implement a few simple objects. Some specifications wil
 
 **Reminder**: Please read the entire problem set before starting.
 
-When programming a new game, you usually start by implementing some basic features and subsequently enhance it with more complex features. As the game grows, the code gets more complicated and the classes will get bigger. To avoid ending up with a mess of spaghetti code, we typically decouple the rendering from the logic. Doing so will also allow you to let the game logic run at a different speed than the rendering. Actually, the game logic will know nothing about the rendering, so it does not matter how the game is displayed (2D, 3D, ASCII art or whatever). The rendering however depends on the logic, because it needs info on how/where to display everything. Typically, all the rendering is done in the view module.
+When programming a new game, you usually start by implementing some basic features and subsequently enhance it with more complex features. As the game grows, the code gets more complicated and the classes will get bigger. To avoid ending up with a mess of spaghetti code, we typically decouple the rendering from the logic. Doing so will also allow you to let the game logic run at a different speed than the rendering. Actually, the game logic will know nothing about the rendering, so it does not matter how the game is displayed (2D, 3D, ASCII art, etc). The rendering however depends on the logic, because it needs info on how/where to display everything. Typically, all the rendering is done in the view module.
 
 The game logic is typically subdivided into a model and a controller. The model keeps track of the objects in the game world, and knows nothing about displaying, user input, etc. It just implements all the world rules, and how entities interact with each other. The controller knows about the model and can manipulate it depending on the external inputs.
 
@@ -49,6 +49,137 @@ The features of the level designer that you are expected to implement include th
 Section 2 - Bubble Blast Saga Level Designer
 --
 
+### Walkthrough for Building the Interface
+
+You will use the following milestone guidelines to set up the project on which you will build this problem set.
+
+##### Milestone 1: Set Up an Xcode project for UI design
+
+Here, we would like to create a new Single View Application project and set up the Storyboard scene so that it can be used for interface design later on. To do so, please follow the step-by-step instructions shown in gallery below. The detailed instructions for each step is given by the caption below the figures. 
+
+![](/ps/ps3/img/Milestone1img/SingleViewApplication.png)
+*Step 1:* Launch Xcode and create a new Single View Application.
+
+![](/ps/ps3/img/Milestone1img/OptionsNewProject.png)
+*Step 2:* In the Project Options dialog, fill in the Product Name as `Game` and the Company Identifier as `nus.cs3217`. Leave the prefix empty. You should select Use Storyboard and Use Automatic Reference Counting. For other options, you can follow the default configurations. We are not going to use the full power of the storyboard in this tutorial, but it does not hurt getting you used to it.
+
+![](/ps/ps3/img/Milestone1img/FileSaveLocation.png)
+*Step 3:* In the file chooser dialog screen, navigate to a folder where you want to place the project and click Create. 
+
+![](/ps/ps3/img/Milestone1img/ViewControllers.png)
+By default, the Project Navigator should be opened in the top left corner of the Xcode IDE. If not, you can open it by from the top menu by going View → Navigators → Show Project Navigator. Notice the highlighted `ViewController.h` and `ViewController.m` in the Project Navigator, as shown above. These are the interface and implementation of the controller class of the view provided by the project template. Also notice the file `MainStoryboard.storyboard` in the Project Navigator. This is the file where the storyboard is stored. In most cases it suffices to use one storyboard for an application, even if you have quite a few different views.
+
+![](/ps/ps3/img/Milestone1img/NavigationPane.png)
+
+*Step 5:* You can hide the Navigation Pane so that you have more room to work with your interface design. Right now the storyboard contains only one empty view. In storyboard terminology, we call this view a scene. Look at the gray pane to the left of the drawing area. All the scenes are listed here. Currently there is only one scene. This is where we wire the things we draw in the storyboard to our view controller class’ member elements.
+
+![](/ps/ps3/img/Milestone1img/ZoomBuilders.png)
+
+*Step 6:* You can also use the zoom buttons at the bottom right of the Interface Builder editor area to adjust the zoom level of your design canvas.
+
+Your project is now set up for interface design using the integrated Interface Builder. Next, you will learn how to add UI elements to your app’s view and link them up to your View Controller.
+
+##### Milestone 2: Add UIButton with IBAction connection using Editor Assistant
+
+What we want to achieve here is to add buttons to the view and set up the buttons such that their text color will toggle between black and light gray as we press them. Please follow the step-by-step instructions shown in the gallery below to set up IBAction connection between the button and the view controller. The detailed instructions for each step is given by the caption below the figures.
+
+![](/ps/ps3/img/Milestone2img/StoryboardView.png)
+
+*Step 1:* First, select View in the left pane. Use the `“=”` button in the bottom right to bring the design canvas to the actual size. This step is necessary so that objects can be dragged and dropped from the Object Library to the View.
+
+![](/ps/ps3/img/Milestone2img/ButtonAttributes.png)
+
+*Step 2:* Open the Object Library. Use the search box at the bottom right to search for the `Button` object. Drag and drop a Round Rect Button from the Object Library to the top left of our view. Select the button by clicking on it. In the Attributes Inspector, change its **Title** to `Start` and **Text Color** to `Light Gray Color`.
+
+![](/ps/ps3/img/Milestone2img/ButtonDragAction.png)
+
+*Step 3:* With the MainStoryboard.storyboard selected, open the Assistant Editor by going from top menu `View → Assistant Editor → Show Assistant Editor.` The Assistant Editor should appear to the right of the main editor, with `ViewController.h` opened in it automatically. Click on the button to select it. Then, while holding the control key, drag the button to the interface declaration in `ViewController.h` in the Assistant Editor. Notice the line protruding from the button as we drag it.
+
+![](/ps/ps3/img/Milestone2img/ButtonAction.png)
+
+*Step 4:* As you release the mouse button, a small window will popup. Change the Connection from `Outlet` to `Action`, then fill in the name as `buttonPressed`. Click Connect, then the following IBAction handler will be added to `ViewController.h`:
+
+    - (IBAction)buttonPressed:(id)sender;
+
+![](/ps/ps3/img/Milestone2img/ButtonActionCode.png)
+
+*Step 5:* Now close the Assistant Editor by clicking the little cross in the top right corner of it. Open `ViewController.m` by clicking it in the Project Navigator. Notice that an empty skeleton for the handler buttonPressed has been added here. Flesh it out as shown above.
+
+*Step 6:* Now run the program, by clicking the Run button in the top left corner of IDE. Alternatively, you can go from top menu `Product → Run`. You should be able to toggle the button’s text color by clicking on it.
+
+![](/ps/ps3/img/Milestone2img/Orientation.png)
+
+*Step 7:* Since we would be only using the `Portrait` orientation in this game, you must specify the supported interface orientations in the project setting. Click on the top-level project in the Project Navigation pane and deselect `Landscape Left` and `Landscape Right` orientations. 
+
+![](/ps/ps3/img/Milestone2img/AllButtons.png)
+
+*Step 8:* Copy and paste this button to create three more buttons. Note that when we copy a button, we also copy its link to the event handlers. That means, the button press events generated by the three new buttons are also handled by `buttonPressed`. Align these buttons nicely at the top of our view. Change the titles of the three new buttons to `Save, Load, and Reset` respectively in the Attributes Inspector or by double-clicking on the buttons.
+
+##### Milestone 3: Add UIView with IBOutlet connection using Editor Assistant
+
+Now, we want to add a `UIView` to the main view to represent the game area. We also want to add an `IBOutlet` connection between the `UIView` and the `View Controller`, so that our View Controller have access to the game area.  To achieve this, please follow the step-by-step instructions shown in the gallery below. The detailed instructions for each step is given by the caption below the figures. 
+
+![](/ps/ps3/img/Milestone3img/GameArea.png)
+
+*Step 1:* Drag and drop a `UIView` to our view. Stretch it to cover the entire space above the buttons.
+
+![](/ps/ps3/img/Milestone3img/GameareaDrag.png)
+
+*Step 2:* Open the `Assistant Editor`. Then, while holding the `control` key, drag the `UIView to the interface declaration in ViewController.h in the Assistant Editor. Notice the line protruding from the button as we drag it.
+
+![](/ps/ps3/img/Milestone3img/GameareaOutlet.png)
+
+*Step 3:* As you release the mouse button, a small window appears. Make sure that the connection is Outlet and fill in the name as `gameArea`. Click connect. The wiring is done.
+
+![](/ps/ps3/img/Milestone3img/GameareaOutletConfirm.png)
+
+*Step 4:* You should see the gamearea property added to ViewController.h.
+
+![](/ps/ps3/img/Milestone3img/StoryboardFinal.png)
+*Step 5:* We are done with the interface building for now. You should now have an interface like the one shown in the figure above. Note that the background colour of the game area has been here just for demonstration purposes.
+
+##### Milestone 4: Add subviews to the game view programmatically
+
+The game area is rather dull, isn’t it? Let’s place a picture in it. Please follow the step-by-step instructions shown in the gallery below to add image resource files to your project and programmatically add these images as UIImageView subviews to your Game View. The detailed instructions for each step is given by the caption below the figures. 
+
+![](/ps/ps3/img/Milestone4img/ImageExtraction.png)
+*Step 1:* Select all the images in the folder Problem Set 3/Images (the project folder that you forked).
+
+![](/ps/ps3/img/Milestone4img/ImportImages.png)
+
+*Step 2:* Drag the images into the Project Navigation pane, under the Game folder. When prompted with the above dialog, check Copy items into destination group’s folder (if needed). Click Finish to complete.
+
+![](/ps/ps3/img/Milestone4img/ImagesFolder.png)
+
+*Step 3:* The images should appear under the Game folder as shown above.
+
+![](/ps/ps3/img/Milestone4img/ViewDidLoad.png)
+
+*Step 4:* Select ViewController.m from the Project Navigation pane and locate the viewDidLoad function. We are going to add code to this function to programmatically add two images to the Scroll View.
+
+![](/ps/ps3/img/Milestone4img/UIImageAlloc.png)
+
+*Step 5:* Load the image resource into an UIImage object.
+
+![](/ps/ps3/img/Milestone4img/UIImageviewAlloc.png)
+
+*Step 6:* Place the UIImage into a UIImageView.
+
+![](/ps/ps3/img/Milestone4img/BackgroundDimensions.png)
+
+*Step 7:* Get the height and width of the game area. These will be used later to set the size of the UIImageView object.
+
+![](/ps/ps3/img/Milestone4img/Backgroundframe.png)
+
+*Step 8:* Set the frames of ground and background based on the previous calculations.
+
+![](/ps/ps3/img/Milestone4img/BackgroundSubview.png)
+
+*Step 9:* Add background as a subview to the gamearea View.
+
+![](/ps/ps3/img/Milestone4img/GameareaFinal.png)
+*Step 10:* Build and run the program. If you have done everything correctly, you should see something like the above
+
 ### Problem 1: Create the Bubble Palette (10 points) ###
 
 To create the palette, you need to add a new view, palette, to the main view. The palette will contain 4 bubbles (blue, red, green, orange) that the user can choose to fill the grid with and an eraser to delete bubbles. These images should stay in the palette throughout the design phase. You can find the necessary graphic files for the game objects in the archive for this problem set. Image 5.1 is a sample screenshot of the level designer. You are however free to redesign the layout of the level designer as long as you satisfy the basic requirements.
@@ -61,11 +192,13 @@ From the bubble palette, the user taps to select the color of bubble he wants to
 
 Your next task is to create an isometric grid. The grid should have 12 columns and should be tightly packed as seen in the previous image (the number of rows is up to you to decide). This grid will indicate all the possible positions of the bubble and would be used by the designer to design a game level by filling it with bubbles.
 
+(Hint: The traditional way of doing this is by adding individual UIView circles to make the grid. Alternatively, you may use UICollectionView to directly build the grid. Although this will make your life less complicated, understanding how UICollectiionView works may take some time. Both ways are equally acceptable and you need to decide which one you are more comfortable with ;) ).
+
 ### Problem 3: Explain your Design (40 points) ###
 
 Before you begin, please spend some time understanding the requirements of this problem set. Think about the following questions: What objects do you need to implement? How will the objects interact with your main controller? How do you best organize the code for these objects? Are there alternatives? How will you add new game objects?
 
-Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file `design.pdf` at the root directory of your project folder.
+Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file `design.pdf` at the root directory of your project repository.
 
 1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. **(10 points)**
 
@@ -90,7 +223,7 @@ A correct implementation of the MVC framework has the following properties:
 
 You will be using the MVC pattern to implement the game objects. Thus, a game object is represented by the triad: **model**, to store the state of the object; **view**, to represent the object on the screen; and **controller**, to manage the model and the view.
 
-1. **Model** - There are two important aspects regarding the object model. In this problem set, you are concerned mostly with the position of the object on the screen, such that you can save and restore the object to that position using the buttons on the palette created in the walkthrough at the start of this problem set. However, be aware that for the next problem set the game objects state will be more complex as you develop a representation required for the physics engine. **(10 points)**
+1. **Model** - There are two important aspects regarding the object model. In this problem set, you are concerned mostly with the position of the object on the screen, such that you can save and restore the object to that position using the buttons at the bottom created in the walkthrough at the start of this problem set. However, be aware that for the next problem set the game objects state will be more complex as you develop a representation required for the physics engine. **(10 points)**
 
 2. **View** -  Rendering to the screen is handled by the view. It uses the model to know where to draw everything. The view doesn’t have any other functionality than this. You are provided with the required sprites in the attached archive. A sprite is an image or animation that is going to be integrated into a larger scene, such as our game. Here you will find included the image sprites. **(10 points)**
  - `bubble-blue.png`, `bubble-red.png`, `bubble-orange.png`, `bubble-green.png` are image sprites. These are the bubble images that will be used to design the game level. The default size of the bubble frame is 160x160 pixels.
@@ -99,7 +232,7 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 
 3. **Controller** - The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, long-press to delete, tap to change color, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
 
- You need to complete the implementation of the abstract class (30 points) and then create subclasses with the additional requirements for each bubble type (30 points). For this problem set, there is only one basic bubble type with different colours. Eventually however, over the next problem sets, you would be subclassing this abstract class to create different types of games bubbles (for example, special power bubbles) that would have different behaviour than the basic bubble types. The interface is found in the file `GameBubble.h`. The subclass implementation be should contained in the file `GameBubbleBasic.m`. **(60 points)**
+ You need to complete the implementation of the abstract class and then create subclasses with the additional requirements for each bubble type. For this problem set, there is only one basic bubble type with different colours. Eventually however, over the next problem sets, you would be subclassing this abstract class to create different types of games bubbles (for example, special power bubbles) that would have different behaviour than the basic bubble types. The interface is found in the file `GameBubble.h`. The subclass implementation be should contained in the file `GameBubbleBasic.m`. **(30 points)**
 
 4. **Touch Gestures**. To implement the drag, single tap and long-press, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer`, for touch/double-tap you can use `UITapGestureRecognizer` and for long-press you can use `UILongPressGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
 
@@ -219,10 +352,15 @@ Points will be taken off if you fail to comply with these requirements.
 
 ### Mode of Submission ###
 
-The teaching staff will be grading your code directly on GitHub. You will be graded on the latest commit on the master branch before the deadline. Your solution for this Problem Set should be contained in a single directory called `ps03`, which should be inside the root directory of the private repository
-assigned to you. The `ps03` directory should contain **all** your project files. However, in order to keep the size of your submission small, you should omit the `build` subdirectory that contains the compiled binaries. In addition, your submission directory should contain your design explanation `design.pdf` and a README file where you specify which implementation files contain your code.
+You will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
 
-You must upload all your work to the master branch of the remote repository. You will be graded on the **latest commit** before the deadline.
+All the relevant files (images and two source files) for the problem set is located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 3`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
+
+When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
+
+**Important Note:** This time, you have to create a new Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
+
+In addition, your project directory should contain your design explanation `design.pdf` and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this problem set may be directed to the IVLE Forum under the heading **“Problem Set 3: Bubble Blast Saga Level Designer”.**
 

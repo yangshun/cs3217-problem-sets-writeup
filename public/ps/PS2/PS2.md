@@ -20,6 +20,10 @@ A *graph* is a collection of *nodes* (also called *vertices*) and *edges*. Each 
 
 The *children* of node B are the nodes to which there is an edge from B. In Fig. 1, the children of B are A and C. Similarly, the *parents* of B are the nodes from which there is an edge to B. In Fig. 1, B only has one parent, A.
 
+<img src="/ps/ps2/img/digraph.png" alt="digraph" style="width: 180px;"/>
+<img src="/ps/ps2/img/multigraph.png" alt="multigraph" style="width: 180px;"/>
+<img src="/ps/ps2/img/labeled-graph.png" alt="labelledgraph" style="width: 180px;"/>
+
 A node is said to be *adjacent* to another node if there exists an edge between the two nodes.
 
 A *path* is a sequence of edges `(node1, node2), (node2, node3), (node3, node4), ....` In other words, a path is an ordered list of edges, where an edge to some node is immediately followed by an edge from that node. In Fig. 1, one possible path is `(B, A), (A, B), (B, C)`. This path represents traveling from B to A to B to C. A path may traverse a given edge twice.
@@ -71,6 +75,20 @@ Answer the following questions in `design.txt`:
 
 It is a very good practice to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 2.1 to run the unit test for Graph ADT.
 
+**Gallery 2.1** Run unit test for GraphADT in Xcode.
+
+![Open Project](/ps/ps2/img/2-1.png)
+
+**Step 1:** Open the *GraphADT* Xcode project.
+
+![Test Project](/ps/ps2/img/2-2.png)
+
+**Step 2:** Then, select `Product -> Test` (or use the ⌘+U shortcut key) to perform unit testing.
+
+![Test Results](/ps/ps2/img/2-3.png)
+
+**Step 3:** Check your test results by switching to the **Log Navigator** and select the first item *Test* under *GraphADT*. If you have done everything correctly, you should see a series of green checks indicating all the unit tests have passed successfully.
+
 Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphADT_Tests.m`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
 
 ### Problem 4: Extending the Graph ADT (50 Points) ###
@@ -81,20 +99,32 @@ In this problem, you are going to use a tree to cipher and decipher texts. The c
 
 In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string. 
 
-1. First, you must design and implement an ADT for a *Tree* in new files named `Tree.h` and `Tree.m`. You may extend the Graph ADT used in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly.
+As an example, consider the string **HELLO WORLD**. When performing the cipher operation with the **key as 2**, the breadth-first string-to-tree conversion would result in the following tree:
+
+![Cipher Tree](/ps/ps2/img/cipher-tree.png)
+
+Here, we need to append some 'special nodes' to the end of the tree to conform to the key. In the given example, **+** denotes a whitespace while ***** represents a special node. 
+
+In the second part of the cipher operation, this tree is converted to a string using the depth-first approach. This would result in the following string: **HELOROLDL \*\*W\*\***. 
+
+If this resultant string is used as the input for the decipher operation using the same key, then it should give back the initial string i.e. **HELLO WORLD**.
+
+Now, follow the steps described below to implement the cipher/decipher functionalities:
+
+1. First, you must design and implement an ADT for a *Tree* in new files named `Tree.h` and `Tree.m`. You may extend the Graph ADT used in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may add new files to the project to support your implementation. However, you are required to mention them in `design.txt`.
 
 2. Now, write a class category for NSString that implements the following two methods:
 
  - `- (Tree*)breadthFirstStringToTree:(NSNumber*)key`
  - `- (Tree*)depthFirstStringToTree:(NSNumber*)key`
 
- Your algorithm will need to append some 'special nodes' to the end of the tree to conform to the keys.
+ Your algorithm will need to append the 'special nodes' to the end of the tree to conform to the keys.
 
 3. Add the following two methods to the *Tree* ADT you had implemented earlier:
  - `- (NSString*)breadthFirstTreeToString:(NSNumber*)key`
  - `- (NSString*)depthFirstTreeToString:(NSNumber*)key`
 
- Your algorithm will need to add special characters to the result string to indicate the 'special nodes' in the tree.
+ Your algorithm will need to deal with the 'special nodes' in the tree appropriately.
 
 4. Write appropriate test cases in `GraphADT_Tests.m` to test the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
@@ -122,9 +152,16 @@ The simplest way to ensure that you get a good grade on your assignment is to si
 - Your unit test cases are well-designed.
 
 ### Mode of Submission ###
-Like Problem Set 1, the teaching staff will be grading your code directly on GitHub. Your solution for this Problem Set should be contained in a single directory called `ps02`. This directory should be inside the root directory of the private repository assigned to you. You must upload all your work to the master branch of this remote repository. You will be graded on the **latest commit** on the master branch before the deadline.
 
-The directory should contain all the source files, so that your TA can run your code and unit tests.
+Like Problem Set 1, you will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
+
+The Xcode project for this problem set will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 2`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
+
+When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
+
+**Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
+
+Even though your TAs will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **‘Problem Set 2: Objective-C & Coding to Specifications’**.
 

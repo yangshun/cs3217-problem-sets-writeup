@@ -22,10 +22,10 @@ This assignment (and the rest of the course) assumes that you have access to
 
 Strictly speaking, it is sufficient (but *not* recommended) to install and use OS X Command Line Tools.
 
-If you do not have access to a computer running Mac OS X 10.9, you may
+If you do not have access to a computer running Mac OS X 10.9, you may:
 
-* Use the iMacs in the programming lab. They have already been configured to support course requirements
-* Resourcefully acquire an OS X installer image. This image can be installed on a virtual machine like VMWare Workstation or Virtual Box
+* Use the iMacs in Programming Lab 1. They have already been configured to support course requirements.
+* Resourcefully acquire an OS X installer image. This image can be installed on a virtual machine like VMWare Workstation or Virtual Box.
 
 Development in general can be a messy process, and you should consider running your toolchain in a virtual environment if you are working on your primary computer.
 
@@ -33,11 +33,11 @@ Development in general can be a messy process, and you should consider running y
 
 Objective-C is the primary language that will be used to write Mac and iOS software. During this semester, all coding assignments will be done using Objective-C.
 
-If you’re comfortable with basic object-oriented concepts and the C language, the extensions provided by Objective-C should be quite natural, and it should be easy to pick up Objective-C during CS3217. You should read Apple's [Introduction to Objective C \(PDF\)](https://developer.apple.com/library/ios/documentation/cocoa/Conceptual/OOP_ObjC/OOP_ObjC.pdf).
+If you’re comfortable with basic object-oriented concepts and the C language, the extensions provided by Objective-C should be quite natural, and it should be easy to pick up Objective-C during CS3217. You should read Apple's [Introduction to Objective-C \(PDF\)](https://developer.apple.com/library/ios/documentation/cocoa/Conceptual/OOP_ObjC/OOP_ObjC.pdf).
 
-[Cocoa](https://developer.apple.com/technologies/mac/cocoa.html) is Apple’s native object-oriented API for the Mac OSX operating system. For iOS development, we will be using [Cocoa Touch](https://developer.apple.com/technologies/ios/cocoa-touch.html), a touch-oriented API similar to Cocoa. Cocoa Touch follows a Model-View-Controller (MVC) paradigm.
+[Cocoa](https://developer.apple.com/technologies/mac/cocoa.html) is Apple’s native object-oriented API for the Mac OS X operating system. For iOS development, we will be using [Cocoa Touch](https://developer.apple.com/technologies/ios/cocoa-touch.html), a touch-oriented API similar to Cocoa. Cocoa Touch follows a Model-View-Controller (MVC) paradigm.
 
-##### Milestone 0: Find out how common programming constructs are expressed idiomatically in Objective C. (Not graded)
+##### Milestone 0: Find out how common programming constructs are expressed idiomatically in Objective-C. (Not graded)
 
 * Declaring primitive types
 * Declaring and instantiating objects
@@ -50,14 +50,14 @@ If you’re comfortable with basic object-oriented concepts and the C language, 
 * C-style structures versus objects
 
 
-Section 2 - Hello iPad!
+Section 2 - Hello iPad! (Not Graded)
 --
 
 In this section, you will use Xcode to create a project and storyboards to construct a very simple user interface. This assignment requires no coding. It is intended to provide you with a quick introduction to the tools that you’ll be using during the course. Follow this walkthrough and build your first iOS application.
 
 **Important Note:** Even though it is possible to complete the first part of the assignment just by following instructions, it is important for you to understand what you are doing in each step, since in the next assignments you will be required to use the same tools.
 
-##### Milestone 1: Create a new Xcode project. (Not graded)
+##### Milestone 1: Create a new Xcode project.
 
 ![Welcome to Xcode\!](/ps/ps1/img/1-1.png)
 
@@ -71,7 +71,7 @@ When you have finally decided to start working, begin by creating an iOS Single 
 
 Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\) You will be prompted to save your project to disk after this step.
 
-##### Milestone 2: Navigate around the IDE. (Not graded)
+##### Milestone 2: Navigate around the IDE.
 
 ![The standard editor displays a single file.](/ps/ps1/img/2-1.png)
 
@@ -85,7 +85,7 @@ The assistant editor is highly recommended for writing code. It shows header and
 
 When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.
 
-##### Milestone 3: Add library interface elements. (Not graded)
+##### Milestone 3: Add library interface elements.
 
 ![Add user interface elements from the library by dragging them to the storyboard.](/ps/ps1/img/3-1.png)
 
@@ -93,7 +93,7 @@ Add user interface elements from the library by dragging them to the storyboard.
 
 Note how the properties panel expands to show further details when a UI element is selected. Add both a label, and a button. 
 
-##### Milestone 4: Add some code. (Not graded)
+##### Milestone 4: Add some code.
 
 You need to "link" storyboard elements to their associated View Controller before you can reference them in code.
 
@@ -103,13 +103,13 @@ Right-click on the label and add a "Referencing Outlet" by dragging the `+` to t
 
 ![Add an Action handler in the same way for "Touch Up Inside".](/ps/ps1/img/4-2.png)
 
-Add an Action handler in the same way for "Touch Up Inside".
+Add an Action handler in the same way for **"Touch Up Inside"**.
 
 ![Write a single line of code to change the label's text.](/ps/ps1/img/4-3.png)
 
 Write a single line of code to change the label's text.
 
-##### Milestone 5: Run your project in the emulator. (Not graded)
+##### Milestone 5: Run your project in the emulator.
 
 Run your project by clicking on the play button at the top-left of the screen. It may take awhile for the emulator to launch. 
 
@@ -121,19 +121,19 @@ Test that your app works by tapping on the button. Observe that the label's text
 
 Note that on lower resolution screens, your emulator may not show the faux iPad bezel. In addition, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down emulator.
 
-Holding the `Alt` key with your cursor over the emulator's "screen" brings out two gray circles representing two touch points. This is useful for debugging pinch and rotate gestures. 
+Holding the `option` key with your cursor over the emulator's "screen" brings out two gray circles representing two touch points. This is useful for debugging pinch and rotate gestures. 
 
 The emulator has limitations when testing more complicated gestures, the camera, and network stacks. You should find out about these limitations if your application implements such functionality.
 
 Section 3 - Introduction to Objective-C (100 points)
 --
 
-In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
+In this section, you will be introduced to Object Oriented Programming and collection-types in Objective-C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
 
 
-### Problem 1: Collections in Objective C (10 points)
+### Problem 1: Collections in Objective-C (10 points)
 
-Objective C provides three main collection types:
+Objective-C provides three main collection types:
 
 - `NSArray` describes a linear collection of objects where each object may be accessed by an index.
 - `NSDictionary` describes a key-value store where some one *key*-object maps to one *value*-object.
@@ -144,11 +144,11 @@ Collections are immutable by default. The mutable counterparts of the above are 
 1. What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  **(10 points)**
 
 
-### Problem 2: Standard Datastructures (30 points)
+### Problem 2: Standard Data Structures (30 points)
 
-Objective C does not provide Stacks and Queus natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
+Objective-C does not provide Stacks and Queues natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
 
-**Fork** the problem set from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your development environment to begin working. 
+**Fork** the Problem Set 1 repository from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your computer to begin working. 
 
 The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
 
@@ -158,7 +158,16 @@ The Xcode project that you would have just cloned is a Mac OS Command Line Tool 
 
 In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to applicaiton bundles, whereas the Windows registry is a global store).
 
-#### Test Format ####
+
+#### Stacks and Queues ####
+
+The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not modify*. We will be using this driver program to grade your assignment automatically.
+
+1. A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. Implement the Stack by filling up the method implementations in `Stack.m`. You should not change the protocol provided. **(15 points)**
+
+2. A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`. Implement the Queue by filling up the method implementations in `Queue.m`. You should not change the protocol provided. **(15 points)**
+
+#### Input Format ####
 
 The input file format for Stacks and Queues is a property list with a root key `testCases` that maps to an array of items. Each test item contains the name of a selector that the driver program should dynamically invoke, and a single optional parameter that may be supplied. 
 
@@ -196,18 +205,6 @@ An example to test a Queue data structure is given below.
 	</dict>
 	</plist>
 
-
-#### Stacks and Queues ####
-
-A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. 
-
-1. Implement the Stack by filling out the skeleton file. You should not change the protocol provided. **(15 points)**
-
-A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`.
-
-2. Implement the Queue by filling out the skeleton file. You should not change the protocol provided. **(15 points)**
-
-
 ### Problem 3: Graph Traversal (45 points)
 
 We may represent a **general graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbors.
@@ -216,7 +213,7 @@ Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki
 
 ![Example Graph](/ps/ps1/img/graph.png)
 
-The corresponding (Apple) property list would be as follows. The root key `start` represents the start vertex of the traversal decribed by this test file.
+The adjacency list for this graph in the format of an (Apple) property list would be as follows. The root key `start` represents the start vertex of the traversal decribed by this test file.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -285,13 +282,13 @@ The Breadth-first Search enumerator should also return vertices in the order tha
 
 4. Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(5 points)**
 
-Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Objective C.
+Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
 
 ### Problem 4: Testing (15 points)
 
-1. Write sufficient tests to ensure the your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
+1. Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-Your tests can be given as a set of input files (in the respective formats described above) and their corresponding outputs, but any other sensible format will do fine. If your tests are input files, you should describe the scope in a comment appended at the end of your code.
+Your tests can be given as a set of input files (in the respective formats described above) and their corresponding outputs, but any other sensible format will do fine. If your tests are input files, you should describe the scope in a comment appended at the end of the file `main.m`.
 
 While it is a good practice to code defensively, we will not be supplying malformed property lists to your implementation.
 
@@ -309,7 +306,7 @@ Please answer the following questions:
 2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
 
-Submit the answer to this question in the form of a comment appended at the end of your code. (3 bonus points)
+Submit the answer to this question in the form of a comment appended at the end of the file `main.m`. **(3 bonus points)**
 
 Section 4 - Grading and Submission
 --
