@@ -150,7 +150,54 @@ Objective C does not provide Stacks and Queus natively. Your task is to implemen
 
 **Fork** the problem set from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your development environment to begin working. 
 
-The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change*. We will be using this driver program to grade your assignment automatically.
+The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
+
+#### Property Lists ####
+
+[Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
+
+In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to applicaiton bundles, whereas the Windows registry is a global store).
+
+#### Test Format ####
+
+The input file format for Stacks and Queues is a property list with a root key `testCases` that maps to an array of items. Each test item contains the name of a selector that the driver program should dynamically invoke, and a single optional parameter that may be supplied. 
+
+An example to test a Queue data structure is given below.
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+	<dict>
+		<key>testCases</key>
+		<array>
+			<dict>
+				<key>selector</key>
+				<string>enqueue:</string>
+				<key>param</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>selector</key>
+				<string>enqueue:</string>
+				<key>param</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>selector</key>
+				<string>enqueue:</string>
+				<key>param</key>
+				<string>C</string>
+			</dict>
+			<dict>
+				<key>selector</key>
+				<string>dequeue</string>
+			</dict>
+		</array>
+	</dict>
+	</plist>
+
+
+#### Stacks and Queues ####
 
 A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. 
 
@@ -161,60 +208,60 @@ A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`.
 2. Implement the Queue by filling out the skeleton file. You should not change the protocol provided. **(15 points)**
 
 
-### Problem 3: Property Lists (45 points)
+### Problem 3: Graph Traversal (45 points)
 
-[Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
-
-In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to applicaiton bundles, whereas the Windows registry is a global store). 
-
-#### Graph Traversal
 We may represent a **general graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbors.
 
 Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
 ![Example Graph](/ps/ps1/img/graph.png)
 
-The corresponding (Apple) property list would be as follows
+The corresponding (Apple) property list would be as follows. The root key `start` represents the start vertex of the traversal decribed by this test file.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 	<plist version="1.0">
 	<dict>
-	  <key>A</key>
-	  <array>
-	    <string>B</string>
-	    <string>C</string>
-	    <string>E</string>
-	  </array>
-	  <key>B</key>
-	  <array>
-	    <string>A</string>
-	    <string>D</string>
-	    <string>F</string>
-	  </array>
-	  <key>C</key>
-	  <array>
-	    <string>A</string>
-	    <string>G</string>
-	  </array>
-	  <key>D</key>
-	  <array>
-	    <string>B</string>
-	  </array>
-	  <key>E</key>
-	  <array>
-	    <string>A</string>
-	    <string>F</string>
-	  </array>
-	  <key>F</key>
-	  <array>
-	    <string>B</string>
-	    <string>E</string>
-	  </array>
-	  <key>G</key>
-	  <array>
-	    <string>C</string>
-	  </array>
+		<key>start</key>
+		<string>A</string>
+		<key>graph</key>
+		<dict>
+			<key>A</key>
+			<array>
+				<string>B</string>
+				<string>C</string>
+				<string>E</string>
+			</array>
+			<key>B</key>
+			<array>
+				<string>A</string>
+				<string>D</string>
+				<string>F</string>
+			</array>
+			<key>C</key>
+			<array>
+				<string>A</string>
+				<string>G</string>
+			</array>
+			<key>D</key>
+			<array>
+				<string>B</string>
+			</array>
+			<key>E</key>
+			<array>
+				<string>A</string>
+				<string>F</string>
+			</array>
+			<key>F</key>
+			<array>
+				<string>B</string>
+				<string>E</string>
+			</array>
+			<key>G</key>
+			<array>
+				<string>C</string>
+			</array>
+		</dict>
 	</dict>
 	</plist>
 	
@@ -243,6 +290,8 @@ Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Obje
 ### Problem 4: Testing (15 points)
 
 1. Write sufficient tests to ensure the your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
+
+Your tests can be given as a set of input files (in the respective formats described above) and their corresponding outputs, but any other sensible format will do fine. If your tests are input files, you should describe the scope in a comment appended at the end of your code.
 
 While it is a good practice to code defensively, we will not be supplying malformed property lists to your implementation.
 
