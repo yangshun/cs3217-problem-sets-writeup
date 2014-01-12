@@ -163,8 +163,6 @@ To view that executable, from the Project Navigator, expand the **Products** fol
 
 #### Stacks and Queues ####
 
-The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not modify*. We will be using this driver program to grade your assignment automatically.
-
 1. A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. Implement the Stack by filling up the method implementations in `Stack.m`. You should not change the protocol provided. **(15 points)**
 
 2. A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`. Implement the Queue by filling up the method implementations in `Queue.m`. You should not change the protocol provided. **(15 points)**
