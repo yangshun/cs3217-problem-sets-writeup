@@ -159,13 +159,15 @@ To view that executable, from the Project Navigator, expand the **Products** fol
 
 If you have implemented the skeleton classes correctly, the driver program should run without modification. The following screenshot shows the execution of the driver program on the example graph given in this document.
 
-![Correct output](/ps/ps1/img/driver.png)
+![Output for stack and queue](/ps/ps1/img/output-stack-queue.png)
+
+The output of the driver program in both cases is a representation of the state of the stack or queue after the sequence of methods described in the property list has been invoked. As seen in the screenshot, the top of the stack, or head of the queue, is on the left.
 
 #### Property Lists ####
 
 [Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
 
-In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to applicaiton bundles, whereas the Windows registry is a global store).
+In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to application bundles, whereas the Windows registry is a global store).
 
 
 #### Stacks and Queues ####
