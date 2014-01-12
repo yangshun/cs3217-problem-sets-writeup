@@ -270,17 +270,17 @@ Fortunately, Xcode provides a graphical property list editor, and you should not
 	
 Your task is to write enumerators that traverse the graph in Depth-first and Breadth-first order starting from a given vertex.
 	
-1. Find out what an `NSEnumerator` does. **(Not graded)**
+- Find out what an `NSEnumerator` does. **(Not graded)**
 
-2. Implement an `NSEnumerator` for Depth-first Search. **(20 points)**
+- Implement the class `DepthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Depth-first Search. **(20 points)**
 
 The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: A, B, D, F, E, C, G.
 
-3. Implement an `NSEnumerator` for Breadth-first Search. **(20 points)**
+- Implement the class `BreadthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Breadth-first Search. **(20 points)**
 
 The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: A, B, C, E, D, F, G.
 
-4. Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(5 points)**
+- Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(5 points)**
 
 Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
 
