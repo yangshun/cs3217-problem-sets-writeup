@@ -141,7 +141,7 @@ Objective-C provides three main collection types:
 
 Collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
 
-1. What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  **(10 points)**
+Keys in NSDictionary and objects in NSSet may be any instance of an NSObject. Which selector does NSDictionary and NSSet use to test for the uniqueness of keys/objects?  **(10 points)**
 
 
 ### Problem 2: Standard Data Structures (30 points)
