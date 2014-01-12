@@ -141,8 +141,7 @@ Objective-C provides three main collection types:
 
 Collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
 
-Keys in NSDictionary and objects in NSSet may be any instance of an NSObject. Which selector does NSDictionary and NSSet use to test for the uniqueness of keys/objects?  **(10 points)**
-
+Keys in `NSDictionary` may be any instance of an `NSObject`. Which selector does `NSDictionary` use to test for the uniqueness of keys?  **(10 points)**
 
 ### Problem 2: Standard Data Structures (30 points)
 
@@ -151,6 +150,16 @@ Objective-C does not provide Stacks and Queues natively. Your task is to impleme
 **Fork** the Problem Set 1 repository from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your computer to begin working. 
 
 The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
+
+#### Running the Driver Program
+
+IDE-generated data, including build files, are stored in your project's subdirectory at `~/Library/Developer/Xcode/DerivedData`. When you build (`Cmd` + `B`) your application, the compiled binary will be written to `./Build/Products`.
+
+To view that executable, from the Project Navigator, expand the **Products** folder and you will see the file `CS3217-PS1`. Click on the file and examine the **Full Path** in the right panel (File Inspector). You may `cd` to that directory in your terminal and run the application from there. If you do not have the `.plist` files in the same directory, you will need to specify a fully qualified path.
+
+If you have implemented the skeleton classes correctly, the driver program should run without modification. The following screenshot shows the execution of the driver program on the example graph given in this document.
+
+![Correct output](/ps/ps1/img/driver.png)
 
 #### Property Lists ####
 
@@ -293,11 +302,6 @@ Your tests can be given as a set of input files (in the respective formats descr
 While it is a good practice to code defensively, we will not be supplying malformed property lists to your implementation.
 
 *You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
-
-#### Running the Driver Program
-If you have implemented the skeleton classes correctly, the driver program should run without modification. The following screenshot shows the execution of the driver program on the example graph given in this document.
-
-![Correct output](/ps/ps1/img/driver.png)
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
