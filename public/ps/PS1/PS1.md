@@ -206,6 +206,10 @@ An example to test a Queue data structure is given below.
 		</array>
 	</dict>
 	</plist>
+	
+Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
+
+![plist Editor](/ps/ps1/img/plist.png)
 
 #### Output ####
 
@@ -275,10 +279,6 @@ The adjacency list for this graph in the format of a property list would be as f
 	</plist>
 	
 Note that this graph contains a cycle, and that edges are bidirectional.
-
-Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
-
-![plist Editor](/ps/ps1/img/plist.png)
 	
 Your task is to write sub-classes of `NSEnumerator`s that traverse the graph in Depth-first and Breadth-first order starting from a given vertex.
 
