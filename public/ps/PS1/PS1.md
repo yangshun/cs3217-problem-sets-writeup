@@ -298,6 +298,10 @@ The Breadth-first Search enumerator should also return vertices in the order tha
 
 Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
 
+The following screenshot shows the output from running the driver program on the given graph.
+
+![Output for bfs and dfs](/ps/ps1/img/output-bfs-dfs)
+
 ### Problem 4: Testing (15 points)
 
 1. Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
@@ -317,7 +321,6 @@ Please answer the following questions:
 1. How many hours did you spend on each problem of this problem set?
 2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
-
 Submit the answer to this question in the form of a comment appended at the end of the file `main.m`. **(3 bonus points)**
 
 Section 4 - Grading and Submission
