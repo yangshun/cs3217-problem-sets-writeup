@@ -1,8 +1,8 @@
 Problem Set 1
 ==
 
-*Issue Date: 19 January 2014  
-Due Date: 27 January 2014  
+*Issue Date: 13 January 2014  
+Due Date: 19 January 2014  
 Tutorial Date: Week 2*
 
 Section 1 - Introduction
@@ -37,7 +37,7 @@ If you’re comfortable with basic object-oriented concepts and the C language, 
 
 [Cocoa](https://developer.apple.com/technologies/mac/cocoa.html) is Apple’s native object-oriented API for the Mac OS X operating system. For iOS development, we will be using [Cocoa Touch](https://developer.apple.com/technologies/ios/cocoa-touch.html), a touch-oriented API similar to Cocoa. Cocoa Touch follows a Model-View-Controller (MVC) paradigm.
 
-##### Milestone 0: Find out how common programming constructs are expressed idiomatically in Objective C. (Not graded)
+##### Milestone 0: Find out how common programming constructs are expressed idiomatically in Objective-C. (Not graded)
 
 * Declaring primitive types
 * Declaring and instantiating objects
@@ -128,10 +128,10 @@ The emulator has limitations when testing more complicated gestures, the camera,
 Section 3 - Introduction to Objective-C (100 points)
 --
 
-In this section, you will be introduced to Object Oriented Programming and collection-types in Objective C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
+In this section, you will be introduced to Object Oriented Programming and collection-types in Objective-C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
 
 
-### Problem 1: Collections in Objective C (10 points)
+### Problem 1: Collections in Objective-C (10 points)
 
 Objective-C provides three main collection types:
 
@@ -150,68 +150,115 @@ Objective-C does not provide Stacks and Queues natively. Your task is to impleme
 
 **Fork** the Problem Set 1 repository from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your computer to begin working. 
 
-The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not modify*. We will be using this driver program to grade your assignment automatically.
+The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
 
-1. A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. 
-Implement the Stack by filling up the method implementations in `Stack.m`. You should not change the protocol provided. **(15 points)**
-
-2. A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`. Implement the Queue by filling up the method implementations in `Queue.m`. You should not change the protocol provided. **(15 points)**
-
-
-### Problem 3: Property Lists (45 points)
+#### Property Lists ####
 
 [Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
 
-In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to application bundles, whereas the Windows registry is a global store). 
+In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to applicaiton bundles, whereas the Windows registry is a global store).
 
-#### Graph Traversal
+
+#### Stacks and Queues ####
+
+The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not modify*. We will be using this driver program to grade your assignment automatically.
+
+1. A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. Implement the Stack by filling up the method implementations in `Stack.m`. You should not change the protocol provided. **(15 points)**
+
+2. A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`. Implement the Queue by filling up the method implementations in `Queue.m`. You should not change the protocol provided. **(15 points)**
+
+#### Input Format ####
+
+The input file format for Stacks and Queues is a property list with a root key `testCases` that maps to an array of items. Each test item contains the name of a selector that the driver program should dynamically invoke, and a single optional parameter that may be supplied. 
+
+An example to test a Queue data structure is given below.
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+	<dict>
+		<key>testCases</key>
+		<array>
+			<dict>
+				<key>selector</key>
+				<string>enqueue:</string>
+				<key>param</key>
+				<string>A</string>
+			</dict>
+			<dict>
+				<key>selector</key>
+				<string>enqueue:</string>
+				<key>param</key>
+				<string>B</string>
+			</dict>
+			<dict>
+				<key>selector</key>
+				<string>enqueue:</string>
+				<key>param</key>
+				<string>C</string>
+			</dict>
+			<dict>
+				<key>selector</key>
+				<string>dequeue</string>
+			</dict>
+		</array>
+	</dict>
+	</plist>
+
+### Problem 3: Graph Traversal (45 points)
+
 We may represent a **general graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbors.
 
 Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
 ![Example Graph](/ps/ps1/img/graph.png)
 
-The adjacency list for this graph in the format of an (Apple) property list would be as follows
+The adjacency list for this graph in the format of an (Apple) property list would be as follows. The root key `start` represents the start vertex of the traversal decribed by this test file.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 	<plist version="1.0">
 	<dict>
-	  <key>A</key>
-	  <array>
-	    <string>B</string>
-	    <string>C</string>
-	    <string>E</string>
-	  </array>
-	  <key>B</key>
-	  <array>
-	    <string>A</string>
-	    <string>D</string>
-	    <string>F</string>
-	  </array>
-	  <key>C</key>
-	  <array>
-	    <string>A</string>
-	    <string>G</string>
-	  </array>
-	  <key>D</key>
-	  <array>
-	    <string>B</string>
-	  </array>
-	  <key>E</key>
-	  <array>
-	    <string>A</string>
-	    <string>F</string>
-	  </array>
-	  <key>F</key>
-	  <array>
-	    <string>B</string>
-	    <string>E</string>
-	  </array>
-	  <key>G</key>
-	  <array>
-	    <string>C</string>
-	  </array>
+		<key>start</key>
+		<string>A</string>
+		<key>graph</key>
+		<dict>
+			<key>A</key>
+			<array>
+				<string>B</string>
+				<string>C</string>
+				<string>E</string>
+			</array>
+			<key>B</key>
+			<array>
+				<string>A</string>
+				<string>D</string>
+				<string>F</string>
+			</array>
+			<key>C</key>
+			<array>
+				<string>A</string>
+				<string>G</string>
+			</array>
+			<key>D</key>
+			<array>
+				<string>B</string>
+			</array>
+			<key>E</key>
+			<array>
+				<string>A</string>
+				<string>F</string>
+			</array>
+			<key>F</key>
+			<array>
+				<string>B</string>
+				<string>E</string>
+			</array>
+			<key>G</key>
+			<array>
+				<string>C</string>
+			</array>
+		</dict>
 	</dict>
 	</plist>
 	
@@ -225,9 +272,13 @@ Your task is to write enumerators that traverse the graph in Depth-first and Bre
 	
 1. Find out what an `NSEnumerator` does. **(Not graded)**
 
-2. The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: A, B, D, F, E, C, G. Implement an `NSEnumerator` for Depth-first Search. **(20 points)**
+2. Implement an `NSEnumerator` for Depth-first Search. **(20 points)**
 
-3. The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: A, B, C, E, D, F, G. Implement an `NSEnumerator` for Breadth-first Search. **(20 points)**
+The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: A, B, D, F, E, C, G.
+
+3. Implement an `NSEnumerator` for Breadth-first Search. **(20 points)**
+
+The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: A, B, C, E, D, F, G.
 
 4. Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(5 points)**
 
@@ -236,6 +287,8 @@ Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Obje
 ### Problem 4: Testing (15 points)
 
 1. Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
+
+Your tests can be given as a set of input files (in the respective formats described above) and their corresponding outputs, but any other sensible format will do fine. If your tests are input files, you should describe the scope in a comment appended at the end of the file `main.m`.
 
 While it is a good practice to code defensively, we will not be supplying malformed property lists to your implementation.
 
