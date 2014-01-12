@@ -339,11 +339,11 @@ In this assignment, you will be using a pilot locally hosted [GitLab](http://cs3
 
 Accounts have already been created for you using your matriculation number and the email address you supplied when registering for this module. You should have received an email containing an initial password, and instructions asking you to login and change that password.
 
-*As this is a non-TLS service (due to typical civil service red tape), please choose a strong throwaway password. Do not reuse passwords from your other accounts.*
+*As this is a non-TLS service, please choose a strong throwaway password. Do not reuse passwords from your other accounts.*
 
 The Xcode projects for your problem sets, if they are provided, will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
-As with GitHub, you may add an SSH key to your account. However, due once again to the above reason, SSH will only be accessible within the SoC network. (We're working on this; it takes *some* time.) We recommend that you clone using HTTP and configure Git to remember your password for minimum grief.
+As with GitHub, you may add an SSH key to your account. However, due to network policy reasons, SSH will only be accessible within the SoC network. We recommend that you clone using HTTP and configure Git to remember your password for minimum grief.
 
 When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
 
