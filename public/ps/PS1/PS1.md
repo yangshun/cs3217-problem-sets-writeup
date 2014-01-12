@@ -280,7 +280,7 @@ Note that this graph contains a cycle, and that edges are bidirectional.
 	
 Your task is to write sub-classes of `NSEnumerator`s that traverse the graph in Depth-first and Breadth-first order starting from a given vertex.
 
-The driver program will parse property lists into their constituent Objective-C objects. This means that your implementation in this case only needs to deal with graphs represented as `NSDictionary`s in the format described above (i.e.: the dictionary under the key `graph`).
+The driver program will parse property lists into their constituent Objective-C objects. Your implementation only needs to deal with graphs represented as `NSDictionary`s. 
 
 - Find out what an `NSEnumerator` does. **(Not graded)**
 
@@ -294,7 +294,7 @@ The Breadth-first Search enumerator should also return vertices in the order tha
 
 - Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` classes. **(5 points)**
 
-Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
+Your files should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
 
 The following screenshot shows the output from running the driver program on the given graph.
 
