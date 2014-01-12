@@ -300,7 +300,7 @@ Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Obje
 
 The following screenshot shows the output from running the driver program on the given graph.
 
-![Output for bfs and dfs](/ps/ps1/img/output-bfs-dfs)
+![Output for bfs and dfs](/ps/ps1/img/output-bfs-dfs.png)
 
 ### Problem 4: Testing (15 points)
 
