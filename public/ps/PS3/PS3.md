@@ -58,7 +58,7 @@ You will use the following milestone guidelines to set up the project on which y
 Here, we would like to create a new Single View Application project and set up the Storyboard scene so that it can be used for interface design later on. To do so, please follow the step-by-step instructions shown in gallery below. The detailed instructions for each step is given by the caption below the figures. 
 
 ![](/ps/ps3/img/Milestone1img/SingleViewApplication.png)
-*Step 1:* Launch Xcode and create a new Single View Application.
+*Step 1:* Launch the empty Xcode project forked from the `Problem Set 3` repository and add a new target. The image above should appear. Select `Single View Application` as the template.
 
 ![](/ps/ps3/img/Milestone1img/OptionsNewProject.png)
 *Step 2:* In the Project Options dialog, fill in the Product Name as `Game` and the Company Identifier as `nus.cs3217`. Leave the prefix empty. You should select Use Storyboard and Use Automatic Reference Counting. For other options, you can follow the default configurations. We are not going to use the full power of the storyboard in this tutorial, but it does not hurt getting you used to it.
@@ -358,7 +358,7 @@ All the relevant files (images and two source files) for the problem set is loca
 
 When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
 
-**Important Note:** This time, you have to create a new Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
+**Important Note:** Until now, a target Xcode project was already constructed for your problem sets. In this problem set, you have to create a new target in the empty Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
 In addition, your project directory should contain your design explanation `design.pdf` and a README file where you specify which implementation files contain your code.
 
