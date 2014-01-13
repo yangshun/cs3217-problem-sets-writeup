@@ -121,7 +121,7 @@ Test that your app works by tapping on the button. Observe that the label's text
 
 Note that on lower resolution screens, your emulator may not show the faux iPad bezel. In addition, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down emulator.
 
-Holding the `option` key with your cursor over the emulator's "screen" brings out two gray circles representing two touch points. This is useful for debugging pinch and rotate gestures. 
+Holding the `option` key with your cursor over the emulator's "screen" brings out two grey circles representing two touch points. This is useful for debugging pinch and rotate gestures. 
 
 The emulator has limitations when testing more complicated gestures, the camera, and network stacks. You should find out about these limitations if your application implements such functionality.
 
@@ -141,27 +141,27 @@ Objective-C provides three main collection types:
 
 Collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
 
-1. What are the selectors used for the comparison operation among keys in `NSDictionary` and objects in `NSSet`?  **(10 points)**
+Keys in `NSDictionary` may be any instance of an `NSObject`. Which selector does `NSDictionary` use to test for the uniqueness of keys?  **(10 points)**
 
-
-### Problem 2: Standard Data Structures (30 points)
+### Problem 2: Standard Data Structures (30 points) ###
 
 Objective-C does not provide Stacks and Queues natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
 
 **Fork** the Problem Set 1 repository from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your computer to begin working. 
 
-The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
+The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change functionally*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
 
 #### Property Lists ####
 
 [Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
 
-In OS X and iOS, `.plist` files are most commonly used to store program settings, and may be seen as analogous to the Windows registry (Property lists compartmentalise settings to applicaiton bundles, whereas the Windows registry is a global store).
+#### Running the Compiled Binary ####
 
+IDE-generated data, including build files, are stored in your project's subdirectory at `~/Library/Developer/Xcode/DerivedData`. When you build (`Cmd` + `B`) your application, the compiled binary will be written to `./Build/Products`.
+
+To view that executable, from the Project Navigator, expand the **Products** folder and you will see the file `CS3217-PS1`. Click on the file and examine the **Full Path** in the right panel (File Inspector). You may `cd` to that directory in your terminal and run the application from there. If you do not have the input `.plist` files in the same directory, you will need to specify a fully qualified path.
 
 #### Stacks and Queues ####
-
-The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not modify*. We will be using this driver program to grade your assignment automatically.
 
 1. A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. Implement the Stack by filling up the method implementations in `Stack.m`. You should not change the protocol provided. **(15 points)**
 
@@ -204,16 +204,30 @@ An example to test a Queue data structure is given below.
 		</array>
 	</dict>
 	</plist>
+	
+Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
+
+![plist Editor](/ps/ps1/img/plist.png)
+
+#### Output ####
+
+If you have implemented the skeleton classes correctly, the driver program should run without modification. The following screenshot shows the execution of the driver program with the stack and queue examples given in the skeleton project.
+
+![Output for stack and queue](/ps/ps1/img/output-stack-queue.png)
+
+The output of the driver program in both cases is a representation of the state of the stack or queue after the sequence of methods described in the respective property list has been invoked.
+
+The top of the stack, or head of the queue, is on the left.
 
 ### Problem 3: Graph Traversal (45 points)
 
-We may represent a **general graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbors.
+We may represent a **general graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbours.
 
 Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
 ![Example Graph](/ps/ps1/img/graph.png)
 
-The adjacency list for this graph in the format of an (Apple) property list would be as follows. The root key `start` represents the start vertex of the traversal decribed by this test file.
+The adjacency list for this graph in the format of a property list would be as follows. The key `start` represents the start vertex of the traversal decribed by this test file, and the key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a vertex in the graph, and its corresponding array represents the vertices that it is adjacent to.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -263,41 +277,40 @@ The adjacency list for this graph in the format of an (Apple) property list woul
 	</plist>
 	
 Note that this graph contains a cycle, and that edges are bidirectional.
-
-Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
-
-![plist Editor](/ps/ps1/img/plist.png)
 	
-Your task is to write enumerators that traverse the graph in Depth-first and Breadth-first order starting from a given vertex.
-	
-1. Find out what an `NSEnumerator` does. **(Not graded)**
+Your task is to write sub-classes of `NSEnumerator`s that traverse the graph in Depth-first and Breadth-first order starting from a given vertex.
 
-2. Implement an `NSEnumerator` for Depth-first Search. **(20 points)**
+The driver program will parse property lists into their constituent Objective-C objects. Your implementation only needs to deal with graphs represented as `NSDictionary`s. 
+
+- Find out what an `NSEnumerator` does. **(Not graded)**
+
+- Implement the class `DepthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Depth-first Search. **(20 points)**
 
 The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: A, B, D, F, E, C, G.
 
-3. Implement an `NSEnumerator` for Breadth-first Search. **(20 points)**
+- Implement the class `BreadthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Breadth-first Search. **(20 points)**
 
 The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: A, B, C, E, D, F, G.
 
-4. Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` class. **(5 points)**
+- Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` classes. **(5 points)**
 
-Your file should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
+Your files should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
+
+The following screenshot shows the output from running the driver program on the given graph.
+
+![Output for bfs and dfs](/ps/ps1/img/output-bfs-dfs.png)
 
 ### Problem 4: Testing (15 points)
 
 1. Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-Your tests can be given as a set of input files (in the respective formats described above) and their corresponding outputs, but any other sensible format will do fine. If your tests are input files, you should describe the scope in a comment appended at the end of the file `main.m`.
+Your tests may be given as a set of input files in the respective formats described above. You should describe the purpose of these tests and their expected output in comment appended at the end of the file `main.m`.
+
+If you need to write tests in code, you may add additional logic to run them in the space provided in `main.m`, but make sure that the output generated by the driver program does not change when the tests are successful, and when we run the program.
 
 While it is a good practice to code defensively, we will not be supplying malformed property lists to your implementation.
 
 *You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
-
-#### Running the Driver Program
-If you have implemented the skeleton classes correctly, the driver program should run without modification. The following screenshot shows the execution of the driver program on the example graph given in this document.
-
-![Correct output](/ps/ps1/img/driver.png)
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
@@ -305,7 +318,6 @@ Please answer the following questions:
 1. How many hours did you spend on each problem of this problem set?
 2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
-
 Submit the answer to this question in the form of a comment appended at the end of the file `main.m`. **(3 bonus points)**
 
 Section 4 - Grading and Submission
@@ -313,9 +325,9 @@ Section 4 - Grading and Submission
 Please read this section carefully so that you fully understand the grading scheme and the mode of submission!
 
 ### Grading Scheme ###
-In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write well-documented code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained and the probability that some poor soul will have to come along to read and modify your code is very high. Your goal is to minimize the grief of this poor fella and make him love reading your code.
+In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write well-documented code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained and the probability that some poor soul will have to come along to read and modify your code is very high. Your goal is to minimise the grief of this poor fella and make him love reading your code.
 
-You also want to minimize the grief that is inflicted on your TAs. In particular, we will be looking out for the following:
+You also want to minimise the grief that is inflicted on your TAs. In particular, we will be looking out for the following:
 
 - Your submission should adhere to the submission format.
 - Your files should compile without errors or warnings.
@@ -327,11 +339,11 @@ In this assignment, you will be using a pilot locally hosted [GitLab](http://cs3
 
 Accounts have already been created for you using your matriculation number and the email address you supplied when registering for this module. You should have received an email containing an initial password, and instructions asking you to login and change that password.
 
-*As this is a non-TLS service (due to typical civil service red tape), please choose a strong throwaway password. Do not reuse passwords from your other accounts.*
+*As this is a non-TLS service, please choose a strong throwaway password. Do not reuse passwords from your other accounts.*
 
 The Xcode projects for your problem sets, if they are provided, will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
-As with GitHub, you may add an SSH key to your account. However, due once again to the above reason, SSH will only be accessible within the SoC network. (We're working on this; it takes *some* time.) We recommend that you clone using HTTP and configure Git to remember your password for minimum grief.
+As with GitHub, you may add an SSH key to your account. However, due to network policy reasons, SSH will only be accessible within the SoC network. We recommend that you clone using HTTP and configure Git to remember your password for minimum grief.
 
 When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
 
