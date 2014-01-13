@@ -1,7 +1,7 @@
 Problem Set 3
 ==
 
-*Issue Date: 27 February 2014  
+*Issue Date: 27 January 2014  
 Due Date: 9 February 2014  
 Tutorial Date: Week 5*
 
