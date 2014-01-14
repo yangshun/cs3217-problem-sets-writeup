@@ -7,11 +7,48 @@ Tutorial Date: Week 4*
 
 Section 1 - Introduction
 --
-The purpose of this problem set is to improve your understanding of *Abstract Data Types* (ADTs). You will interpret, implement and test three ADT classes, `Node`, `Edge` and `Graph`, representing the vertices, edges and overall structure of a labeled graph respectively. The code for these classes can be found in `cs3217/ps2/GraphADT`.
+
+###Bubble Blast Saga###
+
+This assignment will prepare you for the application that you are going to build over the next 5 weeks. This application is a bubble puzzle game similar to BubbleMania. The objective is to shoot bubbles of different colours so that they adhere to other bubbles that are already in the game area. Three or more connected bubbles of the same colour will be removed from the game areas. Any bubbles left unattached to the top will also be removed. 
+
+In this assignment, you will practice reading and interpreting specifications, and writing Objective-C code that satisfies our specifications. In addition, you will be given an introduction to using checkRep methods and testing strategies. You will implement three classes and link them with the code provided to complete the implementation of a Graph ADT. You will be required to answer some questions about both the code you are given and the code you need to write.
+
+A video of what your app might look like is shown in Interactive 3.1. Note that while the grading of the problem sets will be done separately, you will eventually have to integrate all the parts together. You should put effort into ensuring that each problem set is fully debugged before you move on or you will run into a lot of problems when you try to integrate all the parts in a few weeks.
+
+[Interactive 3.1]
+
+###Deploying Apps on your Development iPad###
+
+You should now have received your distributed iPad. It’s time to try installing an application onto your iPad for testing.
+
+To do so, you must ensure your computer and iPad device is configured for iOS development. Make sure your iPad is plugged in, start Xcode and open Organizer from **Window** menu.If this is the first time using the device for development, select your device in Organizer and press **Use for Development**.
+
+If there is no certificate created, Xcode will ask you if you want Xcode to submit certificate request automatically. Say YES. Request will show online on developer portal and has to be approved by an admin user. If Xcode does not prompt you to request a certificate, click **Refresh** in **Provisioning Profiles** under **Library**.
+
+If this is a new device, copy the Identifier UDID and send it to admin user to add it to the online developer portal (should not be the case since all iPads and devices are already added, unless you intend to use your own iPad or iPhone)
+ 
+Go to Provisioning Profiles in LIBRARY in Organizer and click on **Automatic Device Provisioning**. Your device should have a green color dot if everything is OK and you should be able to run apps on it.
+ 
+If you have a yellow/orange dot, select the iOS Team Provisioning profile and hit **DELETE**. Then hit **Refresh** again. Xcode will update with the new profile and should work. Try disconnecting the device and rebooting also if it’s not working straight away. 
+
+**Please note that:**
+ 
+All students use their own certificates, issued on the Mac they connected first. If they wanna use another Mac, they must export and import their profile from Xcode by themselves.
+
+Students may need to install the WWDC certificate authority, which can be downloaded from the online developer portal. 
+
+​ Once that’s done, let’s try to install a very simple application, in fact, just a blank application. Create a single-view iPad application, named **DeviceTest**. Make sure you fill in `nus.cs3217` (case sensitive) as your company. Then change the target platform from simulator to iPad in the scheme selector in the top part of the IDE. Run your application and see that it can be loaded into iPad to run. Now that you are able to successfully deploy an application on the iPad, you can do the same for your future applications by applying similar steps.
+
+Section 2 - Background
+--
+
+### Overview ###
+
+The purpose of this problem set is to improve your understanding of *Abstract Data Types* (ADTs). You will interpret, implement and test three ADT classes, `Node`, `Edge` and `Graph`, representing the vertices, edges and overall structure of a labeled graph respectively. The code for these classes can be found in `problem-set-2/GraphADT`.
 
 **Reminder**: Please read the entire problem set before starting.
 
-### Background ###
 The purpose of a specification is to document a program’s logic, the range of inputs that it can safely operate on, and its expected behaviour. So for ADTs, the specification describes what this ADT represents, its purpose, its representation invariant, and the behaviour of each of its method(s). At the start of the ADT, the specification gives a summary of the ADT, mainly the abstraction function and the representation invariant. The abstraction function is a mapping from the state of an ADT instance to some mathematical object that it represents. The representation invariant is some condition that all valid instances of the ADT must satisfy, which is essentially the format of the ADT. Before each method, there are comments describing its behaviour. Here we are simply describing its expected input and output. The “requires” clause state the conditions that the input must satisfy. When calling this method, we must make sure all the conditions in the “requires” clause are met. When implementing this method, we can safely assume that the input satisfies the “requires” clause. The “returns” clause dictates the relationship between the expected output and the input.
 
 ### Definitions and Terminology ###
@@ -32,13 +69,13 @@ In a *multigraph*, there can be any number of edges (zero, one, or more) between
 
 In a *weighted graph* (Fig. 3), every edge has a weight associated with it. In this assignment, a graph cannot contain more than one edge with the same weight between a pair of nodes.
 
-Section 2 - Graph ADT
+Section 3 - Graph ADT
 --
 Interpreting an abstract type involves understanding its specifications -  what services it should provide and what their behaviour should be. Implementing an abstract type involves choosing a representation and algorithms, and embodying them in code. In this section, you will practice interpreting and implementing specifications for a Graph structure and in doing so, will gain a better appreciation for the role that fundamental tools such as specifications, object models and the representation invariants play in the design of a module.
 
 ### Problem 1: Designing the Graph ADT (20 Points) ###
 
-Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `cs3217/ps2/GraphADT`. Double click `GraphADT.xcodeproj` to open the project template. Read the specifications for *Node* in `Node.h`, representing individual vertices, and for *Edge* in `Edge.h`, representing edges in the graph. Then read over the staff-provided implementations, `Node.m` and `Edge.m`.
+Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `problem-set-2/GraphADT`. Double click `ps2.xcodeproj` to open the project template. Read the specifications for *Node* in `Node.h`, representing individual vertices, and for *Edge* in `Edge.h`, representing edges in the graph. Then read over the staff-provided implementations, `Node.m` and `Edge.m`.
 
 Answer the following questions in `design.txt`:
 
@@ -73,9 +110,9 @@ Answer the following questions in `design.txt`:
 
 ### Problem 3: Testing the Graph ADT (30 Points) ###
 
-It is a very good practice to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 2.1 to run the unit test for Graph ADT.
+It is a very good practice to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 3.1 to run the unit test for Graph ADT.
 
-**Gallery 2.1** Run unit test for GraphADT in Xcode.
+**Gallery 3.1** Run unit test for GraphADT in Xcode.
 
 ![Open Project](/ps/ps2/img/2-1.png)
 
@@ -137,7 +174,7 @@ Please answer the following questions:
 
 Your answers to these questions should be appended at the end of `design.txt`.
 
-Section 3 - Grading and Submission
+Section 4 - Grading and Submission
 --
 Please read this section carefully so that you fully understand the grading scheme and the mode of submission!
 
