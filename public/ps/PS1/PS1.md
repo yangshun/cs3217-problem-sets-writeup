@@ -278,7 +278,7 @@ The adjacency list for this graph in the format of a property list would be as f
 	
 Note that this graph contains a cycle, and that edges are bidirectional.
 	
-Your task is to write sub-classes of `NSEnumerator`s that traverse the graph in Depth-first and Breadth-first order starting from a given vertex.
+Your task is to write sub-classes of `NSEnumerator`s that traverse the graph in Depth-first and Breadth-first order starting from a given vertex. Neighbours of a node will be traversed in the order of nodes specified in the `plist` file.
 
 The driver program will parse property lists into their constituent Objective-C objects. Your implementation only needs to deal with graphs represented as `NSDictionary`s. 
 
