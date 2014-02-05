@@ -1,0 +1,36 @@
+CS3217 - Software Engineering on Modern Application Platforms
+Grading Report for Problem Set 5
+Student: {2} ({1})
+Tutor/TA: {3}
+
+-----
+Grading
+
+Problem 1		: {4}/ 10
+Problem 2		: {5}/ 10
+Problem 3		: {6}/ 25
+Problem 4		: {7}/ 30
+Problem 5		: {8}/ 20
+Problem 6		: {9}/  5
+
+Sub Total		: {10}/100
+
+Testing			: {11}/ 30
+
+Bells & Whistles	: {12}/ 60
+
+Final Reflection	: {13}/ 10
+
+Bonus			: {14}/  4
+
+Basic score		: {15}/200
+
+Coding Style Deduction	: {16}/ 60
+
+Final Score		: {17}/200
+
+------
+Comments by Tutor/TA:
+
+{18}
+
