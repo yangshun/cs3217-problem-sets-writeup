@@ -32,7 +32,7 @@ function saveDocument() {
         ps: number,
         file_data: content
     }, function(res) {
-        if (res == "success") {
+        if (res === 'success') {
             setFileModificationStatus(false);
         }
     })

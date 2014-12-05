@@ -4,7 +4,6 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 var ejs = require('ejs');
@@ -34,11 +33,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/edit', function(req, res) {
-  res.render('ps/index.html');
+  res.render('ps/edit.html');
 });
 
 app.post('/save', function(req, res) {
-
   var filepath = path.join(__dirname, 'public/ps/PS' + req.body.ps + '/PS' + req.body.ps + '.md');
   fs.writeFile(filepath, req.body.file_data, function (err) {
     if (err) throw err;
