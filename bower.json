@@ -2,7 +2,8 @@
   "name": "NUSMods",
   "private": true,
   "dependencies": {
-    "jquery": "~1.11.1"
+    "jquery": "~1.11.1",
+    "codemirror": "~4.8.0"
   },
   "devDependencies": {}
 }
