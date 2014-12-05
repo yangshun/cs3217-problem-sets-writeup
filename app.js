@@ -33,7 +33,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/edit', function(req, res) {
-  res.render('ps/edit.html');
+  res.render('edit.html');
 });
 
 app.post('/save', function(req, res) {
