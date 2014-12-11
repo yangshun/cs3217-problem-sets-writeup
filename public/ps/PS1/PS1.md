@@ -16,9 +16,9 @@ This assignment consists of two parts. In the first part of this assignment, you
 This assignment (and the rest of the course) assumes that you have access to
 
 * Mac OS X 10.9
-* Xcode 5
+* Xcode 6.1
 * An Apple Developer account
-* An iPad capable of running iOS 7
+* An iPad capable of running iOS 8
 
 Strictly speaking, it is sufficient (but *not* recommended) to install and use OS X Command Line Tools.
 
@@ -31,9 +31,9 @@ Development in general can be a messy process, and you should consider running y
 
 ### Objective-C and Cocoa ###
 
-Objective-C is the primary language that will be used to write Mac and iOS software. During this semester, all coding assignments will be done using Objective-C.
+As of iOS 8, Apple introduced a new programming language, Swift. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, and also more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps, but for this course, we will stick with Swift. During this semester, all coding assignments will be done mainly using Swift and a little Objective-C at the start.
 
-If you’re comfortable with basic object-oriented concepts and the C language, the extensions provided by Objective-C should be quite natural, and it should be easy to pick up Objective-C during CS3217. You should read Apple's [Introduction to Objective-C \(PDF\)](https://developer.apple.com/library/ios/documentation/cocoa/Conceptual/OOP_ObjC/OOP_ObjC.pdf).
+If you’re comfortable with basic object-oriented concepts and the C language, the extensions provided by Objective-C should be quite natural, and it should be easy to pick up Objective-C during CS3217. You should read Apple's [Introduction to Swift](https://developer.apple.com/swift/).
 
 [Cocoa](https://developer.apple.com/technologies/mac/cocoa.html) is Apple’s native object-oriented API for the Mac OS X operating system. For iOS development, we will be using [Cocoa Touch](https://developer.apple.com/technologies/ios/cocoa-touch.html), a touch-oriented API similar to Cocoa. Cocoa Touch follows a Model-View-Controller (MVC) paradigm.
 
@@ -63,7 +63,7 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 Welcome to Xcode\!
 
-![When you have finally decided to start working, begin by creating an iOS Single View application.](/ps/ps1/img/1-2.png)
+![Begin by creating an iOS Single View application.](/ps/ps1/img/1-2.png)
 
 When you have finally decided to start working, begin by creating an iOS Single View application.
 
@@ -121,7 +121,7 @@ Test that your app works by tapping on the button. Observe that the label's text
 
 Note that on lower resolution screens, your emulator may not show the faux iPad bezel. In addition, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down emulator.
 
-Holding the `option` key with your cursor over the emulator's "screen" brings out two grey circles representing two touch points. This is useful for debugging pinch and rotate gestures. 
+Holding the `option` key with your cursor over the emulator's "screen" brings out two grey circles representing two touch points. This is useful for debugging pinch and rotate gestures. Pressing `shift` while holding the `option` key will allow you to move the center position of the two points.
 
 The emulator has limitations when testing more complicated gestures, the camera, and network stacks. You should find out about these limitations if your application implements such functionality.
 
@@ -139,15 +139,15 @@ Objective-C provides three main collection types:
 - `NSDictionary` describes a key-value store where some one *key*-object maps to one *value*-object.
 - `NSSet` describes an unordered collection of unique objects.
 
-Collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
+These collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
 
 Keys in `NSDictionary` may be any instance of an `NSObject`. Which selector does `NSDictionary` use to test for the uniqueness of keys?  **(10 points)**
 
 ### Problem 2: Standard Data Structures (30 points) ###
 
-Objective-C does not provide Stacks and Queues natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
+Objective-C does not provide Stacks and Queues ADTs natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
 
-**Fork** the Problem Set 1 repository from GitLab ([http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1](http://cs3217.comp.nus.edu.sg/problem-sets-2014/problem-set-1)) and **clone** it into your computer to begin working. 
+**Fork** the Problem Set 1 repository into your account on Bitbucket ([https://bitbucket.org/cs3217/cs3217-problem-set-1](https://bitbucket.org/cs3217/cs3217-problem-set-1)) and **clone** it into your computer to begin working. 
 
 The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change functionally*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
 
@@ -221,7 +221,7 @@ The top of the stack, or head of the queue, is on the left.
 
 ### Problem 3: Graph Traversal (45 points)
 
-We may represent a **general graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbours.
+We may represent a **general undirected graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbours.
 
 Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
@@ -286,11 +286,11 @@ The driver program will parse property lists into their constituent Objective-C 
 
 - Implement the class `DepthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Depth-first Search. **(20 points)**
 
-The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: A, B, D, F, E, C, G.
+The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, D, F, E, C, G**.
 
 - Implement the class `BreadthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Breadth-first Search. **(20 points)**
 
-The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: A, B, C, E, D, F, G.
+The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: **A, B, C, E, D, F, G**.
 
 - Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` classes. **(5 points)**
 
@@ -302,7 +302,7 @@ The following screenshot shows the output from running the driver program on the
 
 ### Problem 4: Testing (15 points)
 
-1. Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
+Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
 Your tests may be given as a set of input files in the respective formats described above. You should describe the purpose of these tests and their expected output in comment appended at the end of the file `main.m`.
 
