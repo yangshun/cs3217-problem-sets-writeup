@@ -268,41 +268,42 @@ All applications in iOS are sandboxed. As such, applications can only read and w
 
 You can choose to save your data either using a single file, or using multiple files. We will discuss only the case of single file since it might be easier to implement. You start by having one root object (e.g. an `NSArray` or `NSDictionary`) which you populate with all the data that have to be persisted. When saving, you rewrite the single file with the contents of the root directory.
 
-**Property Lists** - Property lists are convenient because their representation is in XML. As such, you  can view and edit files manually using *Xcode* or the *Property List Editor* application. You can create  and write both `NSArray` and `NSDictionary` containing any object as long as the objects are serializable. Although any object can be made serializable, only certain objects can be placed in the Objective-C collection classes, such as: `NSArray, NSMutableArray, NSDictionary, NSMutableDictionary, NSData, NSMutableData, NSString, NSMutableString, NSNumber, NSDate`. If you can build ￼your model using only these objects (NOTE: look at the documentation for `NSData`) then you can save your entire game data using the collection method `writeToFile:atomically:`.
+**Property Lists** - Property lists are convenient because their representation is in XML. As such, you  can view and edit files manually using *Xcode* or the *Property List Editor* application. You can create  and write both `NSArray` and `NSDictionary` containing any object as long as the objects are serializable. Although any object can be made serializable, only certain objects can be placed in the Foundation collection classes, such as: `NSArray, NSMutableArray, NSDictionary, NSMutableDictionary, NSData, NSMutableData, NSString, NSMutableString, NSNumber, NSDate`. If you can build ￼your model using only these objects (NOTE: look at the documentation for `NSData`) then you can save your entire game data using the collection method `writeToFile(_ path: String, atomically atomically: Bool)`.
 
 **Object Archives** - One of the problems with property lists is that custom objects cannot be serialized. In Cocoa, “archiving” refers to a more generic serialization that any object can implement. In fact, any object model should support archiving since this allows you any model object to be saved and restored. As long as every property you implement in your class is either a scalar (int, float etc.) or an object that conforms to the `NSCoding` protocol, you can archive your objects completely. To make an object conform to the `NSCoding` protocol, you must implement two methods, one to encode your object into an archive, and one to create your object by decoding it from a file:
 
-    - (void)encodeWithCoder:(NSCoder*)coder {
+    func encodeWithCoder(coder: NSCoder) {
         // This tells the archiver how to encode the object
-        [coder encodeObject:self.strVar forKey:@"theStringVariable"];
-        [coder encodeInt:self.intVar forKey:@"theIntVariable"];
+        coder.encodeObject(self.strVar, forKey: "strVar")
+        coder.encodeInt(self.intVar, forKey: "intVar")
     }
 
-    - (void)initWithCoder:(NSCoder*)decoder {
+    required convenience init(coder decoder: NSCoder) {
+        self.init()
     	// This tells the unarchiver how to decode the object
-        self.strVar = [decoder decodeObjectForKey:@"theStringVariable"];
-        self.intVar = [decoder decodeIntForKey:@"theIntVariable"];
+        self.strVar = decoder.decodeObjectForKey("strVar") as String?
+        self.intVar = decoder.decodeIntegerForKey("intVar")
     }
 
 To actually store your data then your have to create an instance of `NSMutableData` to hold the encoded data and then create an `NSKeyedArchiver` instance to save the data to a file:
 
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:model forKey:@"modelKeyString"];
-    [archiver finishEncoding];
-    BOOL success = [data writeToFile:@"/path/file/" atomically:YES];
+    let data = NSMutableData();
+    let archiver = NSKeyedArchiver(forWritingWithMutableData: data)
+    archiver.encodeObject(model, forKey: "modelKeyString")
+    archiver.finishEncoding()
+    let success = data.writeToFile("/path/file/", atomically: true)
 
-Restoring an object from a file is similar, using an `NSKeyedUnarchiver` object and its `decodeObjectForKey:` method.
+Restoring an object from a file is similar, using an `NSKeyedUnarchiver` object and its `decodeObjectForKey(_ key: String)` method.
 
-**Saving Images** - Because the `UIImage` class does not implement the `NSCoding` protocol by default, you need to extend it using an Objective-C concept known as *categories*, and add these methods yourself. As before, to encode an object you would do:
+**Saving Images** - Because the `UIImage` class does not implement the `NSCoding` protocol by default, you need to extend it using an Swift concept known as *Extension*, and add these methods yourself. As before, to encode an object you would do:
 
-    NSData *imageData = UIImagePNGRepresentation(self);
-    [coder encodeObject:imageData forKey:@"image"];
+    let imageData = UIImagePNGRepresentation(self);
+    coder.encodeObject(imageData, forKey: "image")
 
 And to decode it:
 
-    NSData *imageData = [coder decodeObjectForKey:@"image"];
-    return [UIImage imageWithData:imageData];
+    let imageData = decoder.decodeObjectForKey("image")
+    return UIImage(data: imageData)
 
 **Manual Encoding** - The general idea in this approach is to open a file and to pass the handler to each object for the object to write itself into the file using a custom format. You will need to assign a unique identifier (type) to each object and write the type of the object to file before calling the object to write itself. To reconstruct objects, you will require a factory function that will read the file for the object type, create an associated empty object and then pass the file handle to the object for the object to initialize its state. Effectively, each object must support a `read` and a `write` method (which you will have to define yourself).
 
