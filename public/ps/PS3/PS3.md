@@ -23,27 +23,27 @@ The game logic is typically subdivided into a model and a controller. The model 
 
 In this problem set you will familiarise yourself with the **Model-View-Controller (MVC)** design pattern. In MVC, the logic of the application is separated from the user interface such that development, testing and maintenance of these modules are independent. An MVC application is a collection of model/view/controller triads, each responsible for a different UI element.
 
-The **model** manages the behavior and the data of the application, provides information to the view about its state, and updates its stated according to the controller. The model may notify observers (such as views) when the information data changes so that they can render the updated state.
+The **Model** manages the behavior and the data of the application, provides information to the view about its state, and updates its stated according to the controller. The model may notify observers (such as views) when the information data changes so that they can render the updated state.
 
-The **view** renders the model into a form suitable for interaction, typically by user interface elements. It is possible to have multiple views for a single model for different purposes.
+The **View** renders the model into a form suitable for interaction, typically by user interface elements. It is possible to have multiple views for a single model for different purposes.
 
-The **controller** receives input from the user and instructs the model and view to perform actions based on the input.
+The **Controller** receives input from the user and instructs the model and view to perform actions based on the input.
 
 The Cocoa and Cocoa Touch frameworks encourage the use of the MVC pattern. Interface Builder constructs views, and connects them to controllers via *Outlets* and *Actions*. In this problem set, you will develop a level designed for a game called Bubble Blast Saga by conforming to MVC design pattern.
 ￼
 ### Bubble Blast Saga Level Designer (MVC) ###
 
-The following is a brief overview of the game that you will be building called Bubble Blast Saga. When launching the game, the user is presented with the interface, with an isometric grid-like structure where the bubbles will be placed. A palette at the bottom will allow the designer to choose the color of bubble he wants to design the grid with (blue, red, green, orange). The palette also contains an eraser used to clean the bubbles off the grid. After adding the bubbles onto the grid, the user can use the **SAVE** button to store the current grid bubbles in a file on the iPad. The **LOAD** button can be used to load and restore the previously saved level, and the **RESET** button will clear all the bubbles from the grid. Once the user is satisfied with the level design, he can start the game by pressing the **START** button (to be implemented in the upcoming problem sets).
+The following is a brief overview of the game that you will be building called Bubble Blast Saga. When launching the game, the user is presented with the interface, with an isometric grid-like structure where the bubbles will be placed. A palette at the bottom will allow the designer to choose the colour of bubble he/she wants to design the grid with (blue, red, green or orange). The palette also contains an eraser used to clean the bubbles off the grid. After adding the bubbles onto the grid, the user can use the **SAVE** button to store the current grid bubbles in a file on the iPad. The **LOAD** button can be used to load and restore the previously saved level, and the **RESET** button will clear all the bubbles from the grid. Once the user is satisfied with the level design, he/she can start the game by pressing the **START** button (to be implemented in the next problem set).
 
-In the game, the user specifies the direction of a new bubble to shot. The bubble will then interact with the existing bubbles in the grid according to the game engine that you will build in the next problem set. If the shot bubble touches another bubble with the same colour as its own, and these bubbles form a group of 3 or more bubbles, then all the connected bubbles of this colour are destroyed. The objective of the game is to destroy all the bubbles from the grid by making groups of 3 or more. In this problem set, the **START** button will be disabled. You will only have to build a rudimentary level designer.
+In the game, the user specifies the direction of a new bubble to shot. The bubble will then interact with the existing bubbles in the grid according to the game engine that you will build in the next problem set. If the shot bubble touches another bubble with the same colour as its own, and these bubbles form a group of 3 or more bubbles, then all the connected bubbles of this colour are destroyed. The objective of the game is to destroy all the bubbles from the grid by making connected groups of 3 or more bubbles. In this problem set, the **START** button will be disabled. You will *only* have to build a rudimentary level designer.
 
 The features of the level designer that you are expected to implement include the following:
 
-* Reset, save and load a game level;
-* An object palette from which the user can select the bubble colour or the eraser;
-* Fill the grid with the bubbles (pan gesture);
-* Change the colour in the grid in a round-robin fashion (single-tap gesture);
-* Delete bubbles from the grid (long-press gesture);
+* Reset, save and load a game level using the respective button
+* An object palette from which the user can select the bubble colour or the eraser
+* Fill the grid with the bubbles (Pan gesture)
+* Cycle through the colour of the bubbles in the grid (Single Tap gesture)
+* Delete bubbles from the grid (via Long Press gesture and panning with eraser mode)
 
 
 Section 2 - Bubble Blast Saga Level Designer
@@ -85,7 +85,7 @@ What we want to achieve here is to add buttons to the view and set up the button
 
 ![](/ps/ps3/img/Milestone2img/StoryboardView.png)
 
-*Step 1:* First, select View in the left pane. Use the `“=”` button in the bottom right to bring the design canvas to the actual size. This step is necessary so that objects can be dragged and dropped from the Object Library to the View.
+*Step 1:* First, select View in the left pane. Use the `=` button at the bottom right to bring the design canvas to the actual size. This step is necessary so that objects can be dragged and dropped from the Object Library to the View.
 
 ![](/ps/ps3/img/Milestone2img/ButtonAttributes.png)
 
@@ -113,11 +113,11 @@ What we want to achieve here is to add buttons to the view and set up the button
 
 ![](/ps/ps3/img/Milestone2img/AllButtons.png)
 
-*Step 8:* Copy and paste this button to create three more buttons. Note that when we copy a button, we also copy its link to the event handlers. That means, the button press events generated by the three new buttons are also handled by `buttonPressed`. Align these buttons nicely at the top of our view. Change the titles of the three new buttons to `Save, Load, and Reset` respectively in the Attributes Inspector or by double-clicking on the buttons.
+*Step 8:* Copy and paste this button to create three more buttons. Note that when we copy a button, we also copy its link to the event handlers. That means, the button press events generated by the three new buttons are also handled by `buttonPressed`. Align these buttons nicely at the top of our view. Change the titles of the three new buttons to **Save**, **Load**, and **Reset** respectively in the Attributes Inspector or by double-clicking on the buttons.
 
 ##### Milestone 3: Add UIView with IBOutlet connection using Editor Assistant
 
-Now, we want to add a `UIView` to the main view to represent the game area. We also want to add an `IBOutlet` connection between the `UIView` and the `View Controller`, so that our View Controller have access to the game area.  To achieve this, please follow the step-by-step instructions shown in the gallery below. The detailed instructions for each step is given by the caption below the figures. 
+Now, we want to add a `UIView` to the main view to represent the game area. We also want to add an `IBOutlet` connection between the `UIView` and the View Controller, so that our View Controller has access to the game area.  To achieve this, please follow the step-by-step instructions shown in the gallery below. The detailed instructions for each step is given by the caption below the figures. 
 
 ![](/ps/ps3/img/Milestone3img/GameArea.png)
 
@@ -143,11 +143,11 @@ Now, we want to add a `UIView` to the main view to represent the game area. We a
 The game area is rather dull, isn’t it? Let’s place a picture in it. Please follow the step-by-step instructions shown in the gallery below to add image resource files to your project and programmatically add these images as UIImageView subviews to your Game View. The detailed instructions for each step is given by the caption below the figures. 
 
 ![](/ps/ps3/img/Milestone4img/ImageExtraction.png)
-*Step 1:* Select all the images in the folder Problem Set 3/Images (the project folder that you forked).
+*Step 1:* Select all the images in the `images` folder of the forked repository.
 
 ![](/ps/ps3/img/Milestone4img/ImportImages.png)
 
-*Step 2:* Drag the images into the Project Navigation pane, under the Game folder. When prompted with the above dialog, check Copy items into destination group’s folder (if needed). Click Finish to complete.
+*Step 2:* Drag the images into the **Project Navigation** pane, under the Game folder. When prompted with the above dialog, check Copy items into destination group’s folder (if needed). Click **Finish** to complete.
 
 ![](/ps/ps3/img/Milestone4img/ImagesFolder.png)
 
@@ -163,11 +163,11 @@ The game area is rather dull, isn’t it? Let’s place a picture in it. Please 
 
 ![](/ps/ps3/img/Milestone4img/UIImageviewAlloc.png)
 
-*Step 6:* Place the UIImage into a UIImageView.
+*Step 6:* Place the `UIImage` into a `UIImageView`.
 
 ![](/ps/ps3/img/Milestone4img/BackgroundDimensions.png)
 
-*Step 7:* Get the height and width of the game area. These will be used later to set the size of the UIImageView object.
+*Step 7:* Get the height and width of the game area. These will be used later to set the size of the `UIImageView` object.
 
 ![](/ps/ps3/img/Milestone4img/Backgroundframe.png)
 
@@ -178,46 +178,48 @@ The game area is rather dull, isn’t it? Let’s place a picture in it. Please 
 *Step 9:* Add background as a subview to the gamearea View.
 
 ![](/ps/ps3/img/Milestone4img/GameareaFinal.png)
-*Step 10:* Build and run the program. If you have done everything correctly, you should see something like the above
+*Step 10:* Build and Run the program. If you have done everything correctly, you should see something like the above
 
 ### Problem 1: Create the Bubble Palette (10 points) ###
 
-To create the palette, you need to add a new view, palette, to the main view. The palette will contain 4 bubbles (blue, red, green, orange) that the user can choose to fill the grid with and an eraser to delete bubbles. These images should stay in the palette throughout the design phase. You can find the necessary graphic files for the game objects in the archive for this problem set. Image 5.1 is a sample screenshot of the level designer. You are however free to redesign the layout of the level designer as long as you satisfy the basic requirements.
+To create the palette, you need to add a new view, palette, to the main view. The palette will contain 4 bubbles (blue, red, green, orange) that the user can choose to fill the grid with and an eraser to delete bubbles. These images should stay in the palette throughout the design phase. You can find the necessary graphic files for the game objects in the archive for this problem set. The following image is a sample screenshot of the level designer. You are however free to redesign the layout of the level designer as long as you satisfy the basic requirements.
 
-From the bubble palette, the user taps to select the color of bubble he wants to use to fill the grid or taps the eraser to delete the bubble from the grid.
+From the palette area, the user taps a coloured bubble to select the colour of bubble he wants to use to fill the grid or taps the eraser to enter the erase mode. In erasing mode, panning over any non-empty bubble cells will clear the bubble from the grid.
+
+Your bubble palette should indicate the current drawing mode (which coloured bubble or eraser).
 
 ![designer](/ps/ps3/img/designer.png)
 
 ### Problem 2: Create the Bubble Grid (10 points) ###
 
-Your next task is to create an isometric grid. The grid should have 12 columns and should be tightly packed as seen in the previous image (the number of rows is up to you to decide). This grid will indicate all the possible positions of the bubble and would be used by the designer to design a game level by filling it with bubbles.
+Your next task is to create an isometric grid. The grid should have 12 columns, at least 9 rows, and should be tightly packed as seen in the previous image. This grid will indicate all the possible positions of the bubble and would be used by the designer to design a game level by filling it with bubbles.
 
-(Hint: The traditional way of doing this is by adding individual UIView circles to make the grid. Alternatively, you may use UICollectionView to directly build the grid. Although this will make your life less complicated, understanding how UICollectiionView works may take some time. Both ways are equally acceptable and you need to decide which one you are more comfortable with ;) ).
+(Hint: The traditional way of doing this is by adding individual `UIView` circles to make the grid. Alternatively, you may use `UICollectionView` to directly build the grid. Although this will make your life less complicated, understanding how `UICollectionView` works may take some time. Both ways are equally acceptable and you need to decide which one you are more comfortable with).
 
 ### Problem 3: Explain your Design (40 points) ###
 
 Before you begin, please spend some time understanding the requirements of this problem set. Think about the following questions: What objects do you need to implement? How will the objects interact with your main controller? How do you best organize the code for these objects? Are there alternatives? How will you add new game objects?
 
-Once you have decided on the best way to organize your code, please answer the following questions by including a PDF file `design.pdf` at the root directory of your project repository.
+Once you have decided on the best way to organize your code, please answer the following questions by including a text file `design.txt` at the root directory of your problem set repository.
 
-1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. **(10 points)**
+1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. Save your diagram as `MDD.png` and include it in the root directory of your problem set repository. **(10 points)**
 
 2. Explain why you decided on your chosen design over alternative designs. **(5 points)**
 
-3. How would you add a new “projectile” object - the launched bubble - to the game? (To be done later) **(5 points)**
+3. How would you add a new “projectile” object - the launched bubble - to the game in subsequent problem sets? **(5 points)**
 
 4. How do you plan to integrate the bubble objects with a game engine? **(10 points)**
 
-5. What other functionalities do you think you might want to add to the game later and how can you extend your code to support these new features, other than what has been specified in this problem set? Give two concrete examples of changes you can make to your code as well as the structure of your classes). **(10 points)**
+5. What other functionalities do you think you might want to add to the game later and how can you extend your code to support these new features, other than what has been specified in this problem set? Give two concrete examples of changes you can/will make to your code as well as the structure of your classes). **(10 points)**
 
 
 ***Self-check:***
 A correct implementation of the MVC framework has the following properties:
 
-* the model knows about nobody
-* the view knows about the model (but accesses it only through the controller)
-* the controller knows about the the view and the model
-* the controller observes the view
+* the **model** knows about nobody
+* the **view** knows about the **model** (but accesses it only through the **controller**)
+* the **controller** knows about the the **view** and the **model**
+* the **controller** observes the **view**
 
 ### Problem 4: Implementing the Bubble Objects (110 points) ###
 
@@ -228,9 +230,9 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 2. **View** -  Rendering to the screen is handled by the view. It uses the model to know where to draw everything. The view doesn’t have any other functionality than this. You are provided with the required sprites in the attached archive. A sprite is an image or animation that is going to be integrated into a larger scene, such as our game. Here you will find included the image sprites. **(10 points)**
  - `bubble-blue.png`, `bubble-red.png`, `bubble-orange.png`, `bubble-green.png` are image sprites. These are the bubble images that will be used to design the game level. The default size of the bubble frame is 160x160 pixels.
 
-  **Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do no have to be the same, as the palette is just for the designer to select the color of bubble  to be used to fill the grid. 
+  **Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do not have to be the same, as the palette is just for the designer to select the colour of bubble  to be used to fill the grid. 
 
-3. **Controller** - The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, long-press to delete, tap to change color, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
+3. **Controller** - The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, long-press to delete, tap to change colour, drag on the grid to fill with bubbles), you are given the interface for an abstract class representing a game object controller. 
 
  You need to complete the implementation of the abstract class and then create subclasses with the additional requirements for each bubble type. For this problem set, there is only one basic bubble type with different colours. Eventually however, over the next problem sets, you would be subclassing this abstract class to create different types of games bubbles (for example, special power bubbles) that would have different behaviour than the basic bubble types. The interface is found in the file `GameBubble.h`. The subclass implementation be should contained in the file `GameBubbleBasic.m`. **(30 points)**
 
@@ -250,15 +252,15 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
-Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Please explain how you chose to implement the save/load function in `design.pdf`. Please argue that your implementation is the best one among all the alternatives you considered.
+Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Please explain how you chose to implement the save/load function in `design.txt`. Please justify your decision by explaining why your implementation is the best one among all the alternatives you considered.
 
 There are five ways to maintain data persistency on iOS:
 
-* Property lists
-* Object archives
-* Manual encoding
-* SQlite database
-* Core Data
+- Property lists
+- Object archives
+- Manual encoding
+- SQlite database
+- Core Data
 
 In this problem set, we will briefly discuss the first three. You should go and learn about the other two ways on your own. 
 
@@ -320,7 +322,7 @@ Testing is an integral part of software engineering. Since you are not implement
 * Glass-box testing 
  
 
-Please come up with your testing strategy and describe it in `design.pdf.` Of course, you should actually test your application as you have described instead of just listing down what you think you ought to test! :-)  
+Please come up with your testing strategy and describe it in `design.txt.` Of course, you should actually test your application as you have described instead of just listing down what you think you ought to test! :-)  
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 
