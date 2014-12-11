@@ -1,8 +1,8 @@
 Problem Set 4
 ==
 
-*Issue Date: 2 February 2015
-Due Date: 15 February 2015 
+*Issue Date: 2 February 2015  
+Due Date: 15 February 2015  
 Tutorial Date: Week 6*
 
 Section 1 - Introduction
