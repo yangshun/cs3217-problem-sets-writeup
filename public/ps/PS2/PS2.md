@@ -172,7 +172,7 @@ Please answer the following questions:
 2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
 
-Your answers to these questions should be appended at the end of `design.txt`.
+Submit your answers to these bonus problems at [http://tiny.cc/cs3217-ps2](http://tiny.cc/cs3217-ps2). Thanks!
 
 Section 4 - Grading and Submission
 --
@@ -200,6 +200,6 @@ When you begin working, your Xcode project will grow to contain files that are u
 
 Even though your TAs will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
 
-Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **‘Problem Set 2: Objective-C & Coding to Specifications’**.
+Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **‘Problem Set 2: Swift & Coding to Specifications’**.
 
 *Good luck and have fun!*

@@ -133,11 +133,11 @@ Please answer the following questions:
 
 1. How many hours did you spend on each problem of this problem set?
 
-2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
+2. In retrospect, what could you have done better to reduce the time you spent  solving this problem set?
 
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set?
 
-Your answers to these questions should be appended at the end of `design.txt`.
+Submit your answers to these bonus problems at [http://tiny.cc/cs3217-ps4](http://tiny.cc/cs3217-ps4). Thanks!
 
 Section 3 - Grading and Submission
 --

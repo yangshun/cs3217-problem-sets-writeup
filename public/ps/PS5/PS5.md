@@ -148,23 +148,23 @@ Comment on the original design of your MVC architecture and also on the design o
 
 Please answer the following questions:
 
-a. How many hours did you spend on each problem of this problem set?
+1. How many hours did you spend on each problem of this problem set?
 
-b. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
+2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 
-c. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set?
+3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set?
 
-d. Congratulations, you have completed all the Problem Sets for CS3217. To recap, the learning objectives of the various problem sets are as follows:
+4. Congratulations, you have completed all the Problem Sets for CS3217. To recap, the learning objectives of the various problem sets are as follows:
 
-- **Problem Set 1**: Introduction to Xcode and Objective-C 
-- **Problem Set 2**: Specifications and unit testing
-- **Problem Set 3**: MVC and GUI-programming in Objective-C
-- **Problem Set 4**: Design and implementation of a full software system
-- **Problem Set 5**: Integration of modules and integration testing
+  - **Problem Set 1**: Introduction to Xcode and Objective-C 
+  - **Problem Set 2**: Specifications and unit testing
+  - **Problem Set 3**: MVC and GUI-programming in Objective-C
+  - **Problem Set 4**: Design and implementation of a full software system
+  - **Problem Set 5**: Integration of modules and integration testing
 
-Yes, we admit that the learning curve is very steep, but we don’t have a lot of time to get you up to speed. The real question is: do you feel that the problem sets have been well-designed to help you learn software engineering and Objective-C is a structured and effective way? Do you have any suggestions on how the problem sets can be improved?
+  Yes, we admit that the learning curve is very steep, but we don’t have a lot of time to get you up to speed. The real question is: do you feel that the problem sets have been well-designed to help you learn software engineering and Swift in a structured and effective way? Do you have any suggestions on how the problem sets can be improved?
 
-Your answers to these questions should be appended at the end of `design.txt`.
+Submit your answers to these bonus problems at [http://tiny.cc/cs3217-ps5](http://tiny.cc/cs3217-ps5). Thanks!
 
 Section 4 - Grading and Submission
 --

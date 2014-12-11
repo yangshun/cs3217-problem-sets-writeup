@@ -318,7 +318,8 @@ Please answer the following questions:
 1. How many hours did you spend on each problem of this problem set?
 2. In retrospect, what could you have done better to reduce the time you spent solving this problem set?
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set? 
-Submit the answer to this question in the form of a comment appended at the end of the file `main.m`. **(3 bonus points)**
+
+Submit your answers to these bonus problems at [http://tiny.cc/cs3217-ps1](http://tiny.cc/cs3217-ps1). Thanks!
 
 Section 4 - Grading and Submission
 --
@@ -327,7 +328,7 @@ Please read this section carefully so that you fully understand the grading sche
 ### Grading Scheme ###
 In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write well-documented code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained and the probability that some poor soul will have to come along to read and modify your code is very high. Your goal is to minimise the grief of this poor fella and make him love reading your code.
 
-You also want to minimise the grief that is inflicted on your TAs. In particular, we will be looking out for the following:
+You also want to minimise the grief that is inflicted on your tutors. In particular, we will be looking out for the following:
 
 - Your submission should adhere to the submission format.
 - Your files should compile without errors or warnings.
@@ -335,7 +336,7 @@ You also want to minimise the grief that is inflicted on your TAs. In particular
 - Your code should be well-documented, correctly indented and neat. You should not use magic numbers.  
 
 ### Mode of Submission ###
-In this assignment, you will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
+In this assignment, you will be using BitBucket for submitting your code and receiving feedback. 
 
 Accounts have already been created for you using your matriculation number and the email address you supplied when registering for this module. You should have received an email containing an initial password, and instructions asking you to login and change that password.
 
@@ -349,6 +350,6 @@ When you begin working, your Xcode project will grow to contain files that are u
 
 **Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes.
 
-Even though your TAs will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
+Even though your tutors will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the heading **‘Problem Set 1: Hello iPad!’**.
