@@ -198,7 +198,7 @@ When you begin working, your Xcode project will grow to contain files that are u
 
 **Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-Even though your TAs will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
+Even though your tutors will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **‘Problem Set 2: Swift & Coding to Specifications’**.
 
