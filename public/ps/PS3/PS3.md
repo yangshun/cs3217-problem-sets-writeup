@@ -61,49 +61,46 @@ Here, we would like to create a new Single View Application project and set up t
 *Step 1:* Launch the empty Xcode project forked from the `Problem Set 3` repository and add a new target. The image above should appear. Select `Single View Application` as the template.
 
 ![](/ps/ps3/img/Milestone1img/OptionsNewProject.png)
-*Step 2:* In the Project Options dialog, fill in the Product Name as `Game` and the Company Identifier as `nus.cs3217`. Leave the prefix empty. You should select Use Storyboard and Use Automatic Reference Counting. For other options, you can follow the default configurations. We are not going to use the full power of the storyboard in this tutorial, but it does not hurt getting you used to it.
-
-![](/ps/ps3/img/Milestone1img/FileSaveLocation.png)
-*Step 3:* In the file chooser dialog screen, navigate to a folder where you want to place the project and click Create. 
+*Step 2:* In the Project Options dialog, fill in the Product Name as `Game` and the Company Identifier as `nus.cs3217`. You should select Swift as Language and iPad as Devices. For other options, you can follow the default configurations.
 
 ![](/ps/ps3/img/Milestone1img/ViewControllers.png)
-By default, the Project Navigator should be opened in the top left corner of the Xcode IDE. If not, you can open it by from the top menu by going View → Navigators → Show Project Navigator. Notice the highlighted `ViewController.h` and `ViewController.m` in the Project Navigator, as shown above. These are the interface and implementation of the controller class of the view provided by the project template. Also notice the file `MainStoryboard.storyboard` in the Project Navigator. This is the file where the storyboard is stored. In most cases it suffices to use one storyboard for an application, even if you have quite a few different views.
+By default, the Project Navigator should be opened in the top left corner of the Xcode IDE. If not, you can open it by from the top menu by going View → Navigators → Show Project Navigator. Notice the highlighted `ViewController.swift` in the Project Navigator, as shown above. This is the interface and implementation of the controller class of the view provided by the project template. Also notice the file `Main.storyboard` in the Project Navigator. This is the file where the storyboard is stored. In most cases it suffices to use one storyboard for an application, even if you have quite a few different views.
 
 ![](/ps/ps3/img/Milestone1img/NavigationPane.png)
 
-*Step 5:* You can hide the Navigation Pane so that you have more room to work with your interface design. Right now the storyboard contains only one empty view. In storyboard terminology, we call this view a scene. Look at the gray pane to the left of the drawing area. All the scenes are listed here. Currently there is only one scene. This is where we wire the things we draw in the storyboard to our view controller class’ member elements.
+*Step 4:* You can hide the Navigation Pane so that you have more room to work with your interface design. Right now the storyboard contains only one empty view. In storyboard terminology, we call this view a scene. Toggle the bottom-left button in the storyboard to show the outline of scenes on the left of the design canvas. All the scenes are listed here. Currently there is only one scene. This is where we wire the things we draw in the storyboard to our view controller class’ member elements. You can also adjust the zoom level of your design canvas by double-clicking on the canvas.
 
-![](/ps/ps3/img/Milestone1img/ZoomBuilders.png)
+![](/ps/ps3/img/Milestone1img/SizeMetrics.png)
 
-*Step 6:* You can also use the zoom buttons at the bottom right of the Interface Builder editor area to adjust the zoom level of your design canvas.
+*Step 5:* In the Attributes Inspector for the View Controller, change the Size to iPad Full Screen. Since the problem sets are implemented only for iPad, this will allow ease in layout. For universal application, the right way should be using Auto Layout. 
 
 Your project is now set up for interface design using the integrated Interface Builder. Next, you will learn how to add UI elements to your app’s view and link them up to your View Controller.
 
 ##### Milestone 2: Add UIButton with IBAction connection using Editor Assistant
 
-What we want to achieve here is to add buttons to the view and set up the buttons such that their text color will toggle between black and light gray as we press them. Please follow the step-by-step instructions shown in the gallery below to set up IBAction connection between the button and the view controller. The detailed instructions for each step is given by the caption below the figures.
+What we want to achieve here is to add buttons to the view and set up the buttons such that their text color will toggle between blue and light gray as we press them. Please follow the step-by-step instructions shown in the gallery below to set up IBAction connection between the button and the view controller. The detailed instructions for each step is given by the caption below the figures.
 
 ![](/ps/ps3/img/Milestone2img/StoryboardView.png)
 
-*Step 1:* First, select View in the left pane. Use the `=` button at the bottom right to bring the design canvas to the actual size. This step is necessary so that objects can be dragged and dropped from the Object Library to the View.
+*Step 1:* First, select View in the left pane. Double-click on the design canvas to bring it to the actual size. This step is necessary so that objects can be dragged and dropped from the Object Library to the View.
 
 ![](/ps/ps3/img/Milestone2img/ButtonAttributes.png)
 
-*Step 2:* Open the Object Library. Use the search box at the bottom right to search for the `Button` object. Drag and drop a Round Rect Button from the Object Library to the top left of our view. Select the button by clicking on it. In the Attributes Inspector, change its **Title** to `Start` and **Text Color** to `Light Gray Color`.
+*Step 2:* Open the Object Library. Use the search box at the bottom right to search for the `UIButton` object. Drag and drop a Round Rect Button from the Object Library to the top left of our view. Select the button by clicking on it. In the Attributes Inspector, change its **Title** to `Start` and **Text Color** to `Light Gray Color`.
 
 ![](/ps/ps3/img/Milestone2img/ButtonDragAction.png)
 
-*Step 3:* With the MainStoryboard.storyboard selected, open the Assistant Editor by going from top menu `View → Assistant Editor → Show Assistant Editor.` The Assistant Editor should appear to the right of the main editor, with `ViewController.h` opened in it automatically. Click on the button to select it. Then, while holding the control key, drag the button to the interface declaration in `ViewController.h` in the Assistant Editor. Notice the line protruding from the button as we drag it.
+*Step 3:* With the **Main.storyboard** selected, open the **Assistant Editor** by going from top menu `View → Assistant Editor → Show Assistant Editor` or just simply toggling the correpsonding top-right button. The Assistant Editor should appear to the right of the main editor, with `ViewController.swift` opened in it automatically. Click on the button to select it. Then, while holding the control key, drag the button to the bottom area in `ViewController.swift` in the Assistant Editor. Notice the line protruding from the button as we drag it.
 
 ![](/ps/ps3/img/Milestone2img/ButtonAction.png)
 
-*Step 4:* As you release the mouse button, a small window will popup. Change the Connection from `Outlet` to `Action`, then fill in the name as `buttonPressed`. Click Connect, then the following IBAction handler will be added to `ViewController.h`:
+*Step 4:* As you release the mouse button, a small window will popup. Change the Connection from `Outlet` to `Action`, then fill in the name as `buttonPressed`. Click Connect, then the following IBAction handler will be added to `ViewController.swift`:
 
-    - (IBAction)buttonPressed:(id)sender;
+    @IBAction func buttonPressed(sender: AnyObject)
 
 ![](/ps/ps3/img/Milestone2img/ButtonActionCode.png)
 
-*Step 5:* Now close the Assistant Editor by clicking the little cross in the top right corner of it. Open `ViewController.m` by clicking it in the Project Navigator. Notice that an empty skeleton for the handler buttonPressed has been added here. Flesh it out as shown above.
+*Step 5:* Now close the Assistant Editor by clicking the little cross in the top right corner of it. Open `ViewController.swift` by selecting it in the Project Navigator. Notice that an empty skeleton for the handler buttonPressed has been added here. Flesh it out as shown above.
 
 *Step 6:* Now run the program, by clicking the Run button in the top left corner of IDE. Alternatively, you can go from top menu `Product → Run`. You should be able to toggle the button’s text color by clicking on it.
 
@@ -125,29 +122,29 @@ Now, we want to add a `UIView` to the main view to represent the game area. We a
 
 ![](/ps/ps3/img/Milestone3img/GameareaDrag.png)
 
-*Step 2:* Open the `Assistant Editor`. Then, while holding the `control` key, drag the `UIView to the interface declaration in ViewController.h in the Assistant Editor. Notice the line protruding from the button as we drag it.
+*Step 2:* Open the **Assistant Editor**. Then, while holding the `control` key, drag the `UIView` to the interface declaration in `ViewController.swift` in the Assistant Editor. Notice the line protruding from the button as we drag it.
 
 ![](/ps/ps3/img/Milestone3img/GameareaOutlet.png)
 
-*Step 3:* As you release the mouse button, a small window appears. Make sure that the connection is Outlet and fill in the name as `gameArea`. Click connect. The wiring is done.
+*Step 3:* As you release the mouse button, a small window appears. Make sure that the connection is `Outlet` and fill in the name as `gameArea`. Click Connect. The wiring is done.
 
 ![](/ps/ps3/img/Milestone3img/GameareaOutletConfirm.png)
 
-*Step 4:* You should see the gamearea property added to ViewController.h.
+*Step 4:* You should see the `gamearea` property added to `ViewController.swift`.
 
 ![](/ps/ps3/img/Milestone3img/StoryboardFinal.png)
 *Step 5:* We are done with the interface building for now. You should now have an interface like the one shown in the figure above. Note that the background colour of the game area has been here just for demonstration purposes.
 
 ##### Milestone 4: Add subviews to the game view programmatically
 
-The game area is rather dull, isn’t it? Let’s place a picture in it. Please follow the step-by-step instructions shown in the gallery below to add image resource files to your project and programmatically add these images as UIImageView subviews to your Game View. The detailed instructions for each step is given by the caption below the figures. 
+The game area is rather dull, isn’t it? Let’s place a picture in it. Please follow the step-by-step instructions shown in the gallery below to add image resource files to your project and programmatically add these images as `UIImageView` subviews to your Game View. The detailed instructions for each step is given by the caption below the figures. 
 
 ![](/ps/ps3/img/Milestone4img/ImageExtraction.png)
 *Step 1:* Select all the images in the `images` folder of the forked repository.
 
 ![](/ps/ps3/img/Milestone4img/ImportImages.png)
 
-*Step 2:* Drag the images into the **Project Navigation** pane, under the Game folder. When prompted with the above dialog, check Copy items into destination group’s folder (if needed). Click **Finish** to complete.
+*Step 2:* Drag the images into the **Project Navigation** pane, under the **Game** folder. When prompted with the above dialog, check Copy items into destination group’s folder (if needed). Click **Finish** to complete.
 
 ![](/ps/ps3/img/Milestone4img/ImagesFolder.png)
 
@@ -155,11 +152,11 @@ The game area is rather dull, isn’t it? Let’s place a picture in it. Please 
 
 ![](/ps/ps3/img/Milestone4img/ViewDidLoad.png)
 
-*Step 4:* Select ViewController.m from the Project Navigation pane and locate the viewDidLoad function. We are going to add code to this function to programmatically add two images to the Scroll View.
+*Step 4:* Select `ViewController.swift` from the Project Navigation pane and locate the `viewDidLoad` function. We are going to add code to this function to programmatically add the background image as subview of `gamearea` View.
 
 ![](/ps/ps3/img/Milestone4img/UIImageAlloc.png)
 
-*Step 5:* Load the image resource into an UIImage object.
+*Step 5:* Load the image resource into an `UIImage` object.
 
 ![](/ps/ps3/img/Milestone4img/UIImageviewAlloc.png)
 
@@ -171,14 +168,14 @@ The game area is rather dull, isn’t it? Let’s place a picture in it. Please 
 
 ![](/ps/ps3/img/Milestone4img/Backgroundframe.png)
 
-*Step 8:* Set the frames of ground and background based on the previous calculations.
+*Step 8:* Set the frames of background  based on the previous calculations.
 
 ![](/ps/ps3/img/Milestone4img/BackgroundSubview.png)
 
-*Step 9:* Add background as a subview to the gamearea View.
+*Step 9:* Add background as a subview to the `gamearea` View.
 
 ![](/ps/ps3/img/Milestone4img/GameareaFinal.png)
-*Step 10:* Build and Run the program. If you have done everything correctly, you should see something like the above
+*Step 10:* **Build** and **Run** the program. If you have done everything correctly, you should see something like the above
 
 ### Problem 1: Create the Bubble Palette (10 points) ###
 
