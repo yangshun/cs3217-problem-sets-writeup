@@ -58,10 +58,10 @@ You will use the following milestone guidelines to set up the project on which y
 Here, we would like to create a new Single View Application project and set up the Storyboard scene so that it can be used for interface design later on. To do so, please follow the step-by-step instructions shown in gallery below. The detailed instructions for each step is given by the caption below the figures. 
 
 ![](/ps/ps3/img/Milestone1img/SingleViewApplication.png)
-*Step 1:* Launch the empty Xcode project forked from the `Problem Set 3` repository and add a new target. The image above should appear. Select `Single View Application` as the template.
+*Step 1:* Launch the empty Xcode project forked from the `cs3217-problem-set-3` repository and add a new target. The image above should appear. Select **Single View Application** as the template.
 
 ![](/ps/ps3/img/Milestone1img/OptionsNewProject.png)
-*Step 2:* In the Project Options dialog, fill in the Product Name as `Game` and the Company Identifier as `nus.cs3217`. You should select Swift as Language and iPad as Devices. For other options, you can follow the default configurations.
+*Step 2:* In the Project Options dialog, fill in the **Product Name** with a name of your choice and the **Company Identifier** as 'nus.cs3217'. You should select 'Swift' as the choice of **Language** and 'iPad' for **Devices**. For other options, you can follow the default configurations.
 
 ![](/ps/ps3/img/Milestone1img/ViewControllers.png)
 By default, the Project Navigator should be opened in the top left corner of the Xcode IDE. If not, you can open it by from the top menu by going View → Navigators → Show Project Navigator. Notice the highlighted `ViewController.swift` in the Project Navigator, as shown above. This is the interface and implementation of the controller class of the view provided by the project template. Also notice the file `Main.storyboard` in the Project Navigator. This is the file where the storyboard is stored. In most cases it suffices to use one storyboard for an application, even if you have quite a few different views.
@@ -86,27 +86,27 @@ What we want to achieve here is to add buttons to the view and set up the button
 
 ![](/ps/ps3/img/Milestone2img/ButtonAttributes.png)
 
-*Step 2:* Open the Object Library. Use the search box at the bottom right to search for the `UIButton` object. Drag and drop a Round Rect Button from the Object Library to the top left of our view. Select the button by clicking on it. In the Attributes Inspector, change its **Title** to `Start` and **Text Color** to `Light Gray Color`.
+*Step 2:* Open the Object Library. Use the search box at the bottom right to search for the `UIButton` object. Drag and drop a Round Rect Button from the Object Library to the top left of our view. Select the button by clicking on it. In the Attributes Inspector, change its **Title** to 'Start' and **Text Color** to 'Light Gray Color'.
 
 ![](/ps/ps3/img/Milestone2img/ButtonDragAction.png)
 
-*Step 3:* With the **Main.storyboard** selected, open the **Assistant Editor** by going from top menu `View → Assistant Editor → Show Assistant Editor` or just simply toggling the correpsonding top-right button. The Assistant Editor should appear to the right of the main editor, with `ViewController.swift` opened in it automatically. Click on the button to select it. Then, while holding the control key, drag the button to the bottom area in `ViewController.swift` in the Assistant Editor. Notice the line protruding from the button as we drag it.
+*Step 3:* With the **Main.storyboard** selected, open the **Assistant Editor** by going from top menu **View → Assistant Editor → Show Assistant Editor** or just simply toggling the correpsonding top-right button. The Assistant Editor should appear to the right of the main editor, with `ViewController.swift` opened in it automatically. Click on the button to select it. Then, while holding the `control` key, drag the button to the bottom area in `ViewController.swift` in the Assistant Editor. Notice the line protruding from the button as we drag it.
 
 ![](/ps/ps3/img/Milestone2img/ButtonAction.png)
 
-*Step 4:* As you release the mouse button, a small window will popup. Change the Connection from `Outlet` to `Action`, then fill in the name as `buttonPressed`. Click Connect, then the following IBAction handler will be added to `ViewController.swift`:
+*Step 4:* As you release the mouse button, a small window will popup. Change the **Connection** from 'Outlet' to 'Action', then fill in the name as 'buttonPressed'. Click **Connect**, then the following IBAction handler will be added to `ViewController.swift`:
 
     @IBAction func buttonPressed(sender: AnyObject)
 
 ![](/ps/ps3/img/Milestone2img/ButtonActionCode.png)
 
-*Step 5:* Now close the Assistant Editor by clicking the little cross in the top right corner of it. Open `ViewController.swift` by selecting it in the Project Navigator. Notice that an empty skeleton for the handler buttonPressed has been added here. Flesh it out as shown above.
+*Step 5:* Now close the Assistant Editor by clicking the little cross in the top right corner of it. Open `ViewController.swift` by selecting it in the Project Navigator. Notice that an empty skeleton for the handler `buttonPressed` has been added here. Flesh it out as shown above.
 
-*Step 6:* Now run the program, by clicking the Run button in the top left corner of IDE. Alternatively, you can go from top menu `Product → Run`. You should be able to toggle the button’s text color by clicking on it.
+*Step 6:* Now run the program, by clicking the **Run** button in the top left corner of IDE. Alternatively, you can go from top menu **Product → Run**. You should be able to toggle the button’s text color by clicking on it.
 
 ![](/ps/ps3/img/Milestone2img/Orientation.png)
 
-*Step 7:* Since we would be only using the `Portrait` orientation in this game, you must specify the supported interface orientations in the project setting. Click on the top-level project in the Project Navigation pane and deselect `Landscape Left` and `Landscape Right` orientations. 
+*Step 7:* Since we would be only using the **Portrait** orientation in this game, you must specify the supported interface orientations in the project setting. Click on the top-level project in the Project Navigation pane and deselect 'Landscape Left' and 'Landscape Right' orientations. 
 
 ![](/ps/ps3/img/Milestone2img/AllButtons.png)
 
@@ -126,11 +126,11 @@ Now, we want to add a `UIView` to the main view to represent the game area. We a
 
 ![](/ps/ps3/img/Milestone3img/GameareaOutlet.png)
 
-*Step 3:* As you release the mouse button, a small window appears. Make sure that the connection is `Outlet` and fill in the name as `gameArea`. Click Connect. The wiring is done.
+*Step 3:* As you release the mouse button, a small window appears. Make sure that the **Connection** is 'Outlet' and fill in the **Name** as 'gameArea'. Click **Connect**. The wiring is done.
 
 ![](/ps/ps3/img/Milestone3img/GameareaOutletConfirm.png)
 
-*Step 4:* You should see the `gamearea` property added to `ViewController.swift`.
+*Step 4:* You should see the `gameArea` property added to `ViewController.swift`.
 
 ![](/ps/ps3/img/Milestone3img/StoryboardFinal.png)
 *Step 5:* We are done with the interface building for now. You should now have an interface like the one shown in the figure above. Note that the background colour of the game area has been here just for demonstration purposes.
@@ -152,7 +152,7 @@ The game area is rather dull, isn’t it? Let’s place a picture in it. Please 
 
 ![](/ps/ps3/img/Milestone4img/ViewDidLoad.png)
 
-*Step 4:* Select `ViewController.swift` from the Project Navigation pane and locate the `viewDidLoad` function. We are going to add code to this function to programmatically add the background image as subview of `gamearea` View.
+*Step 4:* Select `ViewController.swift` from the Project Navigation pane and locate the `viewDidLoad` function. We are going to add code to this function to programmatically add the background image as subview of `gameArea` View.
 
 ![](/ps/ps3/img/Milestone4img/UIImageAlloc.png)
 
