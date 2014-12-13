@@ -17,8 +17,8 @@ simulated, deciding on the ADTs that you need, designing the classes and modules
 that are necessary and finally, implementing and testing your design.
 
 You should also keep in mind that the game engine should be designed such that it 
-not only fulfills the requirements in section 2 but also be extensible enough to
-support new behaviours in the next problem set when your engine is to be integrated with what you have completed in problem set 3. You can refer to any game (and/or physics) engines; however, you must write all the code for your game yourself and not allowed to include an external engine library. You are allowed to use any Apple frameworks and libraries except SpriteKit!
+not only fulfils the requirements in section 2 but also be extensible enough to
+support new behaviours in the next problem set when your engine is to be integrated with what you have completed in Problem Set 3. You can refer to any game (and/or physics) engines; however, you must write all the code for your game yourself and not allowed to include an external engine library. You are allowed to use any Apple frameworks and libraries except SpriteKit!
 
 A good game engine provides various functionalities including "a renderer for 2D or 3D graphics, a physics engine (real-world physical interaction), sound, scripting, animation, artificial intelligence, networking, streaming, memory management, threading, localization support, and a scene graph" ([Wikipedia][Wikipedia-Game Engine]). In this assignment, you are supposed to build a simple engine which only consists of a renderer and a physics engine.
 
@@ -30,7 +30,7 @@ While we will provide certain guidelines here on how to build a game engine, the
 
 A game must have smooth animation which means the screen needs to be redrawn frequently (e.g. 60 frames per second). For every 1/60<sup>th</sup> of a second, your game engine should use its physics engine to update the objects' physical properties (e.g. position, velocity, rotation, etc), handle all the resulting interaction (according to gameplay logic and specifications), then call the renderer to redraw your objects on the screen.
 
-*Hint: If you designed your problem set 3 well, you can simply reuse the data model! However, note that this assignment does not require you to support persistent data. If you choose to reuse your data model and it causes bugs when your game engine runs, marks will be deducted.*
+*Hint: If you designed your Problem Set 3 well, you can simply reuse the data model! However, note that this assignment does not require you to support persistent data. If you choose to reuse your data model and it causes bugs when your game engine runs, marks will be deducted.*
 
 ### 2D Renderer ###
 
@@ -42,7 +42,7 @@ A typical physics engine would require its objects to possess the full set of ph
 
 Keep in my mind that your physics engine should be flexible enough to support future extensions that make the game more interesting.
 
-*Hint: You might want to look ahead at problem set 5 and/or try out Bubble Mania to see what features your physics engine might need to support.*
+*Hint: You might want to look ahead at Problem Set 5 and/or try out Bubble Mania to see what features your physics engine might need to support.*
 
 ### Gameplay ###
 
@@ -56,22 +56,24 @@ Section 2 - Design & Implement the Game Engine (100 points)
 --
 In this section, we will go through the steps of designing and implementing your game engine.
 
-### Problem 1 - Design (25 points) ###
+### Problem 1: Design (25 points) ###
 
 Before you begin, please make sure you understand how a game engine works and the requirements specified in Problem 2 below. You are free to refer to other game (and/or physics) engines, but you are to write your engine completely from scratch. 
 
-Bear in mind that a good game engine is one where the modules/components are reusable in other games of similar nature. Do spend some time understanding the specifications of the game, think of possible extensions to the game (required in problem set 5), and design your game engine to support these. Note that each functionality/specification can be supported by a few game engine components (physics, rendering, etc).
+Bear in mind that a good game engine is one where the modules/components are reusable in other games of similar nature. Do spend some time understanding the specifications of the game, think of possible extensions to the game (required in Problem Set 5), and design your game engine to support these. Note that each functionality/specification can be supported by a few game engine components (physics, rendering, etc).
 
 Please draw the following diagrams and include them in your `ps04` folder:
 
-a. Draw a data model by identifying the data types and how they are related. **(10 points)**
+1. Draw a data model by identifying the data types and how they are related. **(10 points)**
 
-b. Draw a module-dependency diagram (MDD) of your game engine and describe what each module is used for. Please also list down the APIs (Application Programming Interface) for each of your modules. Explain the rationale for your design over alternatives. **(15 points)**
+2. Draw a module dependency diagram of your game engine and describe what each module is used for. Please also list down the APIs (Application Programming Interface) for each of your modules. Explain the rationale for your design over alternatives. **(15 points)**
 
-Put the explanation in a text file `design.txt` and add it to folder `ps04` as well. The image files for your data model and MDD should be named `data-model.png` and `module-dependency.png` respectively (You can use other file formats or names if you prefer to. You should indicate this in `design.txt`). Also, please explain how you would extend your design to support more complex game logic such as removal of all bubbles in the grid of a specific colour.
+3. Also, please explain how you would extend your design to support more complex game logic such as removal of all bubbles in the grid of a specific colour.
+
+Write your answers to the above questions in a text file `design.txt`. The image files for your data model and module dependency diagram should be named `data-model.png` and `mdd.png` respectively and place them in the root directory of your repository. You may use other file formats or names if you prefer to. You should indicate this in `design.txt`.
 
 
-### Problem 2 - Game Engine (55 points) ###
+### Problem 2: Game Engine (55 points) ###
 
 Implement your game engine according to your design in Problem 1 and make sure it allows for the behaviours listed below. 
 
@@ -109,7 +111,7 @@ Implement your game engine according to your design in Problem 1 and make sure i
 
     Give each removal (Problems 2.5 & 2.6) some cool animation such as exploding/fading away/falling out of the screen, etc. While you are free to create whatever animation you like, it must enhance the overall gameplay! 
 
-### Problem 3 - Testing (20 points) ###
+### Problem 3: Testing (20 points) ###
 
 Testing is an integral part of software engineering. You are expected to create unit tests for the various components in your game engine. In addition, you will need to do integration testing to make sure that your game engine works when various components of the engine are put together. The way to do this is to start from a hierarchy and then break down into smaller and more specific cases. For example:
 
@@ -164,7 +166,7 @@ There is no resource or template provided for this problem set. In the group [Pr
 
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your submission directory should contain your design explanation `design.txt`, two diagrams `data-model.png` and `module-dependency.png`, and a `README` file where you specify which implementation files contain your code.
+In addition, your submission directory should contain your design explanation `design.txt`, two diagrams: `data-model.png` and `mdd.png`, and a `README` file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 4: Bubble Blast Saga Game Engine”**.
 
