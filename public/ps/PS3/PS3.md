@@ -361,7 +361,7 @@ When you begin working, your Xcode project will grow to contain files that are u
 
 **Important Note:** Until now, a target Xcode project was already constructed for your problem sets. In this problem set, you have to create a new target in the empty Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your project directory should contain your design explanation `design.pdf` and a README file where you specify which implementation files contain your code.
+In addition, your project directory should contain your design explanation `design.txt` and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this problem set may be directed to the IVLE Forum under the heading **“Problem Set 3: Bubble Blast Saga Level Designer”.**
 
