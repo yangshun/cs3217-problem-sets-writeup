@@ -346,7 +346,7 @@ The Xcode projects for your problem sets, if they are provided, will be located 
 
 As with GitHub, you may add an SSH key to your account. However, due to network policy reasons, SSH will only be accessible within the SoC network. We recommend that you clone using HTTP and configure Git to remember your password for minimum grief.
 
-When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub](https://github.com/github/gitignore/blob/master/Objective-C.gitignore). 
+When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub's Objective-C gitignore](https://github.com/github/gitignore/blob/master/Objective-C.gitignore) and [GitHub's Swift gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore). 
 
 **Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes.
 
