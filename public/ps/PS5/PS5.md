@@ -33,7 +33,7 @@ The following are the conditions that your game must satisfy:
 - It allows for the creation, saving and loading of multiple “levels” or level-equivalents.
 - There is a complete game flow where there are transitions between the menu screen, level selection screen, level design screen and gameplay screen.
 
-As long as your game satisfies the above conditions, you are free to do pretty much anything you want. You are free to replace the background and provided images, if so desire. First, read through this entire problem set to understand the technical requirements for the problem. Next, describe the rules of your game and how the game works in a file called `design.txt`.
+As long as your game satisfies the above conditions, you are free to do pretty much anything you want. You are free to replace the background and provided images, if you desire. First, read through this entire problem set to understand the technical requirements for the problem. Next, describe the rules of your game and how the game works in a file called `design.txt`. Although the rules are not graded, it gives the players (which includes your tutors) expectations on how the game is supposed to behave, so as to can distinguish between features and bugs :P
 
 Section 2 - Completing the Game (100 points)
 --
@@ -41,27 +41,29 @@ In Problem Set 3, you implemented the level designer of the game. The user can f
 
 It is time to implement the actual game. On the level designer screen, the game starts when the user presses the **START** button (though you are free to change the user interface to something else that accomplishes the same). This will trigger several things: a bubble can be fired from the bottom, the arena bubbles will interact with the fired bubble upon collision, and animations are also enabled.
 
-### 1. Cannon Direction (5 points) ###
+### Problem 1: Cannon Direction (5 points) ###
 
 A cannon that fires a bubble will be added to the game. After the game starts, while the user is selecting the direction to fire the bubble, the cannon should rotate to face the direction of firing. In the provided assets, you can find the following image which might be useful:
 
 - `cannon.png`, an animation sprite of the cannon when it fires the bubbles.
 
-### 2. Upcoming Bubbles (10 points) ###
+Explain in `design.txt` how the user is supposed to select the cannon direction.
 
-It would be helpful to the user if he knew the colours of the next few bubbles so that he can better plan his shots. Your task is to come up with an algorithm to decide on the colours of the next few bubbles and justify it.
+### Problem 2: Upcoming Bubbles (10 points) ###
+
+It would be helpful to the user if he/she knew the colours of the next few bubbles so that he can better plan his/her shots. Your task is to come up with an algorithm to decide on the colours of the next few bubbles and justify it in `design.txt`.
 
 Implement an interface to display the next few bubbles that the cannon will fire. It is up to you to decide how many bubbles you want to show (minimum of 1). The interface should also be updated after bubbles are fired.
 
 **Note:** The cannon only fires normal coloured bubbles, it does not fire special bubbles.
 
-### 3. Integration (25 points) ###
+### Problem 3: Integration (25 points) ###
 
 After adding the cannon sprite, and implementing an algorithm which decides the colour of the upcoming bubbles, it is time to put them all together. Integrate the game engine with the designed level and activate it when the user pushes the **START** button; he should be able to play that level and test it out. 
 
 Describe in the file `design.txt` how your design allowed the integration of the game engine. Explain the advantages and disadvantages of your approach and alternative approaches.
 
-### 4. Special Bubbles (30 points) ###
+### Problem 4: Special Bubbles (30 points) ###
 
 The game would be more interesting with special bubbles. Hence we are going to implement special bubbles that will make the game even more fun. This is a test of the flexibility your software design! A good design will make the process of adding features relatively easy and pain-free.
 
@@ -74,34 +76,33 @@ Implement the following additional bubbles:
 
 Except for the indestructible bubble, the effects of the other special bubbles are triggered when any of its adjacent bubbles is removed.
 
-a. You will have to support the addition of these special bubbles in the level designer **(5 points)**.  
-b. Modify your game engine to handle these new bubble behaviours **(25 points)**.
+1. Modify your level designer to support the addition of these special bubbles. **(5 points)**
+2. Modify your game engine to handle these new bubble behaviours. **(20 points)**
+3. Explain in the file `design.txt` your general strategy for implementing these special behaviours. Explain why your strategy is the best among alternatives. **(5 points)**
 
-Explain in the file `design.txt` your general strategy for implementing these special behaviours. Explain why your strategy is the best among alternatives.
+### Problem 5: Game Flow (20 points) ###
 
-### 5. Game Flow (20 points) ###
-
-Make the application a complete one by implementing the following screens and UI elements that allows transitions between them. You are required to use storyboard transitions.
+Make the game a complete application by implementing the following screens and UI elements that allows transitions between them. You are required to use storyboard transitions.
 
 - **Menu Screen** - Entry point of the application
  - Select Level Button - Leads to level selection screen
- - Design Level Button - Leads to level designer screen from Problem Set 3
+ - Design Level Button - Leads to level designer screen (Problem Set 3)
 - **Level Selection Screen** - Interface that shows the levels that are pre-packaged with the application and levels that can be loaded in the design mode).
  - Buttons that lead to the gameplay screen which allows users to preloaded levels. There should be at least 3 different preloaded levels.
 - **Level Designer Screen** - Interface created from Problem Set 3
- - As stated in Problem Set 3
+ - As stated in Problem Set 3.
 - **Gameplay Screen** - Interface for user to play a level (can be preloaded/designed)
  - Back Button - To return to the previous screen
 
-### 6. Module-Dependency Diagram (5 points) ###
+### Problem 6: Module Dependency Diagram (5 points) ###
 
-Draw the MDD for the basic implementation of your game (i.e. you do not need to include the bells and whistles). Save your diagram as `module-dependency-diagram.png` and include it in your repository for submission.
+Draw the module dependency diagram for the basic implementation of your game (i.e. you do not need to include the bells and whistles). Save your diagram as `mdd.png` and include it in the root directory of your repository for submission.
 
 Section 3 - Testing, Refinements and Reflections (100 points)
 --
 In this section, you will perform thorough testing of your app to make sure that it runs as intended. You will also try your best to refine and polish up your app.
 
-### Integration Testing (30 points) ###
+### Problem 7: Integration Testing (30 points) ###
 
 Testing is an integral part of software engineering. For the final game, you are supposed to implement a large number of features and it is important for you to test your final code to make sure that the game meets the stated requirements. The way to do this is to start from a hierarchy and then break down into smaller and more specific cases. For example:
 
@@ -119,11 +120,11 @@ Testing is an integral part of software engineering. For the final game, you are
  - ...
      * ...
 
-Please describe your testing strategy in `design.txt`. The testing strategy should also include the testing strategies for Problem Sets 3 and 4, since these are components of the final application. If you did your testing perfectly in the previous problem sets, you only need to replicate what you did earlier; if you didn’t do so well, this is where you show that you’ve learnt something and updated the tests.
+Please describe your testing strategy in `design.txt`. The testing strategy should also include the testing strategies for Problem Sets 3 and 4, since these are components of the final application. If you did your testing perfectly in the previous problem sets, you only need to replicate what you did earlier; if you didn’t do so well, this is where you show that you’ve learnt something and update the tests.
 
 Of course, you should test the game as you have described instead of just listing down what you think you ought to test! You might want to let your friends try out your game and thereby help you test it too.
 
-### The Bells & Whistles (60 points) ###
+### Problem 8: The Bells & Whistles (60 points) ###
 
 With a good design and good implementation for Problem Sets 3 and 4, extensions and integration should not take too much time. Spend your remaining time by finishing the game and adding extensions. The points in this part are subjective and take into consideration the general feeling of the entire game and will be awarded relative to the submissions by the rest of the class. The following is a list of possible improvements that you can consider implementing:
 
@@ -136,9 +137,9 @@ With a good design and good implementation for Problem Sets 3 and 4, extensions 
 - No snapping of colliding bubbles, i.e. no fixed 2D arrangement;
 - Multiplayer mode;
 
-You are free to add your own features to show off your creativity. Please describe in the file `design.txt` all the extra features and improvements. Briefly describe how you modified your original design to implement each feature.
+You are free to add your own features to show off your creativity. Please describe **ALL** the extra features and improvements in the file `design.txt`, so that your tutors can award you due credit.  Briefly describe how you modified your original design to implement each feature.
 
-### Final Reflection (10 points) ###
+### Problem 9: Final Reflection (10 points) ###
 
 **Note:** You should answer this question only after you have completed this problem set.
 
@@ -191,7 +192,7 @@ There is no resource or template provided for this problem set. In the group [Pr
 
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your submission directory should contain your design explanation design.txt, a module dependency diagram `module-dependency-diagram.png` and a README file where you specify which implementation files contain your code.
+In addition, your submission directory should contain your design explanation `design.txt`, a module dependency diagram `mdd.png` and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 5: Putting It All Together”**.
 
