@@ -236,10 +236,10 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 4. **Touch Gestures**. To implement the drag, single tap and long-press, you can use gesture recognizers. For dragging, you can use `UIPanRecognizer`, for touch/double-tap you can use `UITapGestureRecognizer` and for long-press you can use `UILongPressGestureRecognizer`. An example use of gesture recognisers is the following **(30 points)**: 
 
         // This is required for touch interaction with the view
-        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panHandler:)];
-        panGesture.minimumNumberOfTouches = 1;
-        panGesture.maximumNumberOfTouches = 1;
-        [view addGestureRecognizer:panGesture];
+        let panGesture = UIPanGestureRecognizer(target: self, action: Selector("panHandler:"))
+        recognizer.minimumNumberOfTouches = 1
+        recognizer.maximumNumberOfTouches = 1
+        view.addGestureRecognizer(panGesture)
 
 - Supported Operations:
  - Select a bubble colour from the palette (Single Tap gesture)
