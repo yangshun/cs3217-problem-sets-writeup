@@ -1,2 +1,22 @@
-.main-container { max-width: 768px; width: 100%; margin: 0 auto; }
-div[class*="ps-"] { margin-bottom: 100px; }
+.main-container { 
+  max-width: 768px;
+  width: 100%; 
+  margin: 0 auto;
+}
+
+div[class*="ps-"] { 
+  margin-bottom: 100px; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #666;
+  font-family: Avenir, Helvetica, sans-serif;
+}
+
+h3 {
+  color: #4c8ce4;
+}
+
+p, li {
+  font-family: Avenir, Helvetica, sans-serif;
+}
