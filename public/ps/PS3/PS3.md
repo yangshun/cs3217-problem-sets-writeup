@@ -247,8 +247,8 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
  - Select a bubble colour from the palette (Single Tap gesture)  
  - Drag finger across main grid to fill the cells up with the selected bubble colour 
 or erase a cell if the eraser was chosen in the palette (Pan gesture)  
- - Tap a cell to cycle through bubble colours (Single Tap gesture)
- - Quick erasure of a cell (Long-press gesture)
+ - Tap an existing bubble on the grid to cycle through bubble colours (Single Tap gesture)
+ - Convenient erasure of a cell (Long-press gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
