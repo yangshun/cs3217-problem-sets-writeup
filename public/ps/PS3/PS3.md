@@ -172,10 +172,12 @@ The game area is rather dull, isn’t it? Let’s place a picture in it. Please 
 
 ![](/ps/ps3/img/Milestone4img/BackgroundSubview.png)
 
-*Step 9:* Add background as a subview to the `gamearea` View.
+*Step 9:* Add background as a subview to the `gameArea` View.
 
 ![](/ps/ps3/img/Milestone4img/GameareaFinal.png)
-*Step 10:* **Build** and **Run** the program. If you have done everything correctly, you should see something like the above
+*Step 10:* **Build** and **Run** the program. If you have done everything correctly, you should see something like the above.
+
+Note that you can achieve the above result using the Interface Builder, but it is helpful to learn how it is done programmatically because not everything can be done via the builder. Learn to determine when to use the Interface Builder to add your elements and when to create them programatically.
 
 ### Problem 1: Create the Bubble Palette (10 points) ###
 
@@ -220,7 +222,7 @@ A correct implementation of the MVC framework has the following properties:
 
 ### Problem 4: Implementing the Bubble Objects (110 points) ###
 
-You will be using the MVC pattern to implement the game objects. Thus, a game object is represented by the triad: **model**, to store the state of the object; **view**, to represent the object on the screen; and **controller**, to manage the model and the view.
+You will be using the MVC pattern to implement the game objects. Thus, a game object is represented by the triad: **Model** - to store the state of the object; **View** - to represent the object on the screen; and **Controller** - to manage the model and the view.
 
 1. **Model** - There are two important aspects regarding the object model. In this problem set, you are concerned mostly with the position of the object on the screen, such that you can save and restore the object to that position using the buttons at the bottom created in the walkthrough at the start of this problem set. However, be aware that for the next problem set the game objects state will be more complex as you develop a representation required for the physics engine. **(10 points)**
 
@@ -233,7 +235,7 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
 
  You need to complete the implementation of the abstract class and then create subclasses with the additional requirements for each bubble type. For this problem set, there is only one basic bubble type with different colours. Eventually however, over the next two problem sets, you would be subclassing this abstract class to create different types of games bubbles (for example, special power bubbles) that would have different behaviour than the basic bubble types.  **(30 points)**
 
-4. **Touch Gestures**. To implement the drag, single tap and long-press, you can use gesture recognizers. For dragging, you can use `UIPanGestureRecognizer`, for touch/double-tap you can use `UITapGestureRecognizer` and for long-press you can use `UILongPressGestureRecognizer`. **(30 points)**
+4. **Touch Gestures**. To implement the drag, single-tap and long-press, you can use gesture recognizers. For dragging, you can use `UIPanGestureRecognizer`, for single/double-tap you can use `UITapGestureRecognizer` and for long-press you can use `UILongPressGestureRecognizer`. **(30 points)**
 
  An example use of gesture recognizers is the following: 
 
@@ -244,10 +246,10 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
         view.addGestureRecognizer(panGesture)
 
  Supported Operations:  
- - Select a bubble colour from the palette (Single Tap gesture)  
+ - Select a bubble colour from the palette (Single-tap gesture)  
  - Drag finger across main grid to fill the cells up with the selected bubble colour 
 or erase a cell if the eraser was chosen in the palette (Pan gesture)  
- - Tap an existing bubble on the grid to cycle through bubble colours (Single Tap gesture)
+ - Tap an existing bubble on the grid to cycle through bubble colours (Single-tap gesture)
  - Convenient erasure of a cell (Long-press gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
