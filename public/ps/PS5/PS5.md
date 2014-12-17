@@ -74,7 +74,7 @@ Implement the following additional bubbles:
 - **Bomb Bubble** - Removes all bubbles adjacent to it.
 - **Star Bubble** - When a coloured bubble comes into contact with the star bubble, all bubbles of that colour in the arena will be removed.
 
-Except for the indestructible bubble, the effects of the other special bubbles are triggered when any of its adjacent bubbles is removed.
+Except for the indestructible bubble, the effects of the other special bubbles are triggered when the shot bubble's final position is adjacent to a special bubble (aka touching it).
 
 1. Modify your level designer to support the addition of these special bubbles. **(5 points)**
 2. Modify your game engine to handle these new bubble behaviours. **(20 points)**
