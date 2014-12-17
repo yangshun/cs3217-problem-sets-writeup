@@ -249,12 +249,12 @@ You will be using the MVC pattern to implement the game objects. Thus, a game ob
  - Select a bubble colour from the palette (Single-tap gesture)  
  - Drag finger across main grid to fill the cells up with the selected bubble colour 
 or erase a cell if the eraser was chosen in the palette (Pan gesture)  
- - Tap an existing bubble on the grid to cycle through bubble colours (Single-tap gesture)
+ - Tap an existing bubble on the grid to cycle through bubble colours (Single-tap gesture). **Note**: Tapping on an empty cell will not have any effects.
  - Convenient erasure of a cell (Long-press gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
-Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Please explain how you chose to implement the save/load function in `design.txt`. Please justify your decision by explaining why your implementation is the best one among all the alternatives you considered.
+Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Your saving/loading/editing functionality has to support multiple levels. Please explain how you chose to implement the save/load function in `design.txt`. Justify your decision by explaining why your implementation is the best one among all the alternatives you considered.
 
 There are five ways to maintain data persistency on iOS:
 
