@@ -29,7 +29,7 @@ The **View** renders the model into a form suitable for interaction, typically b
 
 The **Controller** receives input from the user and instructs the model and view to perform actions based on the input.
 
-The Cocoa and Cocoa Touch frameworks encourage the use of the MVC pattern. Interface Builder constructs views, and connects them to controllers via *Outlets* and *Actions*. In this problem set, you will develop a level designed for a game called Bubble Blast Saga by conforming to MVC design pattern.
+The Cocoa and Cocoa Touch frameworks encourage the use of the MVC pattern. Interface Builder constructs views, and connects them to controllers via *Outlets* and *Actions*. In this problem set, you will develop a level designed for a game called Bubble Blast Saga by conforming to the MVC design pattern.
 ￼
 ### Bubble Blast Saga Level Designer (MVC) ###
 
@@ -39,7 +39,7 @@ In the game, the user specifies the direction of a new bubble to shot. The bubbl
 
 The features of the level designer that you are expected to implement include the following:
 
-* Reset, save and load a game level using the respective button
+* **RESET**, **SAVE** and **LOAD** a game level using the respective buttons
 * An object palette from which the user can select the bubble colour or the eraser
 * Fill the grid with the bubbles (Pan gesture)
 * Cycle through the colour of the bubbles in the grid (Single Tap gesture)
@@ -64,7 +64,7 @@ Here, we would like to create a new Single View Application project and set up t
 *Step 2:* In the Project Options dialog, fill in the **Product Name** with a name of your choice and the **Company Identifier** as 'nus.cs3217'. You should select 'Swift' as the choice of **Language** and 'iPad' for **Devices**. For other options, you can follow the default configurations.
 
 ![](/ps/ps3/img/Milestone1img/ViewControllers.png)
-By default, the Project Navigator should be opened in the top left corner of the Xcode IDE. If not, you can open it by from the top menu by going View → Navigators → Show Project Navigator. Notice the highlighted `ViewController.swift` in the Project Navigator, as shown above. This is the interface and implementation of the controller class of the view provided by the project template. Also notice the file `Main.storyboard` in the Project Navigator. This is the file where the storyboard is stored. In most cases it suffices to use one storyboard for an application, even if you have quite a few different views.
+By default, the Project Navigator should be opened in the top left corner of the Xcode IDE. If not, you can open it by from the top menu by clicking on **View → Navigators → Show Project Navigator**. Notice the highlighted `ViewController.swift` in the Project Navigator, as shown above. This is the interface and implementation of the controller class of the view provided by the project template. Also notice the file `Main.storyboard` in the Project Navigator. This is the file where the storyboard is stored. In most cases it suffices to use one storyboard for an application, even if you have quite a few different views.
 
 ![](/ps/ps3/img/Milestone1img/NavigationPane.png)
 
@@ -72,7 +72,7 @@ By default, the Project Navigator should be opened in the top left corner of the
 
 ![](/ps/ps3/img/Milestone1img/SizeMetrics.png)
 
-*Step 5:* In the Attributes Inspector for the View Controller, change the Size to iPad Full Screen. Since the problem sets are implemented only for iPad, this will allow ease in layout. For universal application, the right way should be using Auto Layout. 
+*Step 5:* In the Attributes Inspector for the View Controller, change the **Size** to 'iPad Full Screen'. Since the problem sets are implemented only for iPad, this setting will suffice. In future if/when you build universal applications, the proper way would be to use 'Auto Layout'.
 
 Your project is now set up for interface design using the integrated Interface Builder. Next, you will learn how to add UI elements to your app’s view and link them up to your View Controller.
 
@@ -90,7 +90,7 @@ What we want to achieve here is to add buttons to the view and set up the button
 
 ![](/ps/ps3/img/Milestone2img/ButtonDragAction.png)
 
-*Step 3:* With the **Main.storyboard** selected, open the **Assistant Editor** by going from top menu **View → Assistant Editor → Show Assistant Editor** or just simply toggling the correpsonding top-right button. The Assistant Editor should appear to the right of the main editor, with `ViewController.swift` opened in it automatically. Click on the button to select it. Then, while holding the `control` key, drag the button to the bottom area in `ViewController.swift` in the Assistant Editor. Notice the line protruding from the button as we drag it.
+*Step 3:* With the file `Main.storyboard` selected, open the **Assistant Editor** by going from top menu **View → Assistant Editor → Show Assistant Editor** or just simply toggling the correpsonding top-right button. The Assistant Editor should appear to the right of the main editor, with `ViewController.swift` opened in it automatically. Click on the button to select it. Then, while holding the `control` key, drag the button to the bottom area in `ViewController.swift` in the Assistant Editor. Notice the blue line extending out from the button as we drag it.
 
 ![](/ps/ps3/img/Milestone2img/ButtonAction.png)
 
@@ -122,7 +122,7 @@ Now, we want to add a `UIView` to the main view to represent the game area. We a
 
 ![](/ps/ps3/img/Milestone3img/GameareaDrag.png)
 
-*Step 2:* Open the **Assistant Editor**. Then, while holding the `control` key, drag the `UIView` to the interface declaration in `ViewController.swift` in the Assistant Editor. Notice the line protruding from the button as we drag it.
+*Step 2:* Open the **Assistant Editor**. Then, while holding the `control` key, drag the `UIView` to the interface declaration in `ViewController.swift` in the Assistant Editor. Notice the blue line extending from the button as we drag it.
 
 ![](/ps/ps3/img/Milestone3img/GameareaOutlet.png)
 
