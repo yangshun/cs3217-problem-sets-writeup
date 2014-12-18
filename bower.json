@@ -3,7 +3,6 @@
   "private": true,
   "dependencies": {
     "jquery": "~1.11.1",
-    "codemirror": "~4.8.0",
     "showdown": "~0.3.1"
   },
   "devDependencies": {}
