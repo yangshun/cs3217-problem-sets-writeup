@@ -321,18 +321,26 @@ And to decode it:
 Testing is an integral part of software engineering. Since you are not implementing any complicated ADTs in this assignments, unit tests are probably not particularly helpful. That said, you are supposed to implement a large number of features and it is important for you to test your final code to make sure that your application meets the stated requirements. The way to do this is to start from a hierarchy and then break down into smaller and more specific cases. For example:
 
 * Black-box testing
-  
  - Test implementation of file operations  
- - Save 
+     - Save 
  - ··· 
  - Test implementation of game: 
      - Drag to fill the grid cells
-     - ...
+         - Drag over filled cell
+         - Drag over empty cell
 ￼
-* Glass-box testing 
- 
+* Glass-box testing      (Testing your implementations)
+  - GameViewController (**Note:** Methods shown here are example only!)
+     - eraseBubbleAtCell:
+         - Filled cell
+         - Empty cell
+ - ...
+ - GameBubbleCollection
+     - initializeCollection:
+         - Empty collection
+         - Non-empty collection
 
-Please come up with your testing strategy and describe it in `design.txt.` Of course, you should actually test your application as you have described instead of just listing down what you think you ought to test! :-)  
+Please come up with your testing strategy and describe it in `design.txt`. Of course, you should actually test your application as you have described instead of just listing down what you think you ought to test! :-)  
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 
