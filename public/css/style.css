@@ -20,3 +20,7 @@ h3 {
 p, li {
   font-family: Avenir, Helvetica, sans-serif;
 }
+
+.hljs {
+  background: none;
+}

@@ -6,6 +6,10 @@ function refresh() {
     var $editor = $('.editor');
     var html = converter.makeHtml($editor.val());
     $('.preview').html(html);
+    
+    $('pre code').each(function (i, block) {
+        hljs.highlightBlock(block);
+    });
 }
 
 function loadMarkdown() {
