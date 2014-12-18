@@ -283,7 +283,7 @@ You may use the following code to save a file to the app's document directory (w
 ```
 var urls = NSFileManager.DefaultManager.GetUrls (NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomain.User)
 var path = urls[0].Path
-File.WriteAllText (Path.Combine (path, "myfile.txt"), "woohoo")
+File.WriteAllText(Path.Combine(path, "myfile.txt"), "woohoo")
 ```
 
 Alternatively, you may save the files inside the application bundle using `NSBundle.mainBundle()`.
