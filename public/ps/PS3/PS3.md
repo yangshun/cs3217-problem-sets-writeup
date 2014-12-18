@@ -208,7 +208,7 @@ Once you have decided on the best way to organize your code, please answer the f
   - Relationships between classes should also be shown. Show the instance-level (association, composition) and class-level relationships (generalization, realization) where appropriate.
   - Allow a developer who hasn't seen your code base before to let them have a high-level understanding of your software.
 
-  Save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful, feel free to add them in, and make indicate it inside `design.txt`. **(10 points)**
+  Save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful in allowing others to understand your code architecture, feel free to add them in, and make indicate it inside `design.txt`. **(10 points)**
 
 2. Explain why you decided on your chosen design over alternative designs. **(5 points)**
 
