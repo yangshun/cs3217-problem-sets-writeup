@@ -201,7 +201,14 @@ Before you begin, please spend some time understanding the requirements of this 
 
 Once you have decided on the best way to organize your code, please answer the following questions by including a text file `design.txt` at the root directory of your problem set repository.
 
-1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a module dependency (class) diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). Please follow the conventions as discussed in lecture. Save your diagram as `mdd.png` and include it in the root directory of your problem set repository. **(10 points)**
+1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a class diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). 
+
+  To summarize, your class diagram should:
+  - Show the attributes, methods of each class and additional relevant information about them.
+  - Relationships between classes should also be shown. Show the instance-level (association, composition) and class-level relationships (generalization, realization) where appropriate.
+  - Allow a developer who hasn't seen your code base before to let them have a high-level understanding of your software.
+
+  Save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful, feel free to add them in, and make indicate it inside `design.txt`. **(10 points)**
 
 2. Explain why you decided on your chosen design over alternative designs. **(5 points)**
 
@@ -366,7 +373,7 @@ When you begin working, your Xcode project will grow to contain files that are u
 
 **Important Note:** Until now, a target Xcode project was already constructed for your problem sets. In this problem set, you have to create a new target in the empty Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your project directory should contain your design explanation `design.txt`, the module dependency diagram `mdd.png`, and a README file where you specify which implementation files contain your code.
+In addition, your project directory should contain your design explanation `design.txt`, the class diagram `class-diagram.png`, and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this problem set may be directed to the IVLE Forum under the heading **“Problem Set 3: Bubble Blast Saga Level Designer”.**
 
