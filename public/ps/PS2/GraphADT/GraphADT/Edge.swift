@@ -49,7 +49,7 @@ struct Edge<T> {
 
 //  Return true if `lhs` edge is equal to `rhs` edge.
 func ==<Label>(lhs: Edge<Label>, rhs: Edge<Label>) -> Bool {
-    return lhs.source == rhs.source && lhs.destination == rhs.destination
+    return lhs.source == rhs.source && lhs.destination == rhs.destination && lhs.weight == rhs.weight
 }
 
 extension Edge : Hashable {

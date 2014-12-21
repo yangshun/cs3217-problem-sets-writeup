@@ -7,7 +7,7 @@ extension String {
     
     //  Return a string encrypted by using `key`.
     func encrypt(key: Int) -> String {
-        return self.breadthFirstToTreeWithNumberOfChildren(key).depthFistToString()
+        return self.breadthFirstToTreeWithNumberOfChildren(key).depthFirstToString()
     }
     
     //  Return a string decrypted by using `key`.

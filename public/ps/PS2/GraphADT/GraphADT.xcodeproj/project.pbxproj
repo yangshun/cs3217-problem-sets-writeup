@@ -12,7 +12,6 @@
 		41D398B01A45C4AE00E66F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D398AE1A45C4AE00E66F2C /* Main.storyboard */; };
 		41D398B21A45C4AE00E66F2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D398B11A45C4AE00E66F2C /* Images.xcassets */; };
 		41D398B51A45C4AE00E66F2C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D398B31A45C4AE00E66F2C /* LaunchScreen.xib */; };
-		41D398C11A45C4AE00E66F2C /* GraphADTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398C01A45C4AE00E66F2C /* GraphADTTests.swift */; };
 		41D398CF1A45C94700E66F2C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398CA1A45C94700E66F2C /* Node.swift */; };
 		41D398D01A45C94700E66F2C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398CA1A45C94700E66F2C /* Node.swift */; };
 		41D398D11A45C94700E66F2C /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398CB1A45C94700E66F2C /* Edge.swift */; };
@@ -23,6 +22,9 @@
 		41D398D61A45C94700E66F2C /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398CD1A45C94700E66F2C /* Tree.swift */; };
 		41D398D71A45C94700E66F2C /* String+Cryptography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398CE1A45C94700E66F2C /* String+Cryptography.swift */; };
 		41D398D81A45C94700E66F2C /* String+Cryptography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398CE1A45C94700E66F2C /* String+Cryptography.swift */; };
+		41D398DA1A4650F300E66F2C /* NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398D91A4650F300E66F2C /* NodeTests.swift */; };
+		41D398DC1A466AE900E66F2C /* EdgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398DB1A466AE900E66F2C /* EdgeTests.swift */; };
+		41D398DE1A466B6200E66F2C /* String+CryptographyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398DD1A466B6200E66F2C /* String+CryptographyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +47,14 @@
 		41D398B41A45C4AE00E66F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		41D398BA1A45C4AE00E66F2C /* GraphADTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphADTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D398BF1A45C4AE00E66F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41D398C01A45C4AE00E66F2C /* GraphADTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphADTTests.swift; sourceTree = "<group>"; };
 		41D398CA1A45C94700E66F2C /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		41D398CB1A45C94700E66F2C /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		41D398CC1A45C94700E66F2C /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		41D398CD1A45C94700E66F2C /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		41D398CE1A45C94700E66F2C /* String+Cryptography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Cryptography.swift"; sourceTree = "<group>"; };
+		41D398D91A4650F300E66F2C /* NodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTests.swift; sourceTree = "<group>"; };
+		41D398DB1A466AE900E66F2C /* EdgeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeTests.swift; sourceTree = "<group>"; };
+		41D398DD1A466B6200E66F2C /* String+CryptographyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CryptographyTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,9 @@
 		41D398BD1A45C4AE00E66F2C /* GraphADTTests */ = {
 			isa = PBXGroup;
 			children = (
-				41D398C01A45C4AE00E66F2C /* GraphADTTests.swift */,
+				41D398D91A4650F300E66F2C /* NodeTests.swift */,
+				41D398DB1A466AE900E66F2C /* EdgeTests.swift */,
+				41D398DD1A466B6200E66F2C /* String+CryptographyTests.swift */,
 				41D398BE1A45C4AE00E66F2C /* Supporting Files */,
 			);
 			path = GraphADTTests;
@@ -248,10 +254,12 @@
 			files = (
 				41D398D81A45C94700E66F2C /* String+Cryptography.swift in Sources */,
 				41D398D61A45C94700E66F2C /* Tree.swift in Sources */,
+				41D398DE1A466B6200E66F2C /* String+CryptographyTests.swift in Sources */,
+				41D398DC1A466AE900E66F2C /* EdgeTests.swift in Sources */,
 				41D398D41A45C94700E66F2C /* Graph.swift in Sources */,
-				41D398C11A45C4AE00E66F2C /* GraphADTTests.swift in Sources */,
 				41D398D01A45C94700E66F2C /* Node.swift in Sources */,
 				41D398D21A45C94700E66F2C /* Edge.swift in Sources */,
+				41D398DA1A4650F300E66F2C /* NodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

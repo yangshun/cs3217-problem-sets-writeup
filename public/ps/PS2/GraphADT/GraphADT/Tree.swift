@@ -37,7 +37,7 @@ extension Tree {
     
     //  Return a string that represents the tree when it is traversed
     //  in depth-first order.
-    func depthFistToString() -> String {
+    func depthFirstToString() -> String {
         
         return "" // Please remove this line in actual implementation
     }
