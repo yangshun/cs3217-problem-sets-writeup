@@ -77,8 +77,6 @@ Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provid
 
 Answer the following questions in `design.txt`:
 
-1. The `isEqual:` methods in *Node* and *Edge* require that object != nil. This is because these methods access the fields of 'object' without checking if 'object' is null first. Why do we require `self` to be non-null? What happens when we pass a message to a nil pointer? Explain. **(5 points)**
-
 1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of *Edge*, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify a *Edge* such that it violates its representation invariant? How are changes to instances of and *Edge* prevented?) **(5 points)**
 
 2. For *Node* and *Edge*, we could provide a method such as `isEqualTo(node:)` or `isEqualTo(edge:)` to test whether two instances represent the same Node or Edge instead of defining the global `==` operator. Why is it necessary to define the operator `==` in global scope? **(5 points)**
