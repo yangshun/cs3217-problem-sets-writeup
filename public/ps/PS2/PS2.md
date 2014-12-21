@@ -12,7 +12,7 @@ Section 1 - Introduction
 
 This assignment will prepare you for the application that you are going to build over the next 5 weeks. This application is a bubble puzzle game similar to BubbleMania. The objective is to shoot bubbles of different colours so that they adhere to other bubbles that are already in the game area. Three or more connected bubbles of the same colour will be removed from the game areas. Any bubbles left unattached to the top will also be removed. 
 
-In this assignment, you will practice reading and interpreting specifications, and writing Objective-C code that satisfies our specifications. In addition, you will be given an introduction to using checkRep methods and testing strategies. You will implement three classes and link them with the code provided to complete the implementation of a Graph ADT. You will be required to answer some questions about both the code you are given and the code you need to write.
+In this assignment, you will practice reading and interpreting specifications, and writing Swift code that satisfies our specifications. In addition, you will be given an introduction to using `checkRep` methods and testing in Xcode 6. You will implement three classes and link them with the code provided to complete the implementation of a Graph ADT. You will be required to answer some questions about both the code you are given and the code you need to write.
 
 A video of what your app might look like is shown in Interactive 3.1. Note that while the grading of the problem sets will be done separately, you will eventually have to integrate all the parts together. You should put effort into ensuring that each problem set is fully debugged before you move on or you will run into a lot of problems when you try to integrate all the parts in a few weeks.
 
@@ -22,7 +22,7 @@ A video of what your app might look like is shown in Interactive 3.1. Note that 
 
 You should now have received your distributed iPad. It’s time to try installing an application onto your iPad for testing.
 
-To do so, you must ensure your computer and iPad device is configured for iOS development. Make sure your iPad is plugged in, start Xcode and open Organizer from **Window** menu.If this is the first time using the device for development, select your device in Organizer and press **Use for Development**.
+To do so, you must ensure your computer and iPad device is configured for iOS development. Make sure your iPad is plugged in, start Xcode and open **Devices** from **Window** menu. If this is the first time using the device for development, Xcode 6 will automatically enable Developer Mode on your device.
 
 If there is no certificate created, Xcode will ask you if you want Xcode to submit certificate request automatically. Say YES. Request will show online on developer portal and has to be approved by an admin user. If Xcode does not prompt you to request a certificate, click **Refresh** in **Provisioning Profiles** under **Library**.
 
@@ -36,9 +36,7 @@ If you have a yellow/orange dot, select the iOS Team Provisioning profile and hi
  
 All students use their own certificates, issued on the Mac they connected first. If they wanna use another Mac, they must export and import their profile from Xcode by themselves.
 
-Students may need to install the WWDC certificate authority, which can be downloaded from the online developer portal. 
-
-​ Once that’s done, let’s try to install a very simple application, in fact, just a blank application. Create a single-view iPad application, named **DeviceTest**. Make sure you fill in `nus.cs3217` (case sensitive) as your company. Then change the target platform from simulator to iPad in the scheme selector in the top part of the IDE. Run your application and see that it can be loaded into iPad to run. Now that you are able to successfully deploy an application on the iPad, you can do the same for your future applications by applying similar steps.
+​ Once that’s done, let’s try to install a very simple application, in fact, just a blank application. Create a single-view iPad application, named **DeviceTest**. Make sure you fill in `nus.cs3217` (case sensitive) as your company. Then change the target platform from simulator to your iPad in the scheme selector in the Toolbar. Run your application and see that it can be loaded into iPad to run. Now that you are able to successfully deploy an application on the iPad, you can do the same for your future applications by applying similar steps.
 
 Section 2 - Background
 --
@@ -75,15 +73,17 @@ Interpreting an abstract type involves understanding its specifications -  what 
 
 ### Problem 1: Designing the Graph ADT (20 Points) ###
 
-Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `problem-set-2/GraphADT`. Double click `ps2.xcodeproj` to open the project template. Read the specifications for *Node* in `Node.h`, representing individual vertices, and for *Edge* in `Edge.h`, representing edges in the graph. Then read over the staff-provided implementations, `Node.m` and `Edge.m`.
+Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `problem-set-2/GraphADT`. Read the specifications and implementation for *Node* in `Node.swift`, representing individual vertices, and for *Edge* in `Edge.swift`, representing edges in the graph.
 
 Answer the following questions in `design.txt`:
 
 1. The `isEqual:` methods in *Node* and *Edge* require that object != nil. This is because these methods access the fields of 'object' without checking if 'object' is null first. Why do we require `self` to be non-null? What happens when we pass a message to a nil pointer? Explain. **(5 points)**
 
-2. Calls to `checkRep:` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `checkRep:` at the beginning and end of every method. In the case of *Node* and *Edge*, why is it sufficient to call `checkRep:` only at the end of the constructors? (Hint: could a method ever modify a *Node* or *Edge* such that it violates its representation invariant? How are changes to instances of *Node* and *Edge* prevented?) **(5 points)**
+1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of *Edge*, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify a *Edge* such that it violates its representation invariant? How are changes to instances of and *Edge* prevented?) **(5 points)**
 
-3. For *Node* and *Edge*, we could provide a separate method such as `isEquivalentTo:` to test whether two objects represent the same Node or Edge instead of overriding the `isEqual:` method of NSObject. Why is it necessary to override the `isEqual:` methods in these classes? (Hint: methods like `containsObject:`,  `indexOfObject:` for NSArray, and `addObject:` for NSMutableSet call the `isEqual:` method of the collection objects to test for equality). Explain. **(5 points)**
+2. For *Node* and *Edge*, we could provide a method such as `isEqualTo(node:)` or `isEqualTo(edge:)` to test whether two instances represent the same Node or Edge instead of defining the global `==` operator. Why is it necessary to define the operator `==` in global scope? **(5 points)**
+
+3. Why do *Node* and *Edge* have to conform the *Hashable* protocol? **(5 points)**
 
 4. There are several ways to represent a graph. Here are a few:
  * As a collection of edges
@@ -94,13 +94,13 @@ Answer the following questions in `design.txt`:
 
 ### Problem 2: Implementing the Graph ADT (100 Points) ###
 
-Read over the specifications provided for the *Graph* class in `Graph.h`. Make sure that you understand the overview for *Graph* and the specifications for the given methods.
+Read over the specifications provided for the *Graph* class in `Graph.swift`. Make sure that you understand the overview for *Graph* and the specifications for the given methods.
 
-Fill in an implementation for the methods in the definition of *Graph*, according to the specifications. You may define new helper methods in `Graph.m` if you need them. You may not add public methods; the external interface must remain the same. Also implement the private `checkRep:` method to help you test whether or not a *Graph* instance violates the representation invariants. We highly recommend you use `checkRep:` in the code you write. Think about the issues discussed in **Problem 1.2** when deciding where `checkRep:` should be called. **(80 points)**
+Fill in an implementation for the methods in the definition of *Graph*, according to the specifications. You may define new helper methods in `Graph.swift` if you need them. However, you should the declare them as private so they are not exposed to other source files in the project. Also implement the private `_checkRep()` method to help you test whether or not a *Graph* instance violates the representation invariants. We highly recommend you use `_checkRep()` in the code you write. Think about the issues discussed in **Problem 1.2** when deciding where `_checkRep()` should be called. **(80 points)**
 
 Answer the following questions in `design.txt`:
 
-1. Where did you include calls to `checkRep:` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some other combination)? Why? **(5 points)**
+1. Where did you include calls to `_checkRep()` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some other combination)? Why? **(5 points)**
 
 2. In Problem 1.4, you have explored the different types of graph representations. Briefly explain why you chose that representation to implement the Graph ADT. **(5 points)**
 
@@ -110,7 +110,7 @@ Answer the following questions in `design.txt`:
 
 ### Problem 3: Testing the Graph ADT (30 Points) ###
 
-It is a very good practice to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 3.1 to run the unit test for Graph ADT.
+It is a must to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 3.1 to run the unit test for Graph ADT.
 
 **Gallery 3.1** Run unit test for GraphADT in Xcode.
 
@@ -120,50 +120,87 @@ It is a very good practice to write unit tests for your ADTs. They help you make
 
 ![Test Project](/ps/ps2/img/2-2.png)
 
-**Step 2:** Then, select `Product -> Test` (or use the ⌘+U shortcut key) to perform unit testing.
+**Step 2:** Then, select **Product → Test** (or use the ⌘+U shortcut key) to perform unit testing.
 
 ![Test Results](/ps/ps2/img/2-3.png)
 
-**Step 3:** Check your test results by switching to the **Log Navigator** and select the first item *Test* under *GraphADT*. If you have done everything correctly, you should see a series of green checks indicating all the unit tests have passed successfully.
+**Step 3:** Check your test results by switching to the **Test Navigator**. If you have done everything correctly, you should see a series of green checks indicating all the unit tests have passed successfully.
 
-Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphADT_Tests.m`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
+Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphTests.swift`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
 
 ### Problem 4: Extending the Graph ADT (50 Points) ###
 In this problem, you are going to use a tree to cipher and decipher texts. The cipher and decipher functions are defined as follows:
 
-* **Cipher**: perform string-to-tree with breadth first and then tree-to-string with depth-first
-* **Decipher**: perform string-to-tree with depth first and then tree-to-string with breadth-first
+* **Cipher**: perform string-to-tree with breadth-first order and then tree-to-string with depth-first order
+* **Decipher**: perform string-to-tree with depth-first order and then tree-to-string with breadth-first order
 
-In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string. 
+In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string (or the number of children of each node in the intermediate tree). The intermediate tree is a perfect tree which means that:
 
-As an example, consider the string **HELLO WORLD**. When performing the cipher operation with the **key as 2**, the breadth-first string-to-tree conversion would result in the following tree:
+ - Every node other than the leaves has exactly k children.
+ - All leaves have the same depth.
+
+For example, consider the string **HELLO WORLD**. When performing the cipher operation with the **key as 2**, the breadth-first string-to-tree conversion would result in the following tree:
 
 ![Cipher Tree](/ps/ps2/img/cipher-tree.png)
 
-Here, we need to append some 'special nodes' to the end of the tree to conform to the key. In the given example, **+** denotes a whitespace while ***** represents a special node. 
+In order to create a perfect binary tree, we need to append some 'special nodes' with a string label **\*** to the end of the tree to conform to the key. You can assume that the input string has no **\*** character. (Note that the empty node in the diagram represents the space in the original string.)
 
-In the second part of the cipher operation, this tree is converted to a string using the depth-first approach. This would result in the following string: **HELOROLDL \*\*W\*\***. 
+In the second part of the cipher operation, this tree is converted to a string using the depth-first approach. This would result in the following string: **HELOROLDL \*\*W**. Note that the special characters must be removed if they appears at the end of the string after the conversion.
 
-If this resultant string is used as the input for the decipher operation using the same key, then it should give back the initial string i.e. **HELLO WORLD**.
+If this resultant string is used as the input for the decipher operation using the same key, it should give back the initial string i.e. **HELLO WORLD**.
 
 Now, follow the steps described below to implement the cipher/decipher functionalities:
 
-1. First, you must design and implement an ADT for a *Tree* in new files named `Tree.h` and `Tree.m`. You may extend the Graph ADT used in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may add new files to the project to support your implementation. However, you are required to mention them in `design.txt`.
+1. First, you must design and implement a Tree ADT in `Tree.swift`. You may extend the Graph ADT created in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may add new files to the project to support your implementation. However, you are required to mention them in `design.txt`.
 
-2. Now, write a class category for NSString that implements the following two methods:
+2. Write a class extension for `String` in `String+Cryptograph.swift` that implements the following 4 methods:
 
- - `- (Tree*)breadthFirstStringToTree:(NSNumber*)key`
- - `- (Tree*)depthFirstStringToTree:(NSNumber*)key`
+```
+
+   //  Return a string encrypted by using `key`.
+   func cipherWithKey(key: Int) -> String
+
+   //  Return a string decrypted by using `key`.
+   func decipherWithKey(key: Int) -> String
+
+   //  Return a tree with String labels such that when performing 
+   //  a breath-first traversal on this tree, its labels appear in 
+   //  the same order that they appear from left to right of the 
+   //  string `self`.
+   //
+   //  In other words,
+   //  str.breadthFirstToTreeWithNumberOfChildren(n).breadthFirstToString() == str
+   func breadthFirstToTreeWithNumberOfChildren(numberOfChildren: Int) -> Tree<String>
+
+   //  Return a tree with String labels such that when performing 
+   //  a depth-first traversal on this tree, its labels appear in
+   //  the same order that they appear from left to right of the 
+   //  string `self`.
+   //
+   //  In other words,
+   //  str.depthFirstToTreeWithNumberOfChildren(n).depthFirstToString() == str
+   func depthFirstToTreeWithNumberOfChildren(numberOfChildren: Int) -> Tree<String>
+
+```
 
  Your algorithm will need to append the 'special nodes' to the end of the tree to conform to the keys.
 
-3. Add the following two methods to the *Tree* ADT you had implemented earlier:
- - `- (NSString*)breadthFirstTreeToString:(NSNumber*)key`
- - `- (NSString*)depthFirstTreeToString:(NSNumber*)key`
+3. Implement the following two methods in the extension of the *Tree* ADT in `Tree.swift`:
 
- Your algorithm will need to deal with the 'special nodes' in the tree appropriately.
+```
+   //  Return a string that represents the tree when it is traversed
+   //  in breadth-first order.
+   func breadthFirstToString() -> String
+ 
+   //  Return a string that represents the tree when it is traversed
+   //  in depth-first order.
+   func depthFirstToString() -> String
+```
 
-4. Write appropriate test cases in `GraphADT_Tests.m` to test the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
+ Your algorithm will need to deal with the 'special nodes' in the tree appropriately. Remember that those special nodes with the label **\*** should not appear at the end of the converted string. Also you can assume that nodes' labels are convertible to String and can be concatenated into a final String. The label of type `T` can be 
+converted to a String via String interpolationn e.g. "\(node.label)".
+
+4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the Tree ADT, the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
@@ -179,10 +216,9 @@ Section 4 - Grading and Submission
 Please read this section carefully so that you fully understand the grading scheme and the mode of submission!
 
 ### Grading Scheme ###
-The simplest way to ensure that you get a good grade on your assignment is to simply go through the list of testing items. Most of the reasons we mark an assignment down could very easily be avoided by simply taking a few minutes to go through each of the testing points before submitting. For this assignment, testing/ grading will be done by running the project in the simulator. We will be looking out for the following:
+The simplest way to ensure that you get a good grade on your assignment is to simply go through the list of testing items. Most of the reasons we mark an assignment down could very easily be avoided by simply taking a few minutes to go through each of the testing points before submitting. For this assignment, testing/ grading will be done by running the project through your set of test cases and then our additional ones. We will be looking out for the following:
 
 - Your submission should adhere to the submission format.
-- Your interface must be neat.
 - You have answered the questions correctly in a concise manner.
 - Your project should build without errors or warnings.
 - Your project should run without crashing.
@@ -194,11 +230,11 @@ Like Problem Set 1, you will be using a pilot locally hosted [GitLab](http://cs3
 
 The Xcode project for this problem set will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 2`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
-When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub's Swift gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore).
+When you begin working, your Xcode project will create files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore these files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub's Swift gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore).
 
 **Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-Even though your tutors will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
+Even though your tutors will be reading every single line of your code, we will be testing your code using our set of test cases. Points may be taken off if our tests fails due to unauthorised changes you may have made to the provided struct, class and extension declarations.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **‘Problem Set 2: Swift & Coding to Specifications’**.
 
