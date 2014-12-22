@@ -22,21 +22,27 @@ A video of what your app might look like is shown in Interactive 3.1. Note that 
 
 You should now have received your distributed iPad. It’s time to try installing an application onto your iPad for testing.
 
-To do so, you must ensure your computer and iPad device is configured for iOS development. Make sure your iPad is plugged in, start Xcode and open **Devices** from **Window** menu. If this is the first time using the device for development, Xcode 6 will automatically enable Developer Mode on your device.
+Apple provides an excellent quick guide so please follow them at the following links.
 
-If there is no certificate created, Xcode will ask you if you want Xcode to submit certificate request automatically. Say YES. Request will show online on developer portal and has to be approved by an admin user. If Xcode does not prompt you to request a certificate, click **Refresh** in **Provisioning Profiles** under **Library**.
+ - First, you should have registered for an Apple Developer (at this [link](https://developer.apple.com/register/index.action)) and been invited to join **National University of Singapore (Department of Computer Science)** team.
 
-If this is a new device, copy the Identifier UDID and send it to admin user to add it to the online developer portal (should not be the case since all iPads and devices are already added, unless you intend to use your own iPad or iPhone)
+ - Add your account to Xcode (see the instruction [here](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/AddingYourAccounttoXcode/AddingYourAccounttoXcode.html#//apple_ref/doc/uid/TP40013839-CH40-SW2))
+
+ - Make sure that your app bundle ID is prefixed with **nus.c3217** and the team is set to **National University of Singapore (Department of Computer Science)**
+
+ - Now connect your iPad. If this is the first time using the device for development, Xcode 6 will automatically enable Developer Mode on your device. If you are using your own device, you might see the following screen.
+![Fix issue](/ps/ps2/img/fix-issue.png)
  
-Go to Provisioning Profiles in LIBRARY in Organizer and click on **Automatic Device Provisioning**. Your device should have a green color dot if everything is OK and you should be able to run apps on it.
- 
-If you have a yellow/orange dot, select the iOS Team Provisioning profile and hit **DELETE**. Then hit **Refresh** again. Xcode will update with the new profile and should work. Try disconnecting the device and rebooting also if it’s not working straight away. 
+ Please copy the Identifier UDID (go to **Window → Devices**, select your iPad on the left column and the Identifier field is the UDID) and send it to admin user to add it to the provisioning profile. It should not be the case if you receive the iPad from the school because all iPads are already added.
+
+ - Change the target platform from simulator to your iPad in the scheme selector in the Toolbar and run any application (you can use the provided project GraphADT in this problem set) to see check if the app is successfully loaded onto the device.
+
+ - If the app cannot run on your device, please follow these [instructions](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40013839-CH34-SW7) to verify that your profile has been set up correctly.
 
 **Please note that:**
  
-All students use their own certificates, issued on the Mac they connected first. If they wanna use another Mac, they must export and import their profile from Xcode by themselves.
+All students use their own certificates, issued on the Mac they connected first. If they wanna use another Mac in the lab, they must first export their signing identities (following these [instructions](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/CreatingYourTeamProvisioningProfile/CreatingYourTeamProvisioningProfile.html#//apple_ref/doc/uid/TP40013839-CH33-SW7)) and import to the other computer. 
 
-​ Once that’s done, let’s try to install a very simple application, in fact, just a blank application. Create a single-view iPad application, named **DeviceTest**. Make sure you fill in `nus.cs3217` (case sensitive) as your company. Then change the target platform from simulator to your iPad in the scheme selector in the Toolbar. Run your application and see that it can be loaded into iPad to run. Now that you are able to successfully deploy an application on the iPad, you can do the same for your future applications by applying similar steps.
 
 Section 2 - Background
 --
