@@ -60,7 +60,8 @@ class Graph<T: Equatable> {
     
     //  5 points
     //  Add `addedEdge` to the graph. If `addedEdge` already exists,
-    //  do nothing.
+    //  do nothing. If any of the nodes referenced in `eddedEdge` does
+    //  not exist, add it to the graph.
     func addEdge(addedEdge: E) {
     
     }
