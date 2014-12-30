@@ -49,7 +49,7 @@ Section 2 - Background
 
 ### Overview ###
 
-The purpose of this problem set is to improve your understanding of *Abstract Data Types* (ADTs). You will interpret, implement and test three ADT classes, `Node`, `Edge` and `Graph`, representing the vertices, edges and overall structure of a labeled graph respectively. The code for these classes can be found in `problem-set-2/GraphADT`.
+The purpose of this problem set is to improve your understanding of reading and implementing a specification. You will be interpreting, implementing and testing a `Graph` Abstract Data Type. The code for these classes can be found in `problem-set-2/GraphADT`.
 
 **Reminder**: Please read the entire problem set before starting.
 
@@ -87,7 +87,7 @@ Answer the following questions in `design.txt`:
 
 2. For *Node* and *Edge*, we could provide a method such as `isEqualTo(node:)` or `isEqualTo(edge:)` to test whether two instances represent the same Node or Edge instead of defining the global `==` operator. Why is it necessary to define the operator `==` in global scope? **(5 points)**
 
-3. Why do *Node* and *Edge* have to conform the *Hashable* protocol? **(5 points)**
+3. *Node* and *Edge* implement the *Equatable* protocol. A related protocol is the *Hashable* protocol. Would there be any benefit in requiring that both Node and Edge implement *Hashable* over *Equatable*? Explain your answer. **(5 points)**
 
 4. There are several ways to represent a graph. Here are a few:
    * As a collection of edges
@@ -98,9 +98,11 @@ Answer the following questions in `design.txt`:
 
 ### Problem 2: Implementing the Graph ADT (100 Points) ###
 
-Read over the specifications provided for the *Graph* class in `Graph.swift`. Make sure that you understand the overview for *Graph* and the specifications for the given methods.
+Read the specifications provided for the *Graph* class in `Graph.swift`. Make sure that you understand the behaviour required for the ADT and the specifications for the given methods.
 
-Fill in an implementation for the methods in the definition of *Graph*, according to the specifications. You may define new helper methods in `Graph.swift` if you need them. However, you should the declare them as private so they are not exposed to other source files in the project. Also implement the private `_checkRep()` method to help you test whether or not a *Graph* instance violates the representation invariants. We highly recommend you use `_checkRep()` in the code you write. Think about the issues discussed in **Problem 1.2** when deciding where `_checkRep()` should be called. **(80 points)**
+Implement the *Graph* ADT, according to the specifications. Also implement the private `_checkRep()` method to help you test whether or not a *Graph* instance violates the representation invariants. **(80 points)**
+
+You may modify the declaration of the Graph class so long it adheres to the specifications in terms of behaviour and API. Failure to adhere to specifications will result in a heavy penalty. It is also recommended that you use `_checkRep()` when implementing the ADT. Think about the issues discussed in **Problem 1.2** when deciding where `_checkRep()` should be called.
 
 Answer the following questions in `design.txt`:
 
