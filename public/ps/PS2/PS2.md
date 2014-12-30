@@ -59,19 +59,19 @@ The purpose of a specification is to document a program’s logic, the range of 
 
 A *graph* is a collection of *nodes* (also called *vertices*) and *edges*. Each edge connects two nodes. In a *directed graph*, edges are one-way: an edge `e = (A, B)` indicates that a node, B is directly reachable from another node, A. To indicate that B is directly reachable from A and vice-versa, a directed graph would have edges `(A, B) and (B, A)`. On the other hand, in an *undirected graph* we can travel in either directions along the edges between nodes.
 
-The *children* of node B are the nodes to which there is an edge from B. In Fig. 1, the children of B are A and C. Similarly, the *parents* of B are the nodes from which there is an edge to B. In Fig. 1, B only has one parent, A.
+A node is said to be *adjacent* to another node if there exists an edge between the two nodes. In Fig. 1, the neighbours of A are A and B.
 
 <img src="/ps/ps2/img/digraph.png" alt="digraph" style="width: 180px;"/>
 <img src="/ps/ps2/img/multigraph.png" alt="multigraph" style="width: 180px;"/>
 <img src="/ps/ps2/img/labeled-graph.png" alt="labelledgraph" style="width: 180px;"/>
 
-A node is said to be *adjacent* to another node if there exists an edge between the two nodes.
-
-A *path* is a sequence of edges `(node1, node2), (node2, node3), (node3, node4), ....` In other words, a path is an ordered list of edges, where an edge to some node is immediately followed by an edge from that node. In Fig. 1, one possible path is `(B, A), (A, B), (B, C)`. This path represents traveling from B to A to B to C. A path may traverse a given edge twice.
+A *path* is a sequence of edges `(node1, node2), (node2, node3), (node3, node4), ....` In other words, a path is an ordered list of edges, where an edge to some node is immediately followed by an edge from that node. In Fig. 1, one possible path is `(B, A), (A, B), (B, C)`. This path represents traveling from B to A, to B, and to C. A path may traverse a given edge twice.
 
 In a *multigraph*, there can be any number of edges (zero, one, or more) between a pair of nodes. Fig. 2 shows a multigraph with 2 edges from A to C.
 
-In a *weighted graph* (Fig. 3), every edge has a weight associated with it. In this assignment, a graph cannot contain more than one edge with the same weight between a pair of nodes.
+In a *weighted graph* (Fig. 3), every edge has a weight associated with it.
+
+In this assignment, a graph cannot contain more than one edge with the same weight between a pair of nodes.
 
 Section 3 - Graph ADT
 --
