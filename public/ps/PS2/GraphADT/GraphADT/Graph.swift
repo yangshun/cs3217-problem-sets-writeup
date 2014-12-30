@@ -15,7 +15,7 @@
 
     Hence, the representation invariants for every Graph g:
         - g is either directed or undirected
-        - All nodes in g must have unique IDs
+        - All nodes in g must have unique labels
         - Multiple edges from the same source to the same destination must
         not have the same weight
 
@@ -24,7 +24,7 @@
 */
 
 
-class Graph<T> {
+class Graph<T: Equatable> {
     typealias N = Node<T>
     typealias E = Edge<T>
     

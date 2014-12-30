@@ -5,14 +5,14 @@
     the destination.
 
     The representation invariants:
-        - The cose is non-negative
+        - The weight is non-negative
 
     Similar to `Node`, `Edge` is a generic type with a type parameter
     `T` that is the type of a node's label.
 */
 
 
-struct Edge<T> {
+struct Edge<T: Equatable> {
     typealias N = Node<T>
     
     var source: N
@@ -43,27 +43,16 @@ struct Edge<T> {
     
     //  Check the representation invariants.
     private func _checkRep() {
-        assert(weight >= 0)
+        assert(weight >= 0, "Edge's weight cannot be negative.")
     }
 }
+
+
+extension Edge : Equatable {
+}
+
 
 //  Return true if `lhs` edge is equal to `rhs` edge.
 func ==<Label>(lhs: Edge<Label>, rhs: Edge<Label>) -> Bool {
     return lhs.source == rhs.source && lhs.destination == rhs.destination && lhs.weight == rhs.weight
-}
-
-extension Edge : Hashable {
-    
-    //  Return a hash value for the edge.
-    var hashValue: Int {
-        return "\(source)\(destination)\(weight)".hashValue
-    }
-}
-
-extension Edge : Printable {
-    
-    //  Return a textual representation for the edge.
-    var description: String {
-        return "Edge from \(source.description) to \(destination.description)"
-    }
 }
