@@ -90,11 +90,11 @@ Answer the following questions in `design.txt`:
 3. Why do *Node* and *Edge* have to conform the *Hashable* protocol? **(5 points)**
 
 4. There are several ways to represent a graph. Here are a few:
- * As a collection of edges
- * As an adjacency list, in which each node is associated with a list of its outgoing edges.
- * As an adjacency matrix, which explicitly represents, for every pair ⟨A, B⟩ of edges, whether there is a link from A to B, and how many. 
+   * As a collection of edges
+   * As an adjacency list, in which each node is associated with a list of its  outgoing edges.
+   * As an adjacency matrix, which explicitly represents, for every pair ⟨A, B⟩ of edges, whether there is a link from A to B, and how many. 
 
-  Briefly discuss the advantages and disadvantages of any three types of Graph representations. **(5 points)**
+   Briefly discuss the advantages and disadvantages of any three types of Graph representations. **(5 points)**
 
 ### Problem 2: Implementing the Graph ADT (100 Points) ###
 
