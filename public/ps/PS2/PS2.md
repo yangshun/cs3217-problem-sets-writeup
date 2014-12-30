@@ -59,7 +59,7 @@ The purpose of a specification is to document a program’s logic, the range of 
 
 A *graph* is a collection of *nodes* (also called *vertices*) and *edges*. Each edge connects two nodes. In a *directed graph*, edges are one-way: an edge `e = (A, B)` indicates that a node, B is directly reachable from another node, A. To indicate that B is directly reachable from A and vice-versa, a directed graph would have edges `(A, B) and (B, A)`. On the other hand, in an *undirected graph* we can travel in either directions along the edges between nodes.
 
-A node is said to be *adjacent* to another node if there exists an edge between the two nodes. In Fig. 1, the neighbours of A are A and B.
+A node *A* is said to be *adjacent* to a node *B* if there exists an edge connecting *A* to *B*. In Fig. 1, the neighbours of *A* are *A* and *B*.
 
 <img src="/ps/ps2/img/digraph.png" alt="digraph" style="width: 180px;"/>
 <img src="/ps/ps2/img/multigraph.png" alt="multigraph" style="width: 180px;"/>
@@ -85,9 +85,9 @@ Answer the following questions in `design.txt`:
 
 1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of *Edge*, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify a *Edge* such that it violates its representation invariant? How are changes to instances of and *Edge* prevented?) **(5 points)**
 
-2. For *Node* and *Edge*, we could provide a method such as `isEqualTo(node:)` or `isEqualTo(edge:)` to test whether two instances represent the same Node or Edge instead of defining the global `==` operator. Why is it necessary to define the operator `==` in global scope? **(5 points)**
+2. *Node* and *Edge* implement the *Equatable* protocol. A related protocol is the *Hashable* protocol. Would there be any benefit in requiring that both Node and Edge implement *Hashable* over *Equatable*? Explain your answer. **(5 points)**
 
-3. *Node* and *Edge* implement the *Equatable* protocol. A related protocol is the *Hashable* protocol. Would there be any benefit in requiring that both Node and Edge implement *Hashable* over *Equatable*? Explain your answer. **(5 points)**
+3. Why is *Graph* implemented as a class but not a struct like *Node* and *Edge*? **(5 points)**
 
 4. There are several ways to represent a graph. Here are a few:
    * As a collection of edges
