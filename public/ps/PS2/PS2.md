@@ -79,15 +79,15 @@ Interpreting an abstract type involves understanding its specifications -  what 
 
 ### Problem 1: Designing the Graph ADT (20 Points) ###
 
-Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `problem-set-2/GraphADT`. Read the specifications and implementation for *Node* in `Node.swift`, representing individual vertices, and for *Edge* in `Edge.swift`, representing edges in the graph.
+Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `problem-set-2/GraphADT`. Read the specifications and implementation for `Node` in `Node.swift`, representing individual vertices, and for `Edge` in `Edge.swift`, representing edges in the graph.
 
 Answer the following questions in `design.txt`:
 
-1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of *Edge*, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify a *Edge* such that it violates its representation invariant? How are changes to instances of and *Edge* prevented?) **(5 points)**
+1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of `Edge`, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify an `Edge` such that it violates its representation invariant? How are changes to instances of and `Edge` prevented?) **(5 points)**
 
-2. *Node* and *Edge* implement the *Equatable* protocol. A related protocol is the *Hashable* protocol. Would there be any benefit in requiring that both Node and Edge implement *Hashable* over *Equatable*? Explain your answer. **(5 points)**
+2. `Node` and `Edge` implement the `Equatable` protocol. A related protocol is the `Hashable` protocol. Would there be any benefit in requiring that both Node and Edge implement `Hashable` over `Equatable`? Explain your answer. **(5 points)**
 
-3. Why is *Graph* implemented as a class but not a struct like *Node* and *Edge*? **(5 points)**
+3. Why is `Graph` implemented as a class but not a struct like `Node` and `Edge`? **(5 points)**
 
 4. There are several ways to represent a graph. Here are a few:
    * As a collection of edges
@@ -98,25 +98,25 @@ Answer the following questions in `design.txt`:
 
 ### Problem 2: Implementing the Graph ADT (100 Points) ###
 
-Read the specifications provided for the *Graph* class in `Graph.swift`. Make sure that you understand the behaviour required for the ADT and the specifications for the given methods.
+Read the specifications provided for the `Graph` class in `Graph.swift`. Make sure that you understand the behaviour required for the ADT and the specifications for the given methods.
 
-Implement the *Graph* ADT, according to the specifications. Also implement the private `_checkRep()` method to help you test whether or not a *Graph* instance violates the representation invariants. **(80 points)**
+Implement the `Graph` ADT, according to the specifications. Also implement the private `_checkRep()` method to help you test whether or not a `Graph` instance violates the representation invariants. **(80 points)**
 
-You may modify the declaration of the Graph class so long it adheres to the specifications in terms of behaviour and API. Failure to adhere to specifications will result in a heavy penalty. It is also recommended that you use `_checkRep()` when implementing the ADT. Think about the issues discussed in **Problem 1.2** when deciding where `_checkRep()` should be called.
+You may modify the declaration of the `Graph` class so long it adheres to the specifications in terms of behaviour and API. Failure to adhere to specifications will result in a heavy penalty. It is also recommended that you use `_checkRep()` when implementing the ADT. Think about the issues discussed in **Problem 1.2** when deciding where `_checkRep()` should be called.
 
 Answer the following questions in `design.txt`:
 
 1. Where did you include calls to `_checkRep()` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some other combination)? Why? **(5 points)**
 
-2. In Problem 1.4, you have explored the different types of graph representations. Briefly explain why you chose that representation to implement the Graph ADT. **(5 points)**
+2. In Problem 1.4, you have explored the different types of graph representations. Briefly explain why you chose that representation to implement the `Graph` ADT. **(5 points)**
 
-3. Imagine that the original representation invariant was changed such that the *Graph* was required to be **directed**. Which method or constructor implementations would have to be changed? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given specifications. **(5 points)**
+3. Imagine that the original representation invariant was changed such that the `Graph` was required to be **directed**. Which method or constructor implementations would have to be changed? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given specifications. **(5 points)**
 
 4. Imagine that the original representation invariant was changed to include a new requirement that there can be **at most 1 edge** between a source and destination node. Which method or constructor implementations would have to change? Please list them. For each changed piece of code, describe the changes informally, and indicate how much more or less complex (in terms of code clarity and/or execution efficiency) the result would be. Note that the new implementations must still adhere to the given spec. **(5 points)**
 
 ### Problem 3: Testing the Graph ADT (30 Points) ###
 
-It is a must to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for *Node* and *Edge* have been created for you. Please follow the step-by-step instructions in Gallery 3.1 to run the unit test for Graph ADT.
+It is a must to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for `Node` and `Edge` have been created for you. Please follow the step-by-step instructions in Gallery 3.1 to run the unit test for Graph ADT.
 
 **Gallery 3.1** Run unit test for GraphADT in Xcode.
 
@@ -132,7 +132,7 @@ It is a must to write unit tests for your ADTs. They help you make sure you don�
 
 **Step 3:** Check your test results by switching to the **Test Navigator**. If you have done everything correctly, you should see a series of green checks indicating all the unit tests have passed successfully.
 
-Now, you are required to add your own unit test cases for the methods of *Graph* in `GraphTests.swift`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
+Now, you are required to add your own unit test cases for the methods of `Graph` in `GraphTests.swift`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
 
 ### Problem 4: Extending the Graph ADT (50 Points) ###
 In this problem, you are going to use a tree to cipher and decipher texts. The cipher and decipher functions are defined as follows:
@@ -142,7 +142,7 @@ In this problem, you are going to use a tree to cipher and decipher texts. The c
 
 In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string (or the number of children of each node in the intermediate tree). The intermediate tree is a perfect tree which means that:
 
- - Every node other than the leaves has exactly k children.
+ - Every node other than the leaves has exactly **k** children.
  - All leaves have the same depth.
 
 For example, consider the string **HELLO WORLD**. When performing the cipher operation with the **key as 2**, the breadth-first string-to-tree conversion would result in the following tree:
@@ -157,7 +157,7 @@ If this resultant string is used as the input for the decipher operation using t
 
 Now, follow the steps described below to implement the cipher/decipher functionalities:
 
-1. First, you must design and implement a Tree ADT in `Tree.swift`. You may extend the Graph ADT created in the previous problems or use a different representation for the *Tree*. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may add new files to the project to support your implementation. However, you are required to mention them in `design.txt`.
+1. First, you must design and implement a `Tree` ADT in `Tree.swift`. You may extend the `Graph` ADT created in the previous problems or use a different representation for the `Tree`. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may add new files to the project to support your implementation. However, you are required to mention them in `design.txt`.
 
 2. Write a class extension for `String` in `String+Cryptograph.swift` that implements the following 4 methods:
 
@@ -191,7 +191,7 @@ Now, follow the steps described below to implement the cipher/decipher functiona
 
  Your algorithm will need to append the 'special nodes' to the end of the tree to conform to the keys.
 
-3. Implement the following two methods in the extension of the *Tree* ADT in `Tree.swift`:
+3. Implement the following two methods in the extension of the `Tree` ADT in `Tree.swift`:
 
 ```
    //  Return a string that represents the tree when it is traversed
@@ -204,9 +204,9 @@ Now, follow the steps described below to implement the cipher/decipher functiona
 ```
 
  Your algorithm will need to deal with the 'special nodes' in the tree appropriately. Remember that those special nodes with the label **\*** should not appear at the end of the converted string. Also you can assume that nodes' labels are convertible to String and can be concatenated into a final String. The label of type `T` can be 
-converted to a String via String interpolationn e.g. "\(node.label)".
+converted to a String via String interpolation e.g. "\(node.label)".
 
-4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the Tree ADT, the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
+4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the `Tree` ADT, the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
