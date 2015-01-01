@@ -8,7 +8,7 @@
 extension String {
     
     //  Return a string encrypted by using `key`.
-    func cipherWithKey(key: Int) -> String {
+    func encipherWithKey(key: Int) -> String {
         
         return "" // Please remove this line in actual implementation.
     }
