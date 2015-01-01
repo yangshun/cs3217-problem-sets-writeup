@@ -68,7 +68,7 @@ class Graph<T: Equatable> {
     
     //  5 points
     //  Remove `removedEdge` from the graph. If `removedEdge` does not
-    //  exists, do nothing.
+    //  exist, do nothing.
     func removeEdge(removedEdge: E) {
 
     }
@@ -90,7 +90,7 @@ class Graph<T: Equatable> {
     //  5 points
     //  Return adjacent nodes of the `fromNode` i.e. there
     //  is an directed edge from `fromNode` to its adjacent node.
-    func adjacentNodesFomNode(fromNode: N) -> [N] {
+    func adjacentNodesFromNode(fromNode: N) -> [N] {
         
         return [N]() // Please remove this line in actual implementation.
     }
