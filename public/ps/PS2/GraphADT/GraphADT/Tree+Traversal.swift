@@ -6,17 +6,17 @@
 //
 
 extension Tree {
-    //  Return a string that represents the tree when it is traversed
+    //  Return an array that represents the tree when it is traversed
     //  in breadth-first order.
-    func breadthFirstToString() -> String {
+    func breadthFirstTraversal() -> [T] {
         
-        return "" // Please remove this line in actual implementation.
+        return [T]() // Please remove this line in actual implementation.
     }
     
-    //  Return a string that represents the tree when it is traversed
+    //  Return an array that represents the tree when it is traversed
     //  in depth-first order.
-    func depthFirstToString() -> String {
+    func depthFirstToString() -> [T] {
         
-        return "" // Please remove this line in actual implementation.
+        return [T]() // Please remove this line in actual implementation.
     }
 }
