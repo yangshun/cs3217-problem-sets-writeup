@@ -157,56 +157,17 @@ If this resultant string is used as the input for the decipher operation using t
 
 Now, follow the steps described below to implement the cipher/decipher functionalities:
 
-1. First, you must design and implement a `Tree` ADT in `Tree.swift`. You may extend the `Graph` ADT created in the previous problems or use a different representation for the `Tree`. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may add new files to the project to support your implementation. However, you are required to mention them in `design.txt`.
+1. First, you must design and implement a `Tree` ADT in `Tree.swift`. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may extend the `Graph` ADT created in the previous problems or use a different representation for the `Tree`. You may add new files to the project to support your implementation; however, you are required to mention them in `design.txt`.
 
-2. Write a class extension for `String` in `String+Cryptograph.swift` that implements the following 4 methods:
+2. Implement a class extension for `String` in `String+Cryptography.swift`. The  specifications for the class extension can be found within the skeleton provided.
 
-```
+   Take note that your algorithm will need to append the 'special nodes' to the end of the tree to conform to the perfect tree property.
 
-   //  Return a string encrypted by using `key`.
-   func cipherWithKey(key: Int) -> String
+3. Implement a class extension for `Tree` in `Tree+Traversal.swift`. The specifications for the class extension can be found within the skeleton provided.
 
-   //  Return a string decrypted by using `key`.
-   func decipherWithKey(key: Int) -> String
+   Your algorithm will need to deal with the 'special nodes' in the tree appropriately: they should not appear at the end of the converted string. You can assume that nodes' labels are convertible to String and can be concatenated into a final String. The label of type `T` can be converted to a String via String interpolation i.e. `"\(node.label)"`.
 
-   //  Return a tree with String labels such that when performing 
-   //  a breath-first traversal on this tree, its labels appear in 
-   //  the same order that they appear from left to right of the 
-   //  string `self`.
-   //
-   //  In other words,
-   //  str.breadthFirstToTreeWithNumberOfChildren(n).breadthFirstToString() == str
-   func breadthFirstToTreeWithNumberOfChildren(numberOfChildren: Int) -> Tree<String>
-
-   //  Return a tree with String labels such that when performing 
-   //  a depth-first traversal on this tree, its labels appear in
-   //  the same order that they appear from left to right of the 
-   //  string `self`.
-   //
-   //  In other words,
-   //  str.depthFirstToTreeWithNumberOfChildren(n).depthFirstToString() == str
-   func depthFirstToTreeWithNumberOfChildren(numberOfChildren: Int) -> Tree<String>
-
-```
-
- Your algorithm will need to append the 'special nodes' to the end of the tree to conform to the keys.
-
-3. Implement the following two methods in the extension of the `Tree` ADT in `Tree.swift`:
-
-```
-   //  Return a string that represents the tree when it is traversed
-   //  in breadth-first order.
-   func breadthFirstToString() -> String
- 
-   //  Return a string that represents the tree when it is traversed
-   //  in depth-first order.
-   func depthFirstToString() -> String
-```
-
- Your algorithm will need to deal with the 'special nodes' in the tree appropriately. Remember that those special nodes with the label **\*** should not appear at the end of the converted string. Also you can assume that nodes' labels are convertible to String and can be concatenated into a final String. The label of type `T` can be 
-converted to a String via String interpolation e.g. "\(node.label)".
-
-4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the `Tree` ADT, the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
+4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the `Tree` ADT and the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:

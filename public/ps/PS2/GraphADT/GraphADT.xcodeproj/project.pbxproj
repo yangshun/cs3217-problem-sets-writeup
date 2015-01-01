@@ -20,6 +20,12 @@
 		41D398D41A45C94700E66F2C /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398CC1A45C94700E66F2C /* Graph.swift */; };
 		41D398DA1A4650F300E66F2C /* NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398D91A4650F300E66F2C /* NodeTests.swift */; };
 		41D398DC1A466AE900E66F2C /* EdgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D398DB1A466AE900E66F2C /* EdgeTests.swift */; };
+		5D5591B51A54DA0E0064B9DD /* String+Cryptography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5591B21A54DA0E0064B9DD /* String+Cryptography.swift */; };
+		5D5591B61A54DA0E0064B9DD /* String+Cryptography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5591B21A54DA0E0064B9DD /* String+Cryptography.swift */; };
+		5D5591B71A54DA0E0064B9DD /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5591B31A54DA0E0064B9DD /* Tree.swift */; };
+		5D5591B81A54DA0E0064B9DD /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5591B31A54DA0E0064B9DD /* Tree.swift */; };
+		5D5591B91A54DA0E0064B9DD /* Tree+Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5591B41A54DA0E0064B9DD /* Tree+Traversal.swift */; };
+		5D5591BA1A54DA0E0064B9DD /* Tree+Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5591B41A54DA0E0064B9DD /* Tree+Traversal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,9 @@
 		41D398CC1A45C94700E66F2C /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		41D398D91A4650F300E66F2C /* NodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTests.swift; sourceTree = "<group>"; };
 		41D398DB1A466AE900E66F2C /* EdgeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeTests.swift; sourceTree = "<group>"; };
+		5D5591B21A54DA0E0064B9DD /* String+Cryptography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Cryptography.swift"; sourceTree = "<group>"; };
+		5D5591B31A54DA0E0064B9DD /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		5D5591B41A54DA0E0064B9DD /* Tree+Traversal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tree+Traversal.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +100,9 @@
 				41D398CA1A45C94700E66F2C /* Node.swift */,
 				41D398CB1A45C94700E66F2C /* Edge.swift */,
 				41D398CC1A45C94700E66F2C /* Graph.swift */,
+				5D5591B21A54DA0E0064B9DD /* String+Cryptography.swift */,
+				5D5591B31A54DA0E0064B9DD /* Tree.swift */,
+				5D5591B41A54DA0E0064B9DD /* Tree+Traversal.swift */,
 				41D398AA1A45C4AE00E66F2C /* AppDelegate.swift */,
 				41D398AC1A45C4AE00E66F2C /* ViewController.swift */,
 				41D398AE1A45C4AE00E66F2C /* Main.storyboard */,
@@ -227,10 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5591B71A54DA0E0064B9DD /* Tree.swift in Sources */,
+				5D5591B51A54DA0E0064B9DD /* String+Cryptography.swift in Sources */,
 				41D398CF1A45C94700E66F2C /* Node.swift in Sources */,
 				41D398AD1A45C4AE00E66F2C /* ViewController.swift in Sources */,
 				41D398D11A45C94700E66F2C /* Edge.swift in Sources */,
 				41D398AB1A45C4AE00E66F2C /* AppDelegate.swift in Sources */,
+				5D5591B91A54DA0E0064B9DD /* Tree+Traversal.swift in Sources */,
 				41D398D31A45C94700E66F2C /* Graph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,10 +254,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5591B81A54DA0E0064B9DD /* Tree.swift in Sources */,
+				5D5591B61A54DA0E0064B9DD /* String+Cryptography.swift in Sources */,
 				41D398DC1A466AE900E66F2C /* EdgeTests.swift in Sources */,
 				41D398D41A45C94700E66F2C /* Graph.swift in Sources */,
 				41D398D01A45C94700E66F2C /* Node.swift in Sources */,
 				41D398D21A45C94700E66F2C /* Edge.swift in Sources */,
+				5D5591BA1A54DA0E0064B9DD /* Tree+Traversal.swift in Sources */,
 				41D398DA1A4650F300E66F2C /* NodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +447,7 @@
 				41D398C61A45C4AE00E66F2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41D398C71A45C4AE00E66F2C /* Build configuration list for PBXNativeTarget "GraphADTTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +456,7 @@
 				41D398C91A45C4AE00E66F2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
