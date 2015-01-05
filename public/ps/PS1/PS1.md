@@ -61,37 +61,45 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 ![Welcome to Xcode\!](/ps/ps1/img/1-1.png)
 
-Welcome to Xcode\!
+1.1 Welcome to Xcode\! Click "Create a new Xcode project" on the lower left part of the welcome panel to create your first iPad app.
 
 ![Begin by creating an iOS Single View application.](/ps/ps1/img/1-2.png)
 
-When you have finally decided to start working, begin by creating an iOS Single View application.
+1.2 Begin by creating an iOS Single View application.
 
 ![Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\)](/ps/ps1/img/1-3.png)
 
-Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\) You will be prompted to save your project to disk after this step.
+1.3 Fill in app details as shown here. \(Note: It is important to keep the company identifier as `nus.cs3217`\) You will be prompted to save your project to disk after this step.
+
+![When you are done with the above steps, you should be looking at this page that summaries your app info](/ps/ps1/img/1-4.png)
+
+1.4 When you are done with the above steps, you should be looking at this page that summaries your app info.
 
 ##### Milestone 2: Navigate around the IDE.
 
 ![The standard editor displays a single file.](/ps/ps1/img/2-1.png)
 
-The standard editor displays a single file. This screenshot shows the visual storyboard editor. Note the properties panel to the right of the screen.
+2.1 The standard editor displays a single file. This screenshot shows the visual storyboard editor. Note the properties panel to the right of the screen. When you are looking at the storyboard file which displays a iPad view, chances are you find the views too big/small so you want to zoom out/in. Try press `shift + option + command + [` and `shift + option + command + ]`.
 
 ![The assistant editor is highly recommended for writing code.](/ps/ps1/img/2-2.png)
 
-The assistant editor is highly recommended for writing code. It shows header and implementation files in a 2-column split view by default, but can also be made to show any arbitrary file.
+2.2 The assistant editor is highly recommended for writing code. It shows header and implementation files in a 2-column split view by default, but can also be made to show any arbitrary file.
 
 ![When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.](/ps/ps1/img/2-3.png)
 
-When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.
+2.3 When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.
 
 ##### Milestone 3: Add library interface elements.
 
 ![Add user interface elements from the library by dragging them to the storyboard.](/ps/ps1/img/3-1.png)
 
-Add user interface elements from the library by dragging them to the storyboard.
+3.1 Add user interface elements from the library by dragging them to the storyboard.
 
 Note how the properties panel expands to show further details when a UI element is selected. Add both a label, and a button. 
+
+![Where to find those interface elements and this library? You may ask. This picture gives you the answer. Check the lower right part of Xcode's interface.](/ps/ps1/img/3-2.png)
+
+3.2 Where to find those interface elements and this library? You may ask. This picture gives you the answer. Check the lower right part of Xcode's interface. 
 
 ##### Milestone 4: Add some code.
 
@@ -99,15 +107,14 @@ You need to "link" storyboard elements to their associated View Controller befor
 
 ![Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.](/ps/ps1/img/4-1.png)
 
-Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.
+4.1 Select the UI element label, press the `option` key and drag the label to your code file. Let go and give it a name. Click "connect". Alternatively, you can right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file. 
 
 ![Add an Action handler in the same way for "Touch Up Inside".](/ps/ps1/img/4-2.png)
 
-Add an Action handler in the same way for **"Touch Up Inside"**.
-
+4.2 Do the same for the UI element button. But this time in the pop-out window, first entry "connection", you should choose `Action`. Give your button a name. Alternatively, right-click the button and add an Action handler in the same way for "Touch Up Inside".
 ![Write a single line of code to change the label's text.](/ps/ps1/img/4-3.png)
 
-Write a single line of code to change the label's text.
+4.3 Write a single line of code to change the label's text. Here "myLabel" is the name I give to the UI element label in step 4.1, and "myButtonClicked" is the name I give to the action handler.
 
 ##### Milestone 5: Run your project in the emulator.
 
