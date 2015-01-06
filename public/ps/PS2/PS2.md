@@ -165,7 +165,7 @@ Now, follow the steps described below to implement the cipher/decipher functiona
 
 3. Implement a class extension for `Tree` in `Tree+Traversal.swift`. The specifications for the class extension can be found within the skeleton provided.
 
-   Your algorithm will need to deal with the 'special nodes' in the tree appropriately: they should not appear at the end of the converted string. You can assume that nodes' labels are convertible to String and can be concatenated into a final String. The label of type `T` can be converted to a String via String interpolation i.e. `"\(node.label)"`.
+   Your algorithm will need to deal with the 'special nodes' in the tree appropriately: they should not appear at the end of the converted string.
 
 4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the `Tree` ADT and the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
 
