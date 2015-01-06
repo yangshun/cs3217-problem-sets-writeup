@@ -3,7 +3,7 @@ Problem Set 2
 
 *Issue Date: 19 January 2015  
 Due Date: 25 January 2015  
-Tutorial Date: Week 4*
+Tutorial Date: Week 3*
 
 Section 1 - Introduction
 --
