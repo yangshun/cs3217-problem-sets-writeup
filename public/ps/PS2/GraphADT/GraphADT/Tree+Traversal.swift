@@ -15,7 +15,7 @@ extension Tree {
     
     //  Return an array that represents the tree when it is traversed
     //  in depth-first order.
-    func depthFirstToString() -> [T] {
+    func depthFirstTraversal() -> [T] {
         
         return [T]() // Please remove this line in actual implementation.
     }
