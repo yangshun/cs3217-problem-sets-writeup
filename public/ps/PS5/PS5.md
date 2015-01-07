@@ -157,9 +157,9 @@ Please answer the following questions:
 
 4. Congratulations, you have completed all the Problem Sets for CS3217. To recap, the learning objectives of the various problem sets are as follows:
 
-  - **Problem Set 1**: Introduction to Xcode and Objective-C 
+  - **Problem Set 1**: Introduction to Xcode and Swift/Objective-C 
   - **Problem Set 2**: Specifications and unit testing
-  - **Problem Set 3**: MVC and GUI-programming in Objective-C
+  - **Problem Set 3**: MVC and GUI-programming in Swift/Objective-C
   - **Problem Set 4**: Design and implementation of a full software system
   - **Problem Set 5**: Integration of modules and integration testing
 
