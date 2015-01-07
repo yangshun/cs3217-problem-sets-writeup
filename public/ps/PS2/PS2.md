@@ -81,7 +81,7 @@ Interpreting an abstract type involves understanding its specifications -  what 
 
 Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `problem-set-2/GraphADT`. Read the specifications and implementation for `Node` in `Node.swift`, representing individual vertices, and for `Edge` in `Edge.swift`, representing edges in the graph.
 
-Answer the following questions in `design.txt`:
+Answer the following questions in `answers.txt`:
 
 1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of `Edge`, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify an `Edge` such that it violates its representation invariant? How are changes to instances of and `Edge` prevented?) **(5 points)**
 
@@ -104,7 +104,7 @@ Implement the `Graph` ADT, according to the specifications. Also implement the p
 
 You may modify the declaration of the `Graph` class so long it adheres to the specifications in terms of behaviour and API. Failure to adhere to specifications will result in a heavy penalty. It is also recommended that you use `_checkRep()` when implementing the ADT. Think about the issues discussed in **Problem 1.2** when deciding where `_checkRep()` should be called.
 
-Answer the following questions in `design.txt`:
+Answer the following questions in `answers.txt`:
 
 1. Where did you include calls to `_checkRep()` (at the beginning of methods, the end of methods, the beginning of constructors, the end of constructors, some other combination)? Why? **(5 points)**
 
@@ -157,7 +157,7 @@ If this resultant string is used as the input for the decipher operation using t
 
 Now, follow the steps described below to implement the cipher/decipher functionalities:
 
-1. First, you must design and implement a `Tree` ADT in `Tree.swift`. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may extend the `Graph` ADT created in the previous problems or use a different representation for the `Tree`. You may add new files to the project to support your implementation; however, you are required to mention them in `design.txt`.
+1. First, you must design and implement a `Tree` ADT in `Tree.swift`. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may extend the `Graph` ADT created in the previous problems or use a different representation for the `Tree`. You may add new files to the project to support your implementation; however, you are required to mention them in `answers.txt`.
 
 2. Implement a class extension for `String` in `String+Cryptography.swift`. The  specifications for the class extension can be found within the skeleton provided.
 

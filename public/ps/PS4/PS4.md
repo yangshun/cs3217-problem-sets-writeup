@@ -70,7 +70,7 @@ Please draw the following diagrams and include them in your `ps04` folder:
 
 3. Also, please explain how you would extend your design to support more complex game logic such as removal of all bubbles in the grid of a specific colour.
 
-Write your answers to the above questions in a text file `design.txt`. The image files for your data model and module dependency diagram should be named `data-model.png` and `mdd.png` respectively and place them in the root directory of your repository. You may use other file formats or names if you prefer to. You should indicate this in `design.txt`.
+Write your answers to the above questions in a text file `answers.txt`. The image files for your data model and module dependency diagram should be named `data-model.png` and `mdd.png` respectively and place them in the root directory of your repository. You may use other file formats or names if you prefer to. You should indicate this in `answers.txt`.
 
 
 ### Problem 2: Game Engine (55 points) ###
@@ -128,7 +128,7 @@ Testing is an integral part of software engineering. You are expected to create 
  * ···
      * ···
 
-Please come up with your testing strategy and describe it in `design.txt`. Note that if we find that your application fails any of the tests described, **you will be penalized heavily**. We do not want testing to be merely an exercise in documentation.
+Please come up with your testing strategy and describe it in `answers.txt`. Note that if we find that your application fails any of the tests described, **you will be penalized heavily**. We do not want testing to be merely an exercise in documentation.
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
@@ -166,7 +166,7 @@ There is no resource or template provided for this problem set. In the group [Pr
 
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your submission directory should contain your design explanation `design.txt`, two diagrams: `data-model.png` and `mdd.png`, and a `README` file where you specify which implementation files contain your code.
+In addition, your submission directory should contain your design explanation `answers.txt`, two diagrams: `data-model.png` and `mdd.png`, and a `README` file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 4: Bubble Blast Saga Game Engine”**.
 

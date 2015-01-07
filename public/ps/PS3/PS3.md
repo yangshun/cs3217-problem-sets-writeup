@@ -199,7 +199,7 @@ Your next task is to create an isometric grid. The grid should have 12 columns, 
 
 Before you begin, please spend some time understanding the requirements of this problem set. Think about the following questions: What objects do you need to implement? How will the objects interact with your main controller? How do you best organize the code for these objects? Are there alternatives? How will you add new game objects?
 
-Once you have decided on the best way to organize your code, please answer the following questions by including a text file `design.txt` at the root directory of your problem set repository.
+Once you have decided on the best way to organize your code, please answer the following questions by including a text file `answers.txt` at the root directory of your problem set repository.
 
 1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a class diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). 
 
@@ -208,7 +208,7 @@ Once you have decided on the best way to organize your code, please answer the f
   - Relationships between classes should also be shown. Show the instance-level (association, composition) and class-level relationships (generalization, realization) where appropriate.
   - Allow a developer who hasn't seen your code base before to let them have a high-level understanding of your software.
 
-  Save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful in allowing others to understand your code architecture, feel free to add them in, and make indicate it inside `design.txt`. **(10 points)**
+  Save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful in allowing others to understand your code architecture, feel free to add them in, and make indicate it inside `answers.txt`. **(10 points)**
 
 2. Explain why you decided on your chosen design over alternative designs. **(5 points)**
 
@@ -261,7 +261,7 @@ or erase a cell if the eraser was chosen in the palette (Pan gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
-Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Your saving/loading/editing functionality has to support multiple levels. Please explain how you chose to implement the save/load function in `design.txt`. Justify your decision by explaining why your implementation is the best one among all the alternatives you considered.
+Finally, you have to implement the reset/save/load functionality for the level designer. You are to design your format for storing the game objects and decide how you want to store the objects. Make sure you implement the ability to save and load from different files, as well to modify and re-save a level. Your saving/loading/editing functionality has to support multiple levels. Please explain how you chose to implement the save/load function in `answers.txt`. Justify your decision by explaining why your implementation is the best one among all the alternatives you considered.
 
 There are five ways to maintain data persistency on iOS:
 
@@ -353,7 +353,7 @@ Testing is an integral part of software engineering. Since you are not implement
          - Empty collection
          - Non-empty collection
 
-Please come up with your testing strategy and describe it in `design.txt`. Of course, you should actually test your application as you have described instead of just listing down what you think you ought to test! :-)  
+Please come up with your testing strategy and describe it in `answers.txt`. Of course, you should actually test your application as you have described instead of just listing down what you think you ought to test! :-)  
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 
@@ -394,7 +394,7 @@ When you begin working, your Xcode project will grow to contain files that are u
 
 **Important Note:** Until now, a target Xcode project was already constructed for your problem sets. In this problem set, you have to create a new target in the empty Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your project directory should contain your design explanation `design.txt`, the class diagram `class-diagram.png`, and a README file where you specify which implementation files contain your code.
+In addition, your project directory should contain your design explanation `answers.txt`, the class diagram `class-diagram.png`, and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this problem set may be directed to the IVLE Forum under the heading **“Problem Set 3: Bubble Blast Saga Level Designer”.**
 
