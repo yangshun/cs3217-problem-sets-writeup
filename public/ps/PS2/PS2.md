@@ -49,7 +49,7 @@ Section 2 - Background
 
 ### Overview ###
 
-The purpose of this problem set is to improve your understanding of reading and implementing a specification. You will be interpreting, implementing and testing a `Graph` Abstract Data Type. The code for these classes can be found in `problem-set-2/GraphADT`.
+The purpose of this problem set is to improve your understanding of reading and implementing a specification. You will be interpreting, implementing and testing a `Graph` Abstract Data Type. The skeleton code for these classes can be found in the `GraphADT` folder of the repository.
 
 **Reminder**: Please read the entire problem set before starting.
 
@@ -79,7 +79,7 @@ Interpreting an abstract type involves understanding its specifications -  what 
 
 ### Problem 1: Designing the Graph ADT (20 Points) ###
 
-Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT` in `problem-set-2/GraphADT`. Read the specifications and implementation for `Node` in `Node.swift`, representing individual vertices, and for `Edge` in `Edge.swift`, representing edges in the graph.
+Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provided with an Xcode project called `GraphADT`. Read the specifications and implementation for `Node` in `Node.swift`, representing individual vertices, and for `Edge` in `Edge.swift`, representing edges in the graph.
 
 Answer the following questions in `answers.txt`:
 
