@@ -94,7 +94,7 @@ What we want to achieve here is to add buttons to the view and set up the button
 
 ![](/ps/ps3/img/Milestone2img/ButtonAction.png)
 
-*Step 4:* As you release the mouse button, a small window will popup. Change the **Connection** from 'Outlet' to 'Action', then fill in the name as 'buttonPressed'. Click **Connect**, then the following IBAction handler will be added to `ViewController.swift`:
+*Step 4:* As you release the mouse button, a small window will popup. Change the **Connection** from **Outlet** to **Action**, then fill in the name as `buttonPressed`. Click **Connect**, then the following IBAction handler will be added to `ViewController.swift`:
 
     @IBAction func buttonPressed(sender: AnyObject)
 
@@ -106,7 +106,7 @@ What we want to achieve here is to add buttons to the view and set up the button
 
 ![](/ps/ps3/img/Milestone2img/Orientation.png)
 
-*Step 7:* Since we would be only using the **Portrait** orientation in this game, you must specify the supported interface orientations in the project setting. Click on the top-level project in the Project Navigation pane and deselect 'Landscape Left' and 'Landscape Right' orientations. 
+*Step 7:* Since we would be only using the **Portrait** orientation in this game, you must specify the supported interface orientations in the project setting. Click on the top-level project in the Project Navigation pane and deselect **Landscape Left** and **Landscape Right** orientations. 
 
 ![](/ps/ps3/img/Milestone2img/AllButtons.png)
 
@@ -126,7 +126,7 @@ Now, we want to add a `UIView` to the main view to represent the game area. We a
 
 ![](/ps/ps3/img/Milestone3img/GameareaOutlet.png)
 
-*Step 3:* As you release the mouse button, a small window appears. Make sure that the **Connection** is 'Outlet' and fill in the **Name** as 'gameArea'. Click **Connect**. The wiring is done.
+*Step 3:* As you release the mouse button, a small window appears. Make sure that the **Connection** is **Outlet** and fill in the **Name** as `gameArea`. Click **Connect**. The wiring is done.
 
 ![](/ps/ps3/img/Milestone3img/GameareaOutletConfirm.png)
 
