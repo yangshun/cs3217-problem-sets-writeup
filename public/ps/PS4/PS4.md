@@ -158,9 +158,9 @@ For this problem set, we will be testing your code by compiling your app and upl
 
 ### Mode of Submission ###
 
-You will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
+Like previous problem sets, you will be using BitBucket for submitting your code and receiving feedback. 
 
-There is no resource or template provided for this problem set. In the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 4`, there is a repository which only contains the `.gitignore` as in the previous problem sets. Feel free to fork and clone it or create a new repository on your own but make sure to add the `.gitignore` to reduce the submission size.
+There is no resource or template provided for this problem set. In CS3217's BitBucket [repositories page](https://bitbucket.org/cs3217/profile/repositories?visibility=private), there is a repository which only contains the `.gitignore` as in the previous problem sets. Feel free to fork and clone it or create a new repository on your own but make sure to add the `.gitignore` to reduce the submission size.
 
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
