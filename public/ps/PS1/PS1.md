@@ -7,7 +7,7 @@ Tutorial Date: Week 2*
 
 Section 1 - Introduction
 --
-This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will take the opportunity to learn the basics of the Objective-C programming language and create a simple command line tool using Xcode.
+This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will take the opportunity to learn the basics of the Swift/Objective-C and Cocoa programming language and create a simple command line tool using Xcode.
 
 **Reminder:** Please read the entire problem set before starting.
 
@@ -29,7 +29,7 @@ If you do not have access to a computer running Mac OS X 10.9, you may:
 
 Development in general can be a messy process, and you should consider running your toolchain in a virtual environment if you are working on your primary computer.
 
-### Objective-C and Cocoa ###
+### Swift/Objective-C and Cocoa ###
 
 As of iOS 8, Apple introduced a new programming language, Swift. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, and also more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps, but for this course, we will stick with Swift. During this semester, all coding assignments will be done mainly using Swift and a little Objective-C at the start.
 
@@ -131,21 +131,27 @@ Section 3 - Introduction to Objective-C (100 points)
 In this section, you will be introduced to Object Oriented Programming and collection-types in Objective-C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
 
 
-### Problem 1: Collections in Objective-C (10 points)
+### Problem 1: Collections in Swift (10 points)
 
-Objective-C provides three main collection types:
+Swift provides two main collection types: 
 
-- `NSArray` describes a linear collection of objects where each object may be accessed by an index.
-- `NSDictionary` describes a key-value store where some one *key*-object maps to one *value*-object.
-- `NSSet` describes an unordered collection of unique objects.
+- `Array` describes a linear collection of objects where each object may be accessed by an index.
 
-These collections are immutable by default. The mutable counterparts of the above are `NSMutableArray`, `NSMutableDictionary`, and `NSMutableSet`. Collections should also be thought of in their abstract sense, rather than their concrete implementation (such as in Java).
+- `Dictionary` describes a key-value store where some one *key*-object maps to one *value*-object.
 
-Keys in `NSDictionary` may be any instance of an `NSObject`. Which selector does `NSDictionary` use to test for the uniqueness of keys?  **(10 points)**
+- And you can create third collection type - Set by using Dictionary.
+
+
+These collections can either be mutable or immutable upon declaration (using var for mutable objects and let for immutable objects).
+
+Keys in `Dictionary` may be any instance of an `AnyObject`. Which selector does `Dictionary` use to test for the uniqueness of keys?  **(10 points)**
+
+
 
 ### Problem 2: Standard Data Structures (30 points) ###
 
-Objective-C does not provide Stacks and Queues ADTs natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
+Swift does not provide Stacks and Queues ADTs natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
+
 
 **Fork** the Problem Set 1 repository into your account on Bitbucket ([https://bitbucket.org/cs3217/cs3217-problem-set-1](https://bitbucket.org/cs3217/cs3217-problem-set-1)) and **clone** it into your computer to begin working. 
 
@@ -163,9 +169,9 @@ To view that executable, from the Project Navigator, expand the **Products** fol
 
 #### Stacks and Queues ####
 
-1. A skeleton class for the Stack has been provided in `Stack.h` and `Stack.m`. Implement the Stack by filling up the method implementations in `Stack.m`. You should not change the protocol provided. **(15 points)**
+1. A skeleton class for the Stack has been provided in  `Stack.swift`. Implement the Stack by filling up the method implementations in `Stack.swift`. You should not change the protocol provided. **(15 points)**
 
-2. A skeleton class for the Queue has been provided in `Queue.h` and `Queue.m`. Implement the Queue by filling up the method implementations in `Queue.m`. You should not change the protocol provided. **(15 points)**
+2. A skeleton class for the Queue has been provided in  `Queue.swift`. Implement the Queue by filling up the method implementations in `Queue.swift`. You should not change the protocol provided. **(15 points)**
 
 #### Input Format ####
 
@@ -280,9 +286,8 @@ Note that this graph contains a cycle, and that edges are bidirectional.
 	
 Your task is to write sub-classes of `NSEnumerator`s that traverse the graph in Depth-first and Breadth-first order starting from a given vertex. Neighbours of a node will be traversed in the order of nodes that appear in the `plist` file.
 
-The driver program will parse property lists into their constituent Objective-C objects. Your implementation only needs to deal with graphs represented as `NSDictionary`s. 
+The driver program will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s. 
 
-- Find out what an `NSEnumerator` does. **(Not graded)**
 
 - Implement the class `DepthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Depth-first Search. **(20 points)**
 
@@ -292,9 +297,9 @@ The Depth-first Search enumerator should return vertices in pre-order, that is, 
 
 The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: **A, B, C, E, D, F, G**.
 
-- Create a category for the `NSDictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` classes. **(5 points)**
+- Create a category for the `Dictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` classes. **(5 points)**
 
-Your files should be named `NSDictionary+Traversable.{h, m}` in the style of Objective-C.
+Your files should be named `Dictionary+Traversable.swift` in the style of Swift.
 
 The following screenshot shows the output from running the driver program on the given graph.
 
@@ -304,13 +309,49 @@ The following screenshot shows the output from running the driver program on the
 
 Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-Your tests may be given as a set of input files in the respective formats described above. You should describe the purpose of these tests and their expected output in comment appended at the end of the file `main.m`.
+We Provide three unit test cases (StackTest.swift, QueueTest.swift and GraphTest.swift) for your testing purpose and you should not modify it unless specified. 
 
-If you need to write tests in code, you may add additional logic to run them in the space provided in `main.m`, but make sure that the output generated by the driver program does not change when the tests are successful, and when we run the program.
+We also provide three respective plist and expect files which are used to test in three unit test cases. 
 
-While it is a good practice to code defensively, we will not be supplying malformed property lists to your implementation.
+You can also create your own plist and expect files. Remeber to add plist and expect files before executing the testing drive program.
 
-*You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try.*
+Instruction:
+Targets -> CS3217-PS1-Swift -> Building Phases -> Copy Bundle Resources -> Add respective plist and expect files.
+
+One example is given here:
+
+![Example Graph](/ps/ps1/img/add.png)
+
+
+And you need to change plist and expect files for different testing, you just need to substitute file name.
+
+One example is given here:
+
+![Example Graph](/ps/ps1/img/test.png)
+
+However, "stack" type plist should only be passed into StackTest.swift to run test case, "queue" type plist should only be passed into QueueTest.swift to run test case and "graph" type plist should only be passed into GraphTest.swift to run test case
+
+Note: 
+
+**a.** Only after you implement "DepthFirstSearchEnumerator.swift" and "BreathFirstSearchEnumerator.swift", you can comment back the commented part to test. 
+
+
+![Example Graph](/ps/ps1/img/comment.png)
+
+**b.** After you implement "DepthFirstSearchEnumerator.swift" and "BreathFirstSearchEnumerator.swift", remeber to add them to compile resources: Targets -> CS3217-PS1-SwiftTests -> Build Phases -> Compile Sources -> Add.
+
+
+![Example Graph](/ps/ps1/img/compile.png)
+
+
+
+
+
+
+*You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try. The main focus point this time is on understanding how to use it *
+
+
+
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
