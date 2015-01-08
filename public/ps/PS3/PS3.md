@@ -386,11 +386,11 @@ Points will be taken off if you fail to comply with these requirements.
 
 ### Mode of Submission ###
 
-You will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
+Like previous problem sets, you will be using BitBucket for submitting your code and receiving feedback. 
 
-All the relevant files (images and two source files) for the problem set is located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 3`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
+The Xcode project for this problem set is provided and will be located under the [private repositories section](https://bitbucket.org/cs3217/profile/repositories?visibility=private). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
-When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub's Swift gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore). 
+When you begin working, your Xcode project will create files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore these files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub's Swift gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore).
 
 **Important Note:** Until now, a target Xcode project was already constructed for your problem sets. In this problem set, you have to create a new target in the empty Xcode project based on the walkthrough and ensure that all the required files are inside the project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
