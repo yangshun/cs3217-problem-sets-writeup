@@ -187,16 +187,13 @@ In this section, you will be introduced to Object Oriented Programming and colle
 
 ### Problem 1: Collections in Swift (10 points)
 
-Swift provides two main collection types: 
+Swift provides two main collection types, known as arrays and dictionaries. 
 
-- `Array` describes a linear collection of objects where each object may be accessed by an index.
+- **Arrays** describes an ordered list of objects *of the same type* where each object may be accessed by an index.
 
-- `Dictionary` describes a key-value store where some one *key*-object maps to one *value*-object.
+- **Dictionaries** store unordered collections of values *of the same type*, which can be referenced and looked up using a unique identifier, also known as a key.
 
-- And you can create third collection type - Set by using Dictionary.
-
-
-These collections can either be mutable or immutable upon declaration (using var for mutable objects and let for immutable objects).
+These collections can either be mutable or immutable upon declaration (using `var` for mutable objects and `let` for immutable objects).
 
 Keys in `Dictionary` may be any instance of an `AnyObject`. Which selector does `Dictionary` use to test for the uniqueness of keys?  **(10 points)**
 
@@ -223,9 +220,9 @@ To view that executable, from the Project Navigator, expand the **Products** fol
 
 #### Stacks and Queues ####
 
-1. A skeleton class for the Stack has been provided in  `Stack.swift`. Implement the Stack by filling up the method implementations in `Stack.swift`. You should not change the protocol provided. **(15 points)**
+1. A skeleton class for the Stack has been provided in  `Stack.swift`. Implement the `Stack` by filling up the method implementations in `Stack.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
 
-2. A skeleton class for the Queue has been provided in  `Queue.swift`. Implement the Queue by filling up the method implementations in `Queue.swift`. You should not change the protocol provided. **(15 points)**
+2. A skeleton class for the Queue has been provided in  `Queue.swift`. Implement the `Queue` by filling up the method implementations in `Queue.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
 
 #### Input Format ####
 
@@ -277,7 +274,7 @@ If you have implemented the skeleton classes correctly, the driver program shoul
 
 The output of the driver program in both cases is a representation of the state of the stack or queue after the sequence of methods described in the respective property list has been invoked.
 
-The top of the stack, or head of the queue, is on the left.
+The top of the stack, or front of the queue, is on the left.
 
 ### Problem 3: Graph Traversal (45 points)
 
@@ -287,7 +284,7 @@ Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki
 
 ![Example Graph](/ps/ps1/img/graph.png)
 
-The adjacency list for this graph in the format of a property list would be as follows. The key `start` represents the start vertex of the traversal decribed by this test file, and the key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a vertex in the graph, and its corresponding array represents the vertices that it is adjacent to.
+The adjacency list for this graph in the format of a property list would be as follows. The key `start` represents the start vertex of the traversal described by this test file, and the key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a vertex in the graph, and its corresponding array represents the vertices that it is adjacent to.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -363,14 +360,14 @@ The following screenshot shows the output from running the driver program on the
 
 Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-We Provide three unit test cases (StackTest.swift, QueueTest.swift and GraphTest.swift) for your testing purpose and you should not modify it unless specified. 
+We Provide three unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) for your testing purpose and you should not modify it unless specified. 
 
 We also provide three respective plist and expect files which are used to test in three unit test cases. 
 
-You can also create your own plist and expect files. Remeber to add plist and expect files before executing the testing drive program.
+You can also create your own plist and expect files. Remember to add plist and expect files before executing the testing drive program.
 
 Instruction:
-Targets -> CS3217-PS1-Swift -> Building Phases -> Copy Bundle Resources -> Add respective plist and expect files.
+**Targets -> CS3217-PS1-Swift -> Building Phases -> Copy Bundle Resources -> Add respective plist and expect files**.
 
 One example is given here:
 
@@ -383,29 +380,21 @@ One example is given here:
 
 ![Example Graph](/ps/ps1/img/test.png)
 
-However, "stack" type plist should only be passed into StackTest.swift to run test case, "queue" type plist should only be passed into QueueTest.swift to run test case and "graph" type plist should only be passed into GraphTest.swift to run test case
+However, "stack" type plist should only be passed into `StackTest.swift` to run test case, "queue" type plist should only be passed into `QueueTest.swift` to run test case and "graph" type plist should only be passed into `GraphTest.swift` to run test case
 
 Note: 
 
-**a.** Only after you implement "DepthFirstSearchEnumerator.swift" and "BreathFirstSearchEnumerator.swift", you can comment back the commented part to test. 
+**a.** Only after you implement `DepthFirstSearchEnumerator.swift` and `BreathFirstSearchEnumerator.swift`, you can comment back the commented part to test. 
 
 
 ![Example Graph](/ps/ps1/img/comment.png)
 
-**b.** After you implement "DepthFirstSearchEnumerator.swift" and "BreathFirstSearchEnumerator.swift", remeber to add them to compile resources: Targets -> CS3217-PS1-SwiftTests -> Build Phases -> Compile Sources -> Add.
+**b.** After you implement `DepthFirstSearchEnumerator.swift` and `BreathFirstSearchEnumerator.swift`, remember to add them to compile resources: **Targets -> CS3217-PS1-SwiftTests -> Build Phases -> Compile Sources -> Add**.
 
 
 ![Example Graph](/ps/ps1/img/compile.png)
 
-
-
-
-
-
 *You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try. The main focus point this time is on understanding how to use it *
-
-
-
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
