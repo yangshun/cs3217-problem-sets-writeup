@@ -62,15 +62,13 @@ Before you begin, please make sure you understand how a game engine works and th
 
 Bear in mind that a good game engine is one where the modules/components are reusable in other games of similar nature. Do spend some time understanding the specifications of the game, think of possible extensions to the game (required in Problem Set 5), and design your game engine to support these. Note that each functionality/specification can be supported by a few game engine components (physics, rendering, etc).
 
-Please draw the following diagrams and include them in your `ps04` folder:
+Please answer the following questions:
 
-1. Draw a data model by identifying the data types and how they are related. **(10 points)**
+1.   Draw a class diagram for your application, save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful in allowing others to understand your code architecture, feel free to add them in, and make indicate it inside `answers.txt`. **(15 points)**
 
-2. Draw a module dependency diagram of your game engine and describe what each module is used for. Please also list down the APIs (Application Programming Interface) for each of your modules. Explain the rationale for your design over alternatives. **(15 points)**
+3. Also, please explain how you would extend your design to support more complex game logic such as removal of all bubbles in the grid of a specific colour. **(10 points)**
 
-3. Also, please explain how you would extend your design to support more complex game logic such as removal of all bubbles in the grid of a specific colour.
-
-Write your answers to the above questions in a text file `answers.txt`. The image files for your data model and module dependency diagram should be named `data-model.png` and `mdd.png` respectively and place them in the root directory of your repository. You may use other file formats or names if you prefer to. You should indicate this in `answers.txt`.
+Write your answers to the above questions in a text file `answers.txt`. The image files for your class diagram should be named `class-diagram.png` and place them in the root directory of your repository. You may use other file formats or names if you prefer to. You should indicate this in `answers.txt`.
 
 
 ### Problem 2: Game Engine (55 points) ###
@@ -166,7 +164,7 @@ There is no resource or template provided for this problem set. In the group [Pr
 
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your submission directory should contain your design explanation `answers.txt`, two diagrams: `data-model.png` and `mdd.png`, and a `README` file where you specify which implementation files contain your code.
+In addition, your submission directory should contain your design explanation `answers.txt`, `class-diagram.png`, and a `README` file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 4: Bubble Blast Saga Game Engine”**.
 
