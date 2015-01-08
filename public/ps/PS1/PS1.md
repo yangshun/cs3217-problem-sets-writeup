@@ -61,53 +61,102 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 ![Welcome to Xcode\!](/ps/ps1/img/1-1.png)
 
-Welcome to Xcode\!
+1.1 Welcome to Xcode\! Click "Create a new Xcode project" on the lower left part of the welcome panel to create your first iPad app.
 
 ![Begin by creating an iOS Single View application.](/ps/ps1/img/1-2.png)
 
-When you have finally decided to start working, begin by creating an iOS Single View application.
+1.2 Begin by creating an iOS Single View application.
 
 ![Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\)](/ps/ps1/img/1-3.png)
 
-Fill in app details. \(Note: It is important to keep the company identifier as `nus.cs3217`\) You will be prompted to save your project to disk after this step.
+1.3 Fill in app details as shown here. \(Note: It is important to keep the company identifier as `nus.cs3217`\) You will be prompted to save your project to disk after this step.
+
+**Objective-C versus Swift:** Here in the dropdown menu you can choose between either Objective-C, the programming language maintained by Apple for quite some time, and the newly announced multi-paradigm language, Swift. We will show you the instructions for creating this project in both languages. Here in this picture we select Swift. Select Objective-C if you want to do this project in Objective-C.
+
+![Swift. When you are done with the above steps, you should be looking at this page that summaries your app info.](/ps/ps1/img/1-4-1.png)
+
+1.4.1 When you are done with the above steps, you should be looking at this page that summaries your app info.
+
+**Objective-C versus Swift:** This Step is (almost )the same for projects written in both Objective-C and Swift. The difference is, of course, the files created. This screenshots shows a project written in Swift. The next screenshot shows an Objective-C "Twin project". Compare the files.
+
+![Objective-C. When you are done with the above steps, you should be looking at this page that summaries your app info.](/ps/ps1/img/1-4-2.png)
+
+1.4.2 When you are done with the above steps, you should be looking at this page that summaries your app info.
+
+**Objective-C versus Swift:** Screenshot of project created in Objective-C.
+
 
 ##### Milestone 2: Navigate around the IDE.
 
 ![The standard editor displays a single file.](/ps/ps1/img/2-1.png)
 
-The standard editor displays a single file. This screenshot shows the visual storyboard editor. Note the properties panel to the right of the screen.
+2.1 The standard editor displays a single file. This screenshot shows the visual storyboard editor. Note the properties panel to the right of the screen. When you are looking at the storyboard file which displays a iPad view, chances are you find the views too big/small so you want to zoom out/in. Try press `shift + option + command + [` and `shift + option + command + ]`.
+
+**Objective-C versus Swift:** This step is the same for both languages.
 
 ![The assistant editor is highly recommended for writing code.](/ps/ps1/img/2-2.png)
 
-The assistant editor is highly recommended for writing code. It shows header and implementation files in a 2-column split view by default, but can also be made to show any arbitrary file.
+2.2 The assistant editor is highly recommended for writing code. It shows header and implementation files in a 2-column split view by default, but can also be made to show any arbitrary file.
+
+**Objective-C versus Swift:** This step is the same for both languages.
+
 
 ![When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.](/ps/ps1/img/2-3.png)
 
-When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.
+2.3 When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.
+
+**Objective-C versus Swift:** This step is the same for both languages.
 
 ##### Milestone 3: Add library interface elements.
 
 ![Add user interface elements from the library by dragging them to the storyboard.](/ps/ps1/img/3-1.png)
 
-Add user interface elements from the library by dragging them to the storyboard.
+3.1 Add user interface elements from the library by dragging them to the storyboard.
 
 Note how the properties panel expands to show further details when a UI element is selected. Add both a label, and a button. 
 
+**Objective-C versus Swift:** This step is the same for both languages.
+
+
+![Where to find those interface elements and this library? You may ask. This picture gives you the answer. Check the lower right part of Xcode's interface.](/ps/ps1/img/3-2.png)
+
+3.2 Where to find those interface elements and this library? You may ask. This picture gives you the answer. Check the lower right part of Xcode's interface. 
+
+**Objective-C versus Swift:** This step is the same for both languages.
+
 ##### Milestone 4: Add some code.
+
+**Objective-C versus Swift:** In this Milestone, the difference between Swift project and Objective-C project is relatively big. We will first show how to carry on with Swift, followed by Objective-C.
 
 You need to "link" storyboard elements to their associated View Controller before you can reference them in code.
 
-![Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.](/ps/ps1/img/4-1.png)
+**Objective-C versus Swift:** Following is Swift project instructions.
 
-Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file.
+![Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller Swift file.](/ps/ps1/img/4-1-1.png)
 
-![Add an Action handler in the same way for "Touch Up Inside".](/ps/ps1/img/4-2.png)
+4.1.1 Select the UI element label, press the `option` key and drag the label to your code file (ViewController.swift). Let go and give it a name. Click "connect". Alternatively, you can right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file. 
 
-Add an Action handler in the same way for **"Touch Up Inside"**.
+![Add an Action handler in the same way for "Touch Up Inside".](/ps/ps1/img/4-1-2.png)
 
-![Write a single line of code to change the label's text.](/ps/ps1/img/4-3.png)
+4.1.2 Do the same for the UI element button. But this time in the pop-out window, first entry "connection", you should choose `Action`. Give your button a name. Alternatively, right-click the button and add an Action handler in the same way for "Touch Up Inside".
+![Write a single line of code to change the label's text.](/ps/ps1/img/4-1-3.png)
 
-Write a single line of code to change the label's text.
+4.1.3 Write a single line of code to change the label's text. Here "myLabel" is the name I give to the UI element label in step 4.1.1, and "myButtonClicked" is the name I give to the action handler.
+
+**Objective-C versus Swift:** Following is Objective-C project instructions.
+
+![Right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller file.](/ps/ps1/img/4-2-1.png)
+
+4.2.1 Select the UI element label, press the `option` key and drag the label to your code file (ViewController.m). Note where the mouse is pointing at. Let go and give it a name. Click "connect". Alternatively, you can right-click on the label and add a "Referencing Outlet" by dragging the `+` to the View Controller header file. 
+
+![Add an Action handler in the same way for "Touch Up Inside".](/ps/ps1/img/4-2-2.png)
+
+4.2.2 Do the same for the UI element button. But this time in the pop-out window, first entry "connection", you should choose `Action`. Give your button a name. Alternatively, right-click the button and add an Action handler in the same way for "Touch Up Inside".
+
+![Write a single line of code to change the label's text.](/ps/ps1/img/4-2-3.png)
+
+4.2.3 Write a single line of code to change the label's text. Here "myLabel" is the name I give to the UI element label in step 4.1.1, and "myButtonClicked" is the name I give to the action handler.
+Note here in ViewController.m file, you have a @interface and a @implementation. When you add an action to the button by `control`-dragging the button to @interface section, an method with the name is created in the @implementation section. You should add you code in this method in the @implementation section. Also note that in Objective-C, string constants are declared inside **@""**, unlike Swift or Java, where string constants are declared inside a double quote.
 
 ##### Milestone 5: Run your project in the emulator.
 
@@ -117,6 +166,9 @@ Run your project by clicking on the play button at the top-left of the screen. I
 
 Test that your app works by tapping on the button. Observe that the label's text changes.
 
+**Objective-C versus Swift:** This step is the same for both languages.
+
+
 ![It works\!](/ps/ps1/img/4-5.png)
 
 Note that on lower resolution screens, your emulator may not show the faux iPad bezel. In addition, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down emulator.
@@ -124,6 +176,8 @@ Note that on lower resolution screens, your emulator may not show the faux iPad 
 Holding the `option` key with your cursor over the emulator's "screen" brings out two grey circles representing two touch points. This is useful for debugging pinch and rotate gestures. Pressing `shift` while holding the `option` key will allow you to move the center position of the two points.
 
 The emulator has limitations when testing more complicated gestures, the camera, and network stacks. You should find out about these limitations if your application implements such functionality.
+
+**Objective-C versus Swift:** This step is the same for both languages.
 
 Section 3 - Introduction to Objective-C (100 points)
 --

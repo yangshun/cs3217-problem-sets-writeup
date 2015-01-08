@@ -33,7 +33,7 @@ The following are the conditions that your game must satisfy:
 - It allows for the creation, saving and loading of multiple “levels” or level-equivalents.
 - There is a complete game flow where there are transitions between the menu screen, level selection screen, level design screen and gameplay screen.
 
-As long as your game satisfies the above conditions, you are free to do pretty much anything you want. You are free to replace the background and provided images, if you desire. First, read through this entire problem set to understand the technical requirements for the problem. Next, describe the rules of your game and how the game works in a file called `design.txt`. Although the rules are not graded, it gives the players (which includes your tutors) expectations on how the game is supposed to behave, so as to can distinguish between features and bugs :P
+As long as your game satisfies the above conditions, you are free to do pretty much anything you want. You are free to replace the background and provided images, if you desire. First, read through this entire problem set to understand the technical requirements for the problem. Next, describe the rules of your game and how the game works in a file called `answers.txt`. Although the rules are not graded, it gives the players (which includes your tutors) expectations on how the game is supposed to behave, so as to can distinguish between features and bugs :P
 
 Section 2 - Completing the Game (100 points)
 --
@@ -47,11 +47,11 @@ A cannon that fires a bubble will be added to the game. After the game starts, w
 
 - `cannon.png`, an animation sprite of the cannon when it fires the bubbles.
 
-Explain in `design.txt` how the user is supposed to select the cannon direction.
+Explain in `answers.txt` how the user is supposed to select the cannon direction.
 
 ### Problem 2: Upcoming Bubbles (10 points) ###
 
-It would be helpful to the user if he/she knew the colours of the next few bubbles so that he can better plan his/her shots. Your task is to come up with an algorithm to decide on the colours of the next few bubbles and justify it in `design.txt`.
+It would be helpful to the user if he/she knew the colours of the next few bubbles so that he can better plan his/her shots. Your task is to come up with an algorithm to decide on the colours of the next few bubbles and justify it in `answers.txt`.
 
 Implement an interface to display the next few bubbles that the cannon will fire. It is up to you to decide how many bubbles you want to show (minimum of 1). The interface should also be updated after bubbles are fired.
 
@@ -61,7 +61,7 @@ Implement an interface to display the next few bubbles that the cannon will fire
 
 After adding the cannon sprite, and implementing an algorithm which decides the colour of the upcoming bubbles, it is time to put them all together. Integrate the game engine with the designed level and activate it when the user pushes the **START** button; he should be able to play that level and test it out. 
 
-Describe in the file `design.txt` how your design allowed the integration of the game engine. Explain the advantages and disadvantages of your approach and alternative approaches.
+Describe in the file `answers.txt` how your design allowed the integration of the game engine. Explain the advantages and disadvantages of your approach and alternative approaches.
 
 ### Problem 4: Special Bubbles (30 points) ###
 
@@ -78,7 +78,7 @@ Except for the indestructible bubble, the effects of the other special bubbles a
 
 1. Modify your level designer to support the addition of these special bubbles. **(5 points)**
 2. Modify your game engine to handle these new bubble behaviours. **(20 points)**
-3. Explain in the file `design.txt` your general strategy for implementing these special behaviours. Explain why your strategy is the best among alternatives. **(5 points)**
+3. Explain in the file `answers.txt` your general strategy for implementing these special behaviours. Explain why your strategy is the best among alternatives. **(5 points)**
 
 ### Problem 5: Game Flow (20 points) ###
 
@@ -120,7 +120,7 @@ Testing is an integral part of software engineering. For the final game, you are
  - ...
      * ...
 
-Please describe your testing strategy in `design.txt`. The testing strategy should also include the testing strategies for Problem Sets 3 and 4, since these are components of the final application. If you did your testing perfectly in the previous problem sets, you only need to replicate what you did earlier; if you didn’t do so well, this is where you show that you’ve learnt something and update the tests.
+Please describe your testing strategy in `answers.txt`. The testing strategy should also include the testing strategies for Problem Sets 3 and 4, since these are components of the final application. If you did your testing perfectly in the previous problem sets, you only need to replicate what you did earlier; if you didn’t do so well, this is where you show that you’ve learnt something and update the tests.
 
 Of course, you should test the game as you have described instead of just listing down what you think you ought to test! You might want to let your friends try out your game and thereby help you test it too.
 
@@ -137,7 +137,7 @@ With a good design and good implementation for Problem Sets 3 and 4, extensions 
 - No snapping of colliding bubbles, i.e. no fixed 2D arrangement;
 - Multiplayer mode;
 
-You are free to add your own features to show off your creativity. Please describe **ALL** the extra features and improvements in the file `design.txt`, so that your tutors can award you due credit.  Briefly describe how you modified your original design to implement each feature.
+You are free to add your own features to show off your creativity. Please describe **ALL** the extra features and improvements in the file `answers.txt`, so that your tutors can award you due credit.  Briefly describe how you modified your original design to implement each feature.
 
 ### Problem 9: Final Reflection (10 points) ###
 
@@ -157,9 +157,9 @@ Please answer the following questions:
 
 4. Congratulations, you have completed all the Problem Sets for CS3217. To recap, the learning objectives of the various problem sets are as follows:
 
-  - **Problem Set 1**: Introduction to Xcode and Objective-C 
+  - **Problem Set 1**: Introduction to Xcode and Swift/Objective-C 
   - **Problem Set 2**: Specifications and unit testing
-  - **Problem Set 3**: MVC and GUI-programming in Objective-C
+  - **Problem Set 3**: MVC and GUI-programming in Swift/Objective-C
   - **Problem Set 4**: Design and implementation of a full software system
   - **Problem Set 5**: Integration of modules and integration testing
 
@@ -192,7 +192,7 @@ There is no resource or template provided for this problem set. In the group [Pr
 
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your submission directory should contain your design explanation `design.txt`, a module dependency diagram `mdd.png` and a README file where you specify which implementation files contain your code.
+In addition, your submission directory should contain your design explanation `answers.txt`, a module dependency diagram `mdd.png` and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 5: Putting It All Together”**.
 

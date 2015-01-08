@@ -15,7 +15,7 @@
 
     Hence, the representation invariants for every Graph g:
         - g is either directed or undirected
-        - All nodes in g must have unique IDs
+        - All nodes in g must have unique labels
         - Multiple edges from the same source to the same destination must
         not have the same weight
 
@@ -24,7 +24,7 @@
 */
 
 
-class Graph<T> {
+class Graph<T: Equatable> {
     typealias N = Node<T>
     typealias E = Edge<T>
     
@@ -60,14 +60,15 @@ class Graph<T> {
     
     //  5 points
     //  Add `addedEdge` to the graph. If `addedEdge` already exists,
-    //  do nothing.
+    //  do nothing. If any of the nodes referenced in `eddedEdge` does
+    //  not exist, add it to the graph.
     func addEdge(addedEdge: E) {
     
     }
     
     //  5 points
     //  Remove `removedEdge` from the graph. If `removedEdge` does not
-    //  exists, do nothing.
+    //  exist, do nothing.
     func removeEdge(removedEdge: E) {
 
     }
@@ -89,7 +90,7 @@ class Graph<T> {
     //  5 points
     //  Return adjacent nodes of the `fromNode` i.e. there
     //  is an directed edge from `fromNode` to its adjacent node.
-    func adjacentNodesFomNode(fromNode: N) -> [N] {
+    func adjacentNodesFromNode(fromNode: N) -> [N] {
         
         return [N]() // Please remove this line in actual implementation.
     }
