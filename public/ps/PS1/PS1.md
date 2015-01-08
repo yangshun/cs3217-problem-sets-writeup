@@ -424,16 +424,14 @@ In this assignment, you will be using BitBucket for submitting your code and rec
 
 Accounts have already been created for you using your matriculation number and the email address you supplied when registering for this module. You should have received an email containing an initial password, and instructions asking you to login and change that password.
 
-*As this is a non-TLS service, please choose a strong throwaway password. Do not reuse passwords from your other accounts.*
+The Xcode projects for your problem sets, if they are provided, will be located under the [private repositories section](https://bitbucket.org/cs3217/profile/repositories?visibility=private). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
-The Xcode projects for your problem sets, if they are provided, will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
-
-As with GitHub, you may add an SSH key to your account. However, due to network policy reasons, SSH will only be accessible within the SoC network. We recommend that you clone using HTTP and configure Git to remember your password for minimum grief.
+Please make yourself familiar with Git as you will be using Git to submit your work, receive feedback, and collaborate with others on the final project. Github offers a short crash course at [https://try.github.io/](https://try.github.io/).
 
 When you begin working, your Xcode project will grow to contain files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub's Objective-C gitignore](https://github.com/github/gitignore/blob/master/Objective-C.gitignore) and [GitHub's Swift gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore). 
 
 **Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes.
 
-Even though your tutors will be reading every single line of your code, we will be doing high-level tests of your code using an automated grading script. Points may be taken off if the script fails due to unauthorised changes you may have made in the driver program.
+Even though your tutors will be reading every single line of your code, we will using our own unit tests to test your implementations. Hence is it important that you do not change the method signatures of the given code. Points are likely to be taken off if our unit test fails due to unauthorised changes you may have made in the given skeleton code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the heading **‘Problem Set 1: Hello iPad!’**.
