@@ -94,9 +94,9 @@ Make the game a complete application by implementing the following screens and U
 - **Gameplay Screen** - Interface for user to play a level (can be preloaded/designed)
  - Back Button - To return to the previous screen
 
-### Problem 6: Module Dependency Diagram (5 points) ###
+### Problem 6: Class Diagram (5 points) ###
 
-Draw the module dependency diagram for the basic implementation of your game (i.e. you do not need to include the bells and whistles). Save your diagram as `mdd.png` and include it in the root directory of your repository for submission.
+Draw the class diagram for the basic implementation of your game (i.e. you do not need to include the bells and whistles). Save your diagram as `class-diagram.png` and include it in the root directory of your repository for submission. If you would like to add more diagrams that you find helpful in allowing others to understand your code architecture, feel free to add them in, and make indicate it inside `answers.txt`.
 
 Section 3 - Testing, Refinements and Reflections (100 points)
 --
@@ -159,7 +159,7 @@ Please answer the following questions:
 
   - **Problem Set 1**: Introduction to Xcode and Swift/Objective-C 
   - **Problem Set 2**: Specifications and unit testing
-  - **Problem Set 3**: MVC and GUI-programming in Swift/Objective-C
+  - **Problem Set 3**: MVC and GUI-programming in Swift
   - **Problem Set 4**: Design and implementation of a full software system
   - **Problem Set 5**: Integration of modules and integration testing
 
@@ -186,13 +186,12 @@ For this problem set, we will be testing your code by compiling your app and upl
 
 ### Mode of Submission ###
 
-You will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
+Like previous problem sets, you will be using BitBucket for submitting your code and receiving feedback. 
 
-There is no resource or template provided for this problem set. In the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 5`, there is a repository which only contains the `.gitignore` as in the previous problem sets. Feel free to fork and clone it or create a new repository on your own but make sure to add the `.gitignore` to reduce the submission size.
-
+There is no resource or template provided for this problem set. In CS3217's BitBucket [repositories page](https://bitbucket.org/cs3217/profile/repositories?visibility=private), there is a repository which only contains the `.gitignore` as in the previous problem sets. Feel free to fork and clone it or create a new repository on your own but make sure to add the `.gitignore` to reduce the submission size.
 **Important Note:** This time, you have to start a new Xcode project from scratch. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes. You will be graded on the **latest commit** before the deadline.
 
-In addition, your submission directory should contain your design explanation `answers.txt`, a module dependency diagram `mdd.png` and a README file where you specify which implementation files contain your code.
+In addition, your submission directory should contain your design explanation `answers.txt`, a class diagram `class-diagram.png` and a README file where you specify which implementation files contain your code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the header **“Problem Set 5: Putting It All Together”**.
 
