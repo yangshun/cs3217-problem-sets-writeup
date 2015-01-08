@@ -193,9 +193,9 @@ The simplest way to ensure that you get a good grade on your assignment is to si
 
 ### Mode of Submission ###
 
-Like Problem Set 1, you will be using a pilot locally hosted [GitLab](http://cs3217.comp.nus.edu.sg) instance for submitting your code and receiving feedback. 
+Like Problem Set 1, you will be using BitBucket for submitting your code and receiving feedback. 
 
-The Xcode project for this problem set will be located in the group [Problem Sets 2014](http://cs3217.comp.nus.edu.sg/groups/problem-sets-2014) under `Problem Set 2`. You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
+The Xcode project for this problem set is provided and will be located under the [private repositories section](https://bitbucket.org/cs3217/profile/repositories?visibility=private). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
 When you begin working, your Xcode project will create files that are user-specific, and should not be committed to a revision control system. You can tell Git to ignore these files by writing their definitions in `.gitignore` in the root of a Git repository. This has already been done for you, and the definitions we have used are taken from [GitHub's Swift gitignore](https://github.com/github/gitignore/blob/master/Swift.gitignore).
 
