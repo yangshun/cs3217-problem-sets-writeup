@@ -337,7 +337,7 @@ The test cases will parse property lists into their constituent Swift objects. Y
 
 Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-Unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) have been provided for your testing purpose and you should modify them wherever necessary.
+Unit test cases (`StackTests.swift`, `QueueTests.swift`, `BreadthFirstOrderGeneratorTests.swift`, `DepthFirstOrderGeneratorTests.swift` and `Dictionary+TraversableTests.swift`) have been provided for your testing purpose and you should modify them wherever necessary.
 
 We also provide some plist files for the graphs. You can also create your own plist for new graph data files. Remember to add plist and before executing the testing drive program.
 
