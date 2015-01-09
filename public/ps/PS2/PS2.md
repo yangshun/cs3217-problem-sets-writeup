@@ -116,21 +116,27 @@ Answer the following questions in `answers.txt`:
 
 ### Problem 3: Testing the Graph ADT (30 Points) ###
 
-It is a must to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for `Node` and `Edge` have been created for you. Please follow the step-by-step instructions in Gallery 3.1 to run the unit test for Graph ADT.
+It is a must to write unit tests for your ADTs. They help you make sure you don’t break your program when you make changes. The Unit Tests for `Node` and `Edge` have been created for you. Please follow the step-by-step instructions in Gallery 3.1 to add a new test file to the Graph ADT project.
 
-**Gallery 3.1** Run unit test for GraphADT in Xcode.
+**Gallery 3.1** Add a test file to GraphADT in Xcode.
 
-![Open Project](/ps/ps2/img/2-1.png)
+![Open Project](/ps/ps2/img/test-1.png)
 
-**Step 1:** Open the *GraphADT* Xcode project.
+**Step 1:** Open the *GraphADT* Xcode project. Select the *GraphADTTests* group.
 
-![Test Project](/ps/ps2/img/2-2.png)
+![Create a new file](/ps/ps2/img/test-2.png)
 
-**Step 2:** Then, select **Product → Test** (or use the ⌘+U shortcut key) to perform unit testing.
+**Step 2:** Then select **File → New → File...** (or use the ⌘+N shortcut key) to create a new file.
 
-![Test Results](/ps/ps2/img/2-3.png)
+![Select file type](/ps/ps2/img/test-3.png)
 
-**Step 3:** Check your test results by switching to the **Test Navigator**. If you have done everything correctly, you should see a series of green checks indicating all the unit tests have passed successfully.
+**Step 3:** Select *Source* under *iOS* in the left column. Then select *Test Case Class*.
+
+![Add to test target](/ps/ps2/img/test-4.png)
+
+**Step 4:** The default setting is correct (because we select the right file type in the previous step) so you can just go ahead and press *Create*. 
+
+Do note that there are 2 targets: *GraphADT* and *GraphADTTests*, and only the latter is checked here. This is because our test file doesn't need to be in the main app target that you will some day deploy on App Store. However, when you add a new class to your main target app, you should also add it to the test target so it can be used in your test suite.
 
 Now, you are required to add your own unit test cases for the methods of `Graph` in `GraphTests.swift`. Make sure your implementation passes all the test cases you provide. Do note that this is not a time-wasting practice! It gives you peace of mind by minimising your bugs before submission. :) **(30 points)**
 
