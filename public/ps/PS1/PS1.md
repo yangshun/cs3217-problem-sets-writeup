@@ -180,7 +180,7 @@ within the `myButtonClicked:` method.
 
 ##### Milestone 5: Run your project in the emulator.
 
-Run your project by clicking on the play button at the top-left of the screen. It may take awhile for the emulator to launch. 
+Run your project by clicking on the play button at the top-left of the screen. It may take a while for the emulator to launch. 
 
 ![My First iOS App\!](/ps/ps1/img/4-4.png)
 
@@ -199,37 +199,36 @@ The emulator has limitations when testing more complicated gestures, the camera,
 
 **Objective-C versus Swift:** This step is the same for both languages.
 
-Section 3 - Introduction to Objective-C (100 points)
+Section 3 - Introduction to Objective-C and Swift (100 points)
 --
 
-In this section, you will be introduced to Object-Oriented Programming and collection-types in Swift through the implementation of basic Abstract Data Types (ADT) and simple graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you can reuse these earlier work in the coming weeks.
+In this section, you will be introduced to Object-Oriented Programming and collection-types in Swift through the implementation of basic Abstract Data Types (ADT) and simple graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you can reuse your earlier work in the coming weeks.
 
 
-### Problem 1: Collections in Swift (10 points)
+### Problem 1: Swift Collections (10 points)
 
-Swift provides two main collection types, known as arrays and dictionaries. 
+Swift provides two main collection types, known as arrays and dictionaries. Swift's collections are homogenous, meaning all elements in the collection are of the same type.
 
-- **Arrays** describes an ordered list of objects *of the same type* where each object may be accessed by an index.
+- **Arrays** describes an ordered list of objects, accessed by an index.
 
-- **Dictionaries** store unordered collections of values *of the same type*, which can be referenced and looked up using a unique identifier, also known as a key.
+- **Dictionaries** store unordered collections of values, which are referenced using a unique identifier, also known as a **key**.
 
-These collections can either be mutable or immutable upon declaration (using `var` for mutable objects and `let` for immutable objects).
+These collections can either be mutable or immutable, depending on whether `var` or  `let` is used in the declaration.
 
-Keys in `Dictionary` may be any instance of an `AnyObject`. Which selector does `Dictionary` use to test for the uniqueness of keys?  **(10 points)**
+`Dictionary` keys are must conform to the `Hashable` protocol. Why is this necessary?  **(10 points)**
 
 
+### Problem 2: Simple Abstract Data Structures (30 points) ###
 
-### Problem 2: Standard Data Structures (30 points) ###
-
-Swift does not provide Stacks and Queues ADTs natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
+Swift does not provide Stack and Queue ADTs. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
 
 **Fork** the Problem Set 1 repository into your account on Bitbucket ([https://bitbucket.org/cs3217/cs3217-problem-set-1](https://bitbucket.org/cs3217/cs3217-problem-set-1)) and **clone** it into your computer to begin working. 
 
-The Xcode project that you would have just cloned contained some unit tests. We will be using this driver program to grade your assignment automatically. 
+The Xcode project that you would have just cloned contained some unit tests. We will be adding our private test cases, and then running the resulting set of test cases to automatically grade your program.
 
 #### Property Lists ####
 
-[Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
+[Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (in Base-64 Encoding). 
 
 #### Running the Compiled Binary ####
 
@@ -239,9 +238,9 @@ To view that executable, from the Project Navigator, expand the **Products** fol
 
 #### Stacks and Queues ####
 
-1. A skeleton class for the Stack has been provided in  `Stack.swift`. Implement the `Stack` by filling up the method implementations in `Stack.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
+1. A skeleton class for the Stack has been provided in `Stack.swift`. Implement `Stack` by filling up the method implementations in `Stack.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
 
-2. A skeleton class for the Queue has been provided in  `Queue.swift`. Implement the `Queue` by filling up the method implementations in `Queue.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
+2. A skeleton class for the Queue has been provided in `Queue.swift`. Implement `Queue` by filling up the method implementations in `Queue.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
 
 #### Input Format ####
 
