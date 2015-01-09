@@ -319,39 +319,10 @@ The Breadth-first search generator should also return vertices in the order that
 
 Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-We provide three unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) for your testing purpose and you should modify them wherever necessary.
+Unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) have been provided for your testing purpose and you should modify them wherever necessary.
 
-We also provide three respective plist and expect files which are used to test in three unit test cases. 
+We also provide some plist files for the graphs. You can also create your own plist for new graph data files. Remember to add plist and before executing the testing drive program.
 
-You can also create your own plist and expect files. Remember to add plist and expect files before executing the testing drive program.
-
-Instruction:
-**Targets -> CS3217-PS1-Swift -> Building Phases -> Copy Bundle Resources -> Add respective plist and expect files**.
-
-One example is given here:
-
-![Example Graph](/ps/ps1/img/add.png)
-
-
-And you need to change plist and expect files for different testing, you just need to substitute file name.
-
-One example is given here:
-
-![Example Graph](/ps/ps1/img/test.png)
-
-However, "stack" type plist should only be passed into `StackTest.swift` to run test case, "queue" type plist should only be passed into `QueueTest.swift` to run test case and "graph" type plist should only be passed into `GraphTest.swift` to run test case
-
-Note: 
-
-**a.** Only after you implement `DepthFirstSearchEnumerator.swift` and `BreathFirstSearchEnumerator.swift`, you can comment back the commented part to test. 
-
-
-![Example Graph](/ps/ps1/img/comment.png)
-
-**b.** After you implement `DepthFirstSearchEnumerator.swift` and `BreathFirstSearchEnumerator.swift`, remember to add them to compile resources: **Targets -> CS3217-PS1-SwiftTests -> Build Phases -> Compile Sources -> Add**.
-
-
-![Example Graph](/ps/ps1/img/compile.png)
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
