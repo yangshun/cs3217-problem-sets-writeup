@@ -87,7 +87,7 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 1.3 Fill in app details as shown here. You will be prompted to save your project to disk after this step. **Note**: It is important to keep the company identifier as `nus.cs3217` in order for you to run the app on your device.
 
-**Objective-C versus Swift:** Here in the dropdown menu you can choose between either Objective-C, the programming language maintained by Apple for quite some time, and the newly announced multi-paradigm language, Swift. We will show you the instructions for creating this project in both languages. In the following diagram, the result is shown if we selected **Swift**. Select **Objective-C** if you want to do this project in Objective-C.
+**Objective-C versus Swift:** Here in the dropdown menu you can choose between either Objective-C, the traditional programming language used by Apple, or Swift. We will show you the instructions for creating this project in both languages. In the following diagram, the result is shown if we selected **Swift**. Select **Objective-C** if you want to do this project in Objective-C.
 
 ![Swift. When you are done with the above steps, you should be looking at this page that summaries your app info.](/ps/ps1/img/1-4-1.png)
 
@@ -99,7 +99,7 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 1.4.2 When you are done with the above steps, click on the project name at the top left corner and you will be shown a page that summarizes your app info.
 
-**Objective-C versus Swift:** Screenshot of project created in Objective-C.
+**Objective-C versus Swift:** The screenshot is of a project created in Objective-C.
 
 
 ##### Milestone 2: Navigate around the IDE.
@@ -110,12 +110,11 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 **Objective-C versus Swift:** This step is the same for both languages.
 
-![The assistant editor is highly recommended for writing code.](/ps/ps1/img/2-2.png)
+![The assistant editor is recommended for writing code.](/ps/ps1/img/2-2.png)
 
-2.2 The assistant editor is highly recommended for writing code, as you can use a 2-column split view to compare code between files.
+2.2 The assistant editor is recommended for writing code, as you can use a 2-column split view to compare code between files.
 
 **Objective-C versus Swift:** This step is the same for both languages.
-
 
 ![When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.](/ps/ps1/img/2-3.png)
 
