@@ -254,83 +254,72 @@ Fortunately, Xcode provides a graphical property list editor, and you should not
 
 #### Input Format ####
 
-The adjacency list for this graph in the format of a property list would be as follows. The key `start` represents the start vertex of the traversal described by this test file, and the key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a vertex in the graph, and its corresponding array represents the vertices that it is adjacent to.
+The adjacency list for this graph in the format of a property list would be as follows. The key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a vertex in the graph, and its corresponding array represents the vertices that it is adjacent to.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 	<plist version="1.0">
 	<dict>
-		<key>start</key>
-		<string>A</string>
-		<key>graph</key>
-		<dict>
-			<key>A</key>
-			<array>
-				<string>B</string>
-				<string>C</string>
-				<string>E</string>
-			</array>
-			<key>B</key>
-			<array>
-				<string>A</string>
-				<string>D</string>
-				<string>F</string>
-			</array>
-			<key>C</key>
-			<array>
-				<string>A</string>
-				<string>G</string>
-			</array>
-			<key>D</key>
-			<array>
-				<string>B</string>
-			</array>
-			<key>E</key>
-			<array>
-				<string>A</string>
-				<string>F</string>
-			</array>
-			<key>F</key>
-			<array>
-				<string>B</string>
-				<string>E</string>
-			</array>
-			<key>G</key>
-			<array>
-				<string>C</string>
-			</array>
-		</dict>
+		<key>A</key>
+		<array>
+			<string>B</string>
+			<string>C</string>
+			<string>E</string>
+		</array>
+		<key>B</key>
+		<array>
+			<string>A</string>
+			<string>D</string>
+			<string>F</string>
+		</array>
+		<key>C</key>
+		<array>
+			<string>A</string>
+			<string>G</string>
+		</array>
+		<key>D</key>
+		<array>
+			<string>B</string>
+		</array>
+		<key>E</key>
+		<array>
+			<string>A</string>
+			<string>F</string>
+		</array>
+		<key>F</key>
+		<array>
+			<string>B</string>
+			<string>E</string>
+		</array>
+		<key>G</key>
+		<array>
+			<string>C</string>
+		</array>
 	</dict>
 	</plist>
 	
 Note that this graph contains a cycle, and that edges are bidirectional.
 	
-Your task is to write sub-classes of `NSEnumerator`s that traverse the graph in Depth-first and Breadth-first order starting from a given vertex. Neighbours of a node will be traversed in the order of nodes that appear in the `plist` file.
+Your task is to implement two structs `BreadthFirstOrderGenerator`  and `DepthFirstOrderGenerator` that traverse the graph in Breadth-first and Depth-first order respectively, starting from a given vertex. Your structs should adopt the protocols `GeneratorType` and `SequenceType`, and hence should implement functions of those protocols. Neighbours of a node will be traversed in the order of nodes that appear in the `plist` file.
 
-The driver program will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s. 
+The test cases will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s. 
 
+- Implement the struct `DepthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start vertex. Calls to `next()` will return the nodes in Depth-first search order. **(20 points)**
 
-- Implement the class `DepthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Depth-first Search. **(20 points)**
+The Depth-first search generator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, D, F, E, C, G**.
 
-The Depth-first Search enumerator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, D, F, E, C, G**.
+- Implement the struct `BreadthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start vertex. Calls to `next()` will return the nodes in Breadth-first search order. **(20 points)**
 
-- Implement the class `BreadthFirstSearchEnumerator`, which is a subclass of `NSEnumerator` for Breadth-first Search. **(20 points)**
+The Breadth-first search generator should also return vertices in the order that they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, C, E, D, F, G**.
 
-The Breadth-first Search enumerator should also return vertices in the order that they were visited. In the example graph, the order we are looking for is: **A, B, C, E, D, F, G**.
+- Create an extension of the `Dictionary` class that adopts the `Traversable` protocol. Look at `Traversable.swift` for the functions that protocol implements and the respective return types and values. Your file should be named `Dictionary+Traversable.swift` in the style of Swift. **(5 points)**
 
-- Create a category for the `Dictionary` class implementing `Traversable` that contains a selector returning the new `NSEnumerator` classes. **(5 points)**
-
-Your files should be named `Dictionary+Traversable.swift` in the style of Swift.
-
-The following screenshot shows the output from running the driver program on the given graph.
-
-![Output for bfs and dfs](/ps/ps1/img/output-bfs-dfs.png)
 
 ### Problem 4: Testing (15 points)
 
 Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-We have provided three unit test files (`StackTests.swift`, `QueueTests.swift` and `GraphTests.swift`) for testing. You should modify them where necessary.
+We provide three unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) for your testing purpose and you should modify them wherever necessary.
 
 We also provide three respective plist and expect files which are used to test in three unit test cases. 
 
@@ -388,7 +377,7 @@ You also want to minimise the grief that is inflicted on your tutors. In particu
 - Your code should be well-documented, correctly indented and neat. You should not use magic numbers.  
 
 ### Mode of Submission ###
-In this assignment, you will be using Bitbucket for submitting your code and receiving feedback.
+In this assignment, you will be using Bitbucket for submitting your code and receiving feedback. 
 
 The Xcode projects for your problem sets, if they are provided, will be located under the [private repositories section](https://bitbucket.org/cs3217/profile/repositories?visibility=private). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
