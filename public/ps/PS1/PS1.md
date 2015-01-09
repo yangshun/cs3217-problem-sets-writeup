@@ -33,7 +33,7 @@ Development in general can be a messy process, and you should consider running y
 
 As of iOS 8, Apple introduced a new programming language, Swift. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, and also more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps, but for this course, we will stick with Swift. During this semester, all coding assignments will be done mainly using Swift and a little Objective-C at the start.
 
-If you’re comfortable with basic object-oriented concepts and the C language, the extensions provided by Objective-C should be quite natural, and it should be easy to pick up Objective-C during CS3217. You should read Apple's [Introduction to Swift](https://developer.apple.com/swift/).
+If you’re comfortable with basic object-oriented concepts and have used scripting languages before, it should be easy to pick up Swift during CS3217. You should read Apple's introduction to Swift: [The Swift Programming Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). There is also an iBooks version available that is more iPad-friendly.
 
 [Cocoa](https://developer.apple.com/technologies/mac/cocoa.html) is Apple’s native object-oriented API for the Mac OS X operating system. For iOS development, we will be using [Cocoa Touch](https://developer.apple.com/technologies/ios/cocoa-touch.html), a touch-oriented API similar to Cocoa. Cocoa Touch follows a Model-View-Controller (MVC) paradigm.
 
@@ -192,7 +192,7 @@ Test that your app works by tapping on the button. Observe that the label's text
 
 ![It works\!](/ps/ps1/img/4-5.png)
 
-Note that on lower resolution screens, your emulator may not show the faux iPad bezel. In addition, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down within the emulator. From the menubar, go to **Window > Scale** and change it to a lower scale if you find it too big.
+On lower resolution screens, the height (in pixels) of the iPad may exceed the height of your screen. If this happens, you will need to scroll up and down within the emulator. From the menubar, go to **Window > Scale** and change it to a lower scale if you find it too big.
 
 Holding the `option` key with your cursor over the emulator's "screen" brings out two grey circles representing two touch points. This is useful for debugging pinch and rotate gestures. Pressing `shift` while holding the `option` key will allow you to move the center position of the two points.
 
