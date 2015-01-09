@@ -384,7 +384,7 @@ Points will be taken off if you fail to comply with these requirements.
 
 ### Mode of Submission ###
 
-Like previous problem sets, you will be using BitBucket for submitting your code and receiving feedback. 
+Like previous problem sets, you will be using Bitbucket for submitting your code and receiving feedback. 
 
 The Xcode project for this problem set is provided and will be located under the [private repositories section](https://bitbucket.org/cs3217/profile/repositories?visibility=private). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 

@@ -441,7 +441,7 @@ You also want to minimise the grief that is inflicted on your tutors. In particu
 - Your code should be well-documented, correctly indented and neat. You should not use magic numbers.  
 
 ### Mode of Submission ###
-In this assignment, you will be using BitBucket for submitting your code and receiving feedback. 
+In this assignment, you will be using Bitbucket for submitting your code and receiving feedback. 
 
 Accounts have already been created for you using your matriculation number and the email address you supplied when registering for this module. You should have received an email containing an initial password, and instructions asking you to login and change that password.
 
