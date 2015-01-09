@@ -7,7 +7,7 @@ Tutorial Date: Week 2*
 
 Section 1 - Introduction
 --
-This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will learn the basics of the Swift and Objective-C programming languages, as well as the Cocoa framework, culminating in a simple command-line tool using Xcode.
+This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will take the opportunity to learn the basics of the Swift/Objective-C and Cocoa programming language and create a simple command line tool using Xcode.
 
 **Reminder:** Please read the entire problem set before starting.
 
@@ -15,7 +15,7 @@ This assignment consists of two parts. In the first part of this assignment, you
 
 This assignment (and the rest of the course) assumes that you have access to
 
-* Mac OS X 10.9 or later
+* Mac OS X 10.9
 * Xcode 6.1
 * An Apple Developer account
 * An iPad capable of running iOS 8
@@ -29,9 +29,9 @@ If you do not have access to a computer running Mac OS X 10.9, you may:
 
 Development in general can be a messy process, and you should consider running your toolchain in a virtual environment if you are working on your primary computer.
 
-### Swift, Objective-C and Cocoa ###
+### Swift/Objective-C and Cocoa ###
 
-Apple introduced a new programming language, Swift, together with iOS 8. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, as well as being more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps; however, for this course, we will be using Swift almost exclusively. The only time you will be using Objective-C will be at the start, for you to have a sense of both languages.
+As of iOS 8, Apple introduced a new programming language, Swift. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, and also more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps, but for this course, we will stick with Swift. During this semester, all coding assignments will be done mainly using Swift and a little Objective-C at the start.
 
 If you’re comfortable with basic object-oriented concepts and have used scripting languages before, it should be easy to pick up Swift during CS3217. You should read Apple's introduction to Swift: [The Swift Programming Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). There is also an iBooks version available that is more iPad-friendly.
 
@@ -87,7 +87,7 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 1.3 Fill in app details as shown here. You will be prompted to save your project to disk after this step. **Note**: It is important to keep the company identifier as `nus.cs3217` in order for you to run the app on your device.
 
-**Objective-C versus Swift:** Here in the dropdown menu you can choose between either Objective-C, the traditional programming language used by Apple, or Swift. We will show you the instructions for creating this project in both languages. In the following diagram, the result is shown if we selected **Swift**. Select **Objective-C** if you want to do this project in Objective-C.
+**Objective-C versus Swift:** Here in the dropdown menu you can choose between either Objective-C, the programming language maintained by Apple for quite some time, and the newly announced multi-paradigm language, Swift. We will show you the instructions for creating this project in both languages. In the following diagram, the result is shown if we selected **Swift**. Select **Objective-C** if you want to do this project in Objective-C.
 
 ![Swift. When you are done with the above steps, you should be looking at this page that summaries your app info.](/ps/ps1/img/1-4-1.png)
 
@@ -99,7 +99,7 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 1.4.2 When you are done with the above steps, click on the project name at the top left corner and you will be shown a page that summarizes your app info.
 
-**Objective-C versus Swift:** The screenshot is of a project created in Objective-C.
+**Objective-C versus Swift:** Screenshot of project created in Objective-C.
 
 
 ##### Milestone 2: Navigate around the IDE.
@@ -110,11 +110,12 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 **Objective-C versus Swift:** This step is the same for both languages.
 
-![The assistant editor is recommended for writing code.](/ps/ps1/img/2-2.png)
+![The assistant editor is highly recommended for writing code.](/ps/ps1/img/2-2.png)
 
-2.2 The assistant editor is recommended for writing code, as you can use a 2-column split view to compare code between files.
+2.2 The assistant editor is highly recommended for writing code, as you can use a 2-column split view to compare code between files.
 
 **Objective-C versus Swift:** This step is the same for both languages.
+
 
 ![When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.](/ps/ps1/img/2-3.png)
 
@@ -217,7 +218,6 @@ These collections can either be mutable or immutable, depending on whether `var`
 
 `Dictionary` keys are must conform to the `Hashable` protocol. Why is this necessary?  **(10 points)**
 
-
 ### Problem 2: Simple Abstract Data Structures (30 points) ###
 
 Swift does not provide Stack and Queue ADTs. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
@@ -226,73 +226,17 @@ Swift does not provide Stack and Queue ADTs. Your task is to implement a generic
 
 The Xcode project that you would have just cloned contained some unit tests. We will be adding our private test cases, and then running the resulting set of test cases to automatically grade your program.
 
-#### Property Lists ####
-
-[Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (in Base-64 Encoding). 
-
-#### Running the Compiled Binary ####
-
-IDE-generated data, including build files, are stored in your project's subdirectory at `~/Library/Developer/Xcode/DerivedData`. When you build (`Cmd` + `B`) your application, the compiled binary will be written to `./Build/Products`.
-
-To view that executable, from the Project Navigator, expand the **Products** folder and you will see the file `CS3217-PS1`. Click on the file and examine the **Full Path** in the right panel (File Inspector). You may `cd` to that directory in your terminal and run the application from there. If you do not have the input `.plist` files in the same directory, you will need to specify a fully qualified path.
-
 #### Stacks and Queues ####
 
 1. A skeleton class for the Stack has been provided in `Stack.swift`. Implement `Stack` by filling up the method implementations in `Stack.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
 
 2. A skeleton class for the Queue has been provided in `Queue.swift`. Implement `Queue` by filling up the method implementations in `Queue.swift` according to the descriptions. You should not change the method signatures provided. **(15 points)**
 
-#### Input Format ####
+#### Testing your ADT ####
 
-The input file format for Stacks and Queues is a property list with a root key `testCases` that maps to an array of items. Each test item contains the name of a selector that the driver program should dynamically invoke, and a single optional parameter that may be supplied. 
+Have a look at the files `StackTests.swift` and `QueueTests.swift`. To run the tests, you can click on the little diamonds beside the line numbers.  The corresponding test function will be ran. Clicking on the diamond on the same line as the class will run **all** test functions within it. If you have implemented the ADTs correctly, the `testPush()`, `testPop()` and `testCount()` functions should pass.
 
-An example to test a Queue data structure is given below.
-
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-	<plist version="1.0">
-	<dict>
-		<key>testCases</key>
-		<array>
-			<dict>
-				<key>selector</key>
-				<string>enqueue:</string>
-				<key>param</key>
-				<string>A</string>
-			</dict>
-			<dict>
-				<key>selector</key>
-				<string>enqueue:</string>
-				<key>param</key>
-				<string>B</string>
-			</dict>
-			<dict>
-				<key>selector</key>
-				<string>enqueue:</string>
-				<key>param</key>
-				<string>C</string>
-			</dict>
-			<dict>
-				<key>selector</key>
-				<string>dequeue</string>
-			</dict>
-		</array>
-	</dict>
-	</plist>
-	
-Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
-
-![plist Editor](/ps/ps1/img/plist.png)
-
-#### Output ####
-
-If you have implemented the skeleton classes correctly, the driver program should run without modification. The following screenshot shows the execution of the driver program with the stack and queue examples given in the skeleton project.
-
-![Output for stack and queue](/ps/ps1/img/output-stack-queue.png)
-
-The output of the driver program in both cases is a representation of the state of the stack or queue after the sequence of methods described in the respective property list has been invoked.
-
-The top of the stack, or front of the queue, is on the left.
+You should complete the remaining test functions in `StackTests.swift` and `QueueTests.swift`. Feel free to add on more test cases for each function.
 
 ### Problem 3: Graph Traversal (45 points)
 
@@ -301,6 +245,14 @@ We may represent a **general undirected graph** as an adjacency list implemented
 Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
 ![Example Graph](/ps/ps1/img/graph.png)
+
+#### Property Lists ####
+
+[Property lists](http://en.wikipedia.org/wiki/Property_list), also called "plists", are text files that store serialised objects. They store basic data types such as Strings, Numbers, and Boolean values, but are also capable of representing dates, arrays, dictionaries, and binary data (encoded as Base64 ASCII). 
+
+Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
+
+#### Input Format ####
 
 The adjacency list for this graph in the format of a property list would be as follows. The key `start` represents the start vertex of the traversal described by this test file, and the key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a vertex in the graph, and its corresponding array represents the vertices that it is adjacent to.
 
@@ -378,7 +330,7 @@ The following screenshot shows the output from running the driver program on the
 
 Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-We Provide three unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) for your testing purpose and you should not modify it unless specified. 
+We provide three unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) for your testing purpose and you should modify them wherever necessary.
 
 We also provide three respective plist and expect files which are used to test in three unit test cases. 
 
