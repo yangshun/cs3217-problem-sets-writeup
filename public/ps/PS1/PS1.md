@@ -304,15 +304,15 @@ Your task is to implement two structs `BreadthFirstOrderGenerator`  and `DepthFi
 
 The test cases will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s. 
 
-- Implement the struct `DepthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start node. Calls to `next()` will return the nodes in Depth-first search order. **(20 points)**
+- Implement the struct `DepthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start bide. Calls to `next()` will return the nodes in Depth-first search order, starting at the given node. **(20 points)**
 
-The Depth-first search generator should return nodes in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, D, F, E, C, G**.
+  The Depth-first search generator should be a pre-order traversal, that is, the node should be visited before visiting its neighbours in order. In the example graph, the pre-order depth-first traversal starting from **A** is: **A, B, D, F, E, C, G**.
 
 - Implement the struct `BreadthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start node. Calls to `next()` will return the nodes in Breadth-first search order. **(20 points)**
 
-The Breadth-first search generator should also return nodes in the order that they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, C, E, D, F, G**.
+  In the example graph, the breadth-first traversal starting from **A** is:  **A, B, C, E, D, F, G**.
 
-- Create an extension of the `Dictionary` class that adopts the `Traversable` protocol. Look at `Traversable.swift` for the functions that protocol implements and the respective return types and values. Your file should be named `Dictionary+Traversable.swift` in the style of Swift. **(5 points)**
+- Create an extension of the `Dictionary` class that adopts the `Traversable` protocol. Look at `Traversable.swift` for the functions that protocol implements and the respective return types and values. Your file should be named `Dictionary+Traversable.swift`. **(5 points)**
 
 
 ### Problem 4: Testing (15 points)
