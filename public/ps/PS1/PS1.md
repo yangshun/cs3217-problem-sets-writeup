@@ -234,7 +234,25 @@ The Xcode project that you would have just cloned contained some unit tests. We 
 
 #### Testing your ADT ####
 
-Have a look at the files `StackTests.swift` and `QueueTests.swift`. To run the tests, you can click on the little diamonds beside the line numbers.  The corresponding test function will be ran. Clicking on the diamond on the same line as the class will run **all** test functions within it. If you have implemented the ADTs correctly, the `testPush()`, `testPop()` and `testCount()` functions should pass.
+Have a look at the files `StackTests.swift` and `QueueTests.swift`.
+
+Please follow the step-by-step instructions in Gallery 2.1 to run the unit test for *DataStructures*.
+
+**Gallery 2.1** Run unit test for *DataStructures* in Xcode.
+
+![Open Project](/ps/ps1/img/test-1.png)
+
+**Step 1:** Open the *DataStructures* Xcode project.
+
+![Test Project](/ps/ps1/img/test-2.png)
+
+**Step 2:** Then, select **Product → Test** (or use the ⌘+U shortcut key) to perform unit testing.
+
+![Test Results](/ps/ps1/img/test-3.png)
+
+**Step 3:** Check your test results by switching to the **Test Navigator**. To run the tests, you can click on the little diamonds beside the line numbers.  The corresponding test function will be ran. Clicking on the diamond on the same line as the class will run **all** test functions within it.
+
+Don't panic if you see some red test now! If you implement everything correctly, you should see a series of green checks indicating all the unit tests have passed successfully!
 
 You should complete the remaining test functions in `StackTests.swift` and `QueueTests.swift`. Feel free to add on more test cases for each function.
 
