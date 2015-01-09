@@ -270,6 +270,8 @@ Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki
 
 Fortunately, Xcode provides a graphical property list editor, and you should not have to wrangle XML manually.
 
+![Plist editor](/ps/ps1/img/plist.png)
+
 #### Input Format ####
 
 The adjacency list for this graph in the format of a property list would be as follows. The key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a node in the graph, and its corresponding array represents the nodes that it is adjacent to.
@@ -320,7 +322,7 @@ Note that this graph contains a cycle, and that edges are bidirectional.
 	
 Your task is to implement two structs `BreadthFirstOrderGenerator`  and `DepthFirstOrderGenerator` that traverse the graph in Breadth-first and Depth-first order respectively, starting from a given node. Your structs should adopt the protocols `GeneratorType` and `SequenceType`, and hence should implement functions of those protocols. Neighbours of a node will be traversed in the order of nodes that appear in the `plist` file.
 
-The test cases will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s. 
+The test cases will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s in the format of the graph.
 
 - Implement the struct `DepthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start bide. Calls to `next()` will return the nodes in Depth-first search order, starting at the given node. **(20 points)**
 
@@ -335,11 +337,24 @@ The test cases will parse property lists into their constituent Swift objects. Y
 
 ### Problem 4: Testing (15 points)
 
-Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
+Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, Breadth-first Search and your Dictionary extension work correctly. **(15 points)**
 
-Unit test cases (`StackTests.swift`, `QueueTests.swift`, `BreadthFirstOrderGeneratorTests.swift`, `DepthFirstOrderGeneratorTests.swift` and `Dictionary+TraversableTests.swift`) have been provided for your testing purpose and you should modify them wherever necessary.
+Skeleton unit test cases, `StackTests.swift`, `QueueTests.swift`, `BreadthFirstOrderGeneratorTests.swift`, `DepthFirstOrderGeneratorTests.swift` and `Dictionary+TraversableTests.swift`, have been provided for your testing purpose and you should modify them wherever necessary.
 
-We also provide some plist files for the graphs. You can also create your own plist for new graph data files. Remember to add plist and before executing the testing drive program.
+We also provide some `plist` files for the graphs. You can also create your own plist for new graph data files. Remember to add your new plist file into the project's bundle before running the unit tests.
+
+1. Go to **Files > Add Files to ....** and select the plist file to be added. Check **Copy items if needed**.
+
+2. Click on the project name on the top left hand corner, followed by the **Build Phases** tab.
+
+  ![Add plist](/ps/ps1/img/add-plist-1.png)
+
+3. Select the newly added file and click on the **Add** button.
+
+  ![Add plist](/ps/ps1/img/add-plist-2.png)
+>>>>>>> Stashed changes
+
+4. Note that you have to do this for every new plist file that you want to add.
 
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
@@ -376,6 +391,6 @@ When you begin working, your Xcode project will grow to contain files that are u
 
 **Important Note:** All the required files should be inside the Xcode project that you have forked and cloned. We should be able to download the entire repository, import it into Xcode, and run your solution without making additional changes.
 
-Even though your tutors will be reading every single line of your code, we will using our own unit tests to test your implementations. Hence is it important that you do not change the method signatures of the given code. Points are likely to be taken off if our unit test fails due to unauthorised changes you may have made in the given skeleton code.
+Even though your tutors will be reading every single line of your code, we will be using our own unit tests to test your implementations. Hence is it important that you do not change the method signatures of the given code. Points are likely to be taken off if our unit test fails due to unauthorised changes you may have made in the given skeleton code.
 
 Clarifications and questions related to this assignment may be directed to the IVLE Forum under the heading **‘Problem Set 1: Hello iPad!’**.
