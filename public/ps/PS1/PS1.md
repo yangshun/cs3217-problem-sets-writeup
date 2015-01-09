@@ -7,7 +7,7 @@ Tutorial Date: Week 2*
 
 Section 1 - Introduction
 --
-This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will take the opportunity to learn the basics of the Swift/Objective-C and Cocoa programming language and create a simple command line tool using Xcode.
+This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will learn the basics of the Swift and Objective-C programming languages, as well as the Cocoa framework, culminating in a simple command-line tool using Xcode.
 
 **Reminder:** Please read the entire problem set before starting.
 
@@ -15,7 +15,7 @@ This assignment consists of two parts. In the first part of this assignment, you
 
 This assignment (and the rest of the course) assumes that you have access to
 
-* Mac OS X 10.9
+* Mac OS X 10.9 or later
 * Xcode 6.1
 * An Apple Developer account
 * An iPad capable of running iOS 8
@@ -29,9 +29,9 @@ If you do not have access to a computer running Mac OS X 10.9, you may:
 
 Development in general can be a messy process, and you should consider running your toolchain in a virtual environment if you are working on your primary computer.
 
-### Swift/Objective-C and Cocoa ###
+### Swift, Objective-C and Cocoa ###
 
-As of iOS 8, Apple introduced a new programming language, Swift. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, and also more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps, but for this course, we will stick with Swift. During this semester, all coding assignments will be done mainly using Swift and a little Objective-C at the start.
+Apple introduced a new programming language, Swift, together with iOS 8. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, as well as being more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps; however, for this course, we will be using Swift almost exclusively. The only time you will be using Objective-C will be at the start, for you to have a sense of both languages.
 
 If you’re comfortable with basic object-oriented concepts and have used scripting languages before, it should be easy to pick up Swift during CS3217. You should read Apple's introduction to Swift: [The Swift Programming Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). There is also an iBooks version available that is more iPad-friendly.
 
@@ -87,7 +87,7 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 1.3 Fill in app details as shown here. You will be prompted to save your project to disk after this step. **Note**: It is important to keep the company identifier as `nus.cs3217` in order for you to run the app on your device.
 
-**Objective-C versus Swift:** Here in the dropdown menu you can choose between either Objective-C, the programming language maintained by Apple for quite some time, and the newly announced multi-paradigm language, Swift. We will show you the instructions for creating this project in both languages. In the following diagram, the result is shown if we selected **Swift**. Select **Objective-C** if you want to do this project in Objective-C.
+**Objective-C versus Swift:** Here in the dropdown menu you can choose between either Objective-C, the traditional programming language used by Apple, or Swift. We will show you the instructions for creating this project in both languages. In the following diagram, the result is shown if we selected **Swift**. Select **Objective-C** if you want to do this project in Objective-C.
 
 ![Swift. When you are done with the above steps, you should be looking at this page that summaries your app info.](/ps/ps1/img/1-4-1.png)
 
@@ -99,7 +99,7 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 1.4.2 When you are done with the above steps, click on the project name at the top left corner and you will be shown a page that summarizes your app info.
 
-**Objective-C versus Swift:** Screenshot of project created in Objective-C.
+**Objective-C versus Swift:** The screenshot is of a project created in Objective-C.
 
 
 ##### Milestone 2: Navigate around the IDE.
@@ -110,12 +110,11 @@ In this section, you will use Xcode to create a project and storyboards to const
 
 **Objective-C versus Swift:** This step is the same for both languages.
 
-![The assistant editor is highly recommended for writing code.](/ps/ps1/img/2-2.png)
+![The assistant editor is recommended for writing code.](/ps/ps1/img/2-2.png)
 
-2.2 The assistant editor is highly recommended for writing code, as you can use a 2-column split view to compare code between files.
+2.2 The assistant editor is recommended for writing code, as you can use a 2-column split view to compare code between files.
 
 **Objective-C versus Swift:** This step is the same for both languages.
-
 
 ![When writing code, the properties panel is replaced by Quick Help, which shows brief documentation of the object under cursor.](/ps/ps1/img/2-3.png)
 
@@ -217,6 +216,7 @@ Swift provides two main collection types, known as arrays and dictionaries. Swif
 These collections can either be mutable or immutable, depending on whether `var` or  `let` is used in the declaration.
 
 `Dictionary` keys are must conform to the `Hashable` protocol. Why is this necessary?  **(10 points)**
+
 
 ### Problem 2: Simple Abstract Data Structures (30 points) ###
 
