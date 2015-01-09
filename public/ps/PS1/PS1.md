@@ -7,7 +7,7 @@ Tutorial Date: Week 2*
 
 Section 1 - Introduction
 --
-This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will take the opportunity to learn the basics of the Swift/Objective-C and Cocoa programming language and create a simple command line tool using Xcode.
+This assignment consists of two parts. In the first part of this assignment, you will be introduced to Xcode, which is the IDE for Mac OS and iOS development. In the second part, you will learn the basics of the Swift and Objective-C programming languages, as well as the Cocoa framework, culminating in a simple command-line tool using Xcode.
 
 **Reminder:** Please read the entire problem set before starting.
 
@@ -15,7 +15,7 @@ This assignment consists of two parts. In the first part of this assignment, you
 
 This assignment (and the rest of the course) assumes that you have access to
 
-* Mac OS X 10.9
+* Mac OS X 10.9 or later
 * Xcode 6.1
 * An Apple Developer account
 * An iPad capable of running iOS 8
@@ -29,9 +29,9 @@ If you do not have access to a computer running Mac OS X 10.9, you may:
 
 Development in general can be a messy process, and you should consider running your toolchain in a virtual environment if you are working on your primary computer.
 
-### Swift/Objective-C and Cocoa ###
+### Swift, Objective-C and Cocoa ###
 
-As of iOS 8, Apple introduced a new programming language, Swift. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, and also more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps, but for this course, we will stick with Swift. During this semester, all coding assignments will be done mainly using Swift and a little Objective-C at the start.
+Apple introduced a new programming language, Swift, together with iOS 8. Swift replaces Objective-C as the primary language that will be used to write Mac and iOS software. Swift is intended to be more resilient to erroneous code than Objective-C, as well as being more concise (meaning you have to type less code). It is possible to use Swift and Objective-C together in apps; however, for this course, we will be using Swift almost exclusively. The only time you will be using Objective-C will be at the start, for you to have a sense of both languages.
 
 If you’re comfortable with basic object-oriented concepts and have used scripting languages before, it should be easy to pick up Swift during CS3217. You should read Apple's introduction to Swift: [The Swift Programming Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/). There is also an iBooks version available that is more iPad-friendly.
 
