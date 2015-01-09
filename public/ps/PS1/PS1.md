@@ -240,7 +240,7 @@ You should complete the remaining test functions in `StackTests.swift` and `Queu
 
 ### Problem 3: Graph Traversal (45 points)
 
-We may represent a **general undirected graph** as an adjacency list implemented in the form of a dictionary that maps vertex labels to arrays of their neighbours.
+We may represent a **general undirected graph** as an adjacency list implemented in the form of a dictionary that maps node labels to arrays of their neighbours.
 
 Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
@@ -254,7 +254,7 @@ Fortunately, Xcode provides a graphical property list editor, and you should not
 
 #### Input Format ####
 
-The adjacency list for this graph in the format of a property list would be as follows. The key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a vertex in the graph, and its corresponding array represents the vertices that it is adjacent to.
+The adjacency list for this graph in the format of a property list would be as follows. The key `graph` contains a dictionary representing the adjacency list of the graph. Each key in this dictionary represents a node in the graph, and its corresponding array represents the nodes that it is adjacent to.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -300,17 +300,17 @@ The adjacency list for this graph in the format of a property list would be as f
 	
 Note that this graph contains a cycle, and that edges are bidirectional.
 	
-Your task is to implement two structs `BreadthFirstOrderGenerator`  and `DepthFirstOrderGenerator` that traverse the graph in Breadth-first and Depth-first order respectively, starting from a given vertex. Your structs should adopt the protocols `GeneratorType` and `SequenceType`, and hence should implement functions of those protocols. Neighbours of a node will be traversed in the order of nodes that appear in the `plist` file.
+Your task is to implement two structs `BreadthFirstOrderGenerator`  and `DepthFirstOrderGenerator` that traverse the graph in Breadth-first and Depth-first order respectively, starting from a given node. Your structs should adopt the protocols `GeneratorType` and `SequenceType`, and hence should implement functions of those protocols. Neighbours of a node will be traversed in the order of nodes that appear in the `plist` file.
 
 The test cases will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s. 
 
-- Implement the struct `DepthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start vertex. Calls to `next()` will return the nodes in Depth-first search order. **(20 points)**
+- Implement the struct `DepthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start node. Calls to `next()` will return the nodes in Depth-first search order. **(20 points)**
 
-The Depth-first search generator should return vertices in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, D, F, E, C, G**.
+The Depth-first search generator should return nodes in pre-order, that is, the order in which they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, D, F, E, C, G**.
 
-- Implement the struct `BreadthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start vertex. Calls to `next()` will return the nodes in Breadth-first search order. **(20 points)**
+- Implement the struct `BreadthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start node. Calls to `next()` will return the nodes in Breadth-first search order. **(20 points)**
 
-The Breadth-first search generator should also return vertices in the order that they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, C, E, D, F, G**.
+The Breadth-first search generator should also return nodes in the order that they were visited by the algorithm. In the example graph, the order we are looking for is: **A, B, C, E, D, F, G**.
 
 - Create an extension of the `Dictionary` class that adopts the `Traversable` protocol. Look at `Traversable.swift` for the functions that protocol implements and the respective return types and values. Your file should be named `Dictionary+Traversable.swift` in the style of Swift. **(5 points)**
 
