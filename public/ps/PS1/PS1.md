@@ -330,7 +330,7 @@ The following screenshot shows the output from running the driver program on the
 
 Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, and Breadth-first Search work correctly. **(15 points)**
 
-We provide three unit test cases (`StackTest.swift`, `QueueTest.swift` and `GraphTest.swift`) for your testing purpose and you should modify them wherever necessary.
+We have provided three unit test files (`StackTests.swift`, `QueueTests.swift` and `GraphTests.swift`) for testing. You should modify them where necessary.
 
 We also provide three respective plist and expect files which are used to test in three unit test cases. 
 
@@ -378,7 +378,7 @@ Section 4 - Grading and Submission
 Please read this section carefully so that you fully understand the grading scheme and the mode of submission!
 
 ### Grading Scheme ###
-In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write well-documented code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained and the probability that some poor soul will have to come along to read and modify your code is very high. Your goal is to minimise the grief of this poor fella and make him love reading your code.
+In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write *good* code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained; the probability that some poor soul will have to read and modify your code is very high. Your goal is to minimise the grief of this poor fellow and make him love reading your code.
 
 You also want to minimise the grief that is inflicted on your tutors. In particular, we will be looking out for the following:
 
@@ -388,9 +388,7 @@ You also want to minimise the grief that is inflicted on your tutors. In particu
 - Your code should be well-documented, correctly indented and neat. You should not use magic numbers.  
 
 ### Mode of Submission ###
-In this assignment, you will be using Bitbucket for submitting your code and receiving feedback. 
-
-Accounts have already been created for you using your matriculation number and the email address you supplied when registering for this module. You should have received an email containing an initial password, and instructions asking you to login and change that password.
+In this assignment, you will be using Bitbucket for submitting your code and receiving feedback.
 
 The Xcode projects for your problem sets, if they are provided, will be located under the [private repositories section](https://bitbucket.org/cs3217/profile/repositories?visibility=private). You should first **fork** the project to your own private workspace, and then **clone** the project to your computer.
 
