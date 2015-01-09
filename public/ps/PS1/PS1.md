@@ -203,7 +203,7 @@ The emulator has limitations when testing more complicated gestures, the camera,
 Section 3 - Introduction to Objective-C (100 points)
 --
 
-In this section, you will be introduced to Object-Oriented Programming and collection-types in Objective-C through the implementation of graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you will not have to waste time in the coming weeks.
+In this section, you will be introduced to Object-Oriented Programming and collection-types in Swift through the implementation of basic Abstract Data Types (ADT) and simple graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you can reuse these earlier work in the coming weeks.
 
 
 ### Problem 1: Collections in Swift (10 points)
@@ -224,10 +224,9 @@ Keys in `Dictionary` may be any instance of an `AnyObject`. Which selector does 
 
 Swift does not provide Stacks and Queues ADTs natively. Your task is to implement a generic LIFO stack, and a generic FIFO queue.
 
-
 **Fork** the Problem Set 1 repository into your account on Bitbucket ([https://bitbucket.org/cs3217/cs3217-problem-set-1](https://bitbucket.org/cs3217/cs3217-problem-set-1)) and **clone** it into your computer to begin working. 
 
-The Xcode project that you would have just cloned is a Mac OS Command Line Tool which is designed to be run on your computer, not your iPad. The file `main.m` contains a small driver program that you *should not change functionally*. The driver program will read a property list specified in an argument, and output the results of the specified algorithm to the console. We will be using this driver program to grade your assignment automatically. 
+The Xcode project that you would have just cloned contained some unit tests. We will be using this driver program to grade your assignment automatically. 
 
 #### Property Lists ####
 
@@ -414,8 +413,6 @@ Note:
 
 
 ![Example Graph](/ps/ps1/img/compile.png)
-
-*You are not required to use the unit testing framework at this point, however, feel free to read ahead and give it a try. The main focus point this time is on understanding how to use it *
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
