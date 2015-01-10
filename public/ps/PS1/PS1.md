@@ -258,7 +258,7 @@ You should complete the remaining test functions in `StackTests.swift` and `Queu
 
 ### Problem 3: Graph Traversal (45 points)
 
-We may represent a **general undirected graph** as an adjacency list implemented in the form of a dictionary that maps node labels to arrays of their neighbours.
+We may represent a graph as an adjacency list implemented in the form of a dictionary that maps node labels to arrays of their neighbours. In the following graph, all edges are bi-directional.
 
 Consider the following graph taken from [Wikipedia](http://en.wikipedia.org/wiki/File:Graph.traversal.example.svg):
 
