@@ -182,6 +182,7 @@ For this problem set, we will be testing your code by compiling your app and upl
 - Your project should build without errors or warnings.
 - Your project should run without crashing.
 - You have implemented extra features.
+- Your code should be written neatly and have a consistent coding style.
 - Your game is complete. By this, we mean that you can create and play a level, the cannon can fire, the bubbles interact as expected, the game ends when all the bubbles on the screen are destroyed (or when the cannon finishes the number of bubble), the score is displayed when the game ends.
 
 ### Mode of Submission ###

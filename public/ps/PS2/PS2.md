@@ -196,6 +196,8 @@ The simplest way to ensure that you get a good grade on your assignment is to si
 - Your project should build without errors or warnings.
 - Your project should run without crashing.
 - Your unit test cases are well-designed.
+- Your code should be well-documented, correctly indented and neat. You should not use magic numbers. 
+- Your code should be written neatly and have a consistent coding style.
 
 ### Mode of Submission ###
 

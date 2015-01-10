@@ -371,14 +371,14 @@ Section 4 - Grading and Submission
 Please read this section carefully so that you fully understand the grading scheme and the mode of submission!
 
 ### Grading Scheme ###
-In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write *good* code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained; the probability that some poor soul will have to read and modify your code is very high. Your goal is to minimise the grief of this poor fellow and make him love reading your code.
+In this module, you are training to become a good software engineer. The first and basic requirement is that your code must satisfy the requirements and be correct. Above and beyond correctness, you are required to write *good* code. In real software projects, just ensuring that your code can do the job is not sufficient. Remember that if you are doing anything useful at all, the code has to be maintained; the probability that some poor soul will have to read and modify your code is very high. Your goal is to minimise the grief of this poor fellow and make him love reading your code. **Hint:** the tutors appreciate good coding style. Here's a [Swift style guide](https://github.com/raywenderlich/swift-style-guide) by one of the experts in iOS development, you *should* have a look at it.
 
 You also want to minimise the grief that is inflicted on your tutors. In particular, we will be looking out for the following:
 
 - Your submission should adhere to the submission format.
 - Your files should compile without errors or warnings.
 - Your program should run without crashing over the range of all valid inputs.
-- Your code should be well-documented, correctly indented and neat. You should not use magic numbers.  
+- Your code should be well-documented, correctly indented and neat. You should not use magic numbers. 
 
 ### Mode of Submission ###
 In this assignment, you will be using Bitbucket for submitting your code and receiving feedback. 

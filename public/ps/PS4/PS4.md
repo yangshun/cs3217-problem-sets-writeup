@@ -154,6 +154,7 @@ For this problem set, we will be testing your code by compiling your app and upl
 - Your project should build without errors or warnings.
 - Your project should run without crashing.
 - You have implemented required features.
+- Your code should be written neatly and have a consistent coding style.
 - Your game engine works. By this, we mean that the bubbles interact with each other and exhibit the desired behaviours.
 
 ### Mode of Submission ###

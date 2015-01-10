@@ -373,12 +373,14 @@ In this module, you are training to become a good software engineer. The first a
 
 For this problem set, testing/grading will be done by running the project in the simulator. You should also probably upload the application to your iPad to make sure that the gesture code works correctly. We will be looking at the following:
 
-* Your submission should adhere to the submission format.
-* Your project should build without errors or warnings.
-* Your project should run without crashing.
-* Each of the sections above will be considered to verify that you’ve completed the problem set correctly.
-* You have answered all of the above questions.
-* Your code should be well-documented, correctly indented and neat. You should not use magic   numbers.
+- Your submission should adhere to the submission format.
+- Your project should build without errors or warnings.
+- Your project should run without crashing.
+- Each of the sections above will be considered to verify that you’ve completed the problem set correctly.
+- You have answered all of the above questions.
+- Your code should be well-documented, correctly indented and neat. You should not use magic  numbers.
+- Your code should be written neatly and have a consistent coding style.
+
 
 Points will be taken off if you fail to comply with these requirements.
 
