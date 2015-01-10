@@ -199,7 +199,7 @@ The emulator has limitations when testing more complicated gestures, the camera,
 
 **Objective-C versus Swift:** This step is the same for both languages.
 
-Section 3 - Introduction to Objective-C and Swift (100 points)
+Section 3 - Introduction to Swift (100 points)
 --
 
 In this section, you will be introduced to Object-Oriented Programming and collection-types in Swift through the implementation of basic Abstract Data Types (ADT) and simple graph algorithms. As these algorithms may be relevant to future problem sets, you are advised to design your solutions in a generic and reusable way so that you can reuse your earlier work in the coming weeks.
