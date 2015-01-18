@@ -13,10 +13,9 @@ Problem 2 Subtotal	:  30/ 30
 
 Problem 3.1		:  20/ 20
 Problem 3.2		:  20/ 20
-Problem 3.3		:  5/ 5
-Problem 3 Subtotal	:  45/ 45
+Problem 3 Subtotal	:  40/ 40
 
-Problem 4		:  15/ 15
+Problem 4		:  20/ 20
 
 Bonus			:   3/  3
 
