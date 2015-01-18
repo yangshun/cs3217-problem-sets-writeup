@@ -256,7 +256,7 @@ Don't panic if you see some red test now! If you implement everything correctly,
 
 You should complete the remaining test functions in `StackTests.swift` and `QueueTests.swift`. Feel free to add on more test cases for each function.
 
-### Problem 3: Graph Traversal (45 points)
+### Problem 3: Graph Traversal (40 points)
 
 We may represent a graph as an adjacency list implemented in the form of a dictionary that maps node labels to arrays of their neighbours. In the following graph, all edges are bi-directional.
 
@@ -322,6 +322,8 @@ Note that this graph contains a cycle, and that edges are bidirectional.
 	
 Your task is to implement two structs `BreadthFirstOrderGenerator`  and `DepthFirstOrderGenerator` that traverse the graph in Breadth-first and Depth-first order respectively, starting from a given node. Your structs should adopt the protocols `GeneratorType` and `SequenceType`, and hence should implement functions of those protocols. Neighbours of a node will be traversed in the order of nodes that appear in the `plist` file.
 
+`Traversable.swift` contains functions that the `Traversable` protocol should implement and the respective return types and values. `Dictionary+Traversable.swift` is an extension of the `Dictionary` class that adopts the `Traversable` protocol. Your generators should work well with this extension too.
+
 The test cases will parse property lists into their constituent Swift objects. Your implementation only needs to deal with graphs represented as `Dictionary`s in the format of the graph.
 
 - Implement the struct `DepthFirstOrderGenerator`, which adopts the protocols `GeneratorType` and `SequenceType`. The constructor accepts a graph (represented as our dictionary format) and a start bide. Calls to `next()` will return the nodes in Depth-first search order, starting at the given node. **(20 points)**
@@ -332,12 +334,12 @@ The test cases will parse property lists into their constituent Swift objects. Y
 
   In the example graph, the breadth-first traversal starting from **A** is:  **A, B, C, E, D, F, G**.
 
-- Create an extension of the `Dictionary` class that adopts the `Traversable` protocol. Look at `Traversable.swift` for the functions that protocol implements and the respective return types and values. Your file should be named `Dictionary+Traversable.swift`. **(5 points)**
 
 
-### Problem 4: Testing (15 points)
 
-Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, Breadth-first Search and your Dictionary extension work correctly. **(15 points)**
+### Problem 4: Testing (20 points)
+
+Write sufficient tests to ensure that your Stack, Queue, Depth-first Search, Breadth-first Search and the Dictionary extension works correctly. **(20 points)**
 
 Skeleton unit test cases, `StackTests.swift`, `QueueTests.swift`, `BreadthFirstOrderGeneratorTests.swift`, `DepthFirstOrderGeneratorTests.swift` and `Dictionary+TraversableTests.swift`, have been provided for your testing purpose and you should modify them wherever necessary.
 
