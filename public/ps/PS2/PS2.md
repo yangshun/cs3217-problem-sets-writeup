@@ -83,7 +83,7 @@ Now let’s take a look at the first two ADTs, *Node* and *Edge*. You are provid
 
 Answer the following questions in `answers.txt`:
 
-1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of `Edge`, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify an `Edge` such that it violates its representation invariant? How are changes to instances of and `Edge` prevented?) **(5 points)**
+1. Calls to `_checkRep()` are supposed to catch violations in the classes’ invariants. In general, it is recommended that one calls `_checkRep()` at the beginning and end of every method. In the case of `Edge`, why is it sufficient to call `_checkRep()` only at the end of the constructors? (Hint: could a method ever modify an `Edge` such that it violates its representation invariant? How can changes to instances of an `Edge` be prevented?) **(5 points)**
 
 2. `Node` and `Edge` implement the `Equatable` protocol. A related protocol is the `Hashable` protocol. Would there be any benefit in requiring that both Node and Edge implement `Hashable` over `Equatable`? Explain your answer. **(5 points)**
 
