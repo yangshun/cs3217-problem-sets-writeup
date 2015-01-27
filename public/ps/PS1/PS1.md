@@ -354,7 +354,6 @@ We also provide some `plist` files for the graphs. You can also create your own 
 3. Select the newly added file and click on the **Add** button.
 
   ![Add plist](/ps/ps1/img/add-plist-2.png)
->>>>>>> Stashed changes
 
 4. Note that you have to do this for every new plist file that you want to add.
 
