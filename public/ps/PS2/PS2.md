@@ -146,7 +146,7 @@ In this problem, you are going to use a tree to cipher and decipher texts. The c
 * **Cipher**: perform string-to-tree with breadth-first order and then tree-to-string with depth-first order
 * **Decipher**: perform string-to-tree with depth-first order and then tree-to-string with breadth-first order
 
-In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string (or the number of children of each node in the intermediate tree). The intermediate tree is a perfect tree which means that:
+In order to perform the string-to-tree conversions, you will be provided with a **key**. This key specifies the number of children for every letter in the string (or the number of children of each node in the intermediate tree). The key has a minimum value of **2**. The intermediate tree is a perfect tree which means that:
 
  - Every node other than the leaves has exactly **k** children.
  - All leaves have the same depth.
@@ -155,7 +155,7 @@ For example, consider the string **HELLO WORLD**. When performing the cipher ope
 
 ![Cipher Tree](/ps/ps2/img/cipher-tree.png)
 
-In order to create a perfect binary tree, we need to append some 'special nodes' with a string label **\*** to the end of the tree to conform to the key. You can assume that the input string has no **\*** character. (Note that the empty node in the diagram represents the space in the original string.)
+In order to create a complete binary tree, we need to append some 'special nodes' with a string label **\*** to the end of the tree to conform to the key. You can assume that the input string has no **\*** character. (Note that the empty node in the diagram represents the space in the original string.)
 
 In the second part of the cipher operation, this tree is converted to a string using the depth-first approach. This would result in the following string: **HELOROLDL \*\*W**. Note that the special characters must be removed if they appears at the end of the string after the conversion.
 
