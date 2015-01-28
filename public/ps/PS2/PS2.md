@@ -163,17 +163,17 @@ If this resultant string is used as the input for the decipher operation using t
 
 Now, follow the steps described below to implement the cipher/decipher functionalities:
 
-1. First, you must design and implement a `Tree` ADT in `Tree.swift`. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may extend the `Graph` ADT created in the previous problems or use a different representation for the `Tree`. You may add new files to the project to support your implementation; however, you are required to mention them in `answers.txt`.
+1. First, you must design and implement a `Tree` ADT in `Tree.swift`. You should provide a suitable specification for the ADT and also define the representation invariant properly. You may extend the `Graph` ADT created in the previous problems or use a different representation for the `Tree`. You may add new files to the project to support your implementation; however, you are required to mention them in `answers.txt`. **(20 marks)**
 
 2. Implement a class extension for `String` in `String+Cryptography.swift`. The  specifications for the class extension can be found within the skeleton provided.
 
-   Take note that your algorithm will need to append the 'special nodes' to the end of the tree to conform to the perfect tree property.
+   Take note that your algorithm will need to append the 'special nodes' to the end of the tree to conform to the perfect tree property. **(10 marks)**
 
 3. Implement a class extension for `Tree` in `Tree+Traversal.swift`. The specifications for the class extension can be found within the skeleton provided.
 
-   Your algorithm will need to deal with the 'special nodes' in the tree appropriately: they should not appear at the end of the converted string.
+   Your algorithm will need to deal with the 'special nodes' in the tree appropriately: they should not appear at the end of the converted string. **(10 marks)**
 
-4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the `Tree` ADT and the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string.  
+4. Write appropriate test cases in `TreeTests.swift` and `String+CryptographyTests.swift` to test the `Tree` ADT and the cipher and decipher functionalities. Keep in mind that given a string, performing the cipher operation followed by the decipher operation using the same key should produce the same string. **(10 marks)**  
 
 ### Bonus Problem: Reflection (3 Bonus Points) ###
 Please answer the following questions:
