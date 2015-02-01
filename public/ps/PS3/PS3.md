@@ -281,9 +281,18 @@ Please bear the above in mind when doing your problem set, you may be referring 
 
 You may use the following code to save a file to the app's document directory (which changes everytime you build the app).
 ```
-var urls = NSFileManager.DefaultManager.GetUrls (NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomain.User)
-var path = urls[0].Path
-File.WriteAllText(Path.Combine(path, "myfile.txt"), "woohoo")
+let dirs : [String]? = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
+if dirs != nil {
+    let dir = dirs![0]; // Documents directory
+    let path = dir.stringByAppendingPathComponent("myfile.txt");
+    let text = "woohoo"
+        
+    // Writing
+    text.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil);
+        
+    // Reading
+    let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+}
 ```
 
 You can choose to save your data either using a single file, or using multiple files. We will discuss only the case of single file since it might be easier to implement. You start by having one root object (e.g. an `NSArray` or `NSDictionary`) which you populate with all the data that have to be persisted. When saving, you rewrite the single file with the contents of the root directory.
