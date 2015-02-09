@@ -227,7 +227,7 @@ A correct implementation of the MVC framework has the following properties:
 * the **controller** knows about the the **view** and the **model**
 * the **controller** observes the **view**
 
-### Problem 4: Implementing the Bubble Objects (110 points) ###
+### Problem 4: Implementing the Bubble Objects (80 points) ###
 
 You will be using the MVC pattern to implement the bubble objects. Thus, a game bubble is represented by the triad: **Model** - to store the state of the object; **View** - to represent the bubble on the screen; and **Controller** - to manage the model and the view.
 
@@ -253,10 +253,9 @@ You need to come up with an implementation of a base `GameBubble` class (you may
         view.addGestureRecognizer(panGesture)
 
  Supported Operations:  
- - Select a bubble colour from the palette (Single-tap gesture)  
- - Drag finger across main grid to fill the cells up with the selected bubble colour 
-or erase a cell if the eraser was chosen in the palette (Pan gesture)  
- - Tap an existing bubble on the grid to cycle through bubble colours (Single-tap gesture). **Note**: Tapping on an empty cell will not have any effects.
+ - Selecting a bubble colour from the palette (Single-tap gesture)  
+ - Tapping/dragging across a cell to fill it with the selected bubble colour or erase a cell if the eraser was chosen in the palette (Single-tap & Pan gesture)
+ - Tapping an existing bubble on the grid to cycle through bubble colours (Single-tap gesture).
  - Convenient erasure of a cell (Long-press gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
