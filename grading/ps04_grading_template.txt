@@ -5,30 +5,43 @@ Student:
 
 Grading
 
-Problem 1.1		:  10/ 10
-Problem 1.2		:  15/ 15
-Problem 1 Subtotal	:  25/ 25
+Problem 1.1		:    / 10
+Problem 1.2		:    / 15
+Problem 1 Subtotal	:    / 25
 
-Problem 2.1		:  10/ 10
-Problem 2.2		:   5/  5
-Problem 2.3		:  10/ 10
-Problem 2.4		:   5/  5
-Problem 2.5		:  10/ 10
-Problem 2.6		:  10/ 10
-Problem 2.7		:   5/  5
-Problem 2 Subtotal	:  55/ 55
+Problem 2.1		:    / 10
+Problem 2.2		:    /  5
+Problem 2.3		:    / 10
+Problem 2.4		:    /  5
+Problem 2.5		:    / 10
+Problem 2.6		:    / 10
+Problem 2.7		:    /  5
+Problem 2 Subtotal	:    / 55
 
-Problem 3		:  20/ 20
+Problem 3		:      / 20
 
-Bonus			:   3/  3
+Bonus			:        /  3
 
-Basic score		: 100/100
+Basic score		:    /100
 
 Coding Style Deduction	:   0/ 30
 
-Final Score		: 100/100
+Final Score		:    /100
 
+------
+Bugs:
+
+* 
+* 
+
+------
+UX Improvements:
+
+* 
+* 
 
 ------
 Comments by Tutor/TA:
 
+* 
+* 
