@@ -5,8 +5,8 @@ Student:
 
 Grading
 
-Problem 1.1		:    / 10
-Problem 1.2		:    / 15
+Problem 1.1		:    / 15
+Problem 1.2		:    / 10
 Problem 1 Subtotal	:    / 25
 
 Problem 2.1		:    / 10
