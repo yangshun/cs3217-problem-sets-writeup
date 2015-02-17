@@ -63,7 +63,7 @@ After adding the cannon sprite, and implementing an algorithm which decides the 
 
 Describe in the file `answers.txt` how your design allowed the integration of the game engine. Explain the advantages and disadvantages of your approach and alternative approaches.
 
-### Problem 4: Special Bubbles (30 points) ###
+### Problem 4: Special Bubbles (40 points) ###
 
 The game would be more interesting with special bubbles. Hence we are going to implement special bubbles that will make the game even more fun. This is a test of the flexibility your software design! A good design will make the process of adding features relatively easy and pain-free.
 
@@ -74,13 +74,16 @@ Implement the following additional bubbles:
 - **Bomb Bubble** - Removes all bubbles adjacent to it.
 - **Star Bubble** - When a coloured bubble comes into contact with the star bubble, all bubbles of that colour in the arena will be removed.
 
-Except for the indestructible bubble, the effects of the other special bubbles are triggered when the shot bubble's final position is adjacent to a special bubble (aka touching it).
+Except for the indestructible bubble, the effects of the other special bubbles are activated when the shot bubble's final position is adjacent to a special bubble (aka touching it).
+
+Also, the effect of powerup bubbles that are directly activated/removed by other powerup bubbles should also be triggered for a chain effect. **Example:** If a lightning bubble is activated, and a bomb bubble is in the same row as the lightning bubble, after the lightning bubble destroys all normal bubbles in that row, the effect of the bomb bubble will be activated and all bubbles adjacent to it will be destroyed.
 
 1. Modify your level designer to support the addition of these special bubbles. **(5 points)**
 2. Modify your game engine to handle these new bubble behaviours. **(20 points)**
-3. Explain in the file `answers.txt` your general strategy for implementing these special behaviours. Explain why your strategy is the best among alternatives. **(5 points)**
+3. Support the chaining behaviour of the activation of powerup bubbles. **(10 points)**
+4. Explain in the file `answers.txt` your general strategy for implementing these special bubble behaviours and support for chaining activation. Explain why your strategy is the best among alternatives. **(5 points)**
 
-### Problem 5: Game Flow (20 points) ###
+### Problem 5: Game Flow (10 points) ###
 
 Make the game a complete application by implementing the following screens and UI elements that allows transitions between them. You are required to use storyboard transitions.
 
