@@ -203,12 +203,12 @@ Once you have decided on the best way to organize your code, please answer the f
 
 1. How did you apply the MVC pattern in this problem set? Explain how you decided to organize the code for your game objects with an entity-relationship diagram for your implementation of the game. With the entity-relationship model diagram as a start, build a class diagram for the entire project. The entity-relationship model is an abstract and conceptual representation of your data. An entity is a unique thing that can exist independently in your design. Each entity must have a set of unique attributes. A relationship captures how two or more entities are related to each other. Relationships also may have attributes. The entity-relationship diagram shows graphically the entity and the relationship sets, including the cardinality of the relationship (e.g. one-to-one, one-to-many, many-to-one). 
 
-  To summarize, your class diagram should:
-  - Show the attributes, methods of each class and additional relevant information about them.
-  - Relationships between classes should also be shown. Show the instance-level (association, composition) and class-level relationships (generalization, realization) where appropriate.
-  - Allow a developer who hasn't seen your code base before to let them have a high-level understanding of your software.
+   To summarize, your class diagram should:
+   - Show the attributes, methods of each class and additional relevant information about them.
+   - Relationships between classes should also be shown. Show the instance-level (association, composition) and class-level relationships (generalization, realization) where appropriate.
+   - Allow a developer who hasn't seen your code base before to let them have a high-level understanding of your software.
 
-  Save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful in allowing others to understand your code architecture, feel free to add them in, and make indicate it inside `answers.txt`. **(10 points)**
+   Save your diagram as `class-diagram.png` and include it in the root directory of your problem set repository. If you would like to add more diagrams that you find helpful in allowing others to understand your code architecture, feel free to add them in, and make indicate it inside `answers.txt`. **(10 points)**
 
 2. Explain why you decided on your chosen design over alternative designs. **(5 points)**
 
@@ -234,17 +234,18 @@ You will be using the MVC pattern to implement the bubble objects. Thus, a game 
 1. **Model** - There are two important aspects regarding the object model. In this problem set, you are concerned mostly with the position of the object on the screen, and the type of bubble, such that you can save and restore the object of the respective type to that position using the palette buttons in the walkthrough at the start of this problem set. However, note that for the next problem set the game objects state will be more complex as you develop a representation required for the game and physics engine. Writing extensible and reusable code is one of the qualities of good code. **(10 points)**
 
 2. **View** -  Rendering to the screen is handled by the view. It uses the model to know where to draw everything. The view doesn’t have any other functionality than this. You are provided with the required sprites in the attached archive. A sprite is an image or animation that is going to be integrated into a larger scene, such as our game. Here you will find included the image sprites. **(10 points)**
- - `bubble-blue.png`, `bubble-red.png`, `bubble-orange.png`, `bubble-green.png` are image sprites. These are the bubble images that will be used to design the game level. The default size of the bubble frame is 160x160 pixels.
+   
+   - `bubble-blue.png`, `bubble-red.png`, `bubble-orange.png`, `bubble-green.png` are image sprites. These are the bubble images that will be used to design the game level. The default size of the bubble frame is 160x160 pixels.
 
-  **Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do not have to be the same, as the palette is just for the designer to select the colour of bubble  to be used to fill the grid. 
+   **Note:** If you use the images in their default sizes, the palette and the grid will have to be very big. Thus, the views placed in the palette/grid should be scaled down to a reasonable smaller dimension. The sizes of the bubbles in the palette and grid do not have to be the same, as the palette is just for the designer to select the colour of bubble  to be used to fill the grid. 
 
 3. **Controller** - The controller handles the user input and manipulates the model. First it checks for user input, then it might query the view to see which on-screen objects are being manipulated by the user, and finally it changes the model accordingly. Since all objects respond in a similar way to the user input (for example: tap on the palette, long-press to delete, tap to change colour, drag on the grid to fill with bubbles).
 
-You need to come up with an implementation of a base `GameBubble` class (you may change the name as you please) and then subclass it with the additional requirements for each bubble types. For this problem set, there is only one basic bubble type (how many subclasses should you have?) with different colours. However, over the next two problem sets, you would be subclassing this abstract class to create different types of games bubbles (for example, special power bubbles) that would have different behaviour from the basic bubble types. Design your class well if you want to avoid rewriting code in the future problem sets. **(30 points)**
+   You need to come up with an implementation of a base `GameBubble` class (you may change the name as you please) and then subclass it with the additional requirements for each bubble types. For this problem set, there is only one basic bubble type (how many subclasses should you have?) with different colours. However, over the next two problem sets, you would be subclassing this abstract class to create different types of games bubbles (for example, special power bubbles) that would have different behaviour from the basic bubble types. Design your class well if you want to avoid rewriting code in the future problem sets. **(30 points)**
 
 4. **Touch Gestures**. To implement the drag, single-tap and long-press, you can use gesture recognizers. For dragging, you can use `UIPanGestureRecognizer`, for single/double-tap you can use `UITapGestureRecognizer` and for long-press you can use `UILongPressGestureRecognizer`. **(30 points)**
 
- An example use of gesture recognizers is the following: 
+   An example use of gesture recognizers is the following: 
 
         // This is required for touch interaction with the view
         let panGesture = UIPanGestureRecognizer(target: self, action: Selector("panHandler:"))
@@ -252,11 +253,11 @@ You need to come up with an implementation of a base `GameBubble` class (you may
         panGesture.maximumNumberOfTouches = 1
         view.addGestureRecognizer(panGesture)
 
- Supported Operations:  
- - Selecting a bubble colour from the palette (Single-tap gesture)  
- - Tapping/dragging across a cell to fill it with the selected bubble colour or erase a cell if the eraser was chosen in the palette (Single-tap & Pan gesture)
- - Tapping an existing bubble on the grid to cycle through bubble colours (Single-tap gesture).
- - Convenient erasure of a cell (Long-press gesture)
+   Supported Operations:  
+   - Selecting a bubble colour from the palette (Single-tap gesture)  
+   - Tapping/dragging across a cell to fill it with the selected bubble colour or erase a cell if the eraser was chosen in the palette (Single-tap & Pan gesture)
+   - Tapping an existing bubble on the grid to cycle through bubble colours (Single-tap gesture).
+   - Convenient erasure of a cell (Long-press gesture)
 
 ### Problem 5: Saving and Loading Game Levels. (50 points) ###
 
@@ -279,6 +280,7 @@ However, quoting [Apple's Technical Note TN2406](https://developer.apple.com/lib
 Please bear the above in mind when doing your problem set, you may be referring to guides that are meant for iOS 7 and before and wonder why this does not work.
 
 You may use the following code to save a file to the app's document directory (which changes everytime you build the app).
+
 ```
 let dirs : [String]? = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
 if dirs != nil {
