@@ -41,7 +41,7 @@ In Problem Set 3, you implemented the level designer of the game. The user can f
 
 It is time to implement the actual game. On the level designer screen, the game starts when the user presses the **START** button (though you are free to change the user interface to something else that accomplishes the same). This will trigger several things: a bubble can be fired from the bottom, the arena bubbles will interact with the fired bubble upon collision, and animations are also enabled.
 
-### Problem 1: Cannon Direction (5 points) ###
+### Problem 1: Cannon Direction (10 points) ###
 
 A cannon that fires a bubble will be added to the game. After the game starts, while the user is selecting the direction to fire the bubble, the cannon should rotate to face the direction of firing. In the provided assets, you can find the following image which might be useful:
 
