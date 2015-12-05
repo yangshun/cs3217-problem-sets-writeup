@@ -168,7 +168,7 @@ Please answer the following questions:
 
   Yes, we admit that the learning curve is very steep, but we don’t have a lot of time to get you up to speed. The real question is: do you feel that the problem sets have been well-designed to help you learn software engineering and Swift in a structured and effective way? Do you have any suggestions on how the problem sets can be improved?
 
-Submit your answers to these bonus problems at [http://tiny.cc/cs3217-ps5](http://tiny.cc/cs3217-ps5). Thanks!
+Submit your answers to these bonus problems at [http://bit.ly/cs3217-ps5](http://bit.ly/cs3217-ps5). Thanks!
 
 Section 4 - Grading and Submission
 --

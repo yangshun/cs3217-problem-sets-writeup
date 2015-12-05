@@ -373,7 +373,7 @@ Please answer the following questions:
 
 3. What could the CS3217 teaching staff have done better to improve your learning experience in this problem set?
 
-Submit your answers to these bonus problems at [http://tiny.cc/cs3217-ps3](http://tiny.cc/cs3217-ps3). Thanks!
+Submit your answers to these bonus problems at [http://bit.ly/cs3217-ps3](http://bit.ly/cs3217-ps3). Thanks!
 
 Section 3 - Grading and Submission
 --
